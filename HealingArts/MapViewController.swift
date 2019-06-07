@@ -74,9 +74,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             print ("OK")
         }
         let detailAction = UIAlertAction(title: "Details", style: .default) { (UIAlertAction) in
-            self.locationManager.stopUpdatingLocation()
-            print ("Show details. Location is no longer updating.")
-            //add possible perform segue???
+            self.performSegue(withIdentifier: "toMapDetailSegue", sender: nil)
+            self.mapView.deselectAnnotation(view.annotation, animated: true)
         }
         alertController.addAction(okAction)
         alertController.addAction(detailAction)
@@ -104,6 +103,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         } else {
             return pin
         }
+    }
+    
+    @IBAction func unwindToMapViewController(segue: UIStoryboardSegue) {
+        
     }
 
 }

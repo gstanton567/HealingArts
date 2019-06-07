@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i8u-PQ-EJu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bHf-al-bb1">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map-->
+        <!--Map View Controller-->
         <scene sceneID="Rxs-L4-h2f">
             <objects>
                 <viewController id="i8u-PQ-EJu" customClass="MapViewController" customModule="HealingArts" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybridFlyover" zoomEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICr-ya-rC1">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -31,14 +31,53 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="81l-KH-2Xo"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="WFx-oQ-XrW"/>
+                    <navigationItem key="navigationItem" id="4Nq-Db-LEM"/>
                     <connections>
                         <outlet property="mapView" destination="ICr-ya-rC1" id="un8-F3-301"/>
+                        <segue destination="Zhf-Qy-ZFO" kind="show" identifier="toMapDetailSegue" id="Lwo-oC-aFV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EcZ-Ir-BEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2025" y="-630"/>
+            <point key="canvasLocation" x="2934.7826086956525" y="-630.13392857142856"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="0OG-VJ-a0H">
+            <objects>
+                <viewController title="Details" id="Zhf-Qy-ZFO" customClass="MapDetailViewController" customModule="HealingArts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M9J-Ss-2Xp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="DRf-UP-clN"/>
+                    </view>
+                    <connections>
+                        <segue destination="vjs-KC-ked" kind="unwind" identifier="unwindToMapSegue" unwindAction="unwindToMapViewControllerWithSegue:" id="TIe-UJ-wyc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QdH-0F-llA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="vjs-KC-ked" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3731.884057971015" y="-630.13392857142856"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="Fme-FA-pxJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bHf-al-bb1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" id="WFx-oQ-XrW"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IbG-ir-SMA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="i8u-PQ-EJu" kind="relationship" relationship="rootViewController" id="B3f-VE-XDh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iaz-uY-caJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2122" y="-630"/>
         </scene>
     </scenes>
 </document>
