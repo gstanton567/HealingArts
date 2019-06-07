@@ -42,10 +42,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         locationManager.startUpdatingLocation()
+        print ("getting location")
         mapView.showsUserLocation = true
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        locationManager.stopUpdatingLocation()
+        print ("Location is no longer updating")
     }
     
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
@@ -56,10 +63,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        let alertController = UIAlertController(title: "art title", message: "\n\n\n\n\n\n\n\n\n\n\nart info", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        let alertController = UIAlertController(title: "art title", message: "\n\n\n\n\n\n\n\n\n\n\n"+"art info", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .cancel) { (UIAlertAction) in
+            print ("OK")
+        }
         let detailAction = UIAlertAction(title: "Details", style: .default) { (UIAlertAction) in
-            print ("show details")
+            self.locationManager.stopUpdatingLocation()
+            print ("Show details. Location is no longer updating.")
+            //add possible perform segue???
         }
         alertController.addAction(okAction)
         alertController.addAction(detailAction)
@@ -72,9 +83,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     //image may be optional
     func createPin (location : CLLocationCoordinate2D?/*, icon : UIImage?*/){
-        let annotaion = MKPointAnnotation()
-        annotaion.coordinate = location!
-        mapView.addAnnotation(annotaion)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = location!
+        mapView.addAnnotation(annotation)
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let pin = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
+        let image = UIImage(named: "artIcon")
+        pin.image = image
+        
+        if annotation.isEqual(mapView.userLocation) {
+            return nil
+        } else {
+            return pin
+        }
     }
 
 }
