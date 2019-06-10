@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,11 @@
 		23EFD0FC22AACACB00EC7B72 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EFD0FB22AACACB00EC7B72 /* About.storyboard */; };
 		23EFD0FE22AACADA00EC7B72 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EFD0FD22AACADA00EC7B72 /* Map.storyboard */; };
 		23EFD10022AACAEA00EC7B72 /* Donor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EFD0FF22AACAEA00EC7B72 /* Donor.storyboard */; };
+		7ACC542A22ADEE2900926DA2 /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ACC542922ADEE2900926DA2 /* GoogleService-Info (1).plist */; };
+		7ACC542C22ADF2A300926DA2 /* FirebaseTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACC542B22ADF2A300926DA2 /* FirebaseTestViewController.swift */; };
+		7ACC542E22ADFAB900926DA2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ACC542D22ADFAB900926DA2 /* GoogleService-Info.plist */; };
+		A90BE906C7841DE479DADFAD /* Pods_HealingArts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 802A8BCEA6085745828EF6AF /* Pods_HealingArts.framework */; };
+		D59A30A622AAE9CF000B9260 /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59A30A522AAE9CF000B9260 /* ArtistViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,13 @@
 		23EFD0FB22AACACB00EC7B72 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		23EFD0FD22AACADA00EC7B72 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		23EFD0FF22AACAEA00EC7B72 /* Donor.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Donor.storyboard; sourceTree = "<group>"; };
+		7ACC542922ADEE2900926DA2 /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
+		7ACC542B22ADF2A300926DA2 /* FirebaseTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTestViewController.swift; sourceTree = "<group>"; };
+		7ACC542D22ADFAB900926DA2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		802A8BCEA6085745828EF6AF /* Pods_HealingArts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealingArts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D59A30A522AAE9CF000B9260 /* ArtistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
+		E785BA99679D892493AD2F72 /* Pods-HealingArts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealingArts.debug.xcconfig"; path = "Target Support Files/Pods-HealingArts/Pods-HealingArts.debug.xcconfig"; sourceTree = "<group>"; };
+		FE50B71741D42914269684F1 /* Pods-HealingArts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealingArts.release.xcconfig"; path = "Target Support Files/Pods-HealingArts/Pods-HealingArts.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +51,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A90BE906C7841DE479DADFAD /* Pods_HealingArts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		117C01D16FA64269FDAA8A26 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7ACC542D22ADFAB900926DA2 /* GoogleService-Info.plist */,
+				802A8BCEA6085745828EF6AF /* Pods_HealingArts.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		23EFD0D922AAC0A400EC7B72 = {
 			isa = PBXGroup;
 			children = (
 				23EFD0E422AAC0A500EC7B72 /* HealingArts */,
 				23EFD0E322AAC0A500EC7B72 /* Products */,
+				922FC65562C8DAD3FCCA1D87 /* Pods */,
+				117C01D16FA64269FDAA8A26 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,15 +92,27 @@
 				23EFD0FD22AACADA00EC7B72 /* Map.storyboard */,
 				23EFD0FB22AACACB00EC7B72 /* About.storyboard */,
 				23EFD0F922AACAA900EC7B72 /* Artists.storyboard */,
+				D59A30A522AAE9CF000B9260 /* ArtistViewController.swift */,
+				7ACC542B22ADF2A300926DA2 /* FirebaseTestViewController.swift */,
 				23EFD0F722AAC8C100EC7B72 /* Gallery.storyboard */,
 				23EFD0E522AAC0A500EC7B72 /* AppDelegate.swift */,
 				23EFD0E722AAC0A500EC7B72 /* ViewController.swift */,
 				23EFD0E922AAC0A500EC7B72 /* Main.storyboard */,
 				23EFD0EC22AAC0A500EC7B72 /* Assets.xcassets */,
 				23EFD0EE22AAC0A500EC7B72 /* LaunchScreen.storyboard */,
+				7ACC542922ADEE2900926DA2 /* GoogleService-Info (1).plist */,
 				23EFD0F122AAC0A500EC7B72 /* Info.plist */,
 			);
 			path = HealingArts;
+			sourceTree = "<group>";
+		};
+		922FC65562C8DAD3FCCA1D87 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E785BA99679D892493AD2F72 /* Pods-HealingArts.debug.xcconfig */,
+				FE50B71741D42914269684F1 /* Pods-HealingArts.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,9 +122,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 23EFD0F422AAC0A500EC7B72 /* Build configuration list for PBXNativeTarget "HealingArts" */;
 			buildPhases = (
+				59D1D5286FE44F850B656F0D /* [CP] Check Pods Manifest.lock */,
 				23EFD0DE22AAC0A500EC7B72 /* Sources */,
 				23EFD0DF22AAC0A500EC7B72 /* Frameworks */,
 				23EFD0E022AAC0A500EC7B72 /* Resources */,
+				2EFF58CEC5B94F4AF0C9949C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -138,17 +176,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				23EFD0F022AAC0A500EC7B72 /* LaunchScreen.storyboard in Resources */,
+				7ACC542A22ADEE2900926DA2 /* GoogleService-Info (1).plist in Resources */,
 				23EFD10022AACAEA00EC7B72 /* Donor.storyboard in Resources */,
 				23EFD0FE22AACADA00EC7B72 /* Map.storyboard in Resources */,
 				23EFD0F822AAC8C100EC7B72 /* Gallery.storyboard in Resources */,
 				23EFD0FC22AACACB00EC7B72 /* About.storyboard in Resources */,
 				23EFD0ED22AAC0A500EC7B72 /* Assets.xcassets in Resources */,
+				7ACC542E22ADFAB900926DA2 /* GoogleService-Info.plist in Resources */,
 				23EFD0FA22AACAA900EC7B72 /* Artists.storyboard in Resources */,
 				23EFD0EB22AAC0A500EC7B72 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2EFF58CEC5B94F4AF0C9949C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HealingArts/Pods-HealingArts-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HealingArts/Pods-HealingArts-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HealingArts/Pods-HealingArts-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59D1D5286FE44F850B656F0D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HealingArts-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		23EFD0DE22AAC0A500EC7B72 /* Sources */ = {
@@ -157,6 +239,8 @@
 			files = (
 				23EFD0E822AAC0A500EC7B72 /* ViewController.swift in Sources */,
 				23EFD0E622AAC0A500EC7B72 /* AppDelegate.swift in Sources */,
+				7ACC542C22ADF2A300926DA2 /* FirebaseTestViewController.swift in Sources */,
+				D59A30A622AAE9CF000B9260 /* ArtistViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,10 +384,11 @@
 		};
 		23EFD0F522AAC0A500EC7B72 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E785BA99679D892493AD2F72 /* Pods-HealingArts.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 78X5DXD9AT;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HealingArts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -318,10 +403,11 @@
 		};
 		23EFD0F622AAC0A500EC7B72 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE50B71741D42914269684F1 /* Pods-HealingArts.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 78X5DXD9AT;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HealingArts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

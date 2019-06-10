@@ -8,14 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController {    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Hello
+        FirebaseTestViewController.getDocumentByName(docName: "piece1") { (name, error) in
+            print("YO: \(name)")
+        }
+        
     }
-
 
 }
 
