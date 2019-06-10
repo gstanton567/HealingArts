@@ -18,6 +18,9 @@ class ArtDetailsViewController: UIViewController {
     @IBOutlet weak var mediumLabel: UILabel!
     @IBOutlet weak var dimensionsLabel: UILabel!
     
+    //dummy data from map
+    var artwork : ArtworkItem?
+    
     let artist = "Dale Chihuly"
     let name = "Orange and Yellow Hornet and Rising Sun Sconce Wall"
     let date = "2017-18"
