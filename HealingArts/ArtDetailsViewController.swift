@@ -53,6 +53,8 @@ class ArtDetailsViewController: UIViewController {
     
     // MARK: - Navigation
     
+    
+    //Artist info segue
     @IBAction func onArtistButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "detailsToArtistDetailsSegue", sender: nil)
     }
@@ -61,6 +63,12 @@ class ArtDetailsViewController: UIViewController {
         let avc = segue.destination as! ArtistDetailViewController
         
     }
+    
+    
+    //single piece map
+    @IBAction func onMapButtonPressed(_ sender: UIButton) {
+    }
+    
     
     
 }
