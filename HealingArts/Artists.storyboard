@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ABi-Pm-nlz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q1H-Q4-5C2">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Artists-->
+        <!--Artist View Controller-->
         <scene sceneID="u21-5v-Sfp">
             <objects>
                 <viewController id="ABi-Pm-nlz" customClass="ArtistViewController" customModule="HealingArts" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ore-gW-qFg">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellID" textLabel="xyg-xe-fCg" style="IBUITableViewCellStyleDefault" id="yK6-nQ-mmM">
@@ -38,6 +38,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Upu-4V-2b6" kind="show" id="LSZ-zV-Lp2"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -55,14 +58,106 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HbG-TK-Suf"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Artists" id="rk4-De-q25"/>
+                    <navigationItem key="navigationItem" id="vCb-pm-o8g"/>
                     <connections>
                         <outlet property="tableView" destination="ore-gW-qFg" id="Vxr-df-Hgm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NbH-6j-kay" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2025" y="672"/>
+            <point key="canvasLocation" x="2934.7826086956525" y="671.65178571428567"/>
+        </scene>
+        <!--Artists Art View Controller-->
+        <scene sceneID="zf8-RP-2NA">
+            <objects>
+                <viewController id="Upu-4V-2b6" customClass="ArtistsArtViewController" customModule="HealingArts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2aO-MZ-eIE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pzp-yy-2rf">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="b4o-IB-kS7">
+                                    <size key="itemSize" width="425" height="252"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellID" id="f0y-hB-P6o" customClass="artCollectionViewCell" customModule="HealingArts" customModuleProvider="target">
+                                        <rect key="frame" x="-5.5" y="0.0" width="425" height="252"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="425" height="252"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lef-eh-aYr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="425" height="212"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4m-pg-rlb">
+                                                    <rect key="frame" x="0.0" y="231.5" width="425" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="lef-eh-aYr" secondAttribute="bottom" constant="40" id="S6m-WB-Yl1"/>
+                                            <constraint firstItem="lef-eh-aYr" firstAttribute="top" secondItem="f0y-hB-P6o" secondAttribute="top" id="V7I-oo-Vb9"/>
+                                            <constraint firstItem="L4m-pg-rlb" firstAttribute="leading" secondItem="f0y-hB-P6o" secondAttribute="leading" id="a1U-nr-dnO"/>
+                                            <constraint firstAttribute="trailing" secondItem="lef-eh-aYr" secondAttribute="trailing" id="asj-CM-y2E"/>
+                                            <constraint firstAttribute="trailing" secondItem="L4m-pg-rlb" secondAttribute="trailing" id="eqP-os-LT9"/>
+                                            <constraint firstItem="lef-eh-aYr" firstAttribute="leading" secondItem="f0y-hB-P6o" secondAttribute="leading" id="qwT-Ss-JCZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="L4m-pg-rlb" secondAttribute="bottom" id="tOw-xR-1AN"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="lef-eh-aYr" id="X9x-Xi-DSy"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Upu-4V-2b6" id="sEt-p6-g66"/>
+                                    <outlet property="delegate" destination="Upu-4V-2b6" id="jKI-jA-sgb"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="n1q-dU-qbP" firstAttribute="bottom" secondItem="Pzp-yy-2rf" secondAttribute="bottom" id="HHH-1l-VK5"/>
+                            <constraint firstItem="Pzp-yy-2rf" firstAttribute="top" secondItem="n1q-dU-qbP" secondAttribute="top" id="LsR-lK-8dG"/>
+                            <constraint firstItem="n1q-dU-qbP" firstAttribute="trailing" secondItem="Pzp-yy-2rf" secondAttribute="trailing" id="RpX-EM-Aof"/>
+                            <constraint firstItem="Pzp-yy-2rf" firstAttribute="leading" secondItem="n1q-dU-qbP" secondAttribute="leading" id="Xc4-hE-f0w"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="n1q-dU-qbP"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Pzp-yy-2rf" id="kaG-bN-AA8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t0s-Cn-hJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3660.8695652173915" y="671.65178571428567"/>
+        </scene>
+        <!--Artists-->
+        <scene sceneID="MT0-u6-0Te">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q1H-Q4-5C2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Artists" id="rk4-De-q25"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3ZP-Ol-vgt">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ABi-Pm-nlz" kind="relationship" relationship="rootViewController" id="eVG-BJ-v75"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lFk-E9-y8j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2024.6376811594205" y="671.65178571428567"/>
         </scene>
     </scenes>
 </document>

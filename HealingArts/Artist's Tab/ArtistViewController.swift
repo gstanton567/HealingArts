@@ -22,6 +22,13 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
 
     }
 //table view functions
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        <#code#>
+//    }
+    
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return images.count
     }
