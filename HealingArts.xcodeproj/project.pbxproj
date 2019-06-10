@@ -21,6 +21,11 @@
 		D543267622AB28E20050D0DF /* MapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D543267522AB28E20050D0DF /* MapDetailViewController.swift */; };
 		D543267822AEA5DE0050D0DF /* ArtworkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D543267722AEA5DE0050D0DF /* ArtworkItem.swift */; };
 		D543267A22AEDA080050D0DF /* SanctuaryMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D543267922AEDA080050D0DF /* SanctuaryMapViewController.swift */; };
+		73B5EFA122AAF04200E0F67F /* DonorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B5EFA022AAF04200E0F67F /* DonorViewController.swift */; };
+		73B5EFA322AE240300E0F67F /* ArtDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B5EFA222AE240300E0F67F /* ArtDetailsViewController.swift */; };
+		73B5EFA522AE2D7900E0F67F /* ArtistDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73B5EFA422AE2D7900E0F67F /* ArtistDetails.storyboard */; };
+		73B5EFA722AE2DA400E0F67F /* ArtworkDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73B5EFA622AE2DA400E0F67F /* ArtworkDetails.storyboard */; };
+		73B5EFA922AE8CED00E0F67F /* ArtistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B5EFA822AE8CED00E0F67F /* ArtistDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +45,11 @@
 		D543267522AB28E20050D0DF /* MapDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailViewController.swift; sourceTree = "<group>"; };
 		D543267722AEA5DE0050D0DF /* ArtworkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkItem.swift; sourceTree = "<group>"; };
 		D543267922AEDA080050D0DF /* SanctuaryMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanctuaryMapViewController.swift; sourceTree = "<group>"; };
+		73B5EFA022AAF04200E0F67F /* DonorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorViewController.swift; sourceTree = "<group>"; };
+		73B5EFA222AE240300E0F67F /* ArtDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtDetailsViewController.swift; sourceTree = "<group>"; };
+		73B5EFA422AE2D7900E0F67F /* ArtistDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ArtistDetails.storyboard; sourceTree = "<group>"; };
+		73B5EFA622AE2DA400E0F67F /* ArtworkDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ArtworkDetails.storyboard; sourceTree = "<group>"; };
+		73B5EFA822AE8CED00E0F67F /* ArtistDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,11 +82,20 @@
 		23EFD0E422AAC0A500EC7B72 /* HealingArts */ = {
 			isa = PBXGroup;
 			children = (
+				23EFD0FF22AACAEA00EC7B72 /* Donor.storyboard */,
+				73B5EFA022AAF04200E0F67F /* DonorViewController.swift */,
 				23EFD0FD22AACADA00EC7B72 /* Map.storyboard */,
 				D543267922AEDA080050D0DF /* SanctuaryMapViewController.swift */,
 				D543267522AB28E20050D0DF /* MapDetailViewController.swift */,
 				D543267322AAEA590050D0DF /* MapViewController.swift */,
 				D543267722AEA5DE0050D0DF /* ArtworkItem.swift */,
+				23EFD0FB22AACACB00EC7B72 /* About.storyboard */,
+				23EFD0F922AACAA900EC7B72 /* Artists.storyboard */,
+				23EFD0F722AAC8C100EC7B72 /* Gallery.storyboard */,
+				73B5EFA622AE2DA400E0F67F /* ArtworkDetails.storyboard */,
+				73B5EFA222AE240300E0F67F /* ArtDetailsViewController.swift */,
+				73B5EFA422AE2D7900E0F67F /* ArtistDetails.storyboard */,
+				73B5EFA822AE8CED00E0F67F /* ArtistDetailViewController.swift */,
 				23EFD0E522AAC0A500EC7B72 /* AppDelegate.swift */,
 				23EFD0E722AAC0A500EC7B72 /* ViewController.swift */,
 				23EFD0FF22AACAEA00EC7B72 /* Donor.storyboard */,
@@ -155,7 +174,9 @@
 				23EFD0F822AAC8C100EC7B72 /* Gallery.storyboard in Resources */,
 				23EFD0FC22AACACB00EC7B72 /* About.storyboard in Resources */,
 				23EFD0ED22AAC0A500EC7B72 /* Assets.xcassets in Resources */,
+				73B5EFA522AE2D7900E0F67F /* ArtistDetails.storyboard in Resources */,
 				23EFD0FA22AACAA900EC7B72 /* Artists.storyboard in Resources */,
+				73B5EFA722AE2DA400E0F67F /* ArtworkDetails.storyboard in Resources */,
 				23EFD0EB22AAC0A500EC7B72 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,9 +191,12 @@
 				D543267822AEA5DE0050D0DF /* ArtworkItem.swift in Sources */,
 				D543267622AB28E20050D0DF /* MapDetailViewController.swift in Sources */,
 				23EFD0E822AAC0A500EC7B72 /* ViewController.swift in Sources */,
+				73B5EFA322AE240300E0F67F /* ArtDetailsViewController.swift in Sources */,
+				73B5EFA922AE8CED00E0F67F /* ArtistDetailViewController.swift in Sources */,
 				D543267422AAEA590050D0DF /* MapViewController.swift in Sources */,
 				D543267A22AEDA080050D0DF /* SanctuaryMapViewController.swift in Sources */,
 				23EFD0E622AAC0A500EC7B72 /* AppDelegate.swift in Sources */,
+				73B5EFA122AAF04200E0F67F /* DonorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
