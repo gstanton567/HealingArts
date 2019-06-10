@@ -17,8 +17,8 @@ class ArtistsArtViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        title = "Collection"
+        collectionView.allowsSelection = true
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -30,5 +30,8 @@ class ArtistsArtViewController: UIViewController, UICollectionViewDelegate, UICo
         cell.imageView.image = (UIImage(named: chihulyArt[indexPath.row]))
         return cell
     }
-
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        print("clicked")
+//        performSegue(withIdentifier: "<#T##String#>", sender: <#T##Any?#>)
+//    }
 }

@@ -17,13 +17,57 @@
                     <view key="view" contentMode="scaleToFill" id="a5f-LO-R5S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Artist's Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6o-XT-rz7">
+                                <rect key="frame" x="0.0" y="111" width="414" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="chihulypic" translatesAutoresizingMaskIntoConstraints="NO" id="rZq-HE-R02">
+                                <rect key="frame" x="0.0" y="174" width="414" height="214"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="About" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="om9-7P-RuT">
+                                <rect key="frame" x="0.0" y="463" width="414" height="135"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfY-Yq-Or0">
+                                <rect key="frame" x="173" y="741" width="69" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Collection"/>
+                                <connections>
+                                    <segue destination="dWO-iN-m52" kind="show" id="LmJ-Eq-c3H"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dMc-Wh-1fj" firstAttribute="trailing" secondItem="om9-7P-RuT" secondAttribute="trailing" id="4s0-uH-c3l"/>
+                            <constraint firstItem="rZq-HE-R02" firstAttribute="leading" secondItem="dMc-Wh-1fj" secondAttribute="leading" id="DAq-gx-OiN"/>
+                            <constraint firstItem="L6o-XT-rz7" firstAttribute="leading" secondItem="dMc-Wh-1fj" secondAttribute="leading" id="djT-kB-AOK"/>
+                            <constraint firstItem="om9-7P-RuT" firstAttribute="leading" secondItem="dMc-Wh-1fj" secondAttribute="leading" id="sPe-I5-zlA"/>
+                            <constraint firstItem="dMc-Wh-1fj" firstAttribute="trailing" secondItem="rZq-HE-R02" secondAttribute="trailing" id="t0H-lD-VTo"/>
+                            <constraint firstItem="dMc-Wh-1fj" firstAttribute="trailing" secondItem="L6o-XT-rz7" secondAttribute="trailing" id="u5f-E9-mv4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dMc-Wh-1fj"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pg4-ce-fCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3912" y="21"/>
+            <point key="canvasLocation" x="3911.594202898551" y="20.758928571428569"/>
+        </scene>
+        <!--Collection-->
+        <scene sceneID="w26-dO-L4Y">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Collection" id="dWO-iN-m52" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sck-9x-uYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4603" y="-59"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chihulypic" width="135" height="90"/>
+    </resources>
 </document>
