@@ -24,13 +24,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     //let artCoordinate1 = CLLocationCoordinate2D(latitude: 41.2555318, longitude: -95.9804596)
     //let artCoordinate2 = CLLocationCoordinate2D(latitude: 41.2556318, longitude: -95.9801596)
 
-    var artworks : [AnnotationItem]? = []
+    var artworks : [ArtworkItem]? = []
     
-    let art1 = AnnotationItem(name: "Chihuly Sanctuary", desc: "Dale Chihuly", coordinate: CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596), imageName: "chihulySanctuary")
-    let art2 = AnnotationItem(name: "Search", desc: "Jun Kaneko", coordinate: CLLocationCoordinate2D(latitude: 41.2560330, longitude: -95.9804196), imageName: "search")
-    let art3 = AnnotationItem(name: "Leslie's Healing Garden", desc: "A neat garden", coordinate: CLLocationCoordinate2D(latitude: 41.2552318, longitude: -95.9796596), imageName: "lesliesHealingGarden")
+    let art1 = ArtworkItem(name: "Chihuly Sanctuary", desc: "Dale Chihuly", coordinate: CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596), imageName: "chihulySanctuary")
+    let art2 = ArtworkItem(name: "Search", desc: "Jun Kaneko", coordinate: CLLocationCoordinate2D(latitude: 41.2560330, longitude: -95.9804196), imageName: "search")
+    let art3 = ArtworkItem(name: "Leslie's Healing Garden", desc: "A neat garden", coordinate: CLLocationCoordinate2D(latitude: 41.2552318, longitude: -95.9796596), imageName: "lesliesHealingGarden")
     
-    var selectedArtwork : AnnotationItem?
+    var selectedArtwork : ArtworkItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +81,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                     print ("OK")
                 }
                 let detailAction = UIAlertAction(title: "Details", style: .default) { (UIAlertAction) in
-                    self.performSegue(withIdentifier: "toMapDetailSegue", sender: nil)
+                    if artwork.title == "Chihuly Sanctuary"{
+                        self.performSegue(withIdentifier: "toSanctuaryMap", sender: nil)
+                    } else{
+                        self.performSegue(withIdentifier: "toMapDetailSegue", sender: nil)
+                    }
                     self.mapView.deselectAnnotation(view.annotation, animated: true)
                 }
                 alertController.addAction(okAction)
@@ -96,7 +100,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 //only really works with rectangular images that have width > height
                 var artworkDescString = ""
                 let imageSize = imageView.frame.height
-                let numberOfLines = Double(imageSize / 18)
+                //17.75 = magic number???
+                let numberOfLines = Double(imageSize / 17.75)
                 let numberOfLinesInt = Int(numberOfLines)
                 for _ in 1...numberOfLinesInt{
                     artworkDescString.append("\n")
@@ -134,8 +139,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let MDVC =  segue.destination as! MapDetailViewController
-        MDVC.artwork = selectedArtwork
+        if segue.identifier == "toMapDetailSegue"{
+            let MDVC =  segue.destination as! MapDetailViewController
+            MDVC.artwork = selectedArtwork
+        } else {
+            let SMVC = segue.destination as! SanctuaryMapViewController
+        }
+        
     }
 
 }

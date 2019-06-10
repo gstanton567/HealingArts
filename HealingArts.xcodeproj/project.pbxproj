@@ -19,7 +19,8 @@
 		23EFD10022AACAEA00EC7B72 /* Donor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EFD0FF22AACAEA00EC7B72 /* Donor.storyboard */; };
 		D543267422AAEA590050D0DF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D543267322AAEA590050D0DF /* MapViewController.swift */; };
 		D543267622AB28E20050D0DF /* MapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D543267522AB28E20050D0DF /* MapDetailViewController.swift */; };
-		D543267822AEA5DE0050D0DF /* AnnotationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D543267722AEA5DE0050D0DF /* AnnotationItem.swift */; };
+		D543267822AEA5DE0050D0DF /* ArtworkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D543267722AEA5DE0050D0DF /* ArtworkItem.swift */; };
+		D543267A22AEDA080050D0DF /* SanctuaryMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D543267922AEDA080050D0DF /* SanctuaryMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +38,8 @@
 		23EFD0FF22AACAEA00EC7B72 /* Donor.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Donor.storyboard; sourceTree = "<group>"; };
 		D543267322AAEA590050D0DF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D543267522AB28E20050D0DF /* MapDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailViewController.swift; sourceTree = "<group>"; };
-		D543267722AEA5DE0050D0DF /* AnnotationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationItem.swift; sourceTree = "<group>"; };
+		D543267722AEA5DE0050D0DF /* ArtworkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkItem.swift; sourceTree = "<group>"; };
+		D543267922AEDA080050D0DF /* SanctuaryMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanctuaryMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,9 +73,10 @@
 			isa = PBXGroup;
 			children = (
 				23EFD0FD22AACADA00EC7B72 /* Map.storyboard */,
+				D543267922AEDA080050D0DF /* SanctuaryMapViewController.swift */,
 				D543267522AB28E20050D0DF /* MapDetailViewController.swift */,
-				D543267722AEA5DE0050D0DF /* AnnotationItem.swift */,
 				D543267322AAEA590050D0DF /* MapViewController.swift */,
+				D543267722AEA5DE0050D0DF /* ArtworkItem.swift */,
 				23EFD0E522AAC0A500EC7B72 /* AppDelegate.swift */,
 				23EFD0E722AAC0A500EC7B72 /* ViewController.swift */,
 				23EFD0FF22AACAEA00EC7B72 /* Donor.storyboard */,
@@ -164,10 +167,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D543267822AEA5DE0050D0DF /* AnnotationItem.swift in Sources */,
+				D543267822AEA5DE0050D0DF /* ArtworkItem.swift in Sources */,
 				D543267622AB28E20050D0DF /* MapDetailViewController.swift in Sources */,
 				23EFD0E822AAC0A500EC7B72 /* ViewController.swift in Sources */,
 				D543267422AAEA590050D0DF /* MapViewController.swift in Sources */,
+				D543267A22AEDA080050D0DF /* SanctuaryMapViewController.swift in Sources */,
 				23EFD0E622AAC0A500EC7B72 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

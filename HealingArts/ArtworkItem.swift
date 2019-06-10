@@ -10,7 +10,7 @@ import Foundation
 import MapKit
 import CoreLocation
 
-class AnnotationItem {
+class ArtworkItem {
     
     var title : String!
     var desc : String!

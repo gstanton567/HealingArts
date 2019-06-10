@@ -12,7 +12,7 @@ class MapDetailViewController: UIViewController {
     
     @IBOutlet weak var artTitleLabel: UILabel!
     
-    var artwork : AnnotationItem?
+    var artwork : ArtworkItem?
 
     override func viewDidLoad() {
         super.viewDidLoad()
