@@ -88,6 +88,7 @@ class FirebaseTestViewController: UIViewController {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
+                    
                     print("Document: \(document.documentID) => \(document.data())")
                 }
             }

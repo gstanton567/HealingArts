@@ -18,6 +18,7 @@
 		23EFD0FE22AACADA00EC7B72 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EFD0FD22AACADA00EC7B72 /* Map.storyboard */; };
 		23EFD10022AACAEA00EC7B72 /* Donor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EFD0FF22AACAEA00EC7B72 /* Donor.storyboard */; };
 		7A785EA422AE9D45008E42D8 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A785EA322AE9D45008E42D8 /* Firebase.swift */; };
+		7A785EA622AEDC1E008E42D8 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A785EA522AEDC1E008E42D8 /* Artwork.swift */; };
 		7ACC542A22ADEE2900926DA2 /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ACC542922ADEE2900926DA2 /* GoogleService-Info (1).plist */; };
 		7ACC542C22ADF2A300926DA2 /* FirebaseTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACC542B22ADF2A300926DA2 /* FirebaseTestViewController.swift */; };
 		7ACC542E22ADFAB900926DA2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ACC542D22ADFAB900926DA2 /* GoogleService-Info.plist */; };
@@ -39,6 +40,7 @@
 		23EFD0FD22AACADA00EC7B72 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		23EFD0FF22AACAEA00EC7B72 /* Donor.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Donor.storyboard; sourceTree = "<group>"; };
 		7A785EA322AE9D45008E42D8 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
+		7A785EA522AEDC1E008E42D8 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		7ACC542922ADEE2900926DA2 /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
 		7ACC542B22ADF2A300926DA2 /* FirebaseTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTestViewController.swift; sourceTree = "<group>"; };
 		7ACC542D22ADFAB900926DA2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			children = (
 				23EFD0FF22AACAEA00EC7B72 /* Donor.storyboard */,
 				7A785EA322AE9D45008E42D8 /* Firebase.swift */,
+				7A785EA522AEDC1E008E42D8 /* Artwork.swift */,
 				23EFD0FD22AACADA00EC7B72 /* Map.storyboard */,
 				23EFD0FB22AACACB00EC7B72 /* About.storyboard */,
 				23EFD0F922AACAA900EC7B72 /* Artists.storyboard */,
@@ -244,6 +247,7 @@
 				23EFD0E822AAC0A500EC7B72 /* ViewController.swift in Sources */,
 				23EFD0E622AAC0A500EC7B72 /* AppDelegate.swift in Sources */,
 				7ACC542C22ADF2A300926DA2 /* FirebaseTestViewController.swift in Sources */,
+				7A785EA622AEDC1E008E42D8 /* Artwork.swift in Sources */,
 				D59A30A622AAE9CF000B9260 /* ArtistViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
