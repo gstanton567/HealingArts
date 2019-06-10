@@ -39,7 +39,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="NaU-k2-2pD" kind="show" id="LSZ-zV-Lp2"/>
+                                            <segue destination="NaU-k2-2pD" kind="show" id="33k-dd-rzu"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -86,13 +86,13 @@
             </objects>
             <point key="canvasLocation" x="2024.6376811594205" y="671.65178571428567"/>
         </scene>
-        <!--Collection-->
+        <!--ArtistDetails-->
         <scene sceneID="jQd-SS-VDu">
             <objects>
-                <viewControllerPlaceholder storyboardName="Collection" id="NaU-k2-2pD" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="ArtistDetails" id="NaU-k2-2pD" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zdE-j6-tym" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3660.8695652173915" y="671.65178571428567"/>
+            <point key="canvasLocation" x="3722" y="692"/>
         </scene>
     </scenes>
 </document>
