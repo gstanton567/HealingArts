@@ -20,16 +20,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     //41.2555318
     //-95.9804596
     
-    let artCoordinate1 = CLLocationCoordinate2D(latitude: 41.2555318, longitude: -95.9804596)
-    let artCoordinate2 = CLLocationCoordinate2D(latitude: 41.2556318, longitude: -95.9801596)
-    //approximately over the Chihuly Sanctuary Reflection Room
-    let artCoordinate3 = CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596)
-    //approximate coordinate of "Search" by Kaneko
-    let artCoordinate4 = CLLocationCoordinate2D(latitude: 41.2560330, longitude: -95.9804196)
-    //approximate coordiante of Leslie's Healing Garden
-    let artCoordinate5 = CLLocationCoordinate2D(latitude: 41.2552318, longitude: -95.9796596)
+    //additional coordinates. Probably won't need them.
+    //let artCoordinate1 = CLLocationCoordinate2D(latitude: 41.2555318, longitude: -95.9804596)
+    //let artCoordinate2 = CLLocationCoordinate2D(latitude: 41.2556318, longitude: -95.9801596)
 
-    var artCoordinates : [CLLocationCoordinate2D]? = []
+    var artworks : [AnnotationItem]? = []
+    
+    let art1 = AnnotationItem(name: "Chihuly Sanctuary", desc: "Dale Chihuly", coordinate: CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596), imageName: "artPlaceholderImage")
+    let art2 = AnnotationItem(name: "Search", desc: "Jun Kaneko", coordinate: CLLocationCoordinate2D(latitude: 41.2560330, longitude: -95.9804196), imageName: "artPlaceholderImage")
+    let art3 = AnnotationItem(name: "Leslie's Healing Garden", desc: "A neat garden", coordinate: CLLocationCoordinate2D(latitude: 41.2552318, longitude: -95.9796596), imageName: "artPlaceholderImage")
+    
+    var selectedArtwork : AnnotationItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,16 +38,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
-        artCoordinates?.append(artCoordinate1)
-        artCoordinates?.append(artCoordinate2)
-        artCoordinates?.append(artCoordinate3)
-        artCoordinates?.append(artCoordinate4)
-        artCoordinates?.append(artCoordinate5)
+        artworks?.append(art1)
+        artworks?.append(art2)
+        artworks?.append(art3)
         
-        for coordinate in artCoordinates! {
-            createPin(location: coordinate)
-            print ("added pin")
+        for artwork in artworks!{
+            createPin(location: artwork.coordinate)
         }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -70,21 +69,29 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        let alertController = UIAlertController(title: "art title", message: "\n\n\n\n\n\n\n\n\n\n\n"+"art info", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .cancel) { (UIAlertAction) in
-            print ("OK")
+        let annotation = view.annotation
+        let location = annotation?.coordinate
+        //checks the coordinate of each artwork to see if it is equal to the coordinate of the selected pinb
+        for artwork in artworks!{
+            if artwork.coordinate.latitude == location?.latitude && artwork.coordinate.longitude == location?.longitude{
+                self.selectedArtwork = artwork
+                let alertController = UIAlertController(title: artwork.title, message: "\n\n\n\n\n\n\n\n\n\n\n"+artwork.desc, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .cancel) { (UIAlertAction) in
+                    print ("OK")
+                }
+                let detailAction = UIAlertAction(title: "Details", style: .default) { (UIAlertAction) in
+                    self.performSegue(withIdentifier: "toMapDetailSegue", sender: nil)
+                    self.mapView.deselectAnnotation(view.annotation, animated: true)
+                }
+                alertController.addAction(okAction)
+                alertController.addAction(detailAction)
+                let imageView = UIImageView(frame: CGRect(x: 10, y: 15, width: 250, height: 230))
+                imageView.image = UIImage(named: artwork.imageName)
+                imageView.contentMode = .scaleAspectFit
+                alertController.view.addSubview(imageView)
+                self.present(alertController, animated: true)
+            }
         }
-        let detailAction = UIAlertAction(title: "Details", style: .default) { (UIAlertAction) in
-            self.performSegue(withIdentifier: "toMapDetailSegue", sender: nil)
-            self.mapView.deselectAnnotation(view.annotation, animated: true)
-        }
-        alertController.addAction(okAction)
-        alertController.addAction(detailAction)
-        let imageView = UIImageView(frame: CGRect(x: 10, y: 15, width: 250, height: 230))
-        imageView.image = UIImage(named: "artPlaceholderImage")
-        imageView.contentMode = .scaleAspectFit
-        alertController.view.addSubview(imageView)
-        self.present(alertController, animated: true)
     }
     
     func createPin (location : CLLocationCoordinate2D?){
@@ -107,6 +114,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     @IBAction func unwindToMapViewController(segue: UIStoryboardSegue) {
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let MDVC =  segue.destination as! MapDetailViewController
+        MDVC.artwork = selectedArtwork
     }
 
 }

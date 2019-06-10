@@ -9,11 +9,15 @@
 import UIKit
 
 class MapDetailViewController: UIViewController {
+    
+    @IBOutlet weak var artTitleLabel: UILabel!
+    
+    var artwork : AnnotationItem?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        artTitleLabel.text = artwork?.title
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -48,10 +48,24 @@
                     <view key="view" contentMode="scaleToFill" id="M9J-Ss-2Xp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Art Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DT-tf-d5T">
+                                <rect key="frame" x="0.0" y="118" width="414" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6DT-tf-d5T" firstAttribute="top" secondItem="DRf-UP-clN" secondAttribute="top" constant="30" id="Qs3-BT-pCQ"/>
+                            <constraint firstItem="6DT-tf-d5T" firstAttribute="leading" secondItem="DRf-UP-clN" secondAttribute="leading" id="gMD-SD-aLB"/>
+                            <constraint firstItem="DRf-UP-clN" firstAttribute="trailing" secondItem="6DT-tf-d5T" secondAttribute="trailing" id="h3Y-k6-cOz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="DRf-UP-clN"/>
                     </view>
                     <connections>
+                        <outlet property="artTitleLabel" destination="6DT-tf-d5T" id="MQD-mm-TF8"/>
                         <segue destination="vjs-KC-ked" kind="unwind" identifier="unwindToMapSegue" unwindAction="unwindToMapViewControllerWithSegue:" id="TIe-UJ-wyc"/>
                     </connections>
                 </viewController>
