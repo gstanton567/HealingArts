@@ -26,9 +26,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
     var artworks : [AnnotationItem]? = []
     
-    let art1 = AnnotationItem(name: "Chihuly Sanctuary", desc: "Dale Chihuly", coordinate: CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596), imageName: "artPlaceholderImage")
-    let art2 = AnnotationItem(name: "Search", desc: "Jun Kaneko", coordinate: CLLocationCoordinate2D(latitude: 41.2560330, longitude: -95.9804196), imageName: "artPlaceholderImage")
-    let art3 = AnnotationItem(name: "Leslie's Healing Garden", desc: "A neat garden", coordinate: CLLocationCoordinate2D(latitude: 41.2552318, longitude: -95.9796596), imageName: "artPlaceholderImage")
+    let art1 = AnnotationItem(name: "Chihuly Sanctuary", desc: "Dale Chihuly", coordinate: CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596), imageName: "chihulySanctuary")
+    let art2 = AnnotationItem(name: "Search", desc: "Jun Kaneko", coordinate: CLLocationCoordinate2D(latitude: 41.2560330, longitude: -95.9804196), imageName: "search")
+    let art3 = AnnotationItem(name: "Leslie's Healing Garden", desc: "A neat garden", coordinate: CLLocationCoordinate2D(latitude: 41.2552318, longitude: -95.9796596), imageName: "lesliesHealingGarden")
     
     var selectedArtwork : AnnotationItem?
     
@@ -75,7 +75,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         for artwork in artworks!{
             if artwork.coordinate.latitude == location?.latitude && artwork.coordinate.longitude == location?.longitude{
                 self.selectedArtwork = artwork
-                let alertController = UIAlertController(title: artwork.title, message: "\n\n\n\n\n\n\n\n\n\n\n"+artwork.desc, preferredStyle: .alert)
+                
+                let alertController = UIAlertController(title: artwork.title, message: "", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "OK", style: .cancel) { (UIAlertAction) in
                     print ("OK")
                 }
@@ -85,10 +86,26 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 }
                 alertController.addAction(okAction)
                 alertController.addAction(detailAction)
-                let imageView = UIImageView(frame: CGRect(x: 10, y: 15, width: 250, height: 230))
+                
+                let imageView = UIImageView(frame: CGRect(x: 10, y: 20, width: 250, height: 230))
                 imageView.image = UIImage(named: artwork.imageName)
                 imageView.contentMode = .scaleAspectFit
                 alertController.view.addSubview(imageView)
+                
+                //trying to get the right spacing for the image. not quite working.
+                //only really works with rectangular images that have width > height
+                var artworkDescString = ""
+                let imageSize = imageView.frame.height
+                let numberOfLines = Double(imageSize / 18)
+                let numberOfLinesInt = Int(numberOfLines)
+                for _ in 1...numberOfLinesInt{
+                    artworkDescString.append("\n")
+                }
+                artworkDescString.append(artwork.desc)
+                
+                //set message after it is created. Replaces Empty String.
+                alertController.message = artworkDescString
+                
                 self.present(alertController, animated: true)
             }
         }
