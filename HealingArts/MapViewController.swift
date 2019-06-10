@@ -16,6 +16,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     let locationManager = CLLocationManager()
     
+    //Hospital Coordinates
     //41.2555318
     //-95.9804596
     
@@ -25,11 +26,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     let artCoordinate3 = CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596)
     //approximate coordinate of "Search" by Kaneko
     let artCoordinate4 = CLLocationCoordinate2D(latitude: 41.2560330, longitude: -95.9804196)
-    //approximate location of Leslie's Healing Garden
+    //approximate coordiante of Leslie's Healing Garden
     let artCoordinate5 = CLLocationCoordinate2D(latitude: 41.2552318, longitude: -95.9796596)
 
     var artCoordinates : [CLLocationCoordinate2D]? = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
@@ -62,10 +63,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
-        let center = userLocation.coordinate
+        let span = MKCoordinateSpan(latitudeDelta: 0.00135, longitudeDelta: 0.00135)
+        let center = CLLocationCoordinate2D(latitude: 41.2555318, longitude: -95.979859999)
         let region = MKCoordinateRegion(center: center, span: span)
-        mapView.setRegion(region, animated: true)
+        mapView.setRegion(region, animated: false)
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
@@ -86,8 +87,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.present(alertController, animated: true)
     }
     
-    //image may be optional
-    func createPin (location : CLLocationCoordinate2D?/*, icon : UIImage?*/){
+    func createPin (location : CLLocationCoordinate2D?){
         let annotation = MKPointAnnotation()
         annotation.coordinate = location!
         mapView.addAnnotation(annotation)
