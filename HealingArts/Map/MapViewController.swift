@@ -30,6 +30,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     let art2 = ArtworkItem(name: "Search", desc: "Jun Kaneko", coordinate: CLLocationCoordinate2D(latitude: 41.2560330, longitude: -95.9804196), imageName: "search")
     let art3 = ArtworkItem(name: "Leslie's Healing Garden", desc: "A neat garden", coordinate: CLLocationCoordinate2D(latitude: 41.2552318, longitude: -95.9796596), imageName: "lesliesHealingGarden")
     
+    
     var selectedArtwork : ArtworkItem?
     
     override func viewDidLoad() {
@@ -84,7 +85,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                     if artwork.title == "Chihuly Sanctuary"{
                         self.performSegue(withIdentifier: "toSanctuaryMap", sender: nil)
                     } else{
-                        self.performSegue(withIdentifier: "toMapDetailSegue", sender: nil)
+                        self.performSegue(withIdentifier: "toArtworkDetailSegue", sender: nil)
                     }
                     self.mapView.deselectAnnotation(view.annotation, animated: true)
                 }
@@ -139,9 +140,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toMapDetailSegue"{
-            let MDVC =  segue.destination as! MapDetailViewController
-            MDVC.artwork = selectedArtwork
+        if segue.identifier == "toArtworkDetailSegue"{
+            let ADVC =  segue.destination as! ArtDetailsViewController
+            ADVC.artwork = selectedArtwork
         } else {
             let SMVC = segue.destination as! SanctuaryMapViewController
         }
