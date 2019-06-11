@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreLocation
 
 class ArtDetailsViewController: UIViewController {
     
@@ -21,9 +20,6 @@ class ArtDetailsViewController: UIViewController {
     
     //dummy data from map
     var artwork : ArtworkItem?
-    var mapButtonPressed = false
-    
-    var location = CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596)
     
     let artist = "Dale Chihuly"
     let name = "Orange and Yellow Hornet and Rising Sun Sconce Wall"
@@ -60,32 +56,14 @@ class ArtDetailsViewController: UIViewController {
     
     // MARK: - Navigation
     
-    
-    //Artist info segue
     @IBAction func onArtistButtonPressed(_ sender: UIButton) {
-        mapButtonPressed = false
         performSegue(withIdentifier: "detailsToArtistDetailsSegue", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if !mapButtonPressed {
-            let avc = segue.destination as! ArtistDetailViewController
-            
-            print("art boi button")
-        }
-        else{
-            let smvc = segue.destination as! SingleArtworkMapViewController
-            smvc.location = location
-            print("is map button")
-        }
+        let avc = segue.destination as! ArtistDetailViewController
+        
     }
-    
-    @IBAction func onMapButtonPressed(_ sender: UIButton) {
-        mapButtonPressed = true
-        performSegue(withIdentifier: "detailsToSingleMapSegue", sender: nil)
-    }
-    
-    
     
     
 }
