@@ -10,8 +10,6 @@ import UIKit
 
 class artCollectionViewCell: UICollectionViewCell {
     
-    
     @IBOutlet weak var imageView: UIImageView!
-    
     
 }

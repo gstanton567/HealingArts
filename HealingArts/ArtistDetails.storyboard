@@ -18,34 +18,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chihulypic" translatesAutoresizingMaskIntoConstraints="NO" id="rZq-HE-R02">
-                                <rect key="frame" x="0.0" y="241" width="414" height="214"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dale Chihuly" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6o-XT-rz7">
+                                <rect key="frame" x="22" y="149" width="96" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="om9-7P-RuT">
-                                <rect key="frame" x="0.0" y="463" width="414" height="135"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="om9-7P-RuT">
+                                <rect key="frame" x="1" y="300" width="414" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="3Tu-Gc-Ywq"/>
+                                </constraints>
+                                <string key="text">Dale Chichuly is known for revolutionizing the studio glass movement and elevating perceptions of the galss medium. He empolys a diverse array of materials to realize his creative vision through drawing, painting, and sculpture. Chihuly is renowned for his iconic glass sculptures, ambitious site-specific public installations, and exhibitions in historic cities, museums, and gardens around the world</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfY-Yq-Or0">
-                                <rect key="frame" x="173" y="741" width="69" height="30"/>
+                                <rect key="frame" x="12" y="215" width="117" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Collection"/>
+                                <state key="normal" title="Visit their Gallery"/>
                                 <connections>
                                     <segue destination="dWO-iN-m52" kind="show" id="LmJ-Eq-c3H"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Artist's Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6o-XT-rz7">
-                                <rect key="frame" x="0.0" y="149" width="414" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IP2-jf-3qi">
+                                <rect key="frame" x="0.0" y="524" width="414" height="318"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="318" id="f4G-Sl-tBo"/>
+                                </constraints>
+                                <mutableString key="text">Born in 1941 in Tacoma, Washington, Chihuly draws inspiration from the Pacific Northwest region. A leader of the studio art movement, Chihuly establised the glass program at the Rhode Island School of Design and cofounded the Pilchuck Glass School in Stanwood, Washington. Chihuly, who continues to create art at his studio in Seattle, has recevied numerous awards and honorary degrees, and his work is included in more than 200 museum collections worldwide, including the Metropolitan Museum of Art, the Smithsonian American Art Museum, and theCorning Museum of Glass</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chihulypic" translatesAutoresizingMaskIntoConstraints="NO" id="MNb-KA-sNI">
+                                <rect key="frame" x="154" y="99" width="240" height="193"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="om9-7P-RuT" secondAttribute="trailing" constant="-21" id="4Ob-5W-fQ1"/>
+                            <constraint firstAttribute="trailing" secondItem="IP2-jf-3qi" secondAttribute="trailing" id="USA-de-3Rp"/>
+                            <constraint firstItem="om9-7P-RuT" firstAttribute="leading" secondItem="dMc-Wh-1fj" secondAttribute="leading" constant="1" id="a2G-oR-bQe"/>
+                            <constraint firstItem="IP2-jf-3qi" firstAttribute="leading" secondItem="dMc-Wh-1fj" secondAttribute="leading" id="k2p-Oh-ApF"/>
+                            <constraint firstItem="dMc-Wh-1fj" firstAttribute="bottom" secondItem="om9-7P-RuT" secondAttribute="bottom" constant="306" id="qFm-Yg-IfG"/>
+                            <constraint firstItem="dMc-Wh-1fj" firstAttribute="bottom" secondItem="IP2-jf-3qi" secondAttribute="bottom" constant="20" id="tV9-12-BQW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dMc-Wh-1fj"/>
                     </view>
                 </viewController>
