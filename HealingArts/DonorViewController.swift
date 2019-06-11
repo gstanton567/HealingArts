@@ -13,7 +13,7 @@ class DonorViewController: UIViewController {
     @IBOutlet weak var donorsTextView: UITextView!
     
     //  Healing Arts Program donors
-    let donors = ["Pamela and Fred Buffett","Suzanne & Walter Scott", "Warren Buffett", "and Others"]
+    let donors = ["Pamela and Fred Buffett","Suzanne & Walter Scott", "Warren Buffett", "Sir Chuck E Cheese", "The Hamburgler"]
     
    
     
