@@ -96,14 +96,28 @@
                                     <constraint firstAttribute="height" constant="425" id="jmr-l4-2gw"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pd-Ip-ePA">
+                                <rect key="frame" x="363" y="84" width="39" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="uCz-J9-uJC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Map"/>
+                                <connections>
+                                    <action selector="onMapButtonPressed:" destination="U4q-yq-WLn" eventType="touchUpInside" id="8Wq-6u-Y21"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="h65-Wy-nNB" firstAttribute="trailing" secondItem="Hey-We-VOr" secondAttribute="trailing" constant="32" id="9aQ-cq-P7H"/>
+                            <constraint firstItem="0pd-Ip-ePA" firstAttribute="top" secondItem="h65-Wy-nNB" secondAttribute="top" constant="40" id="9vU-Dk-gZk"/>
                             <constraint firstItem="3WJ-k3-ZZj" firstAttribute="top" secondItem="h65-Wy-nNB" secondAttribute="top" id="IbF-aL-dFK"/>
+                            <constraint firstItem="0pd-Ip-ePA" firstAttribute="leading" secondItem="3WJ-k3-ZZj" secondAttribute="trailing" constant="8" id="Ksb-Qa-jbQ"/>
                             <constraint firstItem="3WJ-k3-ZZj" firstAttribute="top" secondItem="h65-Wy-nNB" secondAttribute="top" id="Les-g3-S19"/>
                             <constraint firstItem="Hey-We-VOr" firstAttribute="leading" secondItem="h65-Wy-nNB" secondAttribute="leading" constant="32" id="Qvl-ty-b0m"/>
                             <constraint firstItem="Hey-We-VOr" firstAttribute="top" secondItem="3WJ-k3-ZZj" secondAttribute="bottom" constant="8" symbolic="YES" id="x4S-Fs-9xg"/>
+                            <constraint firstItem="h65-Wy-nNB" firstAttribute="trailing" secondItem="0pd-Ip-ePA" secondAttribute="trailing" constant="12" id="x7O-GS-arZ"/>
                             <constraint firstItem="3WJ-k3-ZZj" firstAttribute="leading" secondItem="h65-Wy-nNB" secondAttribute="leading" constant="55" id="yr7-mw-Ahc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h65-Wy-nNB"/>
@@ -117,11 +131,41 @@
                         <outlet property="mediumLabel" destination="p8D-sm-jal" id="htn-x2-EDZ"/>
                         <outlet property="pieceNameLabel" destination="w0A-e3-nJX" id="Dt1-3g-A50"/>
                         <segue destination="Sgm-JK-viD" kind="show" identifier="detailsToArtistDetailsSegue" id="Iqz-fO-cUt"/>
+                        <segue destination="bhI-VO-vKJ" kind="show" identifier="detailsToSingleMapSegue" id="gTe-De-BHl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOv-kz-Tac" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3018.840579710145" y="20.758928571428569"/>
+        </scene>
+        <!--Single Artwork Map View Controller-->
+        <scene sceneID="sdq-ME-cI0">
+            <objects>
+                <viewController id="bhI-VO-vKJ" customClass="SingleArtworkMapViewController" customModule="HealingArts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ETy-4E-vSS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybridFlyover" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" showsUserLocation="YES" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyf-Ob-Gad">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qyf-Ob-Gad" firstAttribute="leading" secondItem="yHB-RE-uab" secondAttribute="leading" id="Gy2-Os-0DT"/>
+                            <constraint firstItem="yHB-RE-uab" firstAttribute="trailing" secondItem="qyf-Ob-Gad" secondAttribute="trailing" id="JwM-eN-cgH"/>
+                            <constraint firstItem="yHB-RE-uab" firstAttribute="bottom" secondItem="qyf-Ob-Gad" secondAttribute="bottom" id="Tft-Lf-NZ8"/>
+                            <constraint firstItem="qyf-Ob-Gad" firstAttribute="top" secondItem="yHB-RE-uab" secondAttribute="top" id="qNH-3b-UZA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yHB-RE-uab"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="qyf-Ob-Gad" id="YYG-qi-PJt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w7f-PT-jvh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3019" y="777"/>
         </scene>
         <!--ArtistDetails-->
         <scene sceneID="HS7-Zc-ynL">

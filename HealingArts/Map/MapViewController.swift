@@ -49,6 +49,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        let span = MKCoordinateSpan(latitudeDelta: 0.00135, longitudeDelta: 0.00135)
+        let center = CLLocationCoordinate2D(latitude: 41.2555318, longitude: -95.979859999)
+        let region = MKCoordinateRegion(center: center, span: span)
+        mapView.setRegion(region, animated: false)
+    }
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         locationManager.startUpdatingLocation()
@@ -62,12 +70,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         print ("Location is no longer updating")
     }
     
-    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        let span = MKCoordinateSpan(latitudeDelta: 0.00135, longitudeDelta: 0.00135)
-        let center = CLLocationCoordinate2D(latitude: 41.2555318, longitude: -95.979859999)
-        let region = MKCoordinateRegion(center: center, span: span)
-        mapView.setRegion(region, animated: false)
-    }
+
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         let annotation = view.annotation
