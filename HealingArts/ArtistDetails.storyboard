@@ -10,21 +10,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map-->
-        <scene sceneID="Rxs-L4-h2f">
+        <!--Artist Detail View Controller-->
+        <scene sceneID="qqM-ie-RAg">
             <objects>
-                <viewController id="i8u-PQ-EJu" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yYq-tE-y3q">
+                <viewController id="3kI-LG-lBG" customClass="ArtistDetailViewController" customModule="HealingArts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a5f-LO-R5S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="81l-KH-2Xo"/>
+                        <viewLayoutGuide key="safeArea" id="dMc-Wh-1fj"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="imageedit_4_2067176360" id="WFx-oQ-XrW"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EcZ-Ir-BEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pg4-ce-fCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2025" y="-630"/>
+            <point key="canvasLocation" x="3912" y="21"/>
         </scene>
     </scenes>
     <resources>
