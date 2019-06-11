@@ -20,7 +20,6 @@
 		7A785EA422AE9D45008E42D8 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A785EA322AE9D45008E42D8 /* Firebase.swift */; };
 		7A785EA622AEDC1E008E42D8 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A785EA522AEDC1E008E42D8 /* Artwork.swift */; };
 		7ACC542A22ADEE2900926DA2 /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ACC542922ADEE2900926DA2 /* GoogleService-Info (1).plist */; };
-		7ACC542C22ADF2A300926DA2 /* FirebaseTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACC542B22ADF2A300926DA2 /* FirebaseTestViewController.swift */; };
 		7ACC542E22ADFAB900926DA2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ACC542D22ADFAB900926DA2 /* GoogleService-Info.plist */; };
 		A90BE906C7841DE479DADFAD /* Pods_HealingArts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 802A8BCEA6085745828EF6AF /* Pods_HealingArts.framework */; };
 		D59A30A622AAE9CF000B9260 /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59A30A522AAE9CF000B9260 /* ArtistViewController.swift */; };
@@ -42,7 +41,6 @@
 		7A785EA322AE9D45008E42D8 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		7A785EA522AEDC1E008E42D8 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		7ACC542922ADEE2900926DA2 /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
-		7ACC542B22ADF2A300926DA2 /* FirebaseTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTestViewController.swift; sourceTree = "<group>"; };
 		7ACC542D22ADFAB900926DA2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		802A8BCEA6085745828EF6AF /* Pods_HealingArts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealingArts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D59A30A522AAE9CF000B9260 /* ArtistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 				23EFD0FB22AACACB00EC7B72 /* About.storyboard */,
 				23EFD0F922AACAA900EC7B72 /* Artists.storyboard */,
 				D59A30A522AAE9CF000B9260 /* ArtistViewController.swift */,
-				7ACC542B22ADF2A300926DA2 /* FirebaseTestViewController.swift */,
 				23EFD0F722AAC8C100EC7B72 /* Gallery.storyboard */,
 				23EFD0E522AAC0A500EC7B72 /* AppDelegate.swift */,
 				23EFD0E722AAC0A500EC7B72 /* ViewController.swift */,
@@ -246,7 +243,6 @@
 				7A785EA422AE9D45008E42D8 /* Firebase.swift in Sources */,
 				23EFD0E822AAC0A500EC7B72 /* ViewController.swift in Sources */,
 				23EFD0E622AAC0A500EC7B72 /* AppDelegate.swift in Sources */,
-				7ACC542C22ADF2A300926DA2 /* FirebaseTestViewController.swift in Sources */,
 				7A785EA622AEDC1E008E42D8 /* Artwork.swift in Sources */,
 				D59A30A622AAE9CF000B9260 /* ArtistViewController.swift in Sources */,
 			);
