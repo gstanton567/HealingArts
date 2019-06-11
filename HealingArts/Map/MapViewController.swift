@@ -146,6 +146,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         } else {
             //may or may not need
             let SMVC = segue.destination as! SanctuaryMapViewController
+            SMVC.locationManager = locationManager
         }
         
     }

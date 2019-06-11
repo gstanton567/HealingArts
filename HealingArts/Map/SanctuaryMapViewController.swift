@@ -10,7 +10,10 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class SanctuaryMapViewController: UIViewController, MKMapViewDelegate {
+class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+    
+    var locationManager = CLLocationManager()
+    var selectedArtwork : ArtworkItem?
     
     @IBOutlet weak var sanctuaryMapView: MKMapView!
     
@@ -55,7 +58,7 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate {
         artworks.append(fioriNorthWest)
         
         sanctuaryMapView.delegate = self
-
+        
         let center = CLLocationCoordinate2D(latitude: 41.2553838, longitude: -95.9795296)
         let span = MKCoordinateSpan(latitudeDelta: 0.0003, longitudeDelta: 0.0003)
         let region = MKCoordinateRegion(center: center, span: span)
@@ -72,10 +75,39 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate {
         
     }
     
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        let annotation = view.annotation as! MKPointAnnotation
-        print (annotation.title!)
-        //performSegue(withIdentifier: "toArtworkDetailSegue", sender: nil)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        sanctuaryMapView.showsUserLocation = true
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        locationManager.stopUpdatingLocation()
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        if view.annotation is MKUserLocation{
+            //do nothing
+        } else{
+            let annotation = view.annotation as! MKPointAnnotation
+            print (annotation.title!)
+            for artwork in artworks{
+                if artwork.title == annotation.title{
+                    selectedArtwork = artwork
+                }
+            }
+            performSegue(withIdentifier: "toArtworkDetailSegue", sender: nil)
+        }
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let ADVC =  segue.destination as! ArtDetailsViewController
+        ADVC.artwork = selectedArtwork
+    }
+    
 }
