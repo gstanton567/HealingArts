@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bHf-al-bb1">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="Rxs-L4-h2f">
+            <objects>
+                <viewController id="i8u-PQ-EJu" customClass="MapViewController" customModule="HealingArts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yYq-tE-y3q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybridFlyover" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" showsUserLocation="YES" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICr-ya-rC1">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="81l-KH-2Xo" firstAttribute="bottom" secondItem="ICr-ya-rC1" secondAttribute="bottom" id="ULO-mR-PYg"/>
+                            <constraint firstItem="ICr-ya-rC1" firstAttribute="top" secondItem="81l-KH-2Xo" secondAttribute="top" id="cFt-r2-lbv"/>
+                            <constraint firstItem="81l-KH-2Xo" firstAttribute="trailing" secondItem="ICr-ya-rC1" secondAttribute="trailing" id="ea8-Yo-XF0"/>
+                            <constraint firstItem="ICr-ya-rC1" firstAttribute="leading" secondItem="81l-KH-2Xo" secondAttribute="leading" id="jxb-lG-YnY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="81l-KH-2Xo"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4Nq-Db-LEM"/>
+                    <connections>
+                        <outlet property="mapView" destination="ICr-ya-rC1" id="un8-F3-301"/>
+                        <segue destination="Zhf-Qy-ZFO" kind="show" identifier="toMapDetailSegue" id="Lwo-oC-aFV"/>
+                        <segue destination="4LR-qp-mLZ" kind="show" identifier="toSanctuaryMap" id="ssX-UW-TrZ"/>
+                        <segue destination="SO0-2V-uiU" kind="show" identifier="toArtworkDetailSegue" id="uwl-ca-WCM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EcZ-Ir-BEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2934.7826086956525" y="-630.13392857142856"/>
+        </scene>
+        <!--Sanctuary Map View Controller-->
+        <scene sceneID="O2c-aR-QBx">
+            <objects>
+                <viewController id="4LR-qp-mLZ" customClass="SanctuaryMapViewController" customModule="HealingArts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JJt-bQ-zrT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TeY-uV-4MA">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </mapView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sanctuaryMap" translatesAutoresizingMaskIntoConstraints="NO" id="pbq-eN-4lV">
+                                <rect key="frame" x="0.0" y="177" width="414" height="491"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TeY-uV-4MA" firstAttribute="leading" secondItem="E71-It-ULi" secondAttribute="leading" id="gOI-E5-HrA"/>
+                            <constraint firstItem="E71-It-ULi" firstAttribute="bottom" secondItem="TeY-uV-4MA" secondAttribute="bottom" id="wWp-NW-7VJ"/>
+                            <constraint firstItem="TeY-uV-4MA" firstAttribute="top" secondItem="E71-It-ULi" secondAttribute="top" id="xJT-PL-aGG"/>
+                            <constraint firstItem="E71-It-ULi" firstAttribute="trailing" secondItem="TeY-uV-4MA" secondAttribute="trailing" id="zm5-1q-bgu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="E71-It-ULi"/>
+                    </view>
+                    <connections>
+                        <outlet property="sanctuaryMapView" destination="TeY-uV-4MA" id="RrY-ow-Xdd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hIf-MY-yTm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2934.7826086956525" y="130.58035714285714"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="0OG-VJ-a0H">
+            <objects>
+                <viewController title="Details" id="Zhf-Qy-ZFO" customClass="MapDetailViewController" customModule="HealingArts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M9J-Ss-2Xp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Art Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DT-tf-d5T">
+                                <rect key="frame" x="0.0" y="118" width="414" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6DT-tf-d5T" firstAttribute="top" secondItem="DRf-UP-clN" secondAttribute="top" constant="30" id="Qs3-BT-pCQ"/>
+                            <constraint firstItem="6DT-tf-d5T" firstAttribute="leading" secondItem="DRf-UP-clN" secondAttribute="leading" id="gMD-SD-aLB"/>
+                            <constraint firstItem="DRf-UP-clN" firstAttribute="trailing" secondItem="6DT-tf-d5T" secondAttribute="trailing" id="h3Y-k6-cOz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DRf-UP-clN"/>
+                    </view>
+                    <connections>
+                        <outlet property="artTitleLabel" destination="6DT-tf-d5T" id="MQD-mm-TF8"/>
+                        <segue destination="vjs-KC-ked" kind="unwind" identifier="unwindToMapSegue" unwindAction="unwindToMapViewControllerWithSegue:" id="TIe-UJ-wyc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QdH-0F-llA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="vjs-KC-ked" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3731.884057971015" y="-630.13392857142856"/>
+        </scene>
+        <!--ArtworkDetails-->
+        <scene sceneID="PZC-kn-LWw">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ArtworkDetails" id="SO0-2V-uiU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Azx-uy-XuX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3649" y="-209"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="Fme-FA-pxJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bHf-al-bb1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" id="WFx-oQ-XrW"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IbG-ir-SMA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="i8u-PQ-EJu" kind="relationship" relationship="rootViewController" id="B3f-VE-XDh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iaz-uY-caJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2122" y="-630"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sanctuaryMap" width="3036" height="3262"/>
+    </resources>
+</document>
