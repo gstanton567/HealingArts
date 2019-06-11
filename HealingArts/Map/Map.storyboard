@@ -71,6 +71,7 @@
                     </view>
                     <connections>
                         <outlet property="sanctuaryMapView" destination="TeY-uV-4MA" id="RrY-ow-Xdd"/>
+                        <segue destination="SO0-2V-uiU" kind="show" identifier="toArtworkDetailSegue" id="vR6-dy-8LP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hIf-MY-yTm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -141,4 +142,7 @@
     <resources>
         <image name="blankSanctuaryMap" width="800" height="852"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="vR6-dy-8LP"/>
+    </inferredMetricsTieBreakers>
 </document>
