@@ -26,9 +26,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
     var artworks : [ArtworkItem]? = []
     
-    let art1 = ArtworkItem(name: "Chihuly Sanctuary", desc: "Dale Chihuly", coordinate: CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596), imageName: "chihulySanctuary")
-    let art2 = ArtworkItem(name: "Search", desc: "Jun Kaneko", coordinate: CLLocationCoordinate2D(latitude: 41.2560330, longitude: -95.9804196), imageName: "search")
-    let art3 = ArtworkItem(name: "Leslie's Healing Garden", desc: "A neat garden", coordinate: CLLocationCoordinate2D(latitude: 41.2552318, longitude: -95.9796596), imageName: "lesliesHealingGarden")
+    let art1 = ArtworkItem(name: "Chihuly Sanctuary", artist: "Dale Chihuly", coordinate: CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596), imageName: "chihulySanctuary")
+    let art2 = ArtworkItem(name: "Search", artist: "Jun Kaneko", coordinate: CLLocationCoordinate2D(latitude: 41.2560330, longitude: -95.9804196), imageName: "search")
+    let art3 = ArtworkItem(name: "Leslie's Healing Garden", artist: "" /* N/A */, coordinate: CLLocationCoordinate2D(latitude: 41.2552318, longitude: -95.9796596), imageName: "lesliesHealingGarden")
     
     
     var selectedArtwork : ArtworkItem?
@@ -99,18 +99,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 
                 //trying to get the right spacing for the image. not quite working.
                 //only really works with rectangular images that have width > height
-                var artworkDescString = ""
+                var artworkArtistString = ""
                 let imageSize = imageView.frame.height
                 //17.75 = magic number???
                 let numberOfLines = Double(imageSize / 17.75)
                 let numberOfLinesInt = Int(numberOfLines)
                 for _ in 1...numberOfLinesInt{
-                    artworkDescString.append("\n")
+                    artworkArtistString.append("\n")
                 }
-                artworkDescString.append(artwork.desc)
+                artworkArtistString.append(artwork.artist)
                 
                 //set message after it is created. Replaces Empty String.
-                alertController.message = artworkDescString
+                alertController.message = artworkArtistString
                 
                 self.present(alertController, animated: true)
             }
@@ -144,6 +144,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             let ADVC =  segue.destination as! ArtDetailsViewController
             ADVC.artwork = selectedArtwork
         } else {
+            //may or may not need
             let SMVC = segue.destination as! SanctuaryMapViewController
         }
         
