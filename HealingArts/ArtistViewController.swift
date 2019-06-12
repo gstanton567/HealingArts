@@ -18,21 +18,37 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
 //properties
     //var artistName : [Artist] = []
     //var artistImage : [Artist] = []
-    var images = ["chihulypic", "harnoor", "dan", "gold", "kaneko"]
+//    var images = ["chihulypic", "harnoor", "dan", "gold", "kaneko"]
+    
+    var artworks: [Artwork] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Firebase.getAllDocumentsInCollection { (artworks, error) in
+            if error != nil {
+                print(error?.localizedDescription)
+            } else {
+                self.artworks = artworks
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
 
     }
 //table view functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return images.count
+        return artworks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID")
-        let pictures = images[indexPath.row]
-        cell?.imageView!.image = UIImage(named: pictures)
-        cell?.textLabel?.text = "artist"
+        let artwork = artworks[indexPath.row]
+//        cell?.imageView!.image = UIImage(named: pictures)
+//        cell?.textLabel?.text = "artist"
+        cell?.imageView?.image = artwork.images.first
+        cell?.textLabel?.text = artwork.title
         return cell!
     }
 

@@ -20,7 +20,8 @@ class ArtDetailsViewController: UIViewController {
     @IBOutlet weak var dimensionsLabel: UILabel!
     
     //dummy data from map
-    var artwork : ArtworkItem?
+    var artwork : Artwork?
+    var selectedArtwork : ArtworkItem?
     var mapButtonPressed = false
     
     var location = CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596)
