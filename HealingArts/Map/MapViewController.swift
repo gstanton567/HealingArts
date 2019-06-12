@@ -23,6 +23,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     //additional coordinates. Probably won't need them.
     //let artCoordinate1 = CLLocationCoordinate2D(latitude: 41.2555318, longitude: -95.9804596)
     //let artCoordinate2 = CLLocationCoordinate2D(latitude: 41.2556318, longitude: -95.9801596)
+    
+    //just using this for now to see items outside of sanctuary
     var sanctuaryPiece = false
     
     var artworks : [ArtworkItem]? = []
@@ -84,6 +86,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 let alertController = UIAlertController(title: artwork.title, message: "", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "OK", style: .cancel) { (UIAlertAction) in
                     print ("OK")
+                    mapView.deselectAnnotation(annotation, animated: true)
                 }
                 let detailAction = UIAlertAction(title: "Details", style: .default) { (UIAlertAction) in
                     if artwork.title == "Chihuly Sanctuary"{
