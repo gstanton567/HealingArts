@@ -55,7 +55,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HbG-TK-Suf"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Artists" id="rk4-De-q25"/>
+                    <tabBarItem key="tabBarItem" title="Artists" image="artistIcon" id="rk4-De-q25"/>
                     <connections>
                         <outlet property="tableView" destination="ore-gW-qFg" id="Vxr-df-Hgm"/>
                     </connections>
@@ -65,4 +65,7 @@
             <point key="canvasLocation" x="2025" y="672"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="artistIcon" width="25" height="25"/>
+    </resources>
 </document>

@@ -122,7 +122,7 @@
         <scene sceneID="Fme-FA-pxJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bHf-al-bb1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="WFx-oQ-XrW"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="donorIcon" id="WFx-oQ-XrW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IbG-ir-SMA">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -141,6 +141,7 @@
     </scenes>
     <resources>
         <image name="blankSanctuaryMap" width="800" height="852"/>
+        <image name="donorIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="uwl-ca-WCM"/>
