@@ -122,11 +122,12 @@
         <scene sceneID="Fme-FA-pxJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bHf-al-bb1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="WFx-oQ-XrW"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="donorIcon" id="WFx-oQ-XrW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IbG-ir-SMA">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.68627450980000004" green="0.062745098040000002" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -140,8 +141,9 @@
     </scenes>
     <resources>
         <image name="blankSanctuaryMap" width="800" height="852"/>
+        <image name="donorIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Nuf-ZY-hrJ"/>
+        <segue reference="uwl-ca-WCM"/>
     </inferredMetricsTieBreakers>
 </document>
