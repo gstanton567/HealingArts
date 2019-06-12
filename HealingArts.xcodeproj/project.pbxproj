@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15873C0E22B144040081410E /* ParallaxCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15873C0A22B144040081410E /* ParallaxCollectionViewCell.swift */; };
+		15873C0F22B144040081410E /* ParallaxFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15873C0B22B144040081410E /* ParallaxFlowLayout.swift */; };
+		15873C1022B144040081410E /* ParallaxLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15873C0C22B144040081410E /* ParallaxLayoutAttributes.swift */; };
+		15873C1122B144040081410E /* ParallaxCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15873C0D22B144040081410E /* ParallaxCollectionViewController.swift */; };
 		23EFD0E622AAC0A500EC7B72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EFD0E522AAC0A500EC7B72 /* AppDelegate.swift */; };
 		23EFD0E822AAC0A500EC7B72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EFD0E722AAC0A500EC7B72 /* ViewController.swift */; };
 		23EFD0EB22AAC0A500EC7B72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EFD0E922AAC0A500EC7B72 /* Main.storyboard */; };
@@ -38,6 +42,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15873C0A22B144040081410E /* ParallaxCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxCollectionViewCell.swift; sourceTree = "<group>"; };
+		15873C0B22B144040081410E /* ParallaxFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxFlowLayout.swift; sourceTree = "<group>"; };
+		15873C0C22B144040081410E /* ParallaxLayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxLayoutAttributes.swift; sourceTree = "<group>"; };
+		15873C0D22B144040081410E /* ParallaxCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxCollectionViewController.swift; sourceTree = "<group>"; };
 		23EFD0E222AAC0A500EC7B72 /* HealingArts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealingArts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23EFD0E522AAC0A500EC7B72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23EFD0E722AAC0A500EC7B72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +104,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		15873C0922B144040081410E /* Parallax */ = {
+			isa = PBXGroup;
+			children = (
+				15873C0A22B144040081410E /* ParallaxCollectionViewCell.swift */,
+				15873C0B22B144040081410E /* ParallaxFlowLayout.swift */,
+				15873C0C22B144040081410E /* ParallaxLayoutAttributes.swift */,
+				15873C0D22B144040081410E /* ParallaxCollectionViewController.swift */,
+			);
+			path = Parallax;
+			sourceTree = "<group>";
+		};
 		23EFD0D922AAC0A400EC7B72 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +154,7 @@
 				7A785EBA22B014FF008E42D8 /* ArtworkDetails.storyboard */,
 				7A785EBC22B016FA008E42D8 /* ArtistDetails.storyboard */,
 				23EFD0F722AAC8C100EC7B72 /* Gallery.storyboard */,
+				15873C0922B144040081410E /* Parallax */,
 				7A785EAD22B0135F008E42D8 /* Map */,
 				7A785EA922B01331008E42D8 /* ArtistViewController.swift */,
 				7A785EAB22B01341008E42D8 /* ArtistDetailViewController.swift */,
@@ -297,15 +317,19 @@
 				7A785EB622B0135F008E42D8 /* MapDetailViewController.swift in Sources */,
 				7A785EAC22B01342008E42D8 /* ArtistDetailViewController.swift in Sources */,
 				7A785EB722B0135F008E42D8 /* ArtworkItem.swift in Sources */,
+				15873C1122B144040081410E /* ParallaxCollectionViewController.swift in Sources */,
 				7A785EBF22B02A11008E42D8 /* DonorViewController.swift in Sources */,
 				7A785EB922B0137C008E42D8 /* ArtDetailsViewController.swift in Sources */,
+				15873C1022B144040081410E /* ParallaxLayoutAttributes.swift in Sources */,
 				7A785EAA22B01331008E42D8 /* ArtistViewController.swift in Sources */,
 				7A785EB322B0135F008E42D8 /* SanctuaryMapViewController.swift in Sources */,
 				73B5EFA322AE240300E0F67F /* ArtDetailsViewController.swift in Sources */,
 				73B5EFA922AE8CED00E0F67F /* ArtistDetailViewController.swift in Sources */,
+				15873C0F22B144040081410E /* ParallaxFlowLayout.swift in Sources */,
 				73B5EFAB22AEF01100E0F67F /* SingleArtworkMapViewController.swift in Sources */,
 				23EFD0E622AAC0A500EC7B72 /* AppDelegate.swift in Sources */,
 				7A785EA622AEDC1E008E42D8 /* Artwork.swift in Sources */,
+				15873C0E22B144040081410E /* ParallaxCollectionViewCell.swift in Sources */,
 				7A785EB522B0135F008E42D8 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
