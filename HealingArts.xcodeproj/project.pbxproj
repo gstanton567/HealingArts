@@ -38,6 +38,9 @@
 		7ACC542A22ADEE2900926DA2 /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ACC542922ADEE2900926DA2 /* GoogleService-Info (1).plist */; };
 		7ACC542E22ADFAB900926DA2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ACC542D22ADFAB900926DA2 /* GoogleService-Info.plist */; };
 		A90BE906C7841DE479DADFAD /* Pods_HealingArts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 802A8BCEA6085745828EF6AF /* Pods_HealingArts.framework */; };
+		D54D084D22B13FF60039E5A9 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D084C22B13FF60039E5A9 /* CollectionViewController.swift */; };
+		D54D084F22B141990039E5A9 /* ArtworkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D084E22B141990039E5A9 /* ArtworkCollectionViewCell.swift */; };
+		D54D085122B149540039E5A9 /* Collection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D54D085022B149540039E5A9 /* Collection.storyboard */; };
 		E0B305FE22B14260007A2E85 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B305FD22B1425F007A2E85 /* About.storyboard */; };
 		E0B3060022B1428A007A2E85 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B305FF22B1428A007A2E85 /* AboutViewController.swift */; };
 		E0B3060222B144D6007A2E85 /* UIColor+ChihulyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3060122B144D6007A2E85 /* UIColor+ChihulyColors.swift */; };
@@ -80,6 +83,9 @@
 		7ACC542922ADEE2900926DA2 /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
 		7ACC542D22ADFAB900926DA2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		802A8BCEA6085745828EF6AF /* Pods_HealingArts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealingArts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D54D084C22B13FF60039E5A9 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		D54D084E22B141990039E5A9 /* ArtworkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkCollectionViewCell.swift; sourceTree = "<group>"; };
+		D54D085022B149540039E5A9 /* Collection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Collection.storyboard; sourceTree = "<group>"; };
 		E0B305FD22B1425F007A2E85 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		E0B305FF22B1428A007A2E85 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E0B3060122B144D6007A2E85 /* UIColor+ChihulyColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+ChihulyColors.swift"; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 			children = (
 				7A785EA322AE9D45008E42D8 /* Firebase.swift */,
 				7A785EA522AEDC1E008E42D8 /* Artwork.swift */,
+				D54D084E22B141990039E5A9 /* ArtworkCollectionViewCell.swift */,
 				73B5EFA022AAF04200E0F67F /* DonorViewController.swift */,
 				73B5EFA622AE2DA400E0F67F /* ArtworkDetails.storyboard */,
 				73B5EFAA22AEF01100E0F67F /* SingleArtworkMapViewController.swift */,
@@ -156,6 +163,8 @@
 				E0B305FD22B1425F007A2E85 /* About.storyboard */,
 				23EFD0E922AAC0A500EC7B72 /* Main.storyboard */,
 				23EFD0F922AACAA900EC7B72 /* Artists.storyboard */,
+				D54D085022B149540039E5A9 /* Collection.storyboard */,
+				D54D084C22B13FF60039E5A9 /* CollectionViewController.swift */,
 				7A785EBA22B014FF008E42D8 /* ArtworkDetails.storyboard */,
 				7A785EBC22B016FA008E42D8 /* ArtistDetails.storyboard */,
 				23EFD0F722AAC8C100EC7B72 /* Gallery.storyboard */,
@@ -255,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A785EBD22B016FB008E42D8 /* ArtistDetails.storyboard in Resources */,
+				D54D085122B149540039E5A9 /* Collection.storyboard in Resources */,
 				23EFD0F022AAC0A500EC7B72 /* LaunchScreen.storyboard in Resources */,
 				E0B305FE22B14260007A2E85 /* About.storyboard in Resources */,
 				7ACC542A22ADEE2900926DA2 /* GoogleService-Info (1).plist in Resources */,
@@ -322,6 +332,7 @@
 				23EFD0E822AAC0A500EC7B72 /* ViewController.swift in Sources */,
 				7A785EB622B0135F008E42D8 /* MapDetailViewController.swift in Sources */,
 				7A785EAC22B01342008E42D8 /* ArtistDetailViewController.swift in Sources */,
+				D54D084D22B13FF60039E5A9 /* CollectionViewController.swift in Sources */,
 				7A785EB722B0135F008E42D8 /* ArtworkItem.swift in Sources */,
 				15873C1122B144040081410E /* ParallaxCollectionViewController.swift in Sources */,
 				7A785EBF22B02A11008E42D8 /* DonorViewController.swift in Sources */,
@@ -334,6 +345,7 @@
 				15873C0F22B144040081410E /* ParallaxFlowLayout.swift in Sources */,
 				73B5EFAB22AEF01100E0F67F /* SingleArtworkMapViewController.swift in Sources */,
 				23EFD0E622AAC0A500EC7B72 /* AppDelegate.swift in Sources */,
+				D54D084F22B141990039E5A9 /* ArtworkCollectionViewCell.swift in Sources */,
 				E0B3060222B144D6007A2E85 /* UIColor+ChihulyColors.swift in Sources */,
 				7A785EA622AEDC1E008E42D8 /* Artwork.swift in Sources */,
 				E0B3060022B1428A007A2E85 /* AboutViewController.swift in Sources */,

@@ -33,8 +33,8 @@
                                 <rect key="frame" x="20" y="358" width="374" height="216.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">At the Fred and Pamela Buffett Cancer Center, healing is more than medicine.  The Healing Arts program exists to create environments that support and comfort people through the diverse art opportunities and experiences. 
-The Healing Arts program will be comprised of a growing list of elements to help reduce pain perception, anxiety, stress, loneliness, and depression; and to provide new insight and clarify feelings about a cancer diagnosis and treatment.  The center's program includes works by artists such as stained-glass artisan Dale Chihuly and local artist Jun Kaneko, as well as a section featuring a new artist every six months.</mutableString>
+                                <string key="text">At the Fred and Pamela Buffett Cancer Center, healing is more than medicine.  The Healing Arts program exists to create environments that support and comfort people through the diverse art opportunities and experiences. 
+The Healing Arts program will be comprised of a growing list of elements to help reduce pain perception, anxiety, stress, loneliness, and depression; and to provide new insight and clarify feelings about a cancer diagnosis and treatment.  The center's program includes works by artists such as stained-glass artisan Dale Chihuly and local artist Jun Kaneko, as well as a section featuring a new artist every six months.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -52,7 +52,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="zQJ-RX-R9C"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="About" id="Okd-1X-uCt"/>
+                    <tabBarItem key="tabBarItem" title="About" image="aboutIcon" id="Okd-1X-uCt"/>
                     <connections>
                         <outlet property="aboutPageInfoImageView" destination="jTO-6V-CnX" id="jhd-i4-OLL"/>
                         <outlet property="infoButton" destination="7De-Ib-Dfc" id="nlu-fO-9Vg"/>
@@ -65,4 +65,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
             <point key="canvasLocation" x="2024.6376811594205" y="-1280.3571428571429"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="aboutIcon" width="25" height="25"/>
+    </resources>
 </document>
