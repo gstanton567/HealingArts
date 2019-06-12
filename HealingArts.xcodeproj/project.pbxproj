@@ -35,6 +35,8 @@
 		7ACC542A22ADEE2900926DA2 /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ACC542922ADEE2900926DA2 /* GoogleService-Info (1).plist */; };
 		7ACC542E22ADFAB900926DA2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ACC542D22ADFAB900926DA2 /* GoogleService-Info.plist */; };
 		A90BE906C7841DE479DADFAD /* Pods_HealingArts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 802A8BCEA6085745828EF6AF /* Pods_HealingArts.framework */; };
+		D54D084D22B13FF60039E5A9 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D084C22B13FF60039E5A9 /* CollectionViewController.swift */; };
+		D54D084F22B141990039E5A9 /* ArtworkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D084E22B141990039E5A9 /* ArtworkCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,8 @@
 		7ACC542922ADEE2900926DA2 /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
 		7ACC542D22ADFAB900926DA2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		802A8BCEA6085745828EF6AF /* Pods_HealingArts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealingArts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D54D084C22B13FF60039E5A9 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		D54D084E22B141990039E5A9 /* ArtworkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkCollectionViewCell.swift; sourceTree = "<group>"; };
 		E785BA99679D892493AD2F72 /* Pods-HealingArts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealingArts.debug.xcconfig"; path = "Target Support Files/Pods-HealingArts/Pods-HealingArts.debug.xcconfig"; sourceTree = "<group>"; };
 		FE50B71741D42914269684F1 /* Pods-HealingArts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealingArts.release.xcconfig"; path = "Target Support Files/Pods-HealingArts/Pods-HealingArts.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +123,7 @@
 			children = (
 				7A785EA322AE9D45008E42D8 /* Firebase.swift */,
 				7A785EA522AEDC1E008E42D8 /* Artwork.swift */,
+				D54D084E22B141990039E5A9 /* ArtworkCollectionViewCell.swift */,
 				73B5EFA022AAF04200E0F67F /* DonorViewController.swift */,
 				73B5EFA622AE2DA400E0F67F /* ArtworkDetails.storyboard */,
 				73B5EFAA22AEF01100E0F67F /* SingleArtworkMapViewController.swift */,
@@ -132,6 +137,7 @@
 				23EFD0E922AAC0A500EC7B72 /* Main.storyboard */,
 				23EFD0FB22AACACB00EC7B72 /* About.storyboard */,
 				23EFD0F922AACAA900EC7B72 /* Artists.storyboard */,
+				D54D084C22B13FF60039E5A9 /* CollectionViewController.swift */,
 				7A785EBA22B014FF008E42D8 /* ArtworkDetails.storyboard */,
 				7A785EBC22B016FA008E42D8 /* ArtistDetails.storyboard */,
 				23EFD0F722AAC8C100EC7B72 /* Gallery.storyboard */,
@@ -296,6 +302,7 @@
 				23EFD0E822AAC0A500EC7B72 /* ViewController.swift in Sources */,
 				7A785EB622B0135F008E42D8 /* MapDetailViewController.swift in Sources */,
 				7A785EAC22B01342008E42D8 /* ArtistDetailViewController.swift in Sources */,
+				D54D084D22B13FF60039E5A9 /* CollectionViewController.swift in Sources */,
 				7A785EB722B0135F008E42D8 /* ArtworkItem.swift in Sources */,
 				7A785EBF22B02A11008E42D8 /* DonorViewController.swift in Sources */,
 				7A785EB922B0137C008E42D8 /* ArtDetailsViewController.swift in Sources */,
@@ -305,6 +312,7 @@
 				73B5EFA922AE8CED00E0F67F /* ArtistDetailViewController.swift in Sources */,
 				73B5EFAB22AEF01100E0F67F /* SingleArtworkMapViewController.swift in Sources */,
 				23EFD0E622AAC0A500EC7B72 /* AppDelegate.swift in Sources */,
+				D54D084F22B141990039E5A9 /* ArtworkCollectionViewCell.swift in Sources */,
 				7A785EA622AEDC1E008E42D8 /* Artwork.swift in Sources */,
 				7A785EB522B0135F008E42D8 /* MapViewController.swift in Sources */,
 			);
