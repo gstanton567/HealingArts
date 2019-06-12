@@ -58,11 +58,12 @@
         <scene sceneID="Q8e-y4-ido">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I25-lb-ziI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Gallery" id="BEi-ZF-4eU"/>
+                    <tabBarItem key="tabBarItem" title="Gallery" image="galleryIcon" id="BEi-ZF-4eU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tpo-aP-Mv0">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.68627450980000004" green="0.062745098040000002" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -74,4 +75,7 @@
             <point key="canvasLocation" x="2024.6376811594205" y="20.758928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="galleryIcon" width="25" height="25"/>
+    </resources>
 </document>

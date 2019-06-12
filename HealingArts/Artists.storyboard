@@ -1,26 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ABi-Pm-nlz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wyn-av-WXr">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Artists-->
-        <scene sceneID="u21-5v-Sfp">
+        <!--Artist View Controller-->
+        <scene sceneID="u21-5v-Sf">
             <objects>
-                <viewController id="ABi-Pm-nlz" sceneMemberID="viewController">
+                <viewController id="ABi-Pm-nlz" customClass="ArtistViewController" customModule="HealingArts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DjZ-1Q-rzX">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ore-gW-qFg">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellID" textLabel="xyg-xe-fCg" style="IBUITableViewCellStyleDefault" id="yK6-nQ-mmM">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yK6-nQ-mmM" id="REc-fW-UiJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xyg-xe-fCg">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="xSl-W4-cUq" kind="show" id="OHE-gN-P1S"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ABi-Pm-nlz" id="aA1-N8-gsJ"/>
+                                    <outlet property="delegate" destination="ABi-Pm-nlz" id="dJH-1H-xRV"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ore-gW-qFg" firstAttribute="top" secondItem="HbG-TK-Suf" secondAttribute="top" id="MBU-dj-NCp"/>
+                            <constraint firstItem="HbG-TK-Suf" firstAttribute="bottom" secondItem="ore-gW-qFg" secondAttribute="bottom" id="NxF-vo-BLa"/>
+                            <constraint firstItem="HbG-TK-Suf" firstAttribute="trailing" secondItem="ore-gW-qFg" secondAttribute="trailing" id="cbl-kz-HZq"/>
+                            <constraint firstItem="ore-gW-qFg" firstAttribute="leading" secondItem="HbG-TK-Suf" secondAttribute="leading" id="dcL-a5-yam"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HbG-TK-Suf"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Artists" id="rk4-De-q25"/>
+                    <tabBarItem key="tabBarItem" title="Artists" image="artistIcon" id="rk4-De-q25"/>
+                    <connections>
+                        <outlet property="tableView" destination="ore-gW-qFg" id="Vxr-df-Hgm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NbH-6j-kay" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2025" y="672"/>
+            <point key="canvasLocation" x="2934.7826086956525" y="671.65178571428567"/>
+        </scene>
+        <!--Artists-->
+        <scene sceneID="6jI-e4-nDr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wyn-av-WXr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Artists" id="rk4-De-q2"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XKG-55-UiW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ABi-Pm-nlz" kind="relationship" relationship="rootViewController" id="ZlM-DY-Bbd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NpO-aJ-CiO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2024.6376811594205" y="671.65178571428567"/>
+        </scene>
+        <!--ArtistDetails-->
+        <scene sceneID="Oay-bj-SUt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ArtistDetails" id="xSl-W4-cUq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y3d-aE-ODZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3763.7681159420295" y="671.65178571428567"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="artistIcon" width="25" height="25"/>
+    </resources>
 </document>

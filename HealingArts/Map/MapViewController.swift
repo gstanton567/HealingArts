@@ -26,9 +26,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
     var artworks : [ArtworkItem]? = []
     
-    let art1 = ArtworkItem(name: "Chihuly Sanctuary", desc: "Dale Chihuly", coordinate: CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596), imageName: "chihulySanctuary")
-    let art2 = ArtworkItem(name: "Search", desc: "Jun Kaneko", coordinate: CLLocationCoordinate2D(latitude: 41.2560330, longitude: -95.9804196), imageName: "search")
-    let art3 = ArtworkItem(name: "Leslie's Healing Garden", desc: "A neat garden", coordinate: CLLocationCoordinate2D(latitude: 41.2552318, longitude: -95.9796596), imageName: "lesliesHealingGarden")
+    let art1 = ArtworkItem(name: "Chihuly Sanctuary", artist: "Dale Chihuly", coordinate: CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596), imageName: "chihulySanctuary", distanceToUser: 0.0)
+    let art2 = ArtworkItem(name: "Search", artist: "Jun Kaneko", coordinate: CLLocationCoordinate2D(latitude: 41.2560330, longitude: -95.9804196), imageName: "search", distanceToUser: 0.0)
+    let art3 = ArtworkItem(name: "Leslie's Healing Garden", artist: "" /* N/A */, coordinate: CLLocationCoordinate2D(latitude: 41.2552318, longitude: -95.9796596), imageName: "lesliesHealingGarden", distanceToUser: 0.0)
     
     
     var selectedArtwork : ArtworkItem?
@@ -49,6 +49,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        let span = MKCoordinateSpan(latitudeDelta: 0.00135, longitudeDelta: 0.00135)
+        let center = CLLocationCoordinate2D(latitude: 41.2555318, longitude: -95.979859999)
+        let region = MKCoordinateRegion(center: center, span: span)
+        mapView.setRegion(region, animated: false)
+    }
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         locationManager.startUpdatingLocation()
@@ -62,12 +70,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         print ("Location is no longer updating")
     }
     
-    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        let span = MKCoordinateSpan(latitudeDelta: 0.00135, longitudeDelta: 0.00135)
-        let center = CLLocationCoordinate2D(latitude: 41.2555318, longitude: -95.979859999)
-        let region = MKCoordinateRegion(center: center, span: span)
-        mapView.setRegion(region, animated: false)
-    }
+
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         let annotation = view.annotation
@@ -99,18 +102,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 
                 //trying to get the right spacing for the image. not quite working.
                 //only really works with rectangular images that have width > height
-                var artworkDescString = ""
+                var artworkArtistString = ""
                 let imageSize = imageView.frame.height
                 //17.75 = magic number???
                 let numberOfLines = Double(imageSize / 17.75)
                 let numberOfLinesInt = Int(numberOfLines)
                 for _ in 1...numberOfLinesInt{
-                    artworkDescString.append("\n")
+                    artworkArtistString.append("\n")
                 }
-                artworkDescString.append(artwork.desc)
+                artworkArtistString.append(artwork.artist)
                 
                 //set message after it is created. Replaces Empty String.
-                alertController.message = artworkDescString
+                alertController.message = artworkArtistString
                 
                 self.present(alertController, animated: true)
             }
@@ -142,9 +145,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toArtworkDetailSegue"{
             let ADVC =  segue.destination as! ArtDetailsViewController
-            ADVC.artwork = selectedArtwork
+            ADVC.selectedArtwork = selectedArtwork
         } else {
+            //may or may not need
             let SMVC = segue.destination as! SanctuaryMapViewController
+            SMVC.locationManager = locationManager
         }
         
     }

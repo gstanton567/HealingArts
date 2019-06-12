@@ -69,8 +69,9 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
         if let link = URL(string: linkString) {
             let sfvc = SFSafariViewController(url: link)
             sfvc.delegate = (self as! SFSafariViewControllerDelegate)
-            sfvc.preferredBarTintColor = UIColor.ChihulyUI.Red.UNMCSafariBackground
             sfvc.preferredControlTintColor = .white
+            sfvc.preferredBarTintColor = UIColor.ChihulyUI.Red.UNMCSafariBackground
+            
             present(sfvc, animated: true)
             
         }
