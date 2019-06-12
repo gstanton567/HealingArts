@@ -67,6 +67,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dMc-Wh-1fj"/>
                     </view>
+                    <connections>
+                        <outlet property="artistLabel" destination="nby-af-T5y" id="dfy-2k-tu8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pg4-ce-fCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

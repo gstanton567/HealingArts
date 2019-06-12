@@ -17,6 +17,7 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
     
 //properties
     var artworks : [Artwork] = [Artwork]()
+    var indexOfArtist = 0
     var images = ["chihulypic", "harnoor", "dan", "gold", "kaneko"]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,4 +51,10 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
         return cell!
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dvc = segue.destination as? ArtistDetailViewController
+        indexOfArtist = tableView.indexPathForSelectedRow!.row
+        let artwork = self.artworks[indexOfArtist]
+        dvc!.artwork = artwork
+    }
 }

@@ -9,11 +9,14 @@
 import UIKit
 
 class ArtistDetailViewController: UIViewController {
+    
+    var artwork: Artwork?
+    var indexOfArtist : Int!
 
+    @IBOutlet weak var artistLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        artistLabel.text = artwork!.artist
     }
     
 
