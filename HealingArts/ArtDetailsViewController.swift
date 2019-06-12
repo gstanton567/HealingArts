@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreLocation
+import Firebase
+import FirebaseFirestore
 
 class ArtDetailsViewController: UIViewController {
     
@@ -19,13 +21,15 @@ class ArtDetailsViewController: UIViewController {
     @IBOutlet weak var mediumLabel: UILabel!
     @IBOutlet weak var dimensionsLabel: UILabel!
     
+    var sanctuaryPiece = false
+    
     //dummy data from map
-    var artwork : Artwork?
+    var sanctuaryArtwork : Artwork?
     var selectedArtwork : ArtworkItem?
     var mapButtonPressed = false
-    var pieceLocation = CLLocationCoordinate2D()
+    var pieceLocation : GeoPoint? 
     
-    //var location = CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596)
+    var location = CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596)
     
     let date = "2017-18"
     let medium = "Blown-glass"
@@ -45,14 +49,20 @@ class ArtDetailsViewController: UIViewController {
         }
         task.resume()
         
-        artistButton.setTitle(selectedArtwork?.artist, for: .normal)
-        pieceNameLabel.text = selectedArtwork?.title
-        dateLabel.text = date
-        mediumLabel.text = medium
-        dimensionsLabel.text = dimensions
-        descriptionTextView.text = artDescription
-        //pieceLocation = selectedArtwork!.coordinate
-        
+        if sanctuaryPiece{
+            artistButton.setTitle(sanctuaryArtwork?.artist, for: .normal)
+            pieceNameLabel.text = sanctuaryArtwork?.title
+            pieceLocation = sanctuaryArtwork?.location
+        } else{
+            artistButton.setTitle(selectedArtwork?.artist, for: .normal)
+            pieceNameLabel.text = selectedArtwork?.title
+            location = selectedArtwork!.coordinate
+        }
+            dateLabel.text = date
+            mediumLabel.text = medium
+            dimensionsLabel.text = dimensions
+            descriptionTextView.text = artDescription
+
     }
     
     
@@ -76,7 +86,9 @@ class ArtDetailsViewController: UIViewController {
         }
         else{
             let smvc = segue.destination as! SingleArtworkMapViewController
-            //smvc.pieceLocation = pieceLocation
+            smvc.pieceLocation = pieceLocation
+            smvc.location = location
+            smvc.sanctuaryPiece = sanctuaryPiece
             print(pieceNameLabel.text)
             print("is map button")
         }

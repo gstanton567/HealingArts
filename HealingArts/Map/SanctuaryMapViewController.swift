@@ -17,8 +17,9 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
     
     @IBOutlet weak var sanctuaryMapView: MKMapView!
     
+    var sanctuaryPiece = true
     
-    var artworks : [Artwork] = []
+    var sanctuaryArtworks : [Artwork] = []
     var artTitle = ""
     var pieceArtist = ""
     var pieceLocation : CLLocationCoordinate2D?
@@ -46,6 +47,7 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
                 let annotaionView = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
                 annotaionView.alpha = 1.0
                 self.sanctuaryMapView.addAnnotation(annotation)
+                self.sanctuaryArtworks.append(artwork)
             }
         })
         
@@ -64,14 +66,11 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
             //do nothing
         } else{
             let annotation = view.annotation as! MKPointAnnotation
-            artTitle = annotation.title!
-            pieceLocation = annotation.coordinate
-            //pieceArtist = artwork.
-            
             print (annotation.title!)
-            for artwork in artworks{
+            for artwork in sanctuaryArtworks{
                 if artwork.title == annotation.title{
                     selectedArtwork = artwork
+                    print ("Selected Artwork Title is: \(selectedArtwork!.title)")
                 }
             }
             performSegue(withIdentifier: "toArtworkDetailSegue", sender: nil)
@@ -81,7 +80,8 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let ADVC =  segue.destination as! ArtDetailsViewController
-        ADVC.artwork = selectedArtwork
+        ADVC.sanctuaryPiece = sanctuaryPiece
+        ADVC.sanctuaryArtwork = selectedArtwork
     }
     
     

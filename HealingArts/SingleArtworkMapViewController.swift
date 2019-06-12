@@ -9,28 +9,35 @@
 import UIKit
 import CoreLocation
 import MapKit
+import Firebase
+import FirebaseFirestore
 
 class SingleArtworkMapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
+    var sanctuaryPiece = false
+    
     let locationManager = CLLocationManager()
     //dummy location rn
-    var pieceLocation = CLLocationCoordinate2D()
-    
+    var location = CLLocationCoordinate2D()
+    var pieceLocation : GeoPoint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(pieceLocation)
+        if sanctuaryPiece{
+            location.latitude = pieceLocation!.latitude
+            location.longitude = pieceLocation!.longitude
+        }
         mapView.delegate = self
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        createPin(location: pieceLocation)
+        createPin(location: location)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let span = MKCoordinateSpan(latitudeDelta: 0.000005, longitudeDelta: 0.000005)
-        let center = CLLocationCoordinate2D(latitude: 41.2555318, longitude: -95.9795720)
+        let span = MKCoordinateSpan(latitudeDelta: 0.00135, longitudeDelta: 0.00135)
+        let center = CLLocationCoordinate2D(latitude: 41.2555318, longitude: -95.979859999)
         let region = MKCoordinateRegion(center: center, span: span)
         mapView.setRegion(region, animated: false)
     }
@@ -72,5 +79,5 @@ class SingleArtworkMapViewController: UIViewController, CLLocationManagerDelegat
             return pin
         }
     }
-
+    
 }
