@@ -15,14 +15,20 @@ private let reuseIdentifier = "Cell"
 class ParallaxCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
+    var sortedArtworks : [Artwork] = []
+
     
     var pics = [UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "kaneko"),UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "kaneko"),UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "gold")]
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        locationManager.startUpdatingLocation()
+        //sorting addition
+        sortByLoc()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //sorting addition
-        sortByLoc()
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -90,8 +96,6 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
 //
 //    }
     
-    var sortedArtworks : [Artwork] = []
-    
     //adding sorting stuff here
     func sortByLoc(){
         var distances : [Double] = []
@@ -122,6 +126,7 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
             for artwork in self.sortedArtworks{
                 print (artwork.title)
             }
+            self.locationManager.stopUpdatingLocation()
         }
     }
     
