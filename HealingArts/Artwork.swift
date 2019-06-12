@@ -10,6 +10,7 @@ import Foundation
 import CoreLocation
 import Firebase
 import FirebaseFirestore
+import FirebaseStorage
 
 class Artwork {
     
@@ -21,10 +22,10 @@ class Artwork {
     var textDescription: String?
     var medium: String?
     var location: GeoPoint?
-    var imageURLs: [String]?
-    var images: [UIImage] = []
+//    var imageURLs: [String]?
+    var images: [UIImage] = [UIImage]()
     
-    init(title: String, artist: String, dimensions: String?, date: String?, floor: Int?, textDescription: String?, medium: String?, location: GeoPoint?, imageURLs: [String]?) {
+    init(title: String, artist: String, dimensions: String?, date: String?, floor: Int?, textDescription: String?, medium: String?, location: GeoPoint?, images: [UIImage]?) {
         self.title = title
         self.artist = artist
         self.dimensions = dimensions
@@ -33,33 +34,7 @@ class Artwork {
         self.textDescription = textDescription
         self.medium = medium
         self.location = location
-        self.imageURLs = imageURLs
-        self.images = makeImages(imageURLs: imageURLs!)
+        self.images = images!
     }
-    
-    func makeImages(imageURLs: [String]) -> [UIImage]{
-        var images: [UIImage] = []
-        for imageURL in imageURLs {
-            if imageURL == nil {
-                print("image url does not exist")
-            } else {
-                let picURL = URL(string: imageURL)
-                let session = URLSession.shared
-                let task = session.dataTask(with: picURL!) { (data, response, error) in
-                    print("inside block")
-                    if let error = error {
-                        print(error.localizedDescription)
-                    } else {
-                        DispatchQueue.main.async {
-                            images.append(UIImage(data: data!)!)
-                        }
-                    }
-                }
-                task.resume()
-            }
-            
-        }
-        return images
-    }
-    
 }
+
