@@ -17,13 +17,71 @@
                     <view key="view" contentMode="scaleToFill" id="a5f-LO-R5S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chihulypic" translatesAutoresizingMaskIntoConstraints="NO" id="Zo3-qZ-C2L">
+                                <rect key="frame" x="194" y="107" width="220" height="164"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDG-br-t39">
+                                <rect key="frame" x="0.0" y="583" width="414" height="279"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">Born in 1941 in Tacoma, Washington, Chihuly draws inspiration form the Pacific Northwest region. A leader of the studio art movement, Chihuly established the glass program at the Rhode Island School of Design and cofounded the Pilchuck Glass School in Stanwood, Washington. Chihuly, who continues to create art at his studio in Seattle, has received numerous awards and honorary degrees, and his work is included in more than 200 museums collections worldwide, including the Metropolitan Museum of Art, the Smithsonian American Art Museum, and the Corning Museum of Glass</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfY-7G-wis">
+                                <rect key="frame" x="36" y="229" width="106" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="View Collection"/>
+                                <connections>
+                                    <segue destination="zgh-ND-ma8" kind="show" id="Ytz-Le-67J"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERl-Ih-CKr">
+                                <rect key="frame" x="0.0" y="293" width="414" height="235"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="235" id="da0-iw-b3J"/>
+                                </constraints>
+                                <string key="text">Dale Chihly is known for revolutionizing the studio glass movement and elevating perceptions of the glass medium. He employs a diverse array of materials to realize his creative vision through drawing, painting, and sculpture. Chihuly is renowned for his iconic glass sculptures, ambititious site-specific public installations, and exhibitions in historic cities, museums, and gardens around the world.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dale Chihuly" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nby-af-T5y">
+                                <rect key="frame" x="28" y="167" width="122" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ERl-Ih-CKr" firstAttribute="top" secondItem="a5f-LO-R5S" secondAttribute="top" constant="293" id="DvH-sj-bxN"/>
+                            <constraint firstItem="XDG-br-t39" firstAttribute="top" secondItem="ERl-Ih-CKr" secondAttribute="bottom" constant="55" id="IB1-ZA-9qa"/>
+                            <constraint firstItem="dMc-Wh-1fj" firstAttribute="trailing" secondItem="ERl-Ih-CKr" secondAttribute="trailing" id="OoK-ct-Mrw"/>
+                            <constraint firstItem="XDG-br-t39" firstAttribute="leading" secondItem="dMc-Wh-1fj" secondAttribute="leading" id="SPx-Tw-GwS"/>
+                            <constraint firstItem="dMc-Wh-1fj" firstAttribute="trailing" secondItem="XDG-br-t39" secondAttribute="trailing" id="WvO-4p-tde"/>
+                            <constraint firstItem="dMc-Wh-1fj" firstAttribute="bottom" secondItem="XDG-br-t39" secondAttribute="bottom" id="izd-Uc-5W2"/>
+                            <constraint firstItem="ERl-Ih-CKr" firstAttribute="leading" secondItem="dMc-Wh-1fj" secondAttribute="leading" id="xWj-qJ-cfV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dMc-Wh-1fj"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pg4-ce-fCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3912" y="21"/>
+            <point key="canvasLocation" x="3785.507246376812" y="20.758928571428569"/>
+        </scene>
+        <!--Collection-->
+        <scene sceneID="Z53-CT-9TG">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Collection" id="zgh-ND-ma8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BmM-Qo-hC1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4445" y="-37"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chihulypic" width="135" height="90"/>
+    </resources>
 </document>
