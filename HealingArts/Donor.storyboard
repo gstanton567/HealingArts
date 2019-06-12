@@ -36,7 +36,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="xKG-ES-xWU"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Donors" id="JXl-pY-hiM"/>
+                    <tabBarItem key="tabBarItem" title="Donors" image="donorIcon" id="JXl-pY-hiM"/>
                     <connections>
                         <outlet property="donorsTextView" destination="ELX-TH-lkY" id="GJ0-Ik-3Ke"/>
                     </connections>
@@ -46,4 +46,7 @@
             <point key="canvasLocation" x="2024.6376811594205" y="1320.5357142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="donorIcon" width="25" height="25"/>
+    </resources>
 </document>

@@ -11,7 +11,7 @@
     </dependencies>
     <scenes>
         <!--Artist View Controller-->
-        <scene sceneID="u21-5v-Sfp">
+        <scene sceneID="u21-5v-Sf">
             <objects>
                 <viewController id="ABi-Pm-nlz" customClass="ArtistViewController" customModule="HealingArts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DjZ-1Q-rzX">
@@ -58,7 +58,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HbG-TK-Suf"/>
                     </view>
-                    <navigationItem key="navigationItem" id="fLn-LQ-bvt"/>
+                    <tabBarItem key="tabBarItem" title="Artists" image="artistIcon" id="rk4-De-q25"/>
                     <connections>
                         <outlet property="tableView" destination="ore-gW-qFg" id="Vxr-df-Hgm"/>
                     </connections>
@@ -71,7 +71,7 @@
         <scene sceneID="6jI-e4-nDr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wyn-av-WXr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Artists" id="rk4-De-q25"/>
+                    <tabBarItem key="tabBarItem" title="Artists" id="rk4-De-q2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XKG-55-UiW">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -95,4 +95,7 @@
             <point key="canvasLocation" x="3763.7681159420295" y="671.65178571428567"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="artistIcon" width="25" height="25"/>
+    </resources>
 </document>
