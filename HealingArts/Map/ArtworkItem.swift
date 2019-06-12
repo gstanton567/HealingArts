@@ -16,12 +16,14 @@ class ArtworkItem {
     var artist : String!
     var coordinate = CLLocationCoordinate2D()
     var imageName : String!
+    var distanceToUser : Double!
     
-    init(name : String, artist: String, coordinate: CLLocationCoordinate2D, imageName : String) {
+    init(name : String, artist: String, coordinate: CLLocationCoordinate2D, imageName : String, distanceToUser : Double) {
         self.title = name
         self.artist = artist
         self.coordinate = coordinate
         self.imageName = imageName
+        self.distanceToUser = distanceToUser
     }
     
 }
