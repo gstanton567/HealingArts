@@ -14,16 +14,17 @@ private let reuseIdentifier = "Cell"
 
 class ParallaxCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, CLLocationManagerDelegate {
     
+    //sorting addition
     let locationManager = CLLocationManager()
     var sortedArtworks : [Artwork] = []
 
     
     var pics = [UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "kaneko"),UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "kaneko"),UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "gold")]
     
+    //sorting addition
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         locationManager.startUpdatingLocation()
-        //sorting addition
         sortByLoc()
     }
 
