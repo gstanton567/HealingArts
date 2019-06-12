@@ -63,4 +63,5 @@ class ParallaxCollectionViewCell: UICollectionViewCell {
         let parallaxLayoutAttributes = layoutAttributes as! ParallaxLayoutAttributes
         imageViewCenterYConstraint.constant = parallaxLayoutAttributes.parallaxOffset!.y
     }
+    
 }

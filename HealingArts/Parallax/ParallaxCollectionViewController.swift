@@ -17,7 +17,7 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .black
-        title = "Parallax!"
+        title = "Gallery"
         collectionView!.register(ParallaxCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
@@ -71,4 +71,10 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
         
         return cell
     }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//
+//    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//    }
 }
