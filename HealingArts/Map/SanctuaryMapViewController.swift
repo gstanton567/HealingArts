@@ -36,6 +36,9 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate {
     var locationManager = CLLocationManager()
     
     var artworks : [Artwork] = []
+    var artTitle = ""
+    var pieceArtist = ""
+    var pieceLocation : CLLocationCoordinate2D?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,9 +98,19 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate {
             //do nothing
         } else{
             let annotation = view.annotation as! MKPointAnnotation
+            artTitle = annotation.title!
+            pieceLocation = annotation.coordinate
+            //pieceArtist = artwork.
+            
             print (annotation.title!)
             performSegue(withIdentifier: "toArtworkDetailSegue", sender: nil)
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dvc = segue.destination as! ArtDetailsViewController
+        dvc.artTitle = artTitle
+        //dvc.pieceArtist = artwork.artist
     }
     
 }

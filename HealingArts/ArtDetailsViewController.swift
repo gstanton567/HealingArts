@@ -22,11 +22,14 @@ class ArtDetailsViewController: UIViewController {
     //dummy data from map
     var artwork : ArtworkItem?
     var mapButtonPressed = false
+    var artTitle = ""
+    var pieceArtist = ""
+    var pieceLocation = CLLocationCoordinate2D()
     
-    var location = CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596)
+    //var location = CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596)
     
     let artist = "Dale Chihuly"
-    let name = "Orange and Yellow Hornet and Rising Sun Sconce Wall"
+    //let name = "Orange and Yellow Hornet and Rising Sun Sconce Wall"
     let date = "2017-18"
     let medium = "Blown-glass"
     let dimensions = "2 x 8 1/2 x 16.5"
@@ -46,7 +49,7 @@ class ArtDetailsViewController: UIViewController {
         task.resume()
         
         artistButton.setTitle(artist, for: .normal)
-        pieceNameLabel.text = name
+        pieceNameLabel.text = artTitle
         dateLabel.text = date
         mediumLabel.text = medium
         dimensionsLabel.text = dimensions
@@ -75,7 +78,8 @@ class ArtDetailsViewController: UIViewController {
         }
         else{
             let smvc = segue.destination as! SingleArtworkMapViewController
-            smvc.location = location
+            smvc.pieceLocation = pieceLocation
+            print(artTitle)
             print("is map button")
         }
     }
