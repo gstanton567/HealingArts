@@ -7,15 +7,27 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
 private let reuseIdentifier = "Cell"
 
-class ParallaxCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class ParallaxCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, CLLocationManagerDelegate {
+    
+    let locationManager = CLLocationManager()
     
     var pics = [UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "kaneko"),UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "kaneko"),UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "gold")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //sorting addition
+        sortByLoc()
+        
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
         collectionView.backgroundColor = .black
         title = "Gallery"
         collectionView!.register(ParallaxCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
@@ -77,4 +89,41 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //
 //    }
+    
+    var sortedArtworks : [Artwork] = []
+    
+    //adding sorting stuff here
+    func sortByLoc(){
+        var distances : [Double] = []
+        var distancesMod : [Double] = []
+        
+        var artworksToSort : [Artwork] = []
+        
+        Firebase.getAllDocumentsInCollection { (artworks, error) in
+            for artwork in artworks{
+                artworksToSort.append(artwork)
+                let latitude = artwork.location?.latitude
+                let longitude = artwork.location?.longitude
+                let distance = self.locationManager.location?.distance(from: CLLocation(latitude: latitude!, longitude: longitude!))
+                distances.append(distance!)
+            }
+            distancesMod = distances
+            distancesMod.sort()
+            
+            for distanceMod in distancesMod{
+                for distance in distances{
+                    let indexOf = distances.firstIndex(of: distance)
+                    if distance == distanceMod{
+                        self.sortedArtworks.append(artworksToSort[indexOf!])
+                    }
+                }
+            }
+            
+            for artwork in self.sortedArtworks{
+                print (artwork.title)
+            }
+        }
+    }
+    
+    
 }
