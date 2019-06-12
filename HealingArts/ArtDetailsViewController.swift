@@ -21,6 +21,7 @@ class ArtDetailsViewController: UIViewController {
     
     //dummy data from map
     var artwork : Artwork?
+    var selectedArtwork : ArtworkItem?
     var mapButtonPressed = false
     
     var location = CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596)
