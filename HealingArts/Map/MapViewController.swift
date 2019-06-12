@@ -83,6 +83,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 let alertController = UIAlertController(title: artwork.title, message: "", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "OK", style: .cancel) { (UIAlertAction) in
                     print ("OK")
+                    mapView.deselectAnnotation(annotation, animated: true)
                 }
                 let detailAction = UIAlertAction(title: "Details", style: .default) { (UIAlertAction) in
                     if artwork.title == "Chihuly Sanctuary"{

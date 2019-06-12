@@ -46,8 +46,6 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
             }
         })
         
-        //hits the loop but there is not data. Maybe function call is wrong or this part needs to be
-        //called in a different way.
     }
     
     override func viewWillDisappear(_ animated: Bool) {
