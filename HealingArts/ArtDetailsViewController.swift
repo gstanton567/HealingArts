@@ -20,7 +20,8 @@ class ArtDetailsViewController: UIViewController {
     @IBOutlet weak var dimensionsLabel: UILabel!
     
     //dummy data from map
-    var artwork : ArtworkItem?
+    var artwork : Artwork?
+    var selectedArtwork : ArtworkItem?
     var mapButtonPressed = false
     var artTitle = ""
     var pieceArtist = ""
