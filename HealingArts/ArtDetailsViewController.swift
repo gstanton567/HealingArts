@@ -53,15 +53,20 @@ class ArtDetailsViewController: UIViewController {
             artistButton.setTitle(sanctuaryArtwork?.artist, for: .normal)
             pieceNameLabel.text = sanctuaryArtwork?.title
             pieceLocation = sanctuaryArtwork?.location
+            dateLabel.text = sanctuaryArtwork?.date
+            mediumLabel.text = sanctuaryArtwork?.medium
+            dimensionsLabel.text = sanctuaryArtwork?.dimensions
+            descriptionTextView.text = sanctuaryArtwork?.textDescription
         } else{
             artistButton.setTitle(selectedArtwork?.artist, for: .normal)
             pieceNameLabel.text = selectedArtwork?.title
             location = selectedArtwork!.coordinate
-        }
             dateLabel.text = date
             mediumLabel.text = medium
             dimensionsLabel.text = dimensions
             descriptionTextView.text = artDescription
+        }
+        
 
     }
     
