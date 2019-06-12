@@ -84,10 +84,6 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
         ADVC.artwork = selectedArtwork
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dvc = segue.destination as! ArtDetailsViewController
-        dvc.artTitle = artTitle
-        //dvc.pieceArtist = artwork.artist
-    }
+    
     
 }
