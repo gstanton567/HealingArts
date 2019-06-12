@@ -12,7 +12,7 @@ private let reuseIdentifier = "Cell"
 
 class ParallaxCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    var pics = [UIImage(named: "00"), UIImage(named: "01"), UIImage(named: "02"), UIImage(named: "03"), UIImage(named: "04"), UIImage(named: "05"), UIImage(named: "06"), UIImage(named: "07"), UIImage(named: "08"), UIImage(named: "09"), UIImage(named: "10")]
+    var pics = [UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "kaneko"),UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "kaneko"),UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "gold")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,14 +29,18 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     
     init() {
         let layout = ParallaxFlowLayout()
-        let margin: CGFloat = 11.0
+        let margin: CGFloat = 5.0
         layout.minimumLineSpacing = margin
         layout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
         super.init(collectionViewLayout: layout)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) is not implemented")
+        let layout = ParallaxFlowLayout()
+        let margin: CGFloat = 5.0
+        layout.minimumLineSpacing = margin
+        layout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
+        super.init(collectionViewLayout: layout)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
