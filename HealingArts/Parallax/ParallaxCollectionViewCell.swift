@@ -29,7 +29,7 @@ class ParallaxCollectionViewCell: UICollectionViewCell {
     }
     
     func setupImageView() {
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(imageView)
     }
@@ -63,4 +63,5 @@ class ParallaxCollectionViewCell: UICollectionViewCell {
         let parallaxLayoutAttributes = layoutAttributes as! ParallaxLayoutAttributes
         imageViewCenterYConstraint.constant = parallaxLayoutAttributes.parallaxOffset!.y
     }
+    
 }
