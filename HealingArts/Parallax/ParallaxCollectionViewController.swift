@@ -124,7 +124,7 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
             }
             
             for artwork in self.sortedArtworks{
-                print (artwork.title)
+                print ("\(artwork.title!)")
             }
             self.locationManager.stopUpdatingLocation()
         }
