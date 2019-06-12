@@ -9,19 +9,26 @@
 import UIKit
 import CoreLocation
 import MapKit
+import Firebase
+import FirebaseFirestore
 
 class SingleArtworkMapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
+    var sanctuaryPiece = false
+    
     let locationManager = CLLocationManager()
     //dummy location rn
     var location = CLLocationCoordinate2D()
-    
+    var pieceLocation : GeoPoint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if sanctuaryPiece{
+            location.latitude = pieceLocation!.latitude
+            location.longitude = pieceLocation!.longitude
+        }
         mapView.delegate = self
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -29,8 +36,8 @@ class SingleArtworkMapViewController: UIViewController, CLLocationManagerDelegat
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let span = MKCoordinateSpan(latitudeDelta: 0.000005, longitudeDelta: 0.000005)
-        let center = CLLocationCoordinate2D(latitude: 41.2555318, longitude: -95.9795720)
+        let span = MKCoordinateSpan(latitudeDelta: 0.00135, longitudeDelta: 0.00135)
+        let center = CLLocationCoordinate2D(latitude: 41.2555318, longitude: -95.979859999)
         let region = MKCoordinateRegion(center: center, span: span)
         mapView.setRegion(region, animated: false)
     }
@@ -52,13 +59,12 @@ class SingleArtworkMapViewController: UIViewController, CLLocationManagerDelegat
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         let annotation = view.annotation
         let location = annotation?.coordinate
-        
-        
     }
     
     func createPin (location : CLLocationCoordinate2D?){
         let annotation = MKPointAnnotation()
         annotation.coordinate = location!
+        print(annotation.coordinate)
         mapView.addAnnotation(annotation)
     }
     
@@ -73,5 +79,5 @@ class SingleArtworkMapViewController: UIViewController, CLLocationManagerDelegat
             return pin
         }
     }
-
+    
 }
