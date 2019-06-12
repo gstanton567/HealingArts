@@ -10,7 +10,7 @@ import UIKit
 
 class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    let collection : [String] = ["chihulySanctuary", "search"]
+    let collection : [String] = ["chihulySanctuary", "search", "harnoor", "gold"]
 
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
@@ -25,8 +25,9 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath)
-        //cell.imageView
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! ArtworkCollectionViewCell
+        let images = collection[indexPath.row]
+        cell.imageView.image = UIImage(named: images)
         return cell
     }
 

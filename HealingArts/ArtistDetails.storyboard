@@ -33,6 +33,9 @@
                                 <rect key="frame" x="36" y="229" width="106" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="View Collection"/>
+                                <connections>
+                                    <segue destination="zgh-ND-ma8" kind="show" id="Ytz-Le-67J"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERl-Ih-CKr">
                                 <rect key="frame" x="0.0" y="293" width="414" height="235"/>
@@ -68,6 +71,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pg4-ce-fCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3785.507246376812" y="20.758928571428569"/>
+        </scene>
+        <!--Collection-->
+        <scene sceneID="Z53-CT-9TG">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Collection" id="zgh-ND-ma8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BmM-Qo-hC1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4445" y="-37"/>
         </scene>
     </scenes>
     <resources>
