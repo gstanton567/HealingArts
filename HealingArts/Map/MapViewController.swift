@@ -23,7 +23,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     //additional coordinates. Probably won't need them.
     //let artCoordinate1 = CLLocationCoordinate2D(latitude: 41.2555318, longitude: -95.9804596)
     //let artCoordinate2 = CLLocationCoordinate2D(latitude: 41.2556318, longitude: -95.9801596)
-
+    
+    //just using this for now to see items outside of sanctuary
+    var sanctuaryPiece = false
+    
     var artworks : [ArtworkItem]? = []
     
     let art1 = ArtworkItem(name: "Chihuly Sanctuary", artist: "Dale Chihuly", coordinate: CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596), imageName: "chihulySanctuary", distanceToUser: 0.0)
@@ -146,10 +149,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toArtworkDetailSegue"{
             let ADVC =  segue.destination as! ArtDetailsViewController
+            sanctuaryPiece = false
             ADVC.selectedArtwork = selectedArtwork
+            ADVC.sanctuaryPiece = sanctuaryPiece
         } else {
             //may or may not need
             let SMVC = segue.destination as! SanctuaryMapViewController
+            sanctuaryPiece = true
+            SMVC.sanctuaryPiece = sanctuaryPiece
             SMVC.locationManager = locationManager
         }
         
