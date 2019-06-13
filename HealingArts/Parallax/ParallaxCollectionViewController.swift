@@ -97,8 +97,7 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
 //
 //    }
     
-    //adding sorting stuff here.
-    //Might need to add completion unless we want to update table view data in the function.
+    //adding sorting stuff here. Might need to add completion unless we want to update table view data in the function.
     func sortByLoc(){
         var distances : [Double] = []
         var distancesToSort : [Double] = []
