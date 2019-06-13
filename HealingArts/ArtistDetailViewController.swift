@@ -13,10 +13,14 @@ class ArtistDetailViewController: UIViewController {
     var artwork: Artwork?
     var indexOfArtist : Int!
 
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var artistLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         artistLabel.text = artwork!.artist
+        imageView.image = artwork?.images?.first
     }
     
 

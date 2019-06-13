@@ -69,6 +69,8 @@
                     </view>
                     <connections>
                         <outlet property="artistLabel" destination="nby-af-T5y" id="dfy-2k-tu8"/>
+                        <outlet property="imageView" destination="Zo3-qZ-C2L" id="f2B-3M-yAL"/>
+                        <outlet property="textView" destination="XDG-br-t39" id="raz-SN-jrb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pg4-ce-fCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
