@@ -22,7 +22,6 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     
 //    var pics = [UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "kaneko"),UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "kaneko"),UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "gold")]
 //
-    var artworks: [Artwork] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()

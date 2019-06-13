@@ -39,17 +39,18 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
         sanctuaryMapView.setRegion(region, animated: false)
         
         Firebase.getAllDocumentsInCollection(completion: { (artworks, error) in
-            print (artworks.count)
-            let artwork = artworks.last
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = CLLocationCoordinate2D(latitude: artwork!.location!.latitude, longitude: artwork!.location!.longitude)
-            print (annotation.coordinate)
-            annotation.title = artwork!.title
-            
-            DispatchQueue.main.async {
-                self.sanctuaryMapView.addAnnotation(annotation)
+            for artwork in artworks{
+                print (artworks.count)
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = CLLocationCoordinate2D(latitude: artwork.location!.latitude, longitude: artwork.location!.longitude)
+                print (annotation.coordinate)
+                annotation.title = artwork.title
+                
+                DispatchQueue.main.async {
+                    self.sanctuaryMapView.addAnnotation(annotation)
+                }
+                self.sanctuaryArtworks.append(artwork)
             }
-            self.sanctuaryArtworks.append(artwork!)
         })
     }
     
