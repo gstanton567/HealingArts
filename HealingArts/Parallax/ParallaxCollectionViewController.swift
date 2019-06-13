@@ -97,10 +97,11 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
 //
 //    }
     
-    //adding sorting stuff here
+    //adding sorting stuff here.
+    //Might need to add completion unless we want to update table view data in the function.
     func sortByLoc(){
         var distances : [Double] = []
-        var distancesMod : [Double] = []
+        var distancesToSort : [Double] = []
         
         var artworksToSort : [Artwork] = []
         
@@ -112,18 +113,20 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
                 let distance = self.locationManager.location?.distance(from: CLLocation(latitude: latitude!, longitude: longitude!))
                 distances.append(distance!)
             }
-            distancesMod = distances
-            distancesMod.sort()
+            distancesToSort = distances
+            distancesToSort.sort()
             
-            for distanceMod in distancesMod{
+            for distanceMod in distancesToSort{
                 for distance in distances{
                     let indexOf = distances.firstIndex(of: distance)
                     if distance == distanceMod{
-                        self.sortedArtworks.append(artworksToSort[indexOf!])
+                        let itemToAppend = artworksToSort[indexOf!]
+                        //may need to add a condition that makes sure we dont get a duplicate item if two things are equidistant from the user. Doubtful?
+                        self.sortedArtworks.append(itemToAppend)
                     }
                 }
             }
-            
+            //print statement to check if it worked
             for artwork in self.sortedArtworks{
                 print ("\(artwork.title!)")
             }
