@@ -112,9 +112,9 @@ class Firebase {
                             let newArtwork = Artwork(title: data["title"] as! String, artist: (data["artist"] as? String)!, dimensions: data["dimensions"] as? String, date: "", floor: data["floor"] as? Int, textDescription: data["textDescription"] as? String, medium: data["medium"] as? String, location: data["location"] as? GeoPoint, images: images)
                             
                             artworks.append(newArtwork)
-//                            if artworks.count == querySnapshot!.documents.count {
+                            if artworks.count == querySnapshot!.documents.count {
                                 completion(artworks, nil)
-//                            }
+                            }
                             print("Artwork: \(newArtwork.title!)")
                         })
                     }
