@@ -17,6 +17,7 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
     
 //properties
     var artworks : [Artwork] = [Artwork]()
+    var artists : [String] = []
     var indexOfArtist = 0
     var images = ["chihulypic", "harnoor", "dan", "gold", "kaneko"]
     override func viewDidLoad() {
@@ -27,6 +28,8 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
                 print(error?.localizedDescription)
             } else {
                 self.artworks = artworks
+                self.repeatArtists()
+//                self.repeatArtists()
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -39,22 +42,48 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return artworks.count
+        return artists.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID")
-      //  let pictures = [artworks[indexPath.row].imageURLs]
-        let name = artworks[indexPath.row].artist
-      //  cell?.imageView!.image = UIImage(named: arraypic)
-        cell?.textLabel?.text = name
+//creating array w no repeats
+        let artist = artists[indexPath.row]
+//prints to tableview cell
+        cell?.textLabel!.text = artist
         return cell!
     }
-
+    
+//delete lines
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return nil
+    }
+    
+//gets array of artists with no repeats
+    func repeatArtists() {
+        artists.append(artworks[0].artist!)
+        for artwork in artworks {
+            for artist in artists {
+                if artist != artwork.artist {
+                    artists.append(artwork.artist!)
+                    print(artist)
+                }
+            }
+        }
+    }
+    
+//prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dvc = segue.destination as? ArtistDetailViewController
         indexOfArtist = tableView.indexPathForSelectedRow!.row
         let artwork = self.artworks[indexOfArtist]
         dvc!.artwork = artwork
     }
+    
+    
+
 }
