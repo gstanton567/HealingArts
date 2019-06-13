@@ -105,36 +105,4 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     
     //adding sorting stuff here. Might need to add completion unless we want to update table view data in the function.
     
-    //not working. Fix later.
-    func sortByLoc(){
-        sortedArtworks = []
-        
-        var distances : [Double] = []
-        var distancesToSort : [Double] = []
-        
-        for artwork in artworks{
-            let latitude = artwork.location?.latitude
-            let longitude = artwork.location?.longitude
-            let distance = self.locationManager.location?.distance(from: CLLocation(latitude: latitude!, longitude: longitude!))
-            distances.append(distance!)
-        }
-        distancesToSort = distances
-        distancesToSort.sort()
-        
-        for distanceMod in distancesToSort{
-            for distance in distances{
-                let indexOf = distances.firstIndex(of: distance)
-                if distance == distanceMod{
-                    let itemToAppend = artworks[indexOf!]
-                    //may need to add a condition that makes sure we dont get a duplicate item if two things are equidistant from the user. Doubtful?
-                    self.sortedArtworks.append(itemToAppend)
-                }
-            }
-            //print statement to check if it worked
-            for artwork in self.sortedArtworks{
-                print ("Sorted Art: \(artwork.title!)")
-            }
-            self.locationManager.stopUpdatingLocation()
-        }
-    }
 }
