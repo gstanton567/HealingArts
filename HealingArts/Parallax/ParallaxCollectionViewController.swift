@@ -7,17 +7,29 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
 private let reuseIdentifier = "Cell"
 
-class ParallaxCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class ParallaxCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, CLLocationManagerDelegate {
+    
+    //sorting addition
+    let locationManager = CLLocationManager()
+    var sortedArtworks : [Artwork] = []
+    var artworks : [Artwork] = []
+    
     
 //    var pics = [UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "kaneko"),UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "kaneko"),UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "gold")]
 //
-    var artworks: [Artwork] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
         collectionView.backgroundColor = .black
         title = "Gallery"
         collectionView!.register(ParallaxCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
@@ -35,7 +47,7 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
 
         // Do any additional setup after loading the view.
     }
-
+    
     override convenience init(collectionViewLayout layout: UICollectionViewLayout) {
         self.init()
     }
@@ -68,9 +80,9 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
         let cellHeight = floor(cellWidth / imageWidth * imageHeight) - (2 * layout.maxParallaxOffset)
         return CGSize(width: cellWidth, height: cellHeight)
     }
-
+    
     // MARK: UICollectionViewDataSource
-
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return artworks.count
     }

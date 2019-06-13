@@ -39,18 +39,19 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
         sanctuaryMapView.setRegion(region, animated: false)
         
         Firebase.getAllDocumentsInCollection(completion: { (artworks, error) in
-            print (artworks.count)
             for artwork in artworks{
+                print (artworks.count)
                 let annotation = MKPointAnnotation()
                 annotation.coordinate = CLLocationCoordinate2D(latitude: artwork.location!.latitude, longitude: artwork.location!.longitude)
+                print (annotation.coordinate)
                 annotation.title = artwork.title
-                let annotaionView = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
-                annotaionView.alpha = 1.0
-                self.sanctuaryMapView.addAnnotation(annotation)
+                
+                DispatchQueue.main.async {
+                    self.sanctuaryMapView.addAnnotation(annotation)
+                }
                 self.sanctuaryArtworks.append(artwork)
             }
         })
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -73,7 +74,7 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
             }
             performSegue(withIdentifier: "toArtworkDetailSegue", sender: nil)
         }
-
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
