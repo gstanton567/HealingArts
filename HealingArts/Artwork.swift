@@ -10,6 +10,7 @@ import Foundation
 import CoreLocation
 import Firebase
 import FirebaseFirestore
+import FirebaseStorage
 
 class Artwork {
     
@@ -21,9 +22,10 @@ class Artwork {
     var textDescription: String?
     var medium: String?
     var location: GeoPoint?
-    var imageURLs: [String]?
- 
-    init(title: String, artist: String, dimensions: String?, date: String?, floor: Int?, textDescription: String?, medium: String?, location: GeoPoint?, imageURLs: [String]?) {
+//    var imageURLs: [String]?
+    var images: [UIImage]?
+    
+    init(title: String, artist: String, dimensions: String?, date: String?, floor: Int?, textDescription: String?, medium: String?, location: GeoPoint?, images: [UIImage]?) {
         self.title = title
         self.artist = artist
         self.dimensions = dimensions
@@ -32,6 +34,7 @@ class Artwork {
         self.textDescription = textDescription
         self.medium = medium
         self.location = location
-        self.imageURLs = imageURLs
+        self.images = images!
     }
 }
+
