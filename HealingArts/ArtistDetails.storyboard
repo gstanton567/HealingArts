@@ -25,8 +25,8 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDG-br-t39">
                                 <rect key="frame" x="0.0" y="583" width="414" height="279"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Born in 1941 in Tacoma, Washington, Chihuly draws inspiration form the Pacific Northwest region. A leader of the studio art movement, Chihuly established the glass program at the Rhode Island School of Design and cofounded the Pilchuck Glass School in Stanwood, Washington. Chihuly, who continues to create art at his studio in Seattle, has received numerous awards and honorary degrees, and his work is included in more than 200 museums collections worldwide, including the Metropolitan Museum of Art, the Smithsonian American Art Museum, and the Corning Museum of Glass</mutableString>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <string key="text">Born in 1941 in Tacoma, Washington, Chihuly draws inspiration form the Pacific Northwest region. A leader of the studio art movement, Chihuly established the glass program at the Rhode Island School of Design and cofounded the Pilchuck Glass School in Stanwood, Washington. Chihuly, who continues to create art at his studio in Seattle, has received numerous awards and honorary degrees, and his work is included in more than 200 museums collections worldwide, including the Metropolitan Museum of Art, the Smithsonian American Art Museum, and the Corning Museum of Glass</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfY-7G-wis">
@@ -67,6 +67,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dMc-Wh-1fj"/>
                     </view>
+                    <connections>
+                        <outlet property="artistLabel" destination="nby-af-T5y" id="dfy-2k-tu8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pg4-ce-fCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

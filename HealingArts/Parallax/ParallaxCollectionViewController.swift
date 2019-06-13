@@ -20,8 +20,10 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     var artworks : [Artwork] = []
     
     
-    var pics = [UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "kaneko"),UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "kaneko"),UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "gold")]
-    
+//    var pics = [UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "kaneko"),UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "kaneko"),UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "gold")]
+//
+    var artworks: [Artwork] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +40,6 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
                 print(error?.localizedDescription)
             } else {
                 self.artworks = artworks
-                print (self.artworks.count)
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
@@ -96,13 +97,10 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
         
         return cell
     }
-    //    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    //
-    //    }
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //
-    //    }
-    
-    //adding sorting stuff here. Might need to add completion unless we want to update table view data in the function.
-    
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//
+//    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//    }
 }

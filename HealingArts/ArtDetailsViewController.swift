@@ -29,7 +29,9 @@ class ArtDetailsViewController: UIViewController {
     var sanctuaryArtwork : Artwork?
     var selectedArtwork : ArtworkItem?
     var mapButtonPressed = false
-    var pieceLocation : GeoPoint? 
+    var pieceLocation : GeoPoint?
+    
+    var artwork: Artwork?
     
     var location = CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596)
     
@@ -50,14 +52,14 @@ class ArtDetailsViewController: UIViewController {
         mapButton.setTitleColor(UIColor.ChihulyUI.Blue.DeepAqua, for: .normal)
         barLabel.backgroundColor = UIColor.ChihulyUI.Blue.DeepAqua
         
-        let picURL = URL(string: url)
-        let session = URLSession.shared
-        let task = session.dataTask(with: picURL!) { (data: Data?, response: URLResponse?, error: Error?) in
-            DispatchQueue.main.async {
-                self.imageView!.image = UIImage(data: data!)
-            }
-        }
-        task.resume()
+//        let picURL = URL(string: url)
+//        let session = URLSession.shared
+//        let task = session.dataTask(with: picURL!) { (data: Data?, response: URLResponse?, error: Error?) in
+//            DispatchQueue.main.async {
+//                self.imageView!.image = UIImage(data: data!)
+//            }
+//        }
+//        task.resume()
         
         if sanctuaryPiece{
             artistButton.setTitle(sanctuaryArtwork?.artist, for: .normal)
@@ -67,14 +69,24 @@ class ArtDetailsViewController: UIViewController {
             mediumLabel.text = sanctuaryArtwork?.medium
             dimensionsLabel.text = sanctuaryArtwork?.dimensions
             descriptionTextView.text = sanctuaryArtwork?.textDescription
-        } else{
+        } else if selectedArtwork != nil {
             artistButton.setTitle(selectedArtwork?.artist, for: .normal)
             pieceNameLabel.text = selectedArtwork?.title
-            location = selectedArtwork!.coordinate
+//            location = selectedArtwork!.coordinate
             dateLabel.text = date
             mediumLabel.text = medium
             dimensionsLabel.text = dimensions
             descriptionTextView.text = artDescription
+        } else if artwork != nil {
+            artistButton.setTitle(artwork?.artist, for: .normal)
+            artistButton.isEnabled = false
+//            location = artwork?.locatio
+            pieceNameLabel.text = artwork?.title
+            mediumLabel.text = artwork?.medium
+            dimensionsLabel.text = artwork?.dimensions
+            dateLabel.text = artwork?.date
+            descriptionTextView.text = artwork?.textDescription
+            imageView.image = artwork?.images?.first
         }
         
 

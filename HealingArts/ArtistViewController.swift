@@ -16,17 +16,25 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var tableView: UITableView!
     
 //properties
-    //var artistName : [Artist] = []
-    //var artistImage : [Artist] = []
-//    var images = ["chihulypic", "harnoor", "dan", "gold", "kaneko"]
-    
-    var artworks: [Artwork] = []
-    
+    var artworks : [Artwork] = [Artwork]()
+    var artists : [String] = [String]()
+    var indexOfArtist = 0
+    var images = ["chihulypic", "harnoor", "dan", "gold", "kaneko"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-
+        title = "Artists"
+//gets data
+        Firebase.getAllDocumentsInCollection { (artworks, error) in
+            if error != nil {
+                print(error?.localizedDescription)
+            } else {
+                self.artworks = artworks
+                self.repeatArtists()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
 //table view functions
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -34,17 +42,44 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return artworks.count
+        return artists.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID")
-        let artwork = artworks[indexPath.row]
-//        cell?.imageView!.image = UIImage(named: pictures)
-//        cell?.textLabel?.text = "artist"
-        cell?.imageView?.image = artwork.images?.first
-        cell?.textLabel?.text = artwork.title
+        let artist = artists[indexPath.row]
+        let picture = artworks[indexPath.row].images
+//prints to tableview cell
+        cell?.textLabel!.text = artist
+        cell?.imageView?.image = picture?.first
         return cell!
     }
+    
+//delete lines when cells are empty
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return nil
+    }
+    
+//gets array of artists with no repeats
+    func repeatArtists() {
+        for artwork in artworks {
+            if self.artists.contains(artwork.artist!) {
+                print("duplicate")
+            } else {
+                self.artists.append(artwork.artist!)
+                
+            }
+        }
+    }
+    
+//prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dvc = segue.destination as? ArtistDetailViewController
+        indexOfArtist = tableView.indexPathForSelectedRow!.row
+        let artwork = self.artworks[indexOfArtist]
+        dvc!.artwork = artwork
+    }
+    
+    
 
 }
