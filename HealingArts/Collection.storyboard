@@ -61,7 +61,6 @@
                                         <connections>
                                             <outlet property="artistLabel" destination="RKB-kz-Bd6" id="0BL-hu-X4A"/>
                                             <outlet property="imageView" destination="jZ3-Jj-Okb" id="dh1-Lo-BSW"/>
-                                            <segue destination="tOn-4p-rCp" kind="show" id="dSS-Pg-89A"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -82,6 +81,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="XQH-9X-VbT" id="Sho-dQ-ETK"/>
+                        <segue destination="tOn-4p-rCp" kind="show" identifier="ArtworkSegue" id="aFk-UQ-Kae"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tiy-JM-0KI" userLabel="First Responder" sceneMemberID="firstResponder"/>

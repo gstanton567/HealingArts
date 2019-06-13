@@ -27,7 +27,9 @@ class ArtDetailsViewController: UIViewController {
     var sanctuaryArtwork : Artwork?
     var selectedArtwork : ArtworkItem?
     var mapButtonPressed = false
-    var pieceLocation : GeoPoint? 
+    var pieceLocation : GeoPoint?
+    
+    var artwork: Artwork?
     
     var location = CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596)
     
@@ -57,14 +59,18 @@ class ArtDetailsViewController: UIViewController {
             mediumLabel.text = sanctuaryArtwork?.medium
             dimensionsLabel.text = sanctuaryArtwork?.dimensions
             descriptionTextView.text = sanctuaryArtwork?.textDescription
-        } else{
+        } else if selectedArtwork != nil {
             artistButton.setTitle(selectedArtwork?.artist, for: .normal)
             pieceNameLabel.text = selectedArtwork?.title
-            location = selectedArtwork!.coordinate
+//            location = selectedArtwork!.coordinate
             dateLabel.text = date
             mediumLabel.text = medium
             dimensionsLabel.text = dimensions
             descriptionTextView.text = artDescription
+        } else if artwork != nil {
+            artistButton.setTitle(artwork?.artist, for: .normal)
+//            location = artwork?.locatio
+            
         }
         
 

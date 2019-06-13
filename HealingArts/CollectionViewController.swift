@@ -13,6 +13,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     var artistName: String!
     var artworks : [Artwork] = [Artwork]()
     var artCollection : [String] = []
+    var indexPath: IndexPath?
     let collection : [String] = ["chihulySanctuary", "search", "harnoor", "gold"]
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -35,6 +36,8 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         }
     }
     
+    
+    
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return artCollection.count
@@ -56,6 +59,20 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
                 artCollection.append(artwork.title!)
             }
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.indexPath = indexPath
+        performSegue(withIdentifier: "ArtworkSegue", sender: self)
+    }
+    
+//prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dvc = segue.destination as! ArtDetailsViewController
+        dvc.artwork = artworks[indexPath!.row]
+//        indexOfArtwork = collectionView.indexPathsForSelectedItems?.first
+//        let artwork = self.artworks[indexOfArtwork]
+//        dvc.artwork = artwork
     }
 
 }
