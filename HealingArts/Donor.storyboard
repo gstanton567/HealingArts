@@ -18,27 +18,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Thank You To Our Generous Donors" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xNe-WU-Ga8">
-                                <rect key="frame" x="18" y="156" width="379" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank You To Our Generous Donors" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xNe-WU-Ga8">
+                                <rect key="frame" x="32" y="375" width="350" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="cAc-TL-m11"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Arial-BoldItalicMT" family="Arial" pointSize="25"/>
+                                <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELX-TH-lkY">
+                                <rect key="frame" x="87" y="458.5" width="240" height="359.5"/>
+                                <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unmc" translatesAutoresizingMaskIntoConstraints="NO" id="IMB-ds-dxe">
+                                <rect key="frame" x="8.5" y="44" width="397" height="323"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="323" id="NDN-FK-Bd8"/>
+                                    <constraint firstAttribute="width" constant="397" id="dl4-1P-Swt"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sji-7a-uBE">
+                                <rect key="frame" x="20" y="336" width="374" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELX-TH-lkY">
-                                <rect key="frame" x="87" y="206" width="240" height="482"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xNe-WU-Ga8" firstAttribute="top" secondItem="sji-7a-uBE" secondAttribute="bottom" constant="27" id="52H-be-IVG"/>
+                            <constraint firstItem="IMB-ds-dxe" firstAttribute="centerX" secondItem="xNe-WU-Ga8" secondAttribute="centerX" id="AYu-Cc-30z"/>
+                            <constraint firstItem="xKG-ES-xWU" firstAttribute="trailing" secondItem="ELX-TH-lkY" secondAttribute="trailing" constant="87" id="I8s-Wp-xM5"/>
+                            <constraint firstItem="ELX-TH-lkY" firstAttribute="top" secondItem="xNe-WU-Ga8" secondAttribute="bottom" constant="27.5" id="Jjw-Nn-xgW"/>
+                            <constraint firstItem="xNe-WU-Ga8" firstAttribute="top" secondItem="IMB-ds-dxe" secondAttribute="bottom" constant="8" symbolic="YES" id="Key-24-Pun"/>
+                            <constraint firstItem="ELX-TH-lkY" firstAttribute="leading" secondItem="xKG-ES-xWU" secondAttribute="leading" constant="87" id="QLz-06-wxn"/>
+                            <constraint firstItem="ELX-TH-lkY" firstAttribute="leading" secondItem="xKG-ES-xWU" secondAttribute="leading" constant="87" id="UtG-mw-6gS"/>
+                            <constraint firstItem="xKG-ES-xWU" firstAttribute="bottom" secondItem="ELX-TH-lkY" secondAttribute="bottom" constant="44" id="Ywu-xg-mhT"/>
+                            <constraint firstItem="xKG-ES-xWU" firstAttribute="trailing" secondItem="ELX-TH-lkY" secondAttribute="trailing" constant="87" id="h9B-bi-7DU"/>
+                            <constraint firstItem="xKG-ES-xWU" firstAttribute="bottom" secondItem="ELX-TH-lkY" secondAttribute="bottom" constant="44" id="hsf-88-bFd"/>
+                            <constraint firstItem="sji-7a-uBE" firstAttribute="top" secondItem="xKG-ES-xWU" secondAttribute="top" constant="292" id="nWR-SA-SpQ"/>
+                            <constraint firstItem="IMB-ds-dxe" firstAttribute="top" secondItem="xKG-ES-xWU" secondAttribute="top" id="qaA-hs-zAi"/>
+                            <constraint firstItem="sji-7a-uBE" firstAttribute="leading" secondItem="LAm-tX-gDW" secondAttribute="leadingMargin" id="su0-VM-chb"/>
+                            <constraint firstItem="IMB-ds-dxe" firstAttribute="centerX" secondItem="ELX-TH-lkY" secondAttribute="centerX" id="tWE-Ho-UhT"/>
+                            <constraint firstItem="IMB-ds-dxe" firstAttribute="centerX" secondItem="sji-7a-uBE" secondAttribute="centerX" id="vay-dA-V0J"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="xKG-ES-xWU"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Donors" image="donorIcon" id="JXl-pY-hiM"/>
                     <connections>
                         <outlet property="donorsTextView" destination="ELX-TH-lkY" id="GJ0-Ik-3Ke"/>
+                        <outlet property="redLabel" destination="sji-7a-uBE" id="fyj-uA-id5"/>
+                        <outlet property="thanksLabel" destination="xNe-WU-Ga8" id="j9n-Uk-yTo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7u-Nq-h9V" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -48,5 +81,6 @@
     </scenes>
     <resources>
         <image name="donorIcon" width="25" height="25"/>
+        <image name="unmc" width="400" height="400"/>
     </resources>
 </document>
