@@ -12,7 +12,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     
     var artistName: String!
     var artworks : [Artwork] = [Artwork]()
-    var artCollection : [String] = []
+    var artCollection : [String] = [String]()
     var indexPath: IndexPath?
     let collection : [String] = ["chihulySanctuary", "search", "harnoor", "gold"]
 
@@ -28,17 +28,14 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
                 print(error?.localizedDescription)
             } else {
                 self.artworks = artworks
+                self.getCollection()
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
-                    self.getCollection()
                 }
             }
         }
     }
     
-    
-    
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return artCollection.count
     }
@@ -57,6 +54,9 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         for artwork in artworks {
             if artwork.artist == artistName {
                 artCollection.append(artwork.title!)
+                print(artwork.title)
+            } else {
+                print("duplicate")
             }
         }
     }
