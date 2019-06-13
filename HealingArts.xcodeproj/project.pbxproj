@@ -19,12 +19,10 @@
 		23EFD0F822AAC8C100EC7B72 /* Gallery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EFD0F722AAC8C100EC7B72 /* Gallery.storyboard */; };
 		23EFD0FA22AACAA900EC7B72 /* Artists.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EFD0F922AACAA900EC7B72 /* Artists.storyboard */; };
 		23EFD10022AACAEA00EC7B72 /* Donor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EFD0FF22AACAEA00EC7B72 /* Donor.storyboard */; };
-		E01D17A722AEB8C700885EEC /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D17A622AEB8C700885EEC /* AboutViewController.swift */; };
-		E01D17A922AEBF0D00885EEC /* UIColor+ChihulyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D17A822AEBF0D00885EEC /* UIColor+ChihulyColors.swift */; };
-		73B5EFA122AAF04200E0F67F /* DonorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B5EFA022AAF04200E0F67F /* DonorViewController.swift */; };
 		73B5EFA322AE240300E0F67F /* ArtDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B5EFA222AE240300E0F67F /* ArtDetailsViewController.swift */; };
 		73B5EFA922AE8CED00E0F67F /* ArtistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B5EFA822AE8CED00E0F67F /* ArtistDetailViewController.swift */; };
 		73B5EFAB22AEF01100E0F67F /* SingleArtworkMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B5EFAA22AEF01100E0F67F /* SingleArtworkMapViewController.swift */; };
+		7A2D1E5E22B1886F00C6B30A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D1E5D22B1886F00C6B30A /* NetworkManager.swift */; };
 		7A785EA422AE9D45008E42D8 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A785EA322AE9D45008E42D8 /* Firebase.swift */; };
 		7A785EA622AEDC1E008E42D8 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A785EA522AEDC1E008E42D8 /* Artwork.swift */; };
 		7A785EAA22B01331008E42D8 /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A785EA922B01331008E42D8 /* ArtistViewController.swift */; };
@@ -44,6 +42,8 @@
 		D54D084D22B13FF60039E5A9 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D084C22B13FF60039E5A9 /* CollectionViewController.swift */; };
 		D54D084F22B141990039E5A9 /* ArtworkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D084E22B141990039E5A9 /* ArtworkCollectionViewCell.swift */; };
 		D54D085122B149540039E5A9 /* Collection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D54D085022B149540039E5A9 /* Collection.storyboard */; };
+		E01D17A722AEB8C700885EEC /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D17A622AEB8C700885EEC /* AboutViewController.swift */; };
+		E01D17A922AEBF0D00885EEC /* UIColor+ChihulyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D17A822AEBF0D00885EEC /* UIColor+ChihulyColors.swift */; };
 		E0B305FE22B14260007A2E85 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B305FD22B1425F007A2E85 /* About.storyboard */; };
 		E0B3060022B1428A007A2E85 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B305FF22B1428A007A2E85 /* AboutViewController.swift */; };
 		E0B3060222B144D6007A2E85 /* UIColor+ChihulyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3060122B144D6007A2E85 /* UIColor+ChihulyColors.swift */; };
@@ -64,14 +64,13 @@
 		23EFD0F722AAC8C100EC7B72 /* Gallery.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Gallery.storyboard; sourceTree = "<group>"; };
 		23EFD0F922AACAA900EC7B72 /* Artists.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Artists.storyboard; sourceTree = "<group>"; };
 		23EFD0FF22AACAEA00EC7B72 /* Donor.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Donor.storyboard; sourceTree = "<group>"; };
-		E01D17A622AEB8C700885EEC /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		E01D17A822AEBF0D00885EEC /* UIColor+ChihulyColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ChihulyColors.swift"; sourceTree = "<group>"; };
 		73B5EFA022AAF04200E0F67F /* DonorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorViewController.swift; sourceTree = "<group>"; };
 		73B5EFA222AE240300E0F67F /* ArtDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtDetailsViewController.swift; sourceTree = "<group>"; };
 		73B5EFA422AE2D7900E0F67F /* ArtistDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ArtistDetails.storyboard; sourceTree = "<group>"; };
 		73B5EFA622AE2DA400E0F67F /* ArtworkDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ArtworkDetails.storyboard; sourceTree = "<group>"; };
 		73B5EFA822AE8CED00E0F67F /* ArtistDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailViewController.swift; sourceTree = "<group>"; };
 		73B5EFAA22AEF01100E0F67F /* SingleArtworkMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleArtworkMapViewController.swift; sourceTree = "<group>"; };
+		7A2D1E5D22B1886F00C6B30A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		7A785EA322AE9D45008E42D8 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		7A785EA522AEDC1E008E42D8 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		7A785EA922B01331008E42D8 /* ArtistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +90,8 @@
 		D54D084C22B13FF60039E5A9 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		D54D084E22B141990039E5A9 /* ArtworkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkCollectionViewCell.swift; sourceTree = "<group>"; };
 		D54D085022B149540039E5A9 /* Collection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Collection.storyboard; sourceTree = "<group>"; };
+		E01D17A622AEB8C700885EEC /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		E01D17A822AEBF0D00885EEC /* UIColor+ChihulyColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ChihulyColors.swift"; sourceTree = "<group>"; };
 		E0B305FD22B1425F007A2E85 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		E0B305FF22B1428A007A2E85 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E0B3060122B144D6007A2E85 /* UIColor+ChihulyColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+ChihulyColors.swift"; sourceTree = "<group>"; };
@@ -155,6 +156,7 @@
 				E01D17A822AEBF0D00885EEC /* UIColor+ChihulyColors.swift */,
 				7A785EA322AE9D45008E42D8 /* Firebase.swift */,
 				7A785EA522AEDC1E008E42D8 /* Artwork.swift */,
+				7A2D1E5D22B1886F00C6B30A /* NetworkManager.swift */,
 				D54D084E22B141990039E5A9 /* ArtworkCollectionViewCell.swift */,
 				73B5EFA022AAF04200E0F67F /* DonorViewController.swift */,
 				73B5EFA622AE2DA400E0F67F /* ArtworkDetails.storyboard */,
@@ -337,8 +339,6 @@
 			files = (
 				7A785EA422AE9D45008E42D8 /* Firebase.swift in Sources */,
 				E01D17A722AEB8C700885EEC /* AboutViewController.swift in Sources */,
-				D543267822AEA5DE0050D0DF /* ArtworkItem.swift in Sources */,
-				D543267622AB28E20050D0DF /* MapDetailViewController.swift in Sources */,
 				23EFD0E822AAC0A500EC7B72 /* ViewController.swift in Sources */,
 				E01D17A922AEBF0D00885EEC /* UIColor+ChihulyColors.swift in Sources */,
 				7A785EB622B0135F008E42D8 /* MapDetailViewController.swift in Sources */,
@@ -353,6 +353,7 @@
 				7A785EB322B0135F008E42D8 /* SanctuaryMapViewController.swift in Sources */,
 				73B5EFA322AE240300E0F67F /* ArtDetailsViewController.swift in Sources */,
 				73B5EFA922AE8CED00E0F67F /* ArtistDetailViewController.swift in Sources */,
+				7A2D1E5E22B1886F00C6B30A /* NetworkManager.swift in Sources */,
 				15873C0F22B144040081410E /* ParallaxFlowLayout.swift in Sources */,
 				73B5EFAB22AEF01100E0F67F /* SingleArtworkMapViewController.swift in Sources */,
 				23EFD0E622AAC0A500EC7B72 /* AppDelegate.swift in Sources */,
@@ -509,7 +510,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AQM9F67FCR;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HealingArts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -528,7 +529,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AQM9F67FCR;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HealingArts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
