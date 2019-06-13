@@ -52,14 +52,14 @@ class ArtDetailsViewController: UIViewController {
         mapButton.setTitleColor(UIColor.ChihulyUI.Blue.DeepAqua, for: .normal)
         barLabel.backgroundColor = UIColor.ChihulyUI.Blue.DeepAqua
         
-        let picURL = URL(string: url)
-        let session = URLSession.shared
-        let task = session.dataTask(with: picURL!) { (data: Data?, response: URLResponse?, error: Error?) in
-            DispatchQueue.main.async {
-                self.imageView!.image = UIImage(data: data!)
-            }
-        }
-        task.resume()
+//        let picURL = URL(string: url)
+//        let session = URLSession.shared
+//        let task = session.dataTask(with: picURL!) { (data: Data?, response: URLResponse?, error: Error?) in
+//            DispatchQueue.main.async {
+//                self.imageView!.image = UIImage(data: data!)
+//            }
+//        }
+//        task.resume()
         
         if sanctuaryPiece{
             artistButton.setTitle(sanctuaryArtwork?.artist, for: .normal)
@@ -79,13 +79,14 @@ class ArtDetailsViewController: UIViewController {
             descriptionTextView.text = artDescription
         } else if artwork != nil {
             artistButton.setTitle(artwork?.artist, for: .normal)
+            artistButton.isEnabled = false
 //            location = artwork?.locatio
             pieceNameLabel.text = artwork?.title
             mediumLabel.text = artwork?.medium
             dimensionsLabel.text = artwork?.dimensions
             dateLabel.text = artwork?.date
             descriptionTextView.text = artwork?.textDescription
-            
+            imageView.image = artwork?.images?.first
         }
         
 
