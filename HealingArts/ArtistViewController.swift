@@ -48,8 +48,10 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID")
         let artist = artists[indexPath.row]
+        let picture = artworks[indexPath.row].images
 //prints to tableview cell
         cell?.textLabel!.text = artist
+        cell?.imageView?.image = picture?.first
         return cell!
     }
     
