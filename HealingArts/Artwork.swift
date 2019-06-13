@@ -23,7 +23,7 @@ class Artwork {
     var medium: String?
     var location: GeoPoint?
 //    var imageURLs: [String]?
-    var images: [UIImage] = [UIImage]()
+    var images: [UIImage]?
     
     init(title: String, artist: String, dimensions: String?, date: String?, floor: Int?, textDescription: String?, medium: String?, location: GeoPoint?, images: [UIImage]?) {
         self.title = title

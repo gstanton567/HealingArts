@@ -51,7 +51,7 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
         let artwork = artworks[indexPath.row]
 //        cell?.imageView!.image = UIImage(named: pictures)
 //        cell?.textLabel?.text = "artist"
-        cell?.imageView?.image = artwork.images.first
+            cell?.imageView?.image = artwork.images?.first
         cell?.textLabel?.text = artwork.title
         return cell!
     }
