@@ -12,7 +12,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     
     var artistName: String!
     var artworks : [Artwork] = [Artwork]()
-    var artCollection : [String] = [String]()
+    var artCollection : [Artwork] = [Artwork]()
     var indexPath: IndexPath?
     let collection : [String] = ["chihulySanctuary", "search", "harnoor", "gold"]
 
@@ -42,10 +42,10 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! ArtworkCollectionViewCell
-       // let images = collection[indexPath.row]
         let art = artCollection[indexPath.row]
+        cell.imageView.image = art.images?.first
      //   cell.imageView.image = UIImage(named: images)
-        cell.artistLabel.text = art
+        cell.artistLabel.text = art.title
         
         return cell
     }
@@ -53,7 +53,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     func getCollection() {
         for artwork in artworks {
             if artwork.artist == artistName {
-                artCollection.append(artwork.title!)
+                artCollection.append(artwork)
                 print(artwork.title)
             } else {
                 print("duplicate")
