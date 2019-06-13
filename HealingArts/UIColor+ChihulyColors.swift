@@ -41,7 +41,7 @@ extension UIColor {
             static let Tropical = #colorLiteral(red: 0.2839304209, green: 0.5668683648, blue: 0.2460649014, alpha: 1)
             static let Lime = #colorLiteral(red: 0.6022292376, green: 0.6799240708, blue: 0.2333686054, alpha: 1)
             static let Amazon = #colorLiteral(red: 0.2967425585, green: 0.3504748344, blue: 0.1326889396, alpha: 1)
-            //That weird Chartreuse Chihuly likes
+            //That Chartreuse Chihuly likes
             static let Honeydew = #colorLiteral(red: 0.7463294864, green: 0.7422440648, blue: 0.2806571126, alpha: 1)
             //
         }
