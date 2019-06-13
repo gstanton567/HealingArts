@@ -12,13 +12,26 @@ private let reuseIdentifier = "Cell"
 
 class ParallaxCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    var pics = [UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "kaneko"),UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "kaneko"),UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "gold")]
+//    var pics = [UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "kaneko"),UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "kaneko"),UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "gold")]
+//
+    var artworks: [Artwork] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .black
         title = "Gallery"
         collectionView!.register(ParallaxCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
+        Firebase.getAllDocumentsInCollection { (artworks, error) in
+            if error != nil {
+                print(error?.localizedDescription)
+            } else {
+                self.artworks = artworks
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -44,10 +57,10 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let image = pics[indexPath.item]!
+        let image = artworks[indexPath.item].images?.first!
         
-        let imageWidth: CGFloat = image.size.width
-        let imageHeight: CGFloat = image.size.height
+        let imageWidth: CGFloat = image!.size.width
+        let imageHeight: CGFloat = image!.size.height
         
         let layout = collectionViewLayout as! ParallaxFlowLayout
         
@@ -59,12 +72,12 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     // MARK: UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pics.count
+        return artworks.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ParallaxCollectionViewCell
-        let image = pics[indexPath.item]
+        let image = artworks[indexPath.item].images?.first
         cell.imageView.image = image
         let layout = collectionViewLayout as! ParallaxFlowLayout
         cell.maxParallaxOffset = layout.maxParallaxOffset

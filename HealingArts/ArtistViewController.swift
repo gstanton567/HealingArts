@@ -17,7 +17,7 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
     
 //properties
     var artworks : [Artwork] = [Artwork]()
-    var artists : [String] = []
+    var artists : [String] = [String]()
     var indexOfArtist = 0
     var images = ["chihulypic", "harnoor", "dan", "gold", "kaneko"]
     override func viewDidLoad() {
@@ -58,19 +58,14 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
         return nil
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return nil
-    }
-    
 //gets array of artists with no repeats
     func repeatArtists() {
-        artists.append(artworks[0].artist!)
         for artwork in artworks {
-            for artist in artists {
-                if artist != artwork.artist {
-                    artists.append(artwork.artist!)
-                    print(artist)
-                }
+            if self.artists.contains(artwork.artist!) {
+                print("duplicate")
+            } else {
+                self.artists.append(artwork.artist!)
+                
             }
         }
     }

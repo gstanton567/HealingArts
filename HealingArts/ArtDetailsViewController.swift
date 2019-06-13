@@ -80,6 +80,11 @@ class ArtDetailsViewController: UIViewController {
         } else if artwork != nil {
             artistButton.setTitle(artwork?.artist, for: .normal)
 //            location = artwork?.locatio
+            pieceNameLabel.text = artwork?.title
+            mediumLabel.text = artwork?.medium
+            dimensionsLabel.text = artwork?.dimensions
+            dateLabel.text = artwork?.date
+            descriptionTextView.text = artwork?.textDescription
             
         }
         
