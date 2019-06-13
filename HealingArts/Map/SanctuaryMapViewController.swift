@@ -38,9 +38,6 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
         let region = MKCoordinateRegion(center: center, span: span)
         sanctuaryMapView.setRegion(region, animated: false)
         
-    }
-    
-    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         Firebase.getAllDocumentsInCollection(completion: { (artworks, error) in
             print (artworks.count)
             let artwork = artworks.last
@@ -48,8 +45,10 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
             annotation.coordinate = CLLocationCoordinate2D(latitude: artwork!.location!.latitude, longitude: artwork!.location!.longitude)
             print (annotation.coordinate)
             annotation.title = artwork!.title
-            self.sanctuaryMapView.addAnnotation(annotation)
-            print ("add Pin")
+            
+            DispatchQueue.main.async {
+                self.sanctuaryMapView.addAnnotation(annotation)
+            }
             self.sanctuaryArtworks.append(artwork!)
         })
     }

@@ -44,7 +44,7 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
                 }
             }
         }
-        
+
         // Do any additional setup after loading the view.
     }
     
@@ -105,7 +105,7 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     
     //adding sorting stuff here. Might need to add completion unless we want to update table view data in the function.
     
-    //not working
+    //not working. Fix later.
     func sortByLoc(){
         sortedArtworks = []
         
@@ -137,6 +137,4 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
             self.locationManager.stopUpdatingLocation()
         }
     }
-    
-    
 }
