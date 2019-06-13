@@ -61,6 +61,11 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
         
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        infoTextView.setContentOffset(CGPoint.zero, animated: false)
+    }
+    
     
         
     @IBAction func onInfoButtonPressed(_ sender: UIButton) {

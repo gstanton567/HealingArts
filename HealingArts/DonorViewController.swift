@@ -34,6 +34,10 @@ class DonorViewController: UIViewController {
         
         
     }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        donorsTextView.setContentOffset(CGPoint.zero, animated: false)
+    }
     
 
 }
