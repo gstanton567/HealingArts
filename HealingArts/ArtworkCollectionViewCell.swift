@@ -11,5 +11,6 @@ import UIKit
 class ArtworkCollectionViewCell: UICollectionViewCell {
     
     
+    @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
 }

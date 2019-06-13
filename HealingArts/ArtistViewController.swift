@@ -23,13 +23,13 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Artists"
+//gets data
         Firebase.getAllDocumentsInCollection { (artworks, error) in
             if error != nil {
                 print(error?.localizedDescription)
             } else {
                 self.artworks = artworks
                 self.repeatArtists()
-//                self.repeatArtists()
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -47,14 +47,13 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID")
-//creating array w no repeats
         let artist = artists[indexPath.row]
 //prints to tableview cell
         cell?.textLabel!.text = artist
         return cell!
     }
     
-//delete lines
+//delete lines when cells are empty
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return nil
     }
