@@ -21,6 +21,7 @@
 		23EFD0F822AAC8C100EC7B72 /* Gallery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EFD0F722AAC8C100EC7B72 /* Gallery.storyboard */; };
 		23EFD0FA22AACAA900EC7B72 /* Artists.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EFD0F922AACAA900EC7B72 /* Artists.storyboard */; };
 		23EFD10022AACAEA00EC7B72 /* Donor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EFD0FF22AACAEA00EC7B72 /* Donor.storyboard */; };
+		733069EC22B4146A00E5FB78 /* thevideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 733069EB22B4146900E5FB78 /* thevideo.mp4 */; };
 		73B5EFA322AE240300E0F67F /* ArtDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B5EFA222AE240300E0F67F /* ArtDetailsViewController.swift */; };
 		73B5EFA922AE8CED00E0F67F /* ArtistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B5EFA822AE8CED00E0F67F /* ArtistDetailViewController.swift */; };
 		73B5EFAB22AEF01100E0F67F /* SingleArtworkMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B5EFAA22AEF01100E0F67F /* SingleArtworkMapViewController.swift */; };
@@ -68,6 +69,7 @@
 		23EFD0F722AAC8C100EC7B72 /* Gallery.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Gallery.storyboard; sourceTree = "<group>"; };
 		23EFD0F922AACAA900EC7B72 /* Artists.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Artists.storyboard; sourceTree = "<group>"; };
 		23EFD0FF22AACAEA00EC7B72 /* Donor.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Donor.storyboard; sourceTree = "<group>"; };
+		733069EB22B4146900E5FB78 /* thevideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = thevideo.mp4; sourceTree = "<group>"; };
 		73B5EFA022AAF04200E0F67F /* DonorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorViewController.swift; sourceTree = "<group>"; };
 		73B5EFA222AE240300E0F67F /* ArtDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtDetailsViewController.swift; sourceTree = "<group>"; };
 		73B5EFA422AE2D7900E0F67F /* ArtistDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ArtistDetails.storyboard; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 		23EFD0E422AAC0A500EC7B72 /* HealingArts */ = {
 			isa = PBXGroup;
 			children = (
+				733069EB22B4146900E5FB78 /* thevideo.mp4 */,
 				23D0E36022B2B04F00A093F2 /* Feedback.storyboard */,
 				E01D17A622AEB8C700885EEC /* AboutViewController.swift */,
 				E01D17A822AEBF0D00885EEC /* UIColor+ChihulyColors.swift */,
@@ -278,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				733069EC22B4146A00E5FB78 /* thevideo.mp4 in Resources */,
 				7A785EBD22B016FB008E42D8 /* ArtistDetails.storyboard in Resources */,
 				23D0E36122B2B04F00A093F2 /* Feedback.storyboard in Resources */,
 				D54D085122B149540039E5A9 /* Collection.storyboard in Resources */,

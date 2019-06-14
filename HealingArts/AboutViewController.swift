@@ -9,6 +9,7 @@
 
 import UIKit
 import SafariServices
+import AVKit
 
 
 class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
@@ -78,8 +79,19 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
         infoTextView.setContentOffset(CGPoint.zero, animated: false)
     }
     
+    @IBAction func artistWordsButtonIsPressed(_ sender: UIButton) {
+        if let path = Bundle.main.path(forResource: "thevideo", ofType: "mp4"){
+            let video = AVPlayer(url: URL(fileURLWithPath: path))
+            let videoPlayer = AVPlayerViewController()
+            videoPlayer.player = video
+            present(videoPlayer, animated: true, completion:{
+                video.play()
+            })
+        }
+    }
     
-        
+    
+    
     @IBAction func onInfoButtonPressed(_ sender: UIButton) {
         if let link = URL(string: linkString) {
             let sfvc = SFSafariViewController(url: link)

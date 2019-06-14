@@ -55,6 +55,9 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                 <state key="normal" title="Words from the artists">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="artistWordsButtonIsPressed:" destination="31M-F2-wMh" eventType="touchUpInside" id="RPX-5J-Vfi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7De-Ib-Dfc">
                                 <rect key="frame" x="92" y="608.5" width="230" height="30"/>
