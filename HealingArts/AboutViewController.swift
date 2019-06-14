@@ -19,9 +19,12 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
     @IBOutlet weak var infoTextView: UITextView!
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var aboutPageInfoImageView: UIImageView!
+    @IBOutlet weak var artistsWordsButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = UIColor.ChihulyUI.Red.UNMC
         
         view.layer.masksToBounds = true
         view.layer.borderWidth = 3
@@ -33,15 +36,16 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
         titleLabel.layer.masksToBounds = true
         
         titleLabel.layer.borderWidth = 3
-        titleLabel.layer.borderColor = UIColor.ChihulyCG.Red.UNMC
+        titleLabel.layer.borderColor = UIColor.white.cgColor
         titleLabel.layer.backgroundColor = UIColor.ChihulyCG.Red.UNMC
         
         
         //infoTextView prettiness thing additions, idk
         infoTextView.layer.masksToBounds = true
-//        infoTextView.layer.cornerRadius = 15
-//        infoTextView.layer.borderWidth = 3
-//        infoTextView.layer.borderColor = UIColor.ChihulyCG.Red.UNMC
+        infoTextView.textColor = UIColor.white
+        //        infoTextView.layer.cornerRadius = 15
+        //        infoTextView.layer.borderWidth = 3
+        //        infoTextView.layer.borderColor = UIColor.ChihulyCG.Red.UNMC
         
         //infoButton prettiness thing additions, idk
         infoButton.layer.masksToBounds = true
@@ -49,15 +53,23 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
         infoButton.layer.borderWidth = 3
         infoButton.setTitle("More Info", for: .normal)
         infoButton.setTitleColor(UIColor.white, for: .normal)
-        infoButton.layer.borderColor = UIColor.ChihulyCG.Red.UNMC
-        infoButton.backgroundColor = UIColor.ChihulyUI.Red.UNMC
+        infoButton.layer.borderColor = UIColor.white.cgColor
+        infoButton.backgroundColor = UIColor.ChihulyUI.Red.FlowerEdgeRed
+        
+        //words from artists button
+        artistsWordsButton.layer.masksToBounds = true
+        artistsWordsButton.layer.cornerRadius = 15
+        artistsWordsButton.layer.borderWidth = 3
+        artistsWordsButton.layer.borderColor = UIColor.white.cgColor
+        artistsWordsButton.backgroundColor = UIColor.ChihulyUI.Red.FlowerEdgeRed
+        artistsWordsButton.setTitleColor(UIColor.white, for: .normal)
         
         //imageView prettiness aesthetics I guess, idk
         aboutPageInfoImageView.image = UIImage(named: "CancerCenter")
-
+        
         aboutPageInfoImageView.layer.borderWidth = 3
-        aboutPageInfoImageView.layer.borderColor = UIColor.ChihulyCG.Red.UNMC
-        aboutPageInfoImageView.backgroundColor = UIColor.ChihulyUI.Red.UNMC
+        aboutPageInfoImageView.layer.borderColor = UIColor.white.cgColor
+        aboutPageInfoImageView.backgroundColor = UIColor.ChihulyUI.Red.UNMCSafariBackground
         
     }
     
