@@ -18,6 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        UINavigationBar.appearance().barTintColor = UIColor.ChihulyUI.Red.UNMC
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        
+        UITabBar.appearance().barTintColor = UIColor.ChihulyUI.Red.UNMC
+        UITabBar.appearance().tintColor = UIColor.ChihulyUI.Gray.Graphite
+        UITabBar.appearance().isTranslucent = false
+        UITabBar.appearance().unselectedItemTintColor = UIColor.white
+        
         return true
     }
 
