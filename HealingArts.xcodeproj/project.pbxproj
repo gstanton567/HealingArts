@@ -11,6 +11,8 @@
 		15873C0F22B144040081410E /* ParallaxFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15873C0B22B144040081410E /* ParallaxFlowLayout.swift */; };
 		15873C1022B144040081410E /* ParallaxLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15873C0C22B144040081410E /* ParallaxLayoutAttributes.swift */; };
 		15873C1122B144040081410E /* ParallaxCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15873C0D22B144040081410E /* ParallaxCollectionViewController.swift */; };
+		23D0E35F22B2AFA100A093F2 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0E35E22B2AFA100A093F2 /* FeedbackViewController.swift */; };
+		23D0E36122B2B04F00A093F2 /* Feedback.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23D0E36022B2B04F00A093F2 /* Feedback.storyboard */; };
 		23EFD0E622AAC0A500EC7B72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EFD0E522AAC0A500EC7B72 /* AppDelegate.swift */; };
 		23EFD0E822AAC0A500EC7B72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EFD0E722AAC0A500EC7B72 /* ViewController.swift */; };
 		23EFD0EB22AAC0A500EC7B72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EFD0E922AAC0A500EC7B72 /* Main.storyboard */; };
@@ -54,6 +56,8 @@
 		15873C0B22B144040081410E /* ParallaxFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxFlowLayout.swift; sourceTree = "<group>"; };
 		15873C0C22B144040081410E /* ParallaxLayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxLayoutAttributes.swift; sourceTree = "<group>"; };
 		15873C0D22B144040081410E /* ParallaxCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxCollectionViewController.swift; sourceTree = "<group>"; };
+		23D0E35E22B2AFA100A093F2 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
+		23D0E36022B2B04F00A093F2 /* Feedback.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Feedback.storyboard; path = ../Feedback.storyboard; sourceTree = "<group>"; };
 		23EFD0E222AAC0A500EC7B72 /* HealingArts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealingArts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23EFD0E522AAC0A500EC7B72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23EFD0E722AAC0A500EC7B72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 		23EFD0E422AAC0A500EC7B72 /* HealingArts */ = {
 			isa = PBXGroup;
 			children = (
+				23D0E36022B2B04F00A093F2 /* Feedback.storyboard */,
 				E01D17A622AEB8C700885EEC /* AboutViewController.swift */,
 				E01D17A822AEBF0D00885EEC /* UIColor+ChihulyColors.swift */,
 				7A785EA322AE9D45008E42D8 /* Firebase.swift */,
@@ -187,6 +192,7 @@
 				23EFD0EE22AAC0A500EC7B72 /* LaunchScreen.storyboard */,
 				7ACC542922ADEE2900926DA2 /* GoogleService-Info (1).plist */,
 				23EFD0F122AAC0A500EC7B72 /* Info.plist */,
+				23D0E35E22B2AFA100A093F2 /* FeedbackViewController.swift */,
 			);
 			path = HealingArts;
 			sourceTree = "<group>";
@@ -273,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A785EBD22B016FB008E42D8 /* ArtistDetails.storyboard in Resources */,
+				23D0E36122B2B04F00A093F2 /* Feedback.storyboard in Resources */,
 				D54D085122B149540039E5A9 /* Collection.storyboard in Resources */,
 				23EFD0F022AAC0A500EC7B72 /* LaunchScreen.storyboard in Resources */,
 				E0B305FE22B14260007A2E85 /* About.storyboard in Resources */,
@@ -344,6 +351,7 @@
 				7A785EB622B0135F008E42D8 /* MapDetailViewController.swift in Sources */,
 				7A785EAC22B01342008E42D8 /* ArtistDetailViewController.swift in Sources */,
 				D54D084D22B13FF60039E5A9 /* CollectionViewController.swift in Sources */,
+				23D0E35F22B2AFA100A093F2 /* FeedbackViewController.swift in Sources */,
 				7A785EB722B0135F008E42D8 /* ArtworkItem.swift in Sources */,
 				15873C1122B144040081410E /* ParallaxCollectionViewController.swift in Sources */,
 				7A785EBF22B02A11008E42D8 /* DonorViewController.swift in Sources */,
