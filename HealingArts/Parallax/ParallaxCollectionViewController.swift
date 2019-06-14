@@ -96,6 +96,10 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
         
         return cell
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toArtwork", sender: nil)
+    }
 //    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 //
 //    }
