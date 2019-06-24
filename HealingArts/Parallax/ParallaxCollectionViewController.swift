@@ -99,11 +99,8 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "toArtwork", sender: nil)
+        
+        //TODO: fix crash when attempting to segue through storyboard reference, then pass the correct artwork through prepareForSegue
+        //crash log: Receiver (<HealingArts.ParallaxCollectionViewController: 0x7fee35c06600>) has no segue with identifier 'toArtwork''
     }
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//
-//    }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//    }
 }
