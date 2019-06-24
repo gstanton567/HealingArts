@@ -76,8 +76,8 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dvc = segue.destination as? ArtistDetailViewController
         indexOfArtist = tableView.indexPathForSelectedRow!.row
-        let artwork = self.artworks[indexOfArtist]
-        dvc!.artwork = artwork
+        let artworkPiece = self.artworks[indexOfArtist]
+        dvc!.artworkPiece = artworkPiece
     }
     
     

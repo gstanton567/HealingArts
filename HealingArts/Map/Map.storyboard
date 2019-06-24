@@ -51,17 +51,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blankSanctuaryMap" translatesAutoresizingMaskIntoConstraints="NO" id="pbq-eN-4lV">
-                                <rect key="frame" x="0.0" y="177" width="414" height="491"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blankSanctuaryMap" translatesAutoresizingMaskIntoConstraints="NO" id="pbq-eN-4lV">
+                                <rect key="frame" x="0.0" y="179" width="414" height="493"/>
                             </imageView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleToFill" mapType="mutedStandard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TeY-uV-4MA">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.80000000000000004" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TeY-uV-4MA">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="pbq-eN-4lV" firstAttribute="top" secondItem="E71-It-ULi" secondAttribute="top" constant="91" id="5bQ-PI-pmb"/>
+                            <constraint firstItem="E71-It-ULi" firstAttribute="bottom" secondItem="pbq-eN-4lV" secondAttribute="bottom" constant="190" id="MUd-FP-yfD"/>
+                            <constraint firstItem="pbq-eN-4lV" firstAttribute="trailing" secondItem="E71-It-ULi" secondAttribute="trailing" id="U8e-10-nGo"/>
                             <constraint firstItem="TeY-uV-4MA" firstAttribute="leading" secondItem="E71-It-ULi" secondAttribute="leading" id="gOI-E5-HrA"/>
+                            <constraint firstItem="pbq-eN-4lV" firstAttribute="leading" secondItem="E71-It-ULi" secondAttribute="leading" id="sHJ-dm-yow"/>
                             <constraint firstItem="E71-It-ULi" firstAttribute="bottom" secondItem="TeY-uV-4MA" secondAttribute="bottom" id="wWp-NW-7VJ"/>
                             <constraint firstItem="TeY-uV-4MA" firstAttribute="top" secondItem="E71-It-ULi" secondAttribute="top" id="xJT-PL-aGG"/>
                             <constraint firstItem="E71-It-ULi" firstAttribute="trailing" secondItem="TeY-uV-4MA" secondAttribute="trailing" id="zm5-1q-bgu"/>
@@ -122,7 +125,7 @@
         <scene sceneID="Fme-FA-pxJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bHf-al-bb1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" image="donorIcon" id="WFx-oQ-XrW"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="mapIcon" id="WFx-oQ-XrW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IbG-ir-SMA">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -141,7 +144,7 @@
     </scenes>
     <resources>
         <image name="blankSanctuaryMap" width="800" height="852"/>
-        <image name="donorIcon" width="25" height="25"/>
+        <image name="mapIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="uwl-ca-WCM"/>

@@ -147,6 +147,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             let ADVC =  segue.destination as! ArtDetailsViewController
             sanctuaryPiece = false
             ADVC.selectedArtwork = selectedArtwork
+            ADVC.fromArtist = true
             ADVC.sanctuaryPiece = sanctuaryPiece
         } else {
             //may or may not need
