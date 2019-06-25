@@ -26,6 +26,11 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let layout = self.collectionViewLayout as! ParallaxFlowLayout
+        let margin: CGFloat = 5.0
+        layout.minimumLineSpacing = margin
+        layout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
+        
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
@@ -44,28 +49,6 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
                 }
             }
         }
-
-        // Do any additional setup after loading the view.
-    }
-    
-    override convenience init(collectionViewLayout layout: UICollectionViewLayout) {
-        self.init()
-    }
-    
-    init() {
-        let layout = ParallaxFlowLayout()
-        let margin: CGFloat = 5.0
-        layout.minimumLineSpacing = margin
-        layout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
-        super.init(collectionViewLayout: layout)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        let layout = ParallaxFlowLayout()
-        let margin: CGFloat = 5.0
-        layout.minimumLineSpacing = margin
-        layout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
-        super.init(collectionViewLayout: layout)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
