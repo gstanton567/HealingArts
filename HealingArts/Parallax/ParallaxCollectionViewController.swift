@@ -19,9 +19,7 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     var sortedArtworks : [Artwork] = []
     var artworks : [Artwork] = []
     
-    
-//    var pics = [UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "kaneko"),UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "kaneko"),UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "gold")]
-//
+    var indexPath: IndexPath?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +39,7 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
         
         Firebase.getAllDocumentsInCollection { (artworks, error) in
             if error != nil {
-                print(error?.localizedDescription)
+                print(error?.localizedDescription!)
             } else {
                 self.artworks = artworks
                 DispatchQueue.main.async {
@@ -81,9 +79,14 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.indexPath = indexPath
         performSegue(withIdentifier: "toArtwork", sender: nil)
-        
-        //TODO: fix crash when attempting to segue through storyboard reference, then pass the correct artwork through prepareForSegue
-        //crash log: Receiver (<HealingArts.ParallaxCollectionViewController: 0x7fee35c06600>) has no segue with identifier 'toArtwork''
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dvc = segue.destination as! ArtDetailsViewController
+        dvc.artwork = artworks[self.indexPath!.row]
+    }
+    
+    
 }
