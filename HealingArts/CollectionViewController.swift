@@ -10,25 +10,68 @@ import UIKit
 
 class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    var artistName: String!
+    var artworks : [Artwork] = [Artwork]()
+    var artCollection : [Artwork] = [Artwork]()
+    var indexPath: IndexPath?
     let collection : [String] = ["chihulySanctuary", "search", "harnoor", "gold"]
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.allowsSelection = true
         title = "Collection"
+        //gets data
+        Firebase.getAllDocumentsInCollection { (artworks, error) in
+            if error != nil {
+                print(error?.localizedDescription)
+            } else {
+                self.artworks = artworks
+                self.getCollection()
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+        }
     }
     
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collection.count
+        return artCollection.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! ArtworkCollectionViewCell
-        let images = collection[indexPath.row]
-        cell.imageView.image = UIImage(named: images)
+        let art = artCollection[indexPath.row]
+        cell.imageView.image = art.images?.first
+        cell.artistLabel.text = art.title
+        
         return cell
+    }
+    
+    func getCollection() {
+        for artwork in artworks {
+            if artwork.artist == artistName {
+                artCollection.append(artwork)
+                print(artwork.title)
+            } else {
+                print("duplicate")
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.indexPath = indexPath
+        performSegue(withIdentifier: "ArtworkSegue", sender: self)
+    }
+    
+//prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dvc = segue.destination as! ArtDetailsViewController
+        dvc.artworkPiece = artworks[indexPath!.row]
+        dvc.sanctuaryPiece = true
+        dvc.fromArtist = true
+
     }
 
 }

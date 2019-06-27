@@ -13,13 +13,12 @@
         <!--Art Details View Controller-->
         <scene sceneID="hKI-Gr-LiD">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cOv-kz-Tac" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="U4q-yq-WLn" customClass="ArtDetailsViewController" customModule="HealingArts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aNI-Mx-UWr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3WJ-k3-ZZj">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3WJ-k3-ZZj">
                                 <rect key="frame" x="0.0" y="66" width="375" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="g5E-W1-V26"/>
@@ -174,6 +173,7 @@
                         <segue destination="bhI-VO-vKJ" kind="show" identifier="detailsToSingleMapSegue" id="gTe-De-BHl"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cOv-kz-Tac" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3018.840579710145" y="20.758928571428569"/>
         </scene>

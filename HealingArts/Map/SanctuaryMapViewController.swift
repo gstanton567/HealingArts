@@ -13,11 +13,12 @@ import MapKit
 class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     var locationManager = CLLocationManager()
-    var selectedArtwork : Artwork?
+    var artworkPiece : Artwork?
     
     @IBOutlet weak var sanctuaryMapView: MKMapView!
     
     var sanctuaryPiece = true
+    
     
     var sanctuaryArtworks : [Artwork] = []
     var artTitle = ""
@@ -39,18 +40,19 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
         sanctuaryMapView.setRegion(region, animated: false)
         
         Firebase.getAllDocumentsInCollection(completion: { (artworks, error) in
-            print (artworks.count)
             for artwork in artworks{
+                print (artworks.count)
                 let annotation = MKPointAnnotation()
                 annotation.coordinate = CLLocationCoordinate2D(latitude: artwork.location!.latitude, longitude: artwork.location!.longitude)
+                print (annotation.coordinate)
                 annotation.title = artwork.title
-                let annotaionView = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
-                annotaionView.alpha = 1.0
-                self.sanctuaryMapView.addAnnotation(annotation)
+                
+                DispatchQueue.main.async {
+                    self.sanctuaryMapView.addAnnotation(annotation)
+                }
                 self.sanctuaryArtworks.append(artwork)
             }
         })
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -67,19 +69,20 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
             print (annotation.title!)
             for artwork in sanctuaryArtworks{
                 if artwork.title == annotation.title{
-                    selectedArtwork = artwork
-                    print ("Selected Artwork Title is: \(selectedArtwork!.title)")
+                    artworkPiece = artwork
+                    print ("Selected Artwork Title is: \(artworkPiece!.title)")
                 }
             }
             performSegue(withIdentifier: "toArtworkDetailSegue", sender: nil)
         }
-
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let ADVC =  segue.destination as! ArtDetailsViewController
         ADVC.sanctuaryPiece = sanctuaryPiece
-        ADVC.sanctuaryArtwork = selectedArtwork
+        ADVC.fromArtist = false
+        ADVC.artworkPiece = artworkPiece
     }
     
     

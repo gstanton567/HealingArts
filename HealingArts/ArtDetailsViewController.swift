@@ -24,12 +24,13 @@ class ArtDetailsViewController: UIViewController {
     @IBOutlet weak var mapButton: UIButton!
     
     var sanctuaryPiece = false
+    var fromArtist = false
     
     //dummy data from map
-    var sanctuaryArtwork : Artwork?
+    var artworkPiece : Artwork?
     var selectedArtwork : ArtworkItem?
     var mapButtonPressed = false
-    var pieceLocation : GeoPoint? 
+    var pieceLocation : GeoPoint?
     
     var location = CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596)
     
@@ -41,43 +42,40 @@ class ArtDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor = UIColor.ChihulyUI.Gray.Graphite
-        
-//        descriptionTextView.layer.borderWidth = 1
-//        descriptionTextView.layer.borderColor = UIColor.ChihulyCG.Gray.Pebblestone
-        
+
         artistButton.setTitleColor(UIColor.ChihulyUI.Blue.DeepAqua, for: .normal)
         mapButton.setTitleColor(UIColor.ChihulyUI.Blue.DeepAqua, for: .normal)
         barLabel.backgroundColor = UIColor.ChihulyUI.Blue.DeepAqua
         
-        let picURL = URL(string: url)
-        let session = URLSession.shared
-        let task = session.dataTask(with: picURL!) { (data: Data?, response: URLResponse?, error: Error?) in
-            DispatchQueue.main.async {
-                self.imageView!.image = UIImage(data: data!)
-            }
+        if fromArtist{
+            artistButton.isEnabled = false
+            artistButton.setTitleColor(.black, for: .normal)
+        } else{
+            artistButton.isEnabled = true
         }
-        task.resume()
+        
         
         if sanctuaryPiece{
-            artistButton.setTitle(sanctuaryArtwork?.artist, for: .normal)
-            pieceNameLabel.text = sanctuaryArtwork?.title
-            pieceLocation = sanctuaryArtwork?.location
-            dateLabel.text = sanctuaryArtwork?.date
-            mediumLabel.text = sanctuaryArtwork?.medium
-            dimensionsLabel.text = sanctuaryArtwork?.dimensions
-            descriptionTextView.text = sanctuaryArtwork?.textDescription
-        } else{
+            artistButton.setTitle(artworkPiece?.artist, for: .normal)
+            let lat = artworkPiece?.location?.latitude
+            let long = artworkPiece?.location?.longitude
+            location = CLLocationCoordinate2D(latitude: lat!, longitude: long!)
+            pieceNameLabel.text = artworkPiece?.title
+            mediumLabel.text = artworkPiece?.medium
+            dimensionsLabel.text = artworkPiece?.dimensions
+            dateLabel.text = artworkPiece?.date
+            descriptionTextView.text = artworkPiece?.textDescription
+            imageView.image = artworkPiece?.images?.first
+        } else if selectedArtwork != nil {
             artistButton.setTitle(selectedArtwork?.artist, for: .normal)
             pieceNameLabel.text = selectedArtwork?.title
-            location = selectedArtwork!.coordinate
             dateLabel.text = date
             mediumLabel.text = medium
             dimensionsLabel.text = dimensions
             descriptionTextView.text = artDescription
         }
         
-
+        
     }
     
     
@@ -96,15 +94,21 @@ class ArtDetailsViewController: UIViewController {
         performSegue(withIdentifier: "detailsToArtistDetailsSegue", sender: nil)
     }
     
+    //Map button
+    @IBAction func onMapButtonPressed(_ sender: UIButton) {
+        mapButtonPressed = true
+        performSegue(withIdentifier: "detailsToSingleMapSegue", sender: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if !mapButtonPressed {
             let avc = segue.destination as! ArtistDetailViewController
-            
+            avc.artworkPiece = artworkPiece
             print("art boi button")
+            
         }
         else{
             let smvc = segue.destination as! SingleArtworkMapViewController
-            smvc.pieceLocation = pieceLocation
             smvc.location = location
             smvc.sanctuaryPiece = sanctuaryPiece
             print(pieceNameLabel.text)
@@ -112,10 +116,7 @@ class ArtDetailsViewController: UIViewController {
         }
     }
     
-    @IBAction func onMapButtonPressed(_ sender: UIButton) {
-        mapButtonPressed = true
-        performSegue(withIdentifier: "detailsToSingleMapSegue", sender: nil)
-    }
+    
     
     
     

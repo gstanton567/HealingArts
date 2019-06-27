@@ -19,16 +19,11 @@ class SingleArtworkMapViewController: UIViewController, CLLocationManagerDelegat
     var sanctuaryPiece = false
     
     let locationManager = CLLocationManager()
-    //dummy location rn
+    
     var location = CLLocationCoordinate2D()
-    var pieceLocation : GeoPoint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if sanctuaryPiece{
-            location.latitude = pieceLocation!.latitude
-            location.longitude = pieceLocation!.longitude
-        }
         mapView.delegate = self
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
