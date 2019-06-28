@@ -27,7 +27,7 @@ class SingleArtworkMapViewController: UIViewController, CLLocationManagerDelegat
         mapView.delegate = self
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        createPin(location: location)
+        createPin()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,16 +51,18 @@ class SingleArtworkMapViewController: UIViewController, CLLocationManagerDelegat
     }
     
     
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        let annotation = view.annotation
-        let location = annotation?.coordinate
-    }
+//    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+//        let annotation = view.annotation
+//        location = annotation!.coordinate
+//    }
     
-    func createPin (location : CLLocationCoordinate2D?){
+    func createPin (){
         let annotation = MKPointAnnotation()
-        annotation.coordinate = location!
+        annotation.coordinate = location
         print(annotation.coordinate)
-        mapView.addAnnotation(annotation)
+        DispatchQueue.main.async {
+            self.mapView.addAnnotation(annotation)
+        }
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
