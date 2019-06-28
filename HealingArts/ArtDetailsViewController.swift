@@ -27,7 +27,8 @@ class ArtDetailsViewController: UIViewController {
     
     //dummy data from map
     var sanctuaryArtwork : Artwork?
-    var selectedArtwork : ArtworkItem?
+    var selectedArtworkItem : ArtworkItem?
+    var selectedArtwork : Artwork?
     var mapButtonPressed = false
     var pieceLocation : GeoPoint?
     
@@ -65,18 +66,20 @@ class ArtDetailsViewController: UIViewController {
             artistButton.setTitle(sanctuaryArtwork?.artist, for: .normal)
             pieceNameLabel.text = sanctuaryArtwork?.title
             pieceLocation = sanctuaryArtwork?.location
+            print(pieceLocation)
             dateLabel.text = sanctuaryArtwork?.date
             mediumLabel.text = sanctuaryArtwork?.medium
             dimensionsLabel.text = sanctuaryArtwork?.dimensions
             descriptionTextView.text = sanctuaryArtwork?.textDescription
-        } else if selectedArtwork != nil {
+        } else if (selectedArtwork != nil) {
+            location = CLLocationCoordinate2D(latitude: (selectedArtwork?.location!.latitude)!, longitude: selectedArtwork!.location!.longitude)
+            dateLabel.text = selectedArtwork?.date
+            mediumLabel.text = selectedArtwork?.medium
+            dimensionsLabel.text = selectedArtwork?.dimensions
+            descriptionTextView.text = selectedArtwork?.textDescription
+            imageView.image = selectedArtwork?.images?.first
             artistButton.setTitle(selectedArtwork?.artist, for: .normal)
             pieceNameLabel.text = selectedArtwork?.title
-//            location = selectedArtwork!.coordinate
-            dateLabel.text = date
-            mediumLabel.text = medium
-            dimensionsLabel.text = dimensions
-            descriptionTextView.text = artDescription
         } else if artwork != nil {
             artistButton.setTitle(artwork?.artist, for: .normal)
             artistButton.isEnabled = false

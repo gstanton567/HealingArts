@@ -39,7 +39,7 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
         
         Firebase.getAllDocumentsInCollection { (artworks, error) in
             if error != nil {
-                print(error?.localizedDescription!)
+                print(error?.localizedDescription)
             } else {
                 self.artworks = artworks
                 DispatchQueue.main.async {
@@ -85,7 +85,7 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dvc = segue.destination as! ArtDetailsViewController
-        dvc.artwork = artworks[self.indexPath!.row]
+        dvc.selectedArtwork = artworks[self.indexPath!.row]
     }
     
     

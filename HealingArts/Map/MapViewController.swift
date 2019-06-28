@@ -36,6 +36,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     var selectedArtwork : ArtworkItem?
     
+    var artwork : ArtworkItem?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
@@ -146,7 +148,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         if segue.identifier == "toArtworkDetailSegue"{
             let ADVC =  segue.destination as! ArtDetailsViewController
             sanctuaryPiece = false
-            ADVC.selectedArtwork = selectedArtwork
+            ADVC.selectedArtworkItem = selectedArtwork
             ADVC.sanctuaryPiece = sanctuaryPiece
         } else {
             //may or may not need
