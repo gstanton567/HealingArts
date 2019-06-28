@@ -12,7 +12,7 @@ import Firebase
 import FirebaseFirestore
 
 class ArtDetailsViewController: UIViewController {
-    
+    var artwork : Artwork?
     @IBOutlet weak var barLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -73,6 +73,16 @@ class ArtDetailsViewController: UIViewController {
             mediumLabel.text = medium
             dimensionsLabel.text = dimensions
             descriptionTextView.text = artDescription
+        }
+        else if artwork != nil {
+            artistButton.setTitle(artwork?.artist, for: .normal)
+            pieceNameLabel.text = artwork?.title
+            artistButton.isEnabled = false
+            imageView.image = artwork?.images?.first
+            dateLabel.text = artwork?.date
+            mediumLabel.text = artwork?.medium
+            dimensionsLabel.text = artwork?.dimensions
+            descriptionTextView.text = artwork?.textDescription
         }
         
         
