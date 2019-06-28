@@ -19,12 +19,15 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     var sortedArtworks : [Artwork] = []
     var artworks : [Artwork] = []
     
-    
-//    var pics = [UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "kaneko"),UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "kaneko"),UIImage(named: "chihulypic"), UIImage(named: "CancerCenter"), UIImage(named: "gold")]
-//
+    var indexPath: IndexPath?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let layout = self.collectionViewLayout as! ParallaxFlowLayout
+        let margin: CGFloat = 5.0
+        layout.minimumLineSpacing = margin
+        layout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -44,28 +47,6 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
                 }
             }
         }
-
-        // Do any additional setup after loading the view.
-    }
-    
-    override convenience init(collectionViewLayout layout: UICollectionViewLayout) {
-        self.init()
-    }
-    
-    init() {
-        let layout = ParallaxFlowLayout()
-        let margin: CGFloat = 5.0
-        layout.minimumLineSpacing = margin
-        layout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
-        super.init(collectionViewLayout: layout)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        let layout = ParallaxFlowLayout()
-        let margin: CGFloat = 5.0
-        layout.minimumLineSpacing = margin
-        layout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
-        super.init(collectionViewLayout: layout)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -98,12 +79,14 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.indexPath = indexPath
         performSegue(withIdentifier: "toArtwork", sender: nil)
     }
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//
-//    }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dvc = segue.destination as! ArtDetailsViewController
+        dvc.artwork = artworks[self.indexPath!.row]
+    }
+    
+    
 }
