@@ -10,13 +10,13 @@ import UIKit
 
 class ArtistDetailViewController: UIViewController {
     
-    var artwork: Artwork?
+    var artworkPiece: Artwork?
     var indexOfArtist : Int!
 
     @IBOutlet weak var artistLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        artistLabel.text = artwork!.artist
+        artistLabel.text = artworkPiece!.artist
     }
     
 
@@ -25,7 +25,7 @@ class ArtistDetailViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dvc = segue.destination as? CollectionViewController
-        let artistName = self.artwork!.artist
+        let artistName = self.artworkPiece!.artist
         dvc!.artistName = artistName
     }
  

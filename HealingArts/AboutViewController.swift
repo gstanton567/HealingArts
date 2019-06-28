@@ -44,9 +44,7 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
         //infoTextView prettiness thing additions, idk
         infoTextView.layer.masksToBounds = true
         infoTextView.textColor = UIColor.white
-        //        infoTextView.layer.cornerRadius = 15
-        //        infoTextView.layer.borderWidth = 3
-        //        infoTextView.layer.borderColor = UIColor.ChihulyCG.Red.UNMC
+        
         
         //infoButton prettiness thing additions, idk
         infoButton.layer.masksToBounds = true

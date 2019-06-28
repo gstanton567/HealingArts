@@ -13,11 +13,12 @@ import MapKit
 class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     var locationManager = CLLocationManager()
-    var selectedArtwork : Artwork?
+    var artworkPiece : Artwork?
     
     @IBOutlet weak var sanctuaryMapView: MKMapView!
     
     var sanctuaryPiece = true
+    
     
     var sanctuaryArtworks : [Artwork] = []
     var artTitle = ""
@@ -68,8 +69,8 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
             print (annotation.title!)
             for artwork in sanctuaryArtworks{
                 if artwork.title == annotation.title{
-                    selectedArtwork = artwork
-                    print ("Selected Artwork Title is: \(selectedArtwork!.title)")
+                    artworkPiece = artwork
+                    print ("Selected Artwork Title is: \(artworkPiece!.title)")
                 }
             }
             performSegue(withIdentifier: "toArtworkDetailSegue", sender: nil)
@@ -80,7 +81,8 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let ADVC =  segue.destination as! ArtDetailsViewController
         ADVC.sanctuaryPiece = sanctuaryPiece
-        ADVC.sanctuaryArtwork = selectedArtwork
+        ADVC.fromArtist = false
+        ADVC.artworkPiece = artworkPiece
     }
     
     

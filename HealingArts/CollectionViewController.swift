@@ -44,7 +44,6 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! ArtworkCollectionViewCell
         let art = artCollection[indexPath.row]
         cell.imageView.image = art.images?.first
-     //   cell.imageView.image = UIImage(named: images)
         cell.artistLabel.text = art.title
         
         return cell
@@ -69,10 +68,10 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
 //prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dvc = segue.destination as! ArtDetailsViewController
-        dvc.artwork = artworks[indexPath!.row]
-//        indexOfArtwork = collectionView.indexPathsForSelectedItems?.first
-//        let artwork = self.artworks[indexOfArtwork]
-//        dvc.artwork = artwork
+        dvc.artworkPiece = artworks[indexPath!.row]
+        dvc.sanctuaryPiece = true
+        dvc.fromArtist = true
+
     }
 
 }
