@@ -39,7 +39,7 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
         
         Firebase.getAllDocumentsInCollection { (artworks, error) in
             if error != nil {
-                print(error?.localizedDescription!)
+                print(error?.localizedDescription)
             } else {
                 self.artworks = artworks
                 DispatchQueue.main.async {
