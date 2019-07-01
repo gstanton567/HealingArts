@@ -13,6 +13,7 @@ import FirebaseFirestore
 
 class ArtDetailsViewController: UIViewController {
     var artwork : Artwork?
+    
     @IBOutlet weak var barLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -66,17 +67,19 @@ class ArtDetailsViewController: UIViewController {
             dateLabel.text = artworkPiece?.date
             descriptionTextView.text = artworkPiece?.textDescription
             imageView.image = artworkPiece?.images?.first
-        } else if selectedArtwork != nil {
-            artistButton.setTitle(selectedArtwork?.artist, for: .normal)
-            pieceNameLabel.text = selectedArtwork?.title
-            dateLabel.text = date
-            mediumLabel.text = medium
-            dimensionsLabel.text = dimensions
-            descriptionTextView.text = artDescription
         }
+//            else if selectedArtwork != nil {
+//            artistButton.setTitle(selectedArtwork?.artist, for: .normal)
+//            pieceNameLabel.text = selectedArtwork?.title
+//            dateLabel.text = date
+//            mediumLabel.text = medium
+//            dimensionsLabel.text = dimensions
+//            descriptionTextView.text = artDescription
+//        }
         else if artwork != nil {
             artistButton.setTitle(artwork?.artist, for: .normal)
             pieceNameLabel.text = artwork?.title
+            location = CLLocationCoordinate2D(latitude: (artwork?.location?.latitude)!, longitude: (artwork?.location?.longitude)!)
             artistButton.isEnabled = false
             imageView.image = artwork?.images?.first
             dateLabel.text = artwork?.date
