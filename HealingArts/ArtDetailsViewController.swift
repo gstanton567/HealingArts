@@ -43,6 +43,7 @@ class ArtDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(fromArtist)
 
         artistButton.setTitleColor(UIColor.ChihulyUI.Blue.DeepAqua, for: .normal)
         mapButton.setTitleColor(UIColor.ChihulyUI.Blue.DeepAqua, for: .normal)
@@ -68,14 +69,6 @@ class ArtDetailsViewController: UIViewController {
             descriptionTextView.text = artworkPiece?.textDescription
             imageView.image = artworkPiece?.images?.first
         }
-//            else if selectedArtwork != nil {
-//            artistButton.setTitle(selectedArtwork?.artist, for: .normal)
-//            pieceNameLabel.text = selectedArtwork?.title
-//            dateLabel.text = date
-//            mediumLabel.text = medium
-//            dimensionsLabel.text = dimensions
-//            descriptionTextView.text = artDescription
-//        }
         else if artwork != nil {
             artistButton.setTitle(artwork?.artist, for: .normal)
             pieceNameLabel.text = artwork?.title
@@ -104,6 +97,7 @@ class ArtDetailsViewController: UIViewController {
     //Artist info segue
     @IBAction func onArtistButtonPressed(_ sender: UIButton) {
         mapButtonPressed = false
+        print("boiiiii wtf")
         performSegue(withIdentifier: "detailsToArtistDetailsSegue", sender: nil)
     }
     

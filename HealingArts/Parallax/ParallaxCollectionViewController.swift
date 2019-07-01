@@ -85,6 +85,7 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dvc = segue.destination as! ArtDetailsViewController
+        dvc.fromArtist = false
         dvc.artwork = artworks[self.indexPath!.row]
     }
     
