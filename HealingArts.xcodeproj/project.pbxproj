@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		154E835022CA94740009E842 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154E834F22CA94740009E842 /* Calendar.swift */; };
+		154E835222CA94B50009E842 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154E835122CA94B50009E842 /* Calendar.storyboard */; };
 		15873C0E22B144040081410E /* ParallaxCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15873C0A22B144040081410E /* ParallaxCollectionViewCell.swift */; };
 		15873C0F22B144040081410E /* ParallaxFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15873C0B22B144040081410E /* ParallaxFlowLayout.swift */; };
 		15873C1022B144040081410E /* ParallaxLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15873C0C22B144040081410E /* ParallaxLayoutAttributes.swift */; };
@@ -54,6 +56,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		154E834F22CA94740009E842 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		154E835122CA94B50009E842 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		15873C0A22B144040081410E /* ParallaxCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxCollectionViewCell.swift; sourceTree = "<group>"; };
 		15873C0B22B144040081410E /* ParallaxFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxFlowLayout.swift; sourceTree = "<group>"; };
 		15873C0C22B144040081410E /* ParallaxLayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxLayoutAttributes.swift; sourceTree = "<group>"; };
@@ -182,6 +186,8 @@
 				7A785EBE22B02A11008E42D8 /* DonorViewController.swift */,
 				E0B305FF22B1428A007A2E85 /* AboutViewController.swift */,
 				E0B305FD22B1425F007A2E85 /* About.storyboard */,
+				154E835122CA94B50009E842 /* Calendar.storyboard */,
+				154E834F22CA94740009E842 /* Calendar.swift */,
 				23EFD0E922AAC0A500EC7B72 /* Main.storyboard */,
 				23EFD0F922AACAA900EC7B72 /* Artists.storyboard */,
 				D54D085022B149540039E5A9 /* Collection.storyboard */,
@@ -288,6 +294,7 @@
 				7A785EBD22B016FB008E42D8 /* ArtistDetails.storyboard in Resources */,
 				23D0E36122B2B04F00A093F2 /* Feedback.storyboard in Resources */,
 				D54D085122B149540039E5A9 /* Collection.storyboard in Resources */,
+				154E835222CA94B50009E842 /* Calendar.storyboard in Resources */,
 				23EFD0F022AAC0A500EC7B72 /* LaunchScreen.storyboard in Resources */,
 				E0B305FE22B14260007A2E85 /* About.storyboard in Resources */,
 				7ACC542A22ADEE2900926DA2 /* GoogleService-Info (1).plist in Resources */,
@@ -379,6 +386,7 @@
 				E0B3060022B1428A007A2E85 /* AboutViewController.swift in Sources */,
 				15873C0E22B144040081410E /* ParallaxCollectionViewCell.swift in Sources */,
 				7A785EB522B0135F008E42D8 /* MapViewController.swift in Sources */,
+				154E835022CA94740009E842 /* Calendar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
