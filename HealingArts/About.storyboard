@@ -361,6 +361,9 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                 <state key="normal" title="VISIT WEBSITE">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="WM9-d4-8oq" kind="show" id="Pcw-4M-fAz"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -409,6 +412,14 @@ The Healing Arts program will be comprised of a growing list of elements to help
             <point key="canvasLocation" x="2930.434782608696" y="114.50892857142857"/>
         </scene>
         <!--Feedback-->
+        <scene sceneID="S2i-KC-Y23">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Feedback" id="WM9-d4-8oq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jIq-aG-MF9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3446" y="261"/>
+        </scene>
+        <!--Feedback-->
         <scene sceneID="hhU-Nx-n05">
             <objects>
                 <viewControllerPlaceholder storyboardName="Feedback" id="raL-tL-yx8" sceneMemberID="viewController"/>
@@ -419,7 +430,6 @@ The Healing Arts program will be comprised of a growing list of elements to help
         <!--About-->
         <scene sceneID="tJW-pt-RsY">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CyR-YW-IUy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lJ4-Cr-pqr" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="About" image="aboutIcon" id="Okd-1X-uCt"/>
                     <toolbarItems/>
@@ -433,6 +443,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                         <segue destination="HNa-kJ-spY" kind="relationship" relationship="rootViewController" id="DZs-iE-RhM"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CyR-YW-IUy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2090" y="-588"/>
         </scene>

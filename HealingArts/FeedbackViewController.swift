@@ -11,6 +11,15 @@ import FirebaseFirestore
 import Firebase
 
 class FeedbackViewController: UIViewController {
+   
+    @IBOutlet weak var starOneImageView: UIImageView!
+    @IBOutlet weak var starTwoImageView: UIImageView!
+    @IBOutlet weak var starThreeImageView: UIImageView!
+    @IBOutlet weak var starFourImageView: UIImageView!
+    @IBOutlet weak var starFiveImageView: UIImageView!
+    
+    @IBOutlet weak var submitButton: UIButton!
+    
     @IBOutlet var nameTextField: UITextField!
     
     @IBOutlet var emailTextField: UITextField!
@@ -30,6 +39,77 @@ class FeedbackViewController: UIViewController {
         nameTextField.layer.borderWidth = 1
         emailTextField.layer.borderColor = UIColor.ChihulyCG.Gray.Graphite
         emailTextField.layer.borderWidth = 1
+        
+        let tapGestureRecognizerOne = UITapGestureRecognizer(target: self, action: #selector(starOneTapped(tapGestureRecognizer:)))
+        starOneImageView.isUserInteractionEnabled = true
+        starOneImageView.addGestureRecognizer(tapGestureRecognizerOne)
+        
+        let tapGestureRecognizerTwo = UITapGestureRecognizer(target: self, action: #selector(starTwoTapped(tapGestureRecognizer:)))
+        starTwoImageView.isUserInteractionEnabled = true
+        starTwoImageView.addGestureRecognizer(tapGestureRecognizerTwo)
+        
+        let tapGestureRecognizerThree = UITapGestureRecognizer(target: self, action: #selector(starThreeTapped(tapGestureRecognizer:)))
+        starThreeImageView.isUserInteractionEnabled = true
+        starThreeImageView.addGestureRecognizer(tapGestureRecognizerThree)
+        
+        let tapGestureRecognizerFour = UITapGestureRecognizer(target: self, action: #selector(starFourTapped(tapGestureRecognizer:)))
+        starFourImageView.isUserInteractionEnabled = true
+        starFourImageView.addGestureRecognizer(tapGestureRecognizerFour)
+        
+        let tapGestureRecognizerFive = UITapGestureRecognizer(target: self, action: #selector(starFiveTapped(tapGestureRecognizer:)))
+        starFiveImageView.isUserInteractionEnabled = true
+        starFiveImageView.addGestureRecognizer(tapGestureRecognizerFive)
+        
+    }
+    
+    @objc func starOneTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        starOneImageView.image = UIImage.init(named: "RedStar")
+        starTwoImageView.image = UIImage.init(named: "RedStarHollow")
+        starThreeImageView.image = UIImage.init(named: "RedStarHollow")
+        starFourImageView.image = UIImage.init(named: "RedStarHollow")
+        starFiveImageView.image = UIImage.init(named: "RedStarHollow")
+        // Your action
+    }
+    
+    @objc func starTwoTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        starOneImageView.image = UIImage.init(named: "RedStar")
+        starTwoImageView.image = UIImage.init(named: "RedStar")
+        starThreeImageView.image = UIImage.init(named: "RedStarHollow")
+        starFourImageView.image = UIImage.init(named: "RedStarHollow")
+        starFiveImageView.image = UIImage.init(named: "RedStarHollow")
+        // Your action
+    }
+    
+    @objc func starThreeTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        starOneImageView.image = UIImage.init(named: "RedStar")
+        starTwoImageView.image = UIImage.init(named: "RedStar")
+        starThreeImageView.image = UIImage.init(named: "RedStar")
+        starFourImageView.image = UIImage.init(named: "RedStarHollow")
+        starFiveImageView.image = UIImage.init(named: "RedStarHollow")
+        // Your action
+    }
+    
+    @objc func starFourTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        starOneImageView.image = UIImage.init(named: "RedStar")
+        starTwoImageView.image = UIImage.init(named: "RedStar")
+        starThreeImageView.image = UIImage.init(named: "RedStar")
+        starFourImageView.image = UIImage.init(named: "RedStar")
+        starFiveImageView.image = UIImage.init(named: "RedStarHollow")
+        // Your action
+    }
+    
+    @objc func starFiveTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        starOneImageView.image = UIImage.init(named: "RedStar")
+        starTwoImageView.image = UIImage.init(named: "RedStar")
+        starThreeImageView.image = UIImage.init(named: "RedStar")
+        starFourImageView.image = UIImage.init(named: "RedStar")
+        starFiveImageView.image = UIImage.init(named: "RedStar")
+        // Your action
     }
     
     @IBAction func onSubmitPressed(_ sender: UIButton) {
