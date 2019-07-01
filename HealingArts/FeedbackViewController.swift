@@ -20,19 +20,29 @@ class FeedbackViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Thoughts And Feedback"
         
+        textView.layer.masksToBounds = true
+        textView.layer.cornerRadius = 5
+        textView.layer.borderColor = UIColor.ChihulyCG.Gray.Graphite
+        textView.layer.borderWidth = 1
+        nameTextField.layer.borderColor = UIColor.ChihulyCG.Gray.Graphite
+        nameTextField.layer.borderWidth = 1
+        emailTextField.layer.borderColor = UIColor.ChihulyCG.Gray.Graphite
+        emailTextField.layer.borderWidth = 1
     }
     
-    @IBAction func onSubmitPressed(_ sender: Any) {
+    @IBAction func onSubmitPressed(_ sender: UIButton) {
         let databaseRef  = Firestore.firestore()
         
-        if nameTextField.text != nil && emailTextField.text != nil && textView.text != nil {
+        //Text fields cannot be blank or nil
+        if nameTextField.text != nil && emailTextField.text != nil && textView.text != nil && nameTextField.text != "" && emailTextField.text != "" && textView.text != "" {
             var ref = databaseRef.collection("Feedback").addDocument(data: ["name" : nameTextField.text, "email" : emailTextField.text, "comment" : textView.text]) {err in
                 if let err = err {
                     print("Error adding document: \(err)")
                 } else {
-                    let alertController = UIAlertController(title: "Thanks", message: "We received your feedback", preferredStyle: .alert)
-                    let okay = UIAlertAction(title: "OK", style: .default, handler: { (UIAlertAction) in
+                    let alertController = UIAlertController(title: "Thank You!", message: "We have received your feedback", preferredStyle: .alert)
+                    let okay = UIAlertAction(title: "Okay", style: .default, handler: { (UIAlertAction) in
                         self.nameTextField.text = ""
                         self.emailTextField.text = ""
                         self.textView.text = ""
