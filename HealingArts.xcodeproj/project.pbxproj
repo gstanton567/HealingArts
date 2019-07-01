@@ -162,6 +162,7 @@
 			children = (
 				733069EB22B4146900E5FB78 /* thevideo.mp4 */,
 				23D0E36022B2B04F00A093F2 /* Feedback.storyboard */,
+				23D0E35E22B2AFA100A093F2 /* FeedbackViewController.swift */,
 				E01D17A622AEB8C700885EEC /* AboutViewController.swift */,
 				7A9A300222C6A3680006EAA4 /* TestAboutViewController.swift */,
 				E01D17A822AEBF0D00885EEC /* UIColor+ChihulyColors.swift */,
@@ -198,7 +199,6 @@
 				23EFD0EE22AAC0A500EC7B72 /* LaunchScreen.storyboard */,
 				7ACC542922ADEE2900926DA2 /* GoogleService-Info (1).plist */,
 				23EFD0F122AAC0A500EC7B72 /* Info.plist */,
-				23D0E35E22B2AFA100A093F2 /* FeedbackViewController.swift */,
 			);
 			path = HealingArts;
 			sourceTree = "<group>";
@@ -526,7 +526,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = XBJZSN94YA;
 				INFOPLIST_FILE = HealingArts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -545,7 +545,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = XBJZSN94YA;
 				INFOPLIST_FILE = HealingArts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
