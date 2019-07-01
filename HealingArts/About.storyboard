@@ -279,7 +279,6 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                 <rect key="frame" x="214" y="2575" width="181" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="57" id="HKE-8T-qNG"/>
-                                                    <constraint firstAttribute="width" constant="181" id="Whq-8g-BZK"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
