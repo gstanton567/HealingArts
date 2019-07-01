@@ -122,5 +122,11 @@ class Firebase {
             }
         }
     }
+    
+    class func makeGeoPoint(lat: Double, long: Double) -> GeoPoint{
+        let newPoint = GeoPoint(latitude: lat, longitude: long)
+        return newPoint
+    }
+    
 }
 
