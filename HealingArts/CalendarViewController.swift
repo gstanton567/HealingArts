@@ -11,7 +11,7 @@ import UIKit
 class CalendarViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var events = [Event]()
-    var dans = [UIImage(named: "CancerCenter")]
+    var dans = [UIImage(named: "CancerCenter"), UIImage(named: "CancerCenter")]
     
 
     override func viewDidLoad() {
