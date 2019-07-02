@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import SafariServices
+import AVKit
 
-class TestAboutViewController: UIViewController {
+class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate {
 
     @IBOutlet weak var redBehindImage: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("View did Load")
@@ -19,6 +23,22 @@ class TestAboutViewController: UIViewController {
     }
     
 
+    @IBAction func onButtonPressed(_ sender: Any) {
+        
+        let linkString = "https://www.nebraskamed.com/healingarts"
+        if let link = URL(string: linkString) {
+            let sfvc = SFSafariViewController(url: link)
+            sfvc.delegate = (self as! SFSafariViewControllerDelegate)
+//            sfvc.preferredControlTintColor = .white
+//            sfvc.preferredBarTintColor = UIColor.ChihulyUI.Red.UNMCSafariBackground
+            
+            present(sfvc, animated: true)
+    }
+    }
+    
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        dismiss(animated: true)
+    }
     /*
     // MARK: - Navigation
 
@@ -28,7 +48,18 @@ class TestAboutViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func videoButton(_ sender: Any) {
+        if let path = Bundle.main.path(forResource: "thevideo", ofType: "mp4"){
+                        let video = AVPlayer(url: URL(fileURLWithPath: path))
+                        let videoPlayer = AVPlayerViewController()
+                        videoPlayer.player = video
+                        present(videoPlayer, animated: true, completion:{
+                            video.play()
+                        })
+                    }
+        
+    }
+    
 }
 
 extension UIImageView {
