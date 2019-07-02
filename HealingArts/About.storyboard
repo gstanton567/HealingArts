@@ -456,9 +456,8 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                     <segue destination="xgd-Bb-c0y" kind="show" id="PJY-vW-XO1"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Uq-VG-Str">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Uq-VG-Str">
                                                 <rect key="frame" x="57" y="1769" width="89" height="86"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="  "/>
                                                 <connections>
                                                     <action selector="videoButton:" destination="HNa-kJ-spY" eventType="touchUpInside" id="Dog-He-Z4l"/>
@@ -595,13 +594,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eLn-ra-dZr"/>
                     </view>
-                    <navigationItem key="navigationItem" id="IAo-PM-Psq">
-                        <barButtonItem key="rightBarButtonItem" title="Feedback" id="y0v-PN-RlC">
-                            <connections>
-                                <segue destination="raL-tL-yx8" kind="show" id="qQb-id-Zip"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="IAo-PM-Psq"/>
                     <size key="freeformSize" width="414" height="3000"/>
                     <connections>
                         <outlet property="redBehindImage" destination="jcQ-Ye-cZS" id="cr0-uc-5Ce"/>
@@ -626,14 +619,6 @@ The Healing Arts program will be comprised of a growing list of elements to help
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MZg-W2-9em" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3688" y="1189"/>
-        </scene>
-        <!--Feedback-->
-        <scene sceneID="hhU-Nx-n05">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Feedback" id="raL-tL-yx8" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jo1-Gj-F3x" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3777" y="-1249"/>
         </scene>
         <!--About-->
         <scene sceneID="tJW-pt-RsY">
