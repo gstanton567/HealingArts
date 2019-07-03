@@ -123,6 +123,31 @@ class Firebase {
         }
     }
     
+    class func getArtists(completion: @escaping ([Artist], Error?) -> Void) {
+        let database = Firestore.firestore()
+        var artists = [Artist]()
+        database.collection("Artist").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print ("Error geting document \(err)")
+                completion([Artist](), err)
+            } else {
+                for document in querySnapshot!.documents {
+                    let data = document.data()
+                    if let urlStrings = data["images"] as? [String] {
+                        NetworkManager.getImagesWith(urlStrings: urlStrings, completion: { (images) in
+                            let newArtist = Artist(name: data["name"] as! String, textDesc: data["textDesc"] as! String, images: images)
+                            artists.append(newArtist)
+                            if artists.count == querySnapshot!.documents.count {
+                                completion(artists, nil)
+                            }
+                            print ("Artist: \(newArtist.name)")
+                        })
+                    }
+                }
+            }
+        }
+    }
+    
     class func makeGeoPoint(lat: Double, long: Double) -> GeoPoint{
         let newPoint = GeoPoint(latitude: lat, longitude: long)
         return newPoint
