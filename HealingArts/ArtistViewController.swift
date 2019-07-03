@@ -73,18 +73,6 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
         performSegue(withIdentifier: "toArtistDetail", sender: nil)
     }
     
-//gets array of artists with no repeats
-//    func repeatArtists() {
-//        for artwork in artworks {
-//            if self.artists.contains(artwork.artist!) {
-//                print("duplicate")
-//            } else {
-//                self.artists.append(artwork.artist!)
-//
-//            }
-//        }
-//    }
-    
 //prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dvc = segue.destination as? ArtistDetailViewController
