@@ -17,25 +17,34 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
     
 //properties
     var artworks : [Artwork] = [Artwork]()
-    var artists : [String] = [String]()
+    var artists : [Artist] = []
+    var selectedArtist : Artist?
     var indexOfArtist = 0
     var images = ["chihulypic", "harnoor", "dan", "gold", "kaneko"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Artists"
 //gets data
-        Firebase.getAllDocumentsInCollection { (artworks, error) in
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.delegate = self
+        tableView.dataSource = self
+        super.viewWillAppear(true)
+        Firebase.getArtists(completion: { (artists, error) in
             if error != nil {
                 print(error?.localizedDescription)
             } else {
-                self.artworks = artworks
-                self.repeatArtists()
+                self.artists = artists
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
             }
-        }
+        })
     }
+    
 //table view functions
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
@@ -46,12 +55,11 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       let cell = tableView.dequeueReusableCell(withIdentifier: "cellID")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID")
         let artist = artists[indexPath.row]
-        let picture = artworks[indexPath.row].images
 //prints to tableview cell
-        cell?.textLabel!.text = artist
-        cell?.imageView?.image = picture?.first
+        cell?.textLabel!.text = artist.name
+        cell?.imageView?.image = artist.images.first
         return cell!
     }
     
@@ -60,24 +68,27 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
         return nil
     }
     
-//gets array of artists with no repeats
-    func repeatArtists() {
-        for artwork in artworks {
-            if self.artists.contains(artwork.artist!) {
-                print("duplicate")
-            } else {
-                self.artists.append(artwork.artist!)
-                
-            }
-        }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedArtist = artists[indexPath.row]
+        performSegue(withIdentifier: "toArtistDetail", sender: nil)
     }
+    
+//gets array of artists with no repeats
+//    func repeatArtists() {
+//        for artwork in artworks {
+//            if self.artists.contains(artwork.artist!) {
+//                print("duplicate")
+//            } else {
+//                self.artists.append(artwork.artist!)
+//
+//            }
+//        }
+//    }
     
 //prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dvc = segue.destination as? ArtistDetailViewController
-        indexOfArtist = tableView.indexPathForSelectedRow!.row
-        let artworkPiece = self.artworks[indexOfArtist]
-        dvc!.artworkPiece = artworkPiece
+        dvc!.artist = selectedArtist
     }
     
     

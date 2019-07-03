@@ -48,6 +48,7 @@
 		7ACC542E22ADFAB900926DA2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ACC542D22ADFAB900926DA2 /* GoogleService-Info.plist */; };
 		A90BE906C7841DE479DADFAD /* Pods_HealingArts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 802A8BCEA6085745828EF6AF /* Pods_HealingArts.framework */; };
 		D5431D2F22CB968100CEFC7E /* ImageOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5431D2E22CB968100CEFC7E /* ImageOverlay.swift */; };
+		D5431D3122CBB95D00CEFC7E /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5431D3022CBB95D00CEFC7E /* Artist.swift */; };
 		D54D084D22B13FF60039E5A9 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D084C22B13FF60039E5A9 /* CollectionViewController.swift */; };
 		D54D084F22B141990039E5A9 /* ArtworkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D084E22B141990039E5A9 /* ArtworkCollectionViewCell.swift */; };
 		D54D085122B149540039E5A9 /* Collection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D54D085022B149540039E5A9 /* Collection.storyboard */; };
@@ -105,6 +106,7 @@
 		7ACC542D22ADFAB900926DA2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		802A8BCEA6085745828EF6AF /* Pods_HealingArts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealingArts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5431D2E22CB968100CEFC7E /* ImageOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOverlay.swift; sourceTree = "<group>"; };
+		D5431D3022CBB95D00CEFC7E /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		D54D084C22B13FF60039E5A9 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		D54D084E22B141990039E5A9 /* ArtworkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkCollectionViewCell.swift; sourceTree = "<group>"; };
 		D54D085022B149540039E5A9 /* Collection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Collection.storyboard; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				7A9A300222C6A3680006EAA4 /* TestAboutViewController.swift */,
 				E01D17A822AEBF0D00885EEC /* UIColor+ChihulyColors.swift */,
 				7A785EA322AE9D45008E42D8 /* Firebase.swift */,
+				D5431D3022CBB95D00CEFC7E /* Artist.swift */,
 				7A785EA522AEDC1E008E42D8 /* Artwork.swift */,
 				154E835722CA9A920009E842 /* Event.swift */,
 				7A2D1E5D22B1886F00C6B30A /* NetworkManager.swift */,
@@ -388,6 +391,7 @@
 				73B5EFA922AE8CED00E0F67F /* ArtistDetailViewController.swift in Sources */,
 				7A2D1E5E22B1886F00C6B30A /* NetworkManager.swift in Sources */,
 				7A9A300322C6A3680006EAA4 /* TestAboutViewController.swift in Sources */,
+				D5431D3122CBB95D00CEFC7E /* Artist.swift in Sources */,
 				15873C0F22B144040081410E /* ParallaxFlowLayout.swift in Sources */,
 				D5431D2F22CB968100CEFC7E /* ImageOverlay.swift in Sources */,
 				73B5EFAB22AEF01100E0F67F /* SingleArtworkMapViewController.swift in Sources */,

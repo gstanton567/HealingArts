@@ -38,9 +38,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="xSl-W4-cUq" kind="show" id="OHE-gN-P1S"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -61,6 +58,7 @@
                     <tabBarItem key="tabBarItem" title="Artists" image="artistIcon" id="rk4-De-q25"/>
                     <connections>
                         <outlet property="tableView" destination="ore-gW-qFg" id="Vxr-df-Hgm"/>
+                        <segue destination="xSl-W4-cUq" kind="show" identifier="toArtistDetail" id="O55-Xn-VKG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NbH-6j-kay" userLabel="First Responder" sceneMemberID="firstResponder"/>
