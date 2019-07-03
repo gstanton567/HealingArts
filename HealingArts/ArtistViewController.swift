@@ -16,11 +16,8 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var tableView: UITableView!
     
 //properties
-    var artworks : [Artwork] = [Artwork]()
-    var artists : [Artist] = []
     var selectedArtist : Artist?
     var indexOfArtist = 0
-    var images = ["chihulypic", "harnoor", "dan", "gold", "kaneko"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,16 +30,7 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.delegate = self
         tableView.dataSource = self
         super.viewWillAppear(true)
-        Firebase.getArtists(completion: { (artists, error) in
-            if error != nil {
-                print(error?.localizedDescription)
-            } else {
-                self.artists = artists
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            }
-        })
+       
     }
     
 //table view functions
@@ -51,12 +39,12 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return artists.count
+        return Firebase.globalArtists.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID")
-        let artist = artists[indexPath.row]
+        let artist = Firebase.globalArtists[indexPath.row]
 //prints to tableview cell
         cell?.textLabel!.text = artist.name
         cell?.imageView?.image = artist.images.first
@@ -69,7 +57,7 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedArtist = artists[indexPath.row]
+        selectedArtist = Firebase.globalArtists[indexPath.row]
         performSegue(withIdentifier: "toArtistDetail", sender: nil)
     }
     

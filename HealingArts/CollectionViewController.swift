@@ -14,7 +14,6 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     var artworks : [Artwork] = [Artwork]()
     var artCollection : [Artwork] = [Artwork]()
     var indexPath: IndexPath?
-    let collection : [String] = ["chihulySanctuary", "search", "harnoor", "gold"]
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -23,17 +22,6 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         collectionView.allowsSelection = true
         title = "Collection"
         //gets data
-        Firebase.getAllDocumentsInCollection { (artworks, error) in
-            if error != nil {
-                print(error?.localizedDescription)
-            } else {
-                self.artworks = artworks
-                self.getCollection()
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-            }
-        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -50,7 +38,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     func getCollection() {
-        for artwork in artworks {
+        for artwork in Firebase.globalArtworks {
             if artwork.artist == artistName {
                 artCollection.append(artwork)
                 print(artwork.title)
