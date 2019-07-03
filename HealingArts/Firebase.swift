@@ -16,6 +16,8 @@ import FirebaseStorage
 
 class Firebase {
     
+    static var globalArtworks : [Artwork] = []
+    static var globalArtists : [Artist] = []
     
     //     Add a new document with a generated ID
     class func addDataGeneratedID() {
@@ -62,37 +64,6 @@ class Firebase {
             }
         }
     }
-    
-    //    Gets a specific piece of data from a specific document
-//    class func getDocumentFieldByName(docName: String, docField: String, completion: @escaping (String, Error?) -> Void) {
-//        let database = Firestore.firestore()
-//        let docRef = database.collection("Artwork").document(docName)
-//        var fieldData = ""
-//        docRef.getDocument { (document, error) in
-//            if let document = document, document.exists {
-//                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-//
-//                if docField == "image" {
-//                    let arr: [String] = document.get("image") as! [String]
-//                    let storage = Storage.storage()
-//                    let gsReference = storage.reference(forURL: arr.first!)
-//                    gsReference.downloadURL(completion: { (url, error) in
-//                        if let error = error {
-//                            print(error.localizedDescription)
-//                        } else {
-//                            fieldData = "\(url)"
-//                        }
-//                    })
-//                } else {
-//                    fieldData = document["\(docField)"] as! String
-//                }
-//                completion(fieldData, nil)
-//                print("Document data: \(dataDescription)")
-//            } else {
-//                print("Document does not exist")
-//            }
-//        }
-//    }
     
     //Returns an array of Artworks of all the documents in the collection
     class func getAllDocumentsInCollection(completion: @escaping ([Artwork], Error?) -> Void) {
