@@ -19,13 +19,14 @@ class Event {
     var summary: String?
     //    var imageURLs: [String]?
     var image: UIImage
+    var location: String?
     
-    init(title: String, date: String?, summary: String, image: UIImage) {
+    init(title: String, date: String?, summary: String, image: UIImage, location: String?) {
         self.title = title
         self.date = date
         self.summary = summary
         self.image = image
-        
+        self.location = location
     }
 }
 
