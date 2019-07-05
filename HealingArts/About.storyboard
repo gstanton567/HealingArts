@@ -148,7 +148,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="38" id="bDf-DS-xyd"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Book" family="Bodoni 72 Oldstyle" pointSize="24"/>
+                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Book" family="Bodoni 72 Oldstyle" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -181,7 +181,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                 <color key="backgroundColor" red="0.84313725490000002" green="0.098039215690000001" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newCancer" translatesAutoresizingMaskIntoConstraints="NO" id="wLU-pk-HIc">
-                                                <rect key="frame" x="2.5" y="1825" width="492" height="500"/>
+                                                <rect key="frame" x="0.0" y="1808" width="492" height="500"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="492" id="rW1-Un-zPW"/>
                                                     <constraint firstAttribute="height" constant="500" id="x6k-6J-ULb"/>
@@ -194,28 +194,27 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                     <constraint firstAttribute="width" constant="232" id="y8J-jU-Xv5"/>
                                                 </constraints>
                                                 <string key="text">Studies have shown that creating an atmosphere of hope and resilience through artwork goes beyond curing a disease and leads to improved patient outcomes. </string>
-                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BENEFITS OF HEALING ARTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8K-I1-Hbg">
-                                                <rect key="frame" x="58" y="1676" width="301" height="38"/>
+                                                <rect key="frame" x="58" y="1676" width="313.5" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="38" id="FUd-NX-HTE"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Book" family="Bodoni 72 Oldstyle" pointSize="24"/>
+                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Book" family="Bodoni 72 Oldstyle" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Afz-Fl-5g7">
-                                                <rect key="frame" x="57" y="1835" width="255" height="114"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="16" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Afz-Fl-5g7">
+                                                <rect key="frame" x="20" y="1858" width="255" height="135"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="114" id="6DB-FH-SqI"/>
+                                                    <constraint firstAttribute="height" constant="135" id="6DB-FH-SqI"/>
                                                     <constraint firstAttribute="width" constant="255" id="fuT-RH-nNv"/>
                                                 </constraints>
-                                                <string key="text">Engaging in the healing arts can offer patients and caregivers a safe place to process their experiences, helping to clarify and provide insight about            their cancer diagnosis                          and treatment.
-</string>
-                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                                <string key="text">Engaging in the healing arts can offer patients and caregivers a safe place to process their experiences, helping to clarify and provide insight about            their cancer diagnosis                          and treatment.</string>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -273,18 +272,18 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                     <constraint firstAttribute="height" constant="38" id="DL6-4r-EAS"/>
                                                     <constraint firstAttribute="width" constant="362" id="Qay-A9-wlr"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Book" family="Bodoni 72 Oldstyle" pointSize="24"/>
+                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Book" family="Bodoni 72 Oldstyle" pointSize="25"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2019-07-02 at 8.13.36 AM" translatesAutoresizingMaskIntoConstraints="NO" id="awY-iT-rU6">
-                                                <rect key="frame" x="55" y="1733" width="97" height="94"/>
+                                                <rect key="frame" x="20" y="1733" width="115" height="115"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="97" id="CTH-1I-Mmf"/>
-                                                    <constraint firstAttribute="height" constant="94" id="WQe-1f-NaJ"/>
+                                                    <constraint firstAttribute="width" constant="115" id="CTH-1I-Mmf"/>
+                                                    <constraint firstAttribute="height" constant="115" id="WQe-1f-NaJ"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="youtubeButton" translatesAutoresizingMaskIntoConstraints="NO" id="g3l-pb-Q37">
-                                                <rect key="frame" x="91" y="1764" width="32" height="34"/>
+                                                <rect key="frame" x="63" y="1774" width="32" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="CFR-Sb-PDd"/>
                                                     <constraint firstAttribute="width" constant="32" id="cw0-q0-cv9"/>
@@ -302,13 +301,6 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                 </state>
                                                 <connections>
                                                     <action selector="onButtonPressed:" destination="HNa-kJ-spY" eventType="touchUpInside" id="RQn-Qu-XRj"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Uq-VG-Str">
-                                                <rect key="frame" x="55" y="1749" width="97" height="59"/>
-                                                <state key="normal" title="  "/>
-                                                <connections>
-                                                    <action selector="videoButton:" destination="HNa-kJ-spY" eventType="touchUpInside" id="Dog-He-Z4l"/>
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0GV-uk-ggK">
@@ -343,7 +335,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                     <constraint firstAttribute="height" constant="84" id="jrb-tg-TB9"/>
                                                 </constraints>
                                                 <string key="text">Docent-led tours of the collection are offered to the general public on Saturdays on a first-come first-served basis for 15 people from 1 p.m. to 3 p.m. Saturdays. Self-guided tours are not allowed.</string>
-                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -368,38 +360,129 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                     <constraint firstAttribute="height" constant="70" id="01J-AO-ilg"/>
                                                     <constraint firstAttribute="width" constant="362" id="5Jg-Ar-q1w"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="24"/>
+                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Book" family="Bodoni 72 Oldstyle" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Give a Gift Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJO-1s-zpa">
-                                                <rect key="frame" x="47" y="3285" width="154" height="27"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give a Gift Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJO-1s-zpa">
+                                                <rect key="frame" x="46" y="3285" width="154" height="27"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="27" id="ztV-HW-ezo"/>
+                                                    <constraint firstAttribute="width" constant="154" id="zzu-yb-LzD"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oft-hW-fLw">
+                                                <rect key="frame" x="46" y="3331" width="325" height="95"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="95" id="AxZ-KZ-pJx"/>
+                                                    <constraint firstAttribute="width" constant="325" id="mES-N2-ZR4"/>
+                                                </constraints>
+                                                <string key="text">By giving a small donation, you can help support those battling cancer and a program that brings them peace of mind. You can make a difference today.</string>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOK-1h-bhc">
+                                                <rect key="frame" x="47" y="3451" width="320" height="30"/>
+                                                <color key="backgroundColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="320" id="2uJ-lU-56v"/>
+                                                    <constraint firstAttribute="height" constant="30" id="ay1-kB-UXK"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="20"/>
+                                                <state key="normal" title="CLICK HERE TO GIVE A GIFT">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onGiveButtonPressed:" destination="HNa-kJ-spY" eventType="touchUpInside" id="lLp-iC-rlC"/>
+                                                </connections>
+                                            </button>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="88C-WB-XQA">
+                                                <rect key="frame" x="0.0" y="3020" width="414" height="200"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="slV-ko-5Tn"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tGS-HQ-U9F">
+                                                    <size key="itemSize" width="163" height="200"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="uO4-RP-KpF" customClass="DonorCollectionViewCell" customModule="HealingArts" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="163" height="200"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="163" height="200"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Qi-QJ-KYk">
+                                                                    <rect key="frame" x="10" y="10" width="143" height="130"/>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VH0-oD-8fT">
+                                                                    <rect key="frame" x="8" y="140" width="147" height="52"/>
+                                                                    <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </view>
+                                                        <constraints>
+                                                            <constraint firstItem="VH0-oD-8fT" firstAttribute="leading" secondItem="uO4-RP-KpF" secondAttribute="leadingMargin" id="1B3-EM-Iuu"/>
+                                                            <constraint firstAttribute="bottomMargin" secondItem="VH0-oD-8fT" secondAttribute="bottom" id="9Ib-Zf-psb"/>
+                                                            <constraint firstItem="7Qi-QJ-KYk" firstAttribute="top" secondItem="uO4-RP-KpF" secondAttribute="top" constant="10" id="Rv9-vm-1hE"/>
+                                                            <constraint firstAttribute="trailing" secondItem="7Qi-QJ-KYk" secondAttribute="trailing" constant="10" id="Vbn-yE-5g3"/>
+                                                            <constraint firstItem="7Qi-QJ-KYk" firstAttribute="leading" secondItem="uO4-RP-KpF" secondAttribute="leading" constant="10" id="aWW-Iq-44G"/>
+                                                            <constraint firstItem="VH0-oD-8fT" firstAttribute="top" secondItem="7Qi-QJ-KYk" secondAttribute="bottom" id="eMr-aG-PG6"/>
+                                                            <constraint firstAttribute="trailingMargin" secondItem="VH0-oD-8fT" secondAttribute="trailing" id="eP7-za-w7k"/>
+                                                            <constraint firstAttribute="bottom" secondItem="7Qi-QJ-KYk" secondAttribute="bottom" constant="60" id="laq-hY-sgj"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="donorImageView" destination="7Qi-QJ-KYk" id="Bxd-CO-pAI"/>
+                                                            <outlet property="donorNameLabel" destination="VH0-oD-8fT" id="brF-nI-A5e"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="HNa-kJ-spY" id="4Mk-9A-Glf"/>
+                                                    <outlet property="delegate" destination="HNa-kJ-spY" id="C9N-QP-IIp"/>
+                                                </connections>
+                                            </collectionView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Uq-VG-Str">
+                                                <rect key="frame" x="27" y="1751" width="100" height="64"/>
+                                                <state key="normal" title="  "/>
+                                                <connections>
+                                                    <action selector="videoButton:" destination="HNa-kJ-spY" eventType="touchUpInside" id="Dog-He-Z4l"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="b47-9C-fAi" secondAttribute="trailing" id="1Rr-ka-bsd"/>
                                             <constraint firstItem="b47-9C-fAi" firstAttribute="top" secondItem="VbV-Av-W4A" secondAttribute="bottom" constant="556" id="2ti-Vy-qCY"/>
-                                            <constraint firstItem="wLU-pk-HIc" firstAttribute="top" secondItem="5Uq-VG-Str" secondAttribute="bottom" constant="17" id="38y-1U-Goc"/>
+                                            <constraint firstItem="Afz-Fl-5g7" firstAttribute="top" secondItem="5Uq-VG-Str" secondAttribute="bottom" constant="43" id="38y-1U-Goc"/>
                                             <constraint firstItem="ZH2-h9-9T6" firstAttribute="top" secondItem="ZuW-LS-1qd" secondAttribute="bottom" constant="41" id="4CW-cH-mM5"/>
                                             <constraint firstItem="ecl-jG-Fnz" firstAttribute="top" secondItem="JAX-Am-suE" secondAttribute="bottom" constant="35" id="4QH-Fg-Bjv"/>
                                             <constraint firstItem="JAX-Am-suE" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="88" id="5XX-VV-gZ0"/>
                                             <constraint firstItem="y8K-I1-Hbg" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="58" id="6JA-E8-AM7"/>
                                             <constraint firstAttribute="bottom" secondItem="0GV-uk-ggK" secondAttribute="bottom" id="9X8-Yx-TcD"/>
-                                            <constraint firstItem="KP0-QF-3pK" firstAttribute="leading" secondItem="g3l-pb-Q37" secondAttribute="trailing" constant="37" id="9kp-sl-AEF"/>
+                                            <constraint firstItem="KP0-QF-3pK" firstAttribute="leading" secondItem="g3l-pb-Q37" secondAttribute="trailing" constant="65" id="9kp-sl-AEF"/>
                                             <constraint firstItem="y8K-I1-Hbg" firstAttribute="top" secondItem="ZuW-LS-1qd" secondAttribute="top" constant="30" id="B4u-Yh-QkT"/>
+                                            <constraint firstItem="qJO-1s-zpa" firstAttribute="top" secondItem="g7R-qF-vXF" secondAttribute="bottom" constant="295" id="B9y-un-jrR"/>
                                             <constraint firstItem="g7R-qF-vXF" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="46" id="BYg-eW-jaY"/>
                                             <constraint firstAttribute="trailing" secondItem="VbV-Av-W4A" secondAttribute="trailing" constant="10" id="CuH-P7-gd4"/>
                                             <constraint firstItem="Ygr-z5-3m6" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" id="DJd-I3-eAR"/>
+                                            <constraint firstItem="wLU-pk-HIc" firstAttribute="top" secondItem="y8K-I1-Hbg" secondAttribute="bottom" constant="94" id="EHJ-N8-BAx"/>
                                             <constraint firstItem="UG9-yZ-Avg" firstAttribute="top" secondItem="ecl-jG-Fnz" secondAttribute="bottom" id="EhW-Ut-b0W"/>
+                                            <constraint firstItem="qJO-1s-zpa" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="46" id="EwP-BM-dqf"/>
                                             <constraint firstItem="3dL-kh-b4c" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="146" id="FMe-Ao-DCc"/>
                                             <constraint firstItem="jX8-wm-D0t" firstAttribute="centerX" secondItem="SgD-Qv-JMF" secondAttribute="centerX" id="FjV-7J-Vct"/>
-                                            <constraint firstAttribute="trailing" secondItem="wLU-pk-HIc" secondAttribute="trailing" constant="-80.5" id="G1b-qv-8sg"/>
                                             <constraint firstItem="ySE-8f-LnD" firstAttribute="top" secondItem="ZU2-uY-lBB" secondAttribute="bottom" constant="54" id="G9t-eE-1H5"/>
+                                            <constraint firstItem="YOK-1h-bhc" firstAttribute="centerX" secondItem="SgD-Qv-JMF" secondAttribute="centerX" id="GWP-65-3zZ"/>
                                             <constraint firstItem="g7R-qF-vXF" firstAttribute="top" secondItem="Ygr-z5-3m6" secondAttribute="bottom" constant="30" id="HGk-1e-k4M"/>
                                             <constraint firstItem="Ch7-FJ-bQj" firstAttribute="top" secondItem="SgD-Qv-JMF" secondAttribute="top" constant="-55" id="HZV-yH-lbq"/>
                                             <constraint firstItem="ixV-5d-u33" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="46" id="Hg0-Yp-V2c"/>
@@ -415,23 +498,25 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                             <constraint firstItem="jcQ-Ye-cZS" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" id="Pab-wT-PCd"/>
                                             <constraint firstItem="VbV-Av-W4A" firstAttribute="centerX" secondItem="SgD-Qv-JMF" secondAttribute="centerX" id="Qa9-sg-7h6"/>
                                             <constraint firstItem="ZuW-LS-1qd" firstAttribute="top" secondItem="fE8-N6-enM" secondAttribute="bottom" constant="45" id="T6b-6s-kP3"/>
-                                            <constraint firstItem="g3l-pb-Q37" firstAttribute="top" secondItem="y8K-I1-Hbg" secondAttribute="bottom" constant="50" id="U6R-ja-ha6"/>
+                                            <constraint firstItem="g3l-pb-Q37" firstAttribute="top" secondItem="y8K-I1-Hbg" secondAttribute="bottom" constant="60" id="U6R-ja-ha6"/>
                                             <constraint firstItem="ecl-jG-Fnz" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="58" id="VLC-Lj-wMd"/>
                                             <constraint firstItem="Ygr-z5-3m6" firstAttribute="top" secondItem="ZuW-LS-1qd" secondAttribute="bottom" constant="15" id="VPP-6i-nie"/>
                                             <constraint firstAttribute="height" constant="3500" id="Vju-68-yDc"/>
                                             <constraint firstAttribute="trailing" secondItem="jcQ-Ye-cZS" secondAttribute="trailing" id="Vo0-0c-2iS"/>
+                                            <constraint firstItem="wLU-pk-HIc" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" id="W9a-db-7wr"/>
                                             <constraint firstItem="vzY-As-81c" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="47" id="XKL-db-D1A"/>
                                             <constraint firstAttribute="trailing" secondItem="3dL-kh-b4c" secondAttribute="trailing" constant="28" id="XbI-oo-N7v"/>
                                             <constraint firstItem="awY-iT-rU6" firstAttribute="top" secondItem="y8K-I1-Hbg" secondAttribute="bottom" constant="19" id="Xfd-60-GGd"/>
                                             <constraint firstAttribute="trailing" secondItem="fE8-N6-enM" secondAttribute="trailing" constant="38" id="YI1-CM-ooD"/>
                                             <constraint firstItem="ySE-8f-LnD" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="88" id="YwP-CB-XnW"/>
-                                            <constraint firstItem="KP0-QF-3pK" firstAttribute="leading" secondItem="5Uq-VG-Str" secondAttribute="trailing" constant="8" id="ZH6-zx-JdT"/>
+                                            <constraint firstItem="KP0-QF-3pK" firstAttribute="leading" secondItem="5Uq-VG-Str" secondAttribute="trailing" constant="33" id="ZH6-zx-JdT"/>
                                             <constraint firstAttribute="trailing" secondItem="ecl-jG-Fnz" secondAttribute="trailing" constant="69" id="atw-5d-eRD"/>
                                             <constraint firstItem="ZU2-uY-lBB" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="58" id="b22-gb-nPa"/>
                                             <constraint firstItem="X4D-mT-OHF" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="46" id="bN7-8a-r2d"/>
                                             <constraint firstItem="ZuW-LS-1qd" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="-4" id="bvC-eX-5ZJ"/>
                                             <constraint firstItem="VbV-Av-W4A" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="10" id="d34-PB-NBW"/>
                                             <constraint firstAttribute="trailing" secondItem="jX8-wm-D0t" secondAttribute="trailing" constant="5" id="dGv-Vw-RTq"/>
+                                            <constraint firstAttribute="trailing" secondItem="88C-WB-XQA" secondAttribute="trailing" id="dfB-7r-uFc"/>
                                             <constraint firstItem="3dL-kh-b4c" firstAttribute="top" secondItem="ZH2-h9-9T6" secondAttribute="bottom" constant="165" id="dja-VB-MhK"/>
                                             <constraint firstItem="jX8-wm-D0t" firstAttribute="top" secondItem="SgD-Qv-JMF" secondAttribute="top" constant="185" id="dxR-Qu-2hy"/>
                                             <constraint firstItem="0GV-uk-ggK" firstAttribute="top" secondItem="Ygr-z5-3m6" secondAttribute="bottom" constant="-5" id="dz8-i5-O4S"/>
@@ -439,7 +524,9 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                             <constraint firstItem="Ch7-FJ-bQj" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="-1" id="eSj-fQ-e61"/>
                                             <constraint firstItem="ecl-jG-Fnz" firstAttribute="top" secondItem="ySE-8f-LnD" secondAttribute="bottom" constant="35" id="ep9-9Q-nO0"/>
                                             <constraint firstItem="VbV-Av-W4A" firstAttribute="top" secondItem="jX8-wm-D0t" secondAttribute="bottom" constant="6.5" id="esB-FP-jyK"/>
-                                            <constraint firstItem="5Uq-VG-Str" firstAttribute="top" secondItem="y8K-I1-Hbg" secondAttribute="bottom" constant="35" id="g1h-0H-qdn"/>
+                                            <constraint firstItem="88C-WB-XQA" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" id="fyj-t6-aDK"/>
+                                            <constraint firstItem="5Uq-VG-Str" firstAttribute="top" secondItem="y8K-I1-Hbg" secondAttribute="bottom" constant="37" id="g1h-0H-qdn"/>
+                                            <constraint firstItem="oft-hW-fLw" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="46" id="g3Z-jg-j70"/>
                                             <constraint firstAttribute="trailing" secondItem="vzY-As-81c" secondAttribute="trailing" constant="47" id="gVm-2E-j1y"/>
                                             <constraint firstItem="fE8-N6-enM" firstAttribute="top" secondItem="UG9-yZ-Avg" secondAttribute="bottom" constant="15" id="ghe-aZ-8A5"/>
                                             <constraint firstItem="X4D-mT-OHF" firstAttribute="top" secondItem="ZH2-h9-9T6" secondAttribute="bottom" constant="20" id="gvk-sU-e2t"/>
@@ -449,22 +536,25 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                             <constraint firstItem="UG9-yZ-Avg" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="57" id="ixN-df-cQw"/>
                                             <constraint firstItem="ecl-jG-Fnz" firstAttribute="top" secondItem="ixV-5d-u33" secondAttribute="bottom" constant="15.5" id="ja1-a0-NBI"/>
                                             <constraint firstItem="rkG-P6-q8x" firstAttribute="top" secondItem="3CT-jp-uuL" secondAttribute="bottom" constant="8" id="lOG-n1-AEy"/>
+                                            <constraint firstItem="YOK-1h-bhc" firstAttribute="top" secondItem="oft-hW-fLw" secondAttribute="bottom" constant="25" id="mB2-iu-ciJ"/>
                                             <constraint firstItem="ecl-jG-Fnz" firstAttribute="top" secondItem="ySE-8f-LnD" secondAttribute="bottom" constant="35" id="nld-Tr-5LI"/>
-                                            <constraint firstItem="Afz-Fl-5g7" firstAttribute="top" secondItem="awY-iT-rU6" secondAttribute="bottom" constant="8" id="rHd-fJ-TFe"/>
                                             <constraint firstItem="jcQ-Ye-cZS" firstAttribute="centerX" secondItem="SgD-Qv-JMF" secondAttribute="centerX" id="rtL-iA-qqf"/>
+                                            <constraint firstAttribute="trailing" secondItem="wLU-pk-HIc" secondAttribute="trailing" constant="-78" id="siw-HQ-ZVt"/>
                                             <constraint firstItem="vzY-As-81c" firstAttribute="top" secondItem="3dL-kh-b4c" secondAttribute="bottom" constant="165" id="tGp-G9-crH"/>
                                             <constraint firstItem="3CT-jp-uuL" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="46" id="u1a-1h-Uqa"/>
                                             <constraint firstAttribute="trailing" secondItem="ixV-5d-u33" secondAttribute="trailing" constant="70" id="uFD-2h-qT1"/>
                                             <constraint firstAttribute="trailing" secondItem="ySE-8f-LnD" secondAttribute="trailing" constant="28" id="udE-0r-rPa"/>
                                             <constraint firstItem="ixV-5d-u33" firstAttribute="top" secondItem="ZU2-uY-lBB" secondAttribute="bottom" constant="73.5" id="uf8-s6-EZX"/>
                                             <constraint firstAttribute="trailing" secondItem="ZU2-uY-lBB" secondAttribute="trailing" constant="-6" id="ujw-yT-EXb"/>
-                                            <constraint firstItem="Afz-Fl-5g7" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="57" id="viL-FS-j6U"/>
-                                            <constraint firstItem="Afz-Fl-5g7" firstAttribute="top" secondItem="5Uq-VG-Str" secondAttribute="bottom" constant="27" id="wVn-wI-TNU"/>
+                                            <constraint firstItem="Afz-Fl-5g7" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="20" id="viL-FS-j6U"/>
+                                            <constraint firstItem="Afz-Fl-5g7" firstAttribute="top" secondItem="awY-iT-rU6" secondAttribute="bottom" constant="10" id="wVn-wI-TNU"/>
+                                            <constraint firstItem="oft-hW-fLw" firstAttribute="top" secondItem="qJO-1s-zpa" secondAttribute="bottom" constant="19" id="wtu-Wo-CHq"/>
                                             <constraint firstAttribute="trailing" secondItem="3CT-jp-uuL" secondAttribute="trailing" constant="128" id="xUT-2o-Twy"/>
                                             <constraint firstItem="KP0-QF-3pK" firstAttribute="top" secondItem="y8K-I1-Hbg" secondAttribute="bottom" constant="14" id="y1B-we-LxM"/>
-                                            <constraint firstItem="KP0-QF-3pK" firstAttribute="leading" secondItem="awY-iT-rU6" secondAttribute="trailing" constant="8" id="yZ8-xn-8Os"/>
-                                            <constraint firstItem="5Uq-VG-Str" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="55" id="z1f-y1-fac"/>
+                                            <constraint firstItem="KP0-QF-3pK" firstAttribute="leading" secondItem="awY-iT-rU6" secondAttribute="trailing" constant="25" id="yZ8-xn-8Os"/>
+                                            <constraint firstItem="5Uq-VG-Str" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="27" id="z1f-y1-fac"/>
                                             <constraint firstItem="0GV-uk-ggK" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" id="zHD-qq-68h"/>
+                                            <constraint firstItem="88C-WB-XQA" firstAttribute="top" secondItem="g7R-qF-vXF" secondAttribute="bottom" constant="30" id="znk-Bq-Rt3"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -495,6 +585,8 @@ The Healing Arts program will be comprised of a growing list of elements to help
                     </navigationItem>
                     <size key="freeformSize" width="414" height="3600"/>
                     <connections>
+                        <outlet property="donateAskLabel" destination="oft-hW-fLw" id="saf-Wv-eHb"/>
+                        <outlet property="donorCollectionView" destination="88C-WB-XQA" id="7sX-9a-ugJ"/>
                         <outlet property="redBehindImage" destination="jcQ-Ye-cZS" id="cr0-uc-5Ce"/>
                     </connections>
                 </viewController>
