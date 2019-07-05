@@ -37,7 +37,7 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate 
     }
     
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
-        dismiss(animated: true)
+        //dismiss(animated: true)
     }
     /*
     // MARK: - Navigation
