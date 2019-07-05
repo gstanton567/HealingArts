@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		154E835222CA94B50009E842 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154E835122CA94B50009E842 /* Calendar.storyboard */; };
-		154E835422CA98580009E842 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154E835322CA98580009E842 /* CalendarViewController.swift */; };
-		154E835622CA99780009E842 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154E835522CA99780009E842 /* CalendarCollectionViewCell.swift */; };
 		154E835822CA9A920009E842 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154E835722CA9A920009E842 /* Event.swift */; };
 		15873C0E22B144040081410E /* ParallaxCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15873C0A22B144040081410E /* ParallaxCollectionViewCell.swift */; };
 		15873C0F22B144040081410E /* ParallaxFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15873C0B22B144040081410E /* ParallaxFlowLayout.swift */; };
@@ -43,6 +40,9 @@
 		7A785EBB22B014FF008E42D8 /* ArtworkDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A785EBA22B014FF008E42D8 /* ArtworkDetails.storyboard */; };
 		7A785EBD22B016FB008E42D8 /* ArtistDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A785EBC22B016FA008E42D8 /* ArtistDetails.storyboard */; };
 		7A785EBF22B02A11008E42D8 /* DonorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A785EBE22B02A11008E42D8 /* DonorViewController.swift */; };
+		7A8C2B4122CFA4DA00990C8B /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A8C2B4022CFA4DA00990C8B /* Calendar.storyboard */; };
+		7A8C2B4322CFA4F200990C8B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C2B4222CFA4F200990C8B /* CalendarViewController.swift */; };
+		7A8C2B4522CFA80700990C8B /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C2B4422CFA80700990C8B /* CalendarTableViewCell.swift */; };
 		7A9A300322C6A3680006EAA4 /* TestAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A300222C6A3680006EAA4 /* TestAboutViewController.swift */; };
 		7ACC542A22ADEE2900926DA2 /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ACC542922ADEE2900926DA2 /* GoogleService-Info (1).plist */; };
 		7ACC542E22ADFAB900926DA2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ACC542D22ADFAB900926DA2 /* GoogleService-Info.plist */; };
@@ -61,9 +61,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		154E835122CA94B50009E842 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
-		154E835322CA98580009E842 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
-		154E835522CA99780009E842 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		154E835722CA9A920009E842 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		15873C0A22B144040081410E /* ParallaxCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxCollectionViewCell.swift; sourceTree = "<group>"; };
 		15873C0B22B144040081410E /* ParallaxFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxFlowLayout.swift; sourceTree = "<group>"; };
@@ -102,6 +99,9 @@
 		7A785EBA22B014FF008E42D8 /* ArtworkDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ArtworkDetails.storyboard; sourceTree = "<group>"; };
 		7A785EBC22B016FA008E42D8 /* ArtistDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ArtistDetails.storyboard; sourceTree = "<group>"; };
 		7A785EBE22B02A11008E42D8 /* DonorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonorViewController.swift; sourceTree = "<group>"; };
+		7A8C2B4022CFA4DA00990C8B /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
+		7A8C2B4222CFA4F200990C8B /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		7A8C2B4422CFA80700990C8B /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		7A9A300222C6A3680006EAA4 /* TestAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAboutViewController.swift; sourceTree = "<group>"; };
 		7ACC542922ADEE2900926DA2 /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
 		7ACC542D22ADFAB900926DA2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -195,12 +195,12 @@
 				23EFD0E522AAC0A500EC7B72 /* AppDelegate.swift */,
 				23EFD0E722AAC0A500EC7B72 /* ViewController.swift */,
 				23EFD0FF22AACAEA00EC7B72 /* Donor.storyboard */,
+				7A8C2B4022CFA4DA00990C8B /* Calendar.storyboard */,
+				7A8C2B4422CFA80700990C8B /* CalendarTableViewCell.swift */,
+				7A8C2B4222CFA4F200990C8B /* CalendarViewController.swift */,
 				7A785EBE22B02A11008E42D8 /* DonorViewController.swift */,
 				E0B305FF22B1428A007A2E85 /* AboutViewController.swift */,
 				E0B305FD22B1425F007A2E85 /* About.storyboard */,
-				154E835122CA94B50009E842 /* Calendar.storyboard */,
-				154E835522CA99780009E842 /* CalendarCollectionViewCell.swift */,
-				154E835322CA98580009E842 /* CalendarViewController.swift */,
 				23EFD0E922AAC0A500EC7B72 /* Main.storyboard */,
 				23EFD0F922AACAA900EC7B72 /* Artists.storyboard */,
 				D54D085022B149540039E5A9 /* Collection.storyboard */,
@@ -317,7 +317,7 @@
 				7A785EBD22B016FB008E42D8 /* ArtistDetails.storyboard in Resources */,
 				23D0E36122B2B04F00A093F2 /* Feedback.storyboard in Resources */,
 				D54D085122B149540039E5A9 /* Collection.storyboard in Resources */,
-				154E835222CA94B50009E842 /* Calendar.storyboard in Resources */,
+				7A8C2B4122CFA4DA00990C8B /* Calendar.storyboard in Resources */,
 				23EFD0F022AAC0A500EC7B72 /* LaunchScreen.storyboard in Resources */,
 				E0B305FE22B14260007A2E85 /* About.storyboard in Resources */,
 				7ACC542A22ADEE2900926DA2 /* GoogleService-Info (1).plist in Resources */,
@@ -381,10 +381,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				154E835422CA98580009E842 /* CalendarViewController.swift in Sources */,
 				7A785EA422AE9D45008E42D8 /* Firebase.swift in Sources */,
 				E01D17A722AEB8C700885EEC /* AboutViewController.swift in Sources */,
 				23EFD0E822AAC0A500EC7B72 /* ViewController.swift in Sources */,
+				7A8C2B4322CFA4F200990C8B /* CalendarViewController.swift in Sources */,
 				E01D17A922AEBF0D00885EEC /* UIColor+ChihulyColors.swift in Sources */,
 				7A785EB622B0135F008E42D8 /* MapDetailViewController.swift in Sources */,
 				D5431D3422CF8A6C00CEFC7E /* SpinnerViewController.swift in Sources */,
@@ -409,10 +409,10 @@
 				73B5EFAB22AEF01100E0F67F /* SingleArtworkMapViewController.swift in Sources */,
 				23EFD0E622AAC0A500EC7B72 /* AppDelegate.swift in Sources */,
 				D54D084F22B141990039E5A9 /* ArtworkCollectionViewCell.swift in Sources */,
-				154E835622CA99780009E842 /* CalendarCollectionViewCell.swift in Sources */,
 				E0B3060222B144D6007A2E85 /* UIColor+ChihulyColors.swift in Sources */,
 				7A785EA622AEDC1E008E42D8 /* Artwork.swift in Sources */,
 				E0B3060022B1428A007A2E85 /* AboutViewController.swift in Sources */,
+				7A8C2B4522CFA80700990C8B /* CalendarTableViewCell.swift in Sources */,
 				15873C0E22B144040081410E /* ParallaxCollectionViewCell.swift in Sources */,
 				7A785EB522B0135F008E42D8 /* MapViewController.swift in Sources */,
 			);

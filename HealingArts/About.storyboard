@@ -510,14 +510,6 @@ The Healing Arts program will be comprised of a growing list of elements to help
             </objects>
             <point key="canvasLocation" x="3446" y="261"/>
         </scene>
-        <!--Calendar-->
-        <scene sceneID="nlv-Vs-9Jn">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Calendar" id="xgd-Bb-c0y" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MZg-W2-9em" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3688" y="1189"/>
-        </scene>
         <!--Feedback-->
         <scene sceneID="hhU-Nx-n05">
             <objects>
