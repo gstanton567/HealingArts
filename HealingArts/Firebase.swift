@@ -18,6 +18,7 @@ class Firebase {
     
     static var globalArtworks : [Artwork] = []
     static var globalArtists : [Artist] = []
+    static var globalEvents : [Event] = []
     
     //     Add a new document with a generated ID
     class func addDataGeneratedID() {
@@ -112,6 +113,31 @@ class Firebase {
                                 completion(artists, nil)
                             }
                             print ("Artist: \(newArtist.name)")
+                        })
+                    }
+                }
+            }
+        }
+    }
+    
+    class func getEvents(completion: @escaping ([Event], Error?) -> Void) {
+        let database = Firestore.firestore()
+        var events = [Event]()
+        database.collection("Events").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print ("Error geting document \(err)")
+                completion([Event](), err)
+            } else {
+                for document in querySnapshot!.documents {
+                    let data = document.data()
+                    if let urlStrings = data["images"] as? [String] {
+                        NetworkManager.getImagesWith(urlStrings: urlStrings, completion: { (images) in
+                            let newEvent = Event(title: data["title"] as! String, date: data["startTime"] as! String, summary: data["description"] as! String, image: UIImage(named: "dan")!, location: data["location"] as! String)
+                            events.append(newEvent)
+                            if events.count == querySnapshot!.documents.count {
+                                completion(events, nil)
+                            }
+                            print ("Event: \(events.first?.title)")
                         })
                     }
                 }
