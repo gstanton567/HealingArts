@@ -86,8 +86,8 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
     }
     
     func createOverlay(){
-        let mapRect = MKMapRect(origin: MKMapPoint(CLLocationCoordinate2D(latitude: 41.255515, longitude: -95.979688)), size: MKMapSize(width: 235.0, height: 240.0))
-        let overlay = ImageOverlay(image: UIImage(named: "blankSanctuaryMap")!, rect: mapRect)
+        let mapRect = MKMapRect(origin: MKMapPoint(CLLocationCoordinate2D(latitude: 41.255520, longitude: -95.979840)), size: MKMapSize(width: 410, height: 370))
+        let overlay = ImageOverlay(image: UIImage(named: "mapOverlayImage")!, rect: mapRect)
         print (overlay.coordinate)
         sanctuaryMapView.addOverlay(overlay)
     }
