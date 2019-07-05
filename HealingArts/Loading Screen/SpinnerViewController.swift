@@ -11,16 +11,31 @@ import UIKit
 class SpinnerViewController: UIViewController {
     
     var spinner = UIActivityIndicatorView(style: .whiteLarge)
+    var label = UILabel(frame: CGRect(x: 138, y: 400, width: 200, height: 40))
     
     override func loadView() {
         view = UIView()
         
+        label.center = self.view.center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.text = "Loading..."
+        label.textColor = .white
+        label.font = UIFont(name: "HelveticaNeue-UltraLight", size: 32.0)
+        
         spinner.translatesAutoresizingMaskIntoConstraints = false
         spinner.startAnimating()
-        view.addSubview(spinner)
         
-        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        let stackView = UIStackView(arrangedSubviews: [label, spinner])
+        stackView.axis = .horizontal
+        stackView.distribution = .equalSpacing
+        stackView.alignment = .fill
+        stackView.spacing = 5
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(stackView)
+        
+        stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
         view.backgroundColor = UIColor.ChihulyUI.Red.UNMC
     }
