@@ -30,15 +30,19 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate,
     // MARK: - Collection View
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print(donorPictures.count)
         return donorPictures.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = donorCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! DonorCollectionViewCell
         cell.donorImageView.image = UIImage(named: donorPictures[indexPath.row])
+        print(donorPictures[indexPath.row])
         
         return cell
     }
+    
+    
     
      // MARK: - Buttons
      
