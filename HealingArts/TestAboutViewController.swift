@@ -19,6 +19,7 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate,
     @IBOutlet weak var donorCollectionView: UICollectionView!
     
     var donorPictures: [String] = ["walterscott", "fredandpam", "clwerner"]
+    var donorNames: [String] = ["Walter Scott, Jr.", "Fred and Pamela Buffett", "C.L. Werner"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,14 +31,22 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate,
     // MARK: - Collection View
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(donorPictures.count)
         return donorPictures.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = donorCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! DonorCollectionViewCell
-        cell.donorImageView.image = UIImage(named: donorPictures[indexPath.row])
-        print(donorPictures[indexPath.row])
+        cell.donorImageView.image = UIImage(named: donorPictures[indexPath.item])
+        cell.donorNameLabel.text = donorNames[indexPath.item]
+        
+//        var rowIndex = indexPath.row
+//        let numberOfRecords: Int = donorPictures.count - 1
+//        if rowIndex < numberOfRecords{
+//            rowIndex = rowIndex + 1
+//        } else{
+//            rowIndex = 0
+//        }
+        
         
         return cell
     }
