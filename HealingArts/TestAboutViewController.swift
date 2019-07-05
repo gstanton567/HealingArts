@@ -37,7 +37,7 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate 
     }
     
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
-        dismiss(animated: true)
+        //dismiss(animated: true)
     }
     /*
     // MARK: - Navigation
@@ -57,6 +57,18 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate 
                             video.play()
                         })
                     }
+        
+    }
+    
+    
+    @IBAction func onTourButtonPressed(_ sender: UIButton) {
+        let linkString = "https://www.eventbrite.com/e/healing-arts-tour-tickets-35186263060"
+        if let link = URL(string: linkString) {
+            let sfvc = SFSafariViewController(url: link)
+            sfvc.delegate = (self as! SFSafariViewControllerDelegate)
+            
+            present(sfvc, animated: true)
+        }
         
     }
     

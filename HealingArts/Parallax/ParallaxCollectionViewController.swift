@@ -17,7 +17,6 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     //sorting addition
     let locationManager = CLLocationManager()
     var sortedArtworks : [Artwork] = []
-    var artworks : [Artwork] = []
     
     var indexPath: IndexPath?
 
@@ -37,20 +36,18 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
         title = "Gallery"
         collectionView!.register(ParallaxCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
-        Firebase.getAllDocumentsInCollection { (artworks, error) in
-            if error != nil {
-                print(error?.localizedDescription)
+        Firebase.getArtists { (artists, error) in
+            if error != nil{
+                print (error?.localizedDescription)
             } else {
-                self.artworks = artworks
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
+                Firebase.globalArtists = artists
             }
         }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let image = artworks[indexPath.item].images?.first!
+        let image = Firebase.globalArtworks[indexPath.item].images?.first!
         
         let imageWidth: CGFloat = image!.size.width
         let imageHeight: CGFloat = image!.size.height
@@ -65,12 +62,12 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     // MARK: UICollectionViewDataSource
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return artworks.count
+        return Firebase.globalArtworks.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ParallaxCollectionViewCell
-        let image = artworks[indexPath.item].images?.first
+        let image = Firebase.globalArtworks[indexPath.item].images?.first
         cell.imageView.image = image
         let layout = collectionViewLayout as! ParallaxFlowLayout
         cell.maxParallaxOffset = layout.maxParallaxOffset
@@ -86,7 +83,7 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dvc = segue.destination as! ArtDetailsViewController
         dvc.fromArtist = false
-        dvc.artwork = artworks[self.indexPath!.row]
+        dvc.artwork = Firebase.globalArtworks[self.indexPath!.row]
     }
     
     

@@ -16,6 +16,9 @@ import FirebaseStorage
 
 class Firebase {
     
+    static var globalArtworks : [Artwork] = []
+    static var globalArtists : [Artist] = []
+    static var globalEvents : [Event] = []
     
     //     Add a new document with a generated ID
     class func addDataGeneratedID() {
@@ -63,37 +66,6 @@ class Firebase {
         }
     }
     
-    //    Gets a specific piece of data from a specific document
-//    class func getDocumentFieldByName(docName: String, docField: String, completion: @escaping (String, Error?) -> Void) {
-//        let database = Firestore.firestore()
-//        let docRef = database.collection("Artwork").document(docName)
-//        var fieldData = ""
-//        docRef.getDocument { (document, error) in
-//            if let document = document, document.exists {
-//                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-//
-//                if docField == "image" {
-//                    let arr: [String] = document.get("image") as! [String]
-//                    let storage = Storage.storage()
-//                    let gsReference = storage.reference(forURL: arr.first!)
-//                    gsReference.downloadURL(completion: { (url, error) in
-//                        if let error = error {
-//                            print(error.localizedDescription)
-//                        } else {
-//                            fieldData = "\(url)"
-//                        }
-//                    })
-//                } else {
-//                    fieldData = document["\(docField)"] as! String
-//                }
-//                completion(fieldData, nil)
-//                print("Document data: \(dataDescription)")
-//            } else {
-//                print("Document does not exist")
-//            }
-//        }
-//    }
-    
     //Returns an array of Artworks of all the documents in the collection
     class func getAllDocumentsInCollection(completion: @escaping ([Artwork], Error?) -> Void) {
         let database = Firestore.firestore()
@@ -116,6 +88,56 @@ class Firebase {
                                 completion(artworks, nil)
                             }
                             print("Artwork: \(newArtwork.title!)")
+                        })
+                    }
+                }
+            }
+        }
+    }
+    
+    class func getArtists(completion: @escaping ([Artist], Error?) -> Void) {
+        let database = Firestore.firestore()
+        var artists = [Artist]()
+        database.collection("Artist").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print ("Error geting document \(err)")
+                completion([Artist](), err)
+            } else {
+                for document in querySnapshot!.documents {
+                    let data = document.data()
+                    if let urlStrings = data["images"] as? [String] {
+                        NetworkManager.getImagesWith(urlStrings: urlStrings, completion: { (images) in
+                            let newArtist = Artist(name: data["name"] as! String, textDesc: data["textDesc"] as! String, images: images)
+                            artists.append(newArtist)
+                            if artists.count == querySnapshot!.documents.count {
+                                completion(artists, nil)
+                            }
+                            print ("Artist: \(newArtist.name)")
+                        })
+                    }
+                }
+            }
+        }
+    }
+    
+    class func getEvents(completion: @escaping ([Event], Error?) -> Void) {
+        let database = Firestore.firestore()
+        var events = [Event]()
+        database.collection("Events").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print ("Error geting document \(err)")
+                completion([Event](), err)
+            } else {
+                for document in querySnapshot!.documents {
+                    let data = document.data()
+                    if let urlStrings = data["images"] as? [String] {
+                        NetworkManager.getImagesWith(urlStrings: urlStrings, completion: { (images) in
+                            let newEvent = Event(title: data["title"] as! String, date: data["startTime"] as! String, summary: data["description"] as! String, image: UIImage(named: "dan")!, location: data["location"] as! String)
+                            events.append(newEvent)
+                            if events.count == querySnapshot!.documents.count {
+                                completion(events, nil)
+                            }
+                            print ("Event: \(events.first?.title)")
                         })
                     }
                 }

@@ -19,13 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
-        UINavigationBar.appearance().barTintColor = UIColor.ChihulyUI.Red.UNMC
+        UINavigationBar.appearance().barTintColor = UIColor.ChihulyUI.Gray.Graphite
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         
-        UITabBar.appearance().barTintColor = UIColor.ChihulyUI.Red.UNMC
-        UITabBar.appearance().tintColor = UIColor.ChihulyUI.Gray.Graphite
+        UITabBar.appearance().barTintColor = UIColor.ChihulyUI.Gray.Graphite
+        UITabBar.appearance().tintColor = UIColor.ChihulyUI.Red.UNMC
         UITabBar.appearance().isTranslucent = false
         UITabBar.appearance().unselectedItemTintColor = UIColor.white
         

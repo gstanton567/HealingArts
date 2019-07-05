@@ -32,14 +32,9 @@ class ArtDetailsViewController: UIViewController {
     var selectedArtwork : ArtworkItem?
     var mapButtonPressed = false
     var pieceLocation : GeoPoint?
+    var artist : Artist?
     
     var location = CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596)
-    
-    let date = "2017-18"
-    let medium = "Blown-glass"
-    let dimensions = "2 x 8 1/2 x 16.5"
-    let url = "https://s3.amazonaws.com/cdn.seattlemonorail.com/wp-content/uploads/2012/05/17003603/Chihuly03.jpg"
-    let artDescription = "Chihuly's Sconces are wall installations composed of blown-glass elements that are created in responce to a specfic environment. The exterior-lit sculptures are influenced by the chandeliers of the grand homes and palaces throughout Europe from which Chihuly derived inspiration. Chihuly's blown-glass forms vary in color and form and frequently reference the natural world. In Chihuly's Orange and Yellow Hornet Sconce, the elements are referred to as 'hornets' due to their elongated shape, reminiscent of the insect's spiral rear section.\n\nAround the exterior of the Reflection Room, carefully arranged to complement the Orange and Yellow Hornet Sconce, is the Rising Sun Sconce Wall, composed of eight Sconces. Named for things found in nature, its elements include hornets, feathers, balls, and split leaves."
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +53,11 @@ class ArtDetailsViewController: UIViewController {
         
         
         if sanctuaryPiece{
+            for artist in Firebase.globalArtists{
+                if artist.name == artworkPiece?.artist{
+                    self.artist = artist
+                }
+            }
             artistButton.setTitle(artworkPiece?.artist, for: .normal)
             let lat = artworkPiece?.location?.latitude
             let long = artworkPiece?.location?.longitude
@@ -70,6 +70,11 @@ class ArtDetailsViewController: UIViewController {
             imageView.image = artworkPiece?.images?.first
         }
         else if artwork != nil {
+            for artist in Firebase.globalArtists{
+                if artist.name == artwork?.artist{
+                    self.artist = artist
+                }
+            }
             artistButton.setTitle(artwork?.artist, for: .normal)
             pieceNameLabel.text = artwork?.title
             location = CLLocationCoordinate2D(latitude: (artwork?.location?.latitude)!, longitude: (artwork?.location?.longitude)!)
@@ -97,7 +102,6 @@ class ArtDetailsViewController: UIViewController {
     //Artist info segue
     @IBAction func onArtistButtonPressed(_ sender: UIButton) {
         mapButtonPressed = false
-        print("boiiiii wtf")
         performSegue(withIdentifier: "detailsToArtistDetailsSegue", sender: nil)
     }
     
@@ -111,6 +115,7 @@ class ArtDetailsViewController: UIViewController {
         if !mapButtonPressed {
             let avc = segue.destination as! ArtistDetailViewController
             avc.artworkPiece = artworkPiece
+            avc.artist = artist
             print("art boi button")
             
         }
@@ -119,7 +124,6 @@ class ArtDetailsViewController: UIViewController {
             smvc.location = location
             smvc.sanctuaryPiece = sanctuaryPiece
             print(pieceNameLabel.text)
-            print("is map button")
         }
     }
     
