@@ -358,7 +358,20 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                 <state key="normal" title="SIGN UP HERE">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onTourButtonPressed:" destination="HNa-kJ-spY" eventType="touchUpInside" id="yrq-Gc-T7d"/>
+                                                </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THANK YOU TO OUR GENEROUS DONORS" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7R-qF-vXF">
+                                                <rect key="frame" x="46" y="2920" width="362" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="01J-AO-ilg"/>
+                                                    <constraint firstAttribute="width" constant="362" id="5Jg-Ar-q1w"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="24"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -372,6 +385,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                             <constraint firstAttribute="bottom" secondItem="0GV-uk-ggK" secondAttribute="bottom" id="9X8-Yx-TcD"/>
                                             <constraint firstItem="KP0-QF-3pK" firstAttribute="leading" secondItem="g3l-pb-Q37" secondAttribute="trailing" constant="37" id="9kp-sl-AEF"/>
                                             <constraint firstItem="y8K-I1-Hbg" firstAttribute="top" secondItem="ZuW-LS-1qd" secondAttribute="top" constant="30" id="B4u-Yh-QkT"/>
+                                            <constraint firstItem="g7R-qF-vXF" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="46" id="BYg-eW-jaY"/>
                                             <constraint firstAttribute="trailing" secondItem="VbV-Av-W4A" secondAttribute="trailing" constant="10" id="CuH-P7-gd4"/>
                                             <constraint firstItem="Ygr-z5-3m6" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" id="DJd-I3-eAR"/>
                                             <constraint firstItem="UG9-yZ-Avg" firstAttribute="top" secondItem="ecl-jG-Fnz" secondAttribute="bottom" id="EhW-Ut-b0W"/>
@@ -379,6 +393,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                             <constraint firstItem="jX8-wm-D0t" firstAttribute="centerX" secondItem="SgD-Qv-JMF" secondAttribute="centerX" id="FjV-7J-Vct"/>
                                             <constraint firstAttribute="trailing" secondItem="wLU-pk-HIc" secondAttribute="trailing" constant="-80.5" id="G1b-qv-8sg"/>
                                             <constraint firstItem="ySE-8f-LnD" firstAttribute="top" secondItem="ZU2-uY-lBB" secondAttribute="bottom" constant="54" id="G9t-eE-1H5"/>
+                                            <constraint firstItem="g7R-qF-vXF" firstAttribute="top" secondItem="Ygr-z5-3m6" secondAttribute="bottom" constant="30" id="HGk-1e-k4M"/>
                                             <constraint firstItem="Ch7-FJ-bQj" firstAttribute="top" secondItem="SgD-Qv-JMF" secondAttribute="top" constant="-55" id="HZV-yH-lbq"/>
                                             <constraint firstItem="ixV-5d-u33" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="46" id="Hg0-Yp-V2c"/>
                                             <constraint firstAttribute="trailing" secondItem="KP0-QF-3pK" secondAttribute="trailing" constant="22" id="IOr-MM-VKs"/>

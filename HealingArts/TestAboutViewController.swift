@@ -60,6 +60,18 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate 
         
     }
     
+    
+    @IBAction func onTourButtonPressed(_ sender: UIButton) {
+        let linkString = "https://www.eventbrite.com/e/healing-arts-tour-tickets-35186263060"
+        if let link = URL(string: linkString) {
+            let sfvc = SFSafariViewController(url: link)
+            sfvc.delegate = (self as! SFSafariViewControllerDelegate)
+            
+            present(sfvc, animated: true)
+        }
+        
+    }
+    
 }
 
 extension UIImageView {
