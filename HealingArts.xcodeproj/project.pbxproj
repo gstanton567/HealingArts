@@ -39,7 +39,6 @@
 		7A785EB722B0135F008E42D8 /* ArtworkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A785EB222B0135F008E42D8 /* ArtworkItem.swift */; };
 		7A785EB922B0137C008E42D8 /* ArtDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A785EB822B0137B008E42D8 /* ArtDetailsViewController.swift */; };
 		7A785EBB22B014FF008E42D8 /* ArtworkDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A785EBA22B014FF008E42D8 /* ArtworkDetails.storyboard */; };
-		7A785EBD22B016FB008E42D8 /* ArtistDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A785EBC22B016FA008E42D8 /* ArtistDetails.storyboard */; };
 		7A785EBF22B02A11008E42D8 /* DonorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A785EBE22B02A11008E42D8 /* DonorViewController.swift */; };
 		7A8C2B4122CFA4DA00990C8B /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A8C2B4022CFA4DA00990C8B /* Calendar.storyboard */; };
 		7A8C2B4322CFA4F200990C8B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C2B4222CFA4F200990C8B /* CalendarViewController.swift */; };
@@ -54,6 +53,7 @@
 		D54D084D22B13FF60039E5A9 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D084C22B13FF60039E5A9 /* CollectionViewController.swift */; };
 		D54D084F22B141990039E5A9 /* ArtworkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D084E22B141990039E5A9 /* ArtworkCollectionViewCell.swift */; };
 		D54D085122B149540039E5A9 /* Collection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D54D085022B149540039E5A9 /* Collection.storyboard */; };
+		D6A9A20422CFEDD10071E389 /* ArtistDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6A9A20322CFEDD10071E389 /* ArtistDetails.storyboard */; };
 		E01D17A722AEB8C700885EEC /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D17A622AEB8C700885EEC /* AboutViewController.swift */; };
 		E01D17A922AEBF0D00885EEC /* UIColor+ChihulyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D17A822AEBF0D00885EEC /* UIColor+ChihulyColors.swift */; };
 		E0B305FE22B14260007A2E85 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B305FD22B1425F007A2E85 /* About.storyboard */; };
@@ -82,8 +82,6 @@
 		733069EB22B4146900E5FB78 /* thevideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = thevideo.mp4; sourceTree = "<group>"; };
 		73B5EFA022AAF04200E0F67F /* DonorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorViewController.swift; sourceTree = "<group>"; };
 		73B5EFA222AE240300E0F67F /* ArtDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtDetailsViewController.swift; sourceTree = "<group>"; };
-		73B5EFA422AE2D7900E0F67F /* ArtistDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ArtistDetails.storyboard; sourceTree = "<group>"; };
-		73B5EFA622AE2DA400E0F67F /* ArtworkDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ArtworkDetails.storyboard; sourceTree = "<group>"; };
 		73B5EFA822AE8CED00E0F67F /* ArtistDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailViewController.swift; sourceTree = "<group>"; };
 		73B5EFAA22AEF01100E0F67F /* SingleArtworkMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleArtworkMapViewController.swift; sourceTree = "<group>"; };
 		73ED4FF722CFCF90001092E8 /* DonorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 		7A785EB222B0135F008E42D8 /* ArtworkItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtworkItem.swift; sourceTree = "<group>"; };
 		7A785EB822B0137B008E42D8 /* ArtDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtDetailsViewController.swift; sourceTree = "<group>"; };
 		7A785EBA22B014FF008E42D8 /* ArtworkDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ArtworkDetails.storyboard; sourceTree = "<group>"; };
-		7A785EBC22B016FA008E42D8 /* ArtistDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ArtistDetails.storyboard; sourceTree = "<group>"; };
 		7A785EBE22B02A11008E42D8 /* DonorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonorViewController.swift; sourceTree = "<group>"; };
 		7A8C2B4022CFA4DA00990C8B /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		7A8C2B4222CFA4F200990C8B /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +111,7 @@
 		D54D084C22B13FF60039E5A9 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		D54D084E22B141990039E5A9 /* ArtworkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkCollectionViewCell.swift; sourceTree = "<group>"; };
 		D54D085022B149540039E5A9 /* Collection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Collection.storyboard; sourceTree = "<group>"; };
+		D6A9A20322CFEDD10071E389 /* ArtistDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ArtistDetails.storyboard; sourceTree = "<group>"; };
 		E01D17A622AEB8C700885EEC /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E01D17A822AEBF0D00885EEC /* UIColor+ChihulyColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ChihulyColors.swift"; sourceTree = "<group>"; };
 		E0B305FD22B1425F007A2E85 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
@@ -190,13 +188,12 @@
 				7A2D1E5D22B1886F00C6B30A /* NetworkManager.swift */,
 				D54D084E22B141990039E5A9 /* ArtworkCollectionViewCell.swift */,
 				73B5EFA022AAF04200E0F67F /* DonorViewController.swift */,
-				73B5EFA622AE2DA400E0F67F /* ArtworkDetails.storyboard */,
 				73B5EFAA22AEF01100E0F67F /* SingleArtworkMapViewController.swift */,
 				73B5EFA222AE240300E0F67F /* ArtDetailsViewController.swift */,
-				73B5EFA422AE2D7900E0F67F /* ArtistDetails.storyboard */,
 				73B5EFA822AE8CED00E0F67F /* ArtistDetailViewController.swift */,
 				23EFD0E522AAC0A500EC7B72 /* AppDelegate.swift */,
 				23EFD0E722AAC0A500EC7B72 /* ViewController.swift */,
+				D6A9A20322CFEDD10071E389 /* ArtistDetails.storyboard */,
 				23EFD0FF22AACAEA00EC7B72 /* Donor.storyboard */,
 				7A8C2B4022CFA4DA00990C8B /* Calendar.storyboard */,
 				7A8C2B4422CFA80700990C8B /* CalendarTableViewCell.swift */,
@@ -209,7 +206,6 @@
 				D54D085022B149540039E5A9 /* Collection.storyboard */,
 				D54D084C22B13FF60039E5A9 /* CollectionViewController.swift */,
 				7A785EBA22B014FF008E42D8 /* ArtworkDetails.storyboard */,
-				7A785EBC22B016FA008E42D8 /* ArtistDetails.storyboard */,
 				23EFD0F722AAC8C100EC7B72 /* Gallery.storyboard */,
 				15873C0922B144040081410E /* Parallax */,
 				7A785EAD22B0135F008E42D8 /* Map */,
@@ -317,9 +313,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				733069EC22B4146A00E5FB78 /* thevideo.mp4 in Resources */,
-				7A785EBD22B016FB008E42D8 /* ArtistDetails.storyboard in Resources */,
 				23D0E36122B2B04F00A093F2 /* Feedback.storyboard in Resources */,
 				D54D085122B149540039E5A9 /* Collection.storyboard in Resources */,
+				D6A9A20422CFEDD10071E389 /* ArtistDetails.storyboard in Resources */,
 				7A8C2B4122CFA4DA00990C8B /* Calendar.storyboard in Resources */,
 				23EFD0F022AAC0A500EC7B72 /* LaunchScreen.storyboard in Resources */,
 				E0B305FE22B14260007A2E85 /* About.storyboard in Resources */,
