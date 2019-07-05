@@ -10,53 +10,48 @@ import UIKit
 import SafariServices
 import AVKit
 
-class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate {
-
-    @IBOutlet weak var redBehindImage: UIImageView!
+class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    
+    
+    @IBOutlet weak var redBehindImage: UIImageView!
+    @IBOutlet weak var donateAskLabel: UILabel!
+    @IBOutlet weak var donorCollectionView: UICollectionView!
+    
+    var donorPictures: [String] = ["walterscott", "fredandpam", "clwerner"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("View did Load")
-
-        // Do any additional setup after loading the view.
-    }
-    
-
-    @IBAction func onButtonPressed(_ sender: Any) {
         
-        let linkString = "https://www.nebraskamed.com/healingarts"
-        if let link = URL(string: linkString) {
-            let sfvc = SFSafariViewController(url: link)
-            sfvc.delegate = (self as! SFSafariViewControllerDelegate)
-//            sfvc.preferredControlTintColor = .white
-//            sfvc.preferredBarTintColor = UIColor.ChihulyUI.Red.UNMCSafariBackground
-            
-            present(sfvc, animated: true)
-    }
+        donateAskLabel.text = "By giving a small donation, you can help support those battling cancer and a program that brings them peace of mind.\n\nYou can make a difference today."
     }
     
-    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
-        dismiss(animated: true)
+    // MARK: - Collection View
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return donorPictures.count
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = donorCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! DonorCollectionViewCell
+        cell.donorImageView.image = UIImage(named: donorPictures[indexPath.row])
+        
+        return cell
     }
-    */
+    
+     // MARK: - Buttons
+     
+ 
     @IBAction func videoButton(_ sender: Any) {
         if let path = Bundle.main.path(forResource: "thevideo", ofType: "mp4"){
-                        let video = AVPlayer(url: URL(fileURLWithPath: path))
-                        let videoPlayer = AVPlayerViewController()
-                        videoPlayer.player = video
-                        present(videoPlayer, animated: true, completion:{
-                            video.play()
-                        })
-                    }
+            let video = AVPlayer(url: URL(fileURLWithPath: path))
+            let videoPlayer = AVPlayerViewController()
+            videoPlayer.player = video
+            present(videoPlayer, animated: true, completion:{
+                video.play()
+            })
+        }
         
     }
     
@@ -72,6 +67,34 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate 
         
     }
     
+    @IBAction func onGiveButtonPressed(_ sender: UIButton) {
+        let linkString = "https://nufoundation.org/-/unmc-fred-and-pamela-buffett-cancer-center-fred-and-pamela-buffett-cancer-center-healing-arts-program-fund-01133070"
+        if let link = URL(string: linkString) {
+            let sfvc = SFSafariViewController(url: link)
+            sfvc.delegate = (self as! SFSafariViewControllerDelegate)
+            
+            present(sfvc, animated: true)
+        }
+    }
+    
+    @IBAction func onButtonPressed(_ sender: Any) {
+        
+        let linkString = "https://www.nebraskamed.com/healingarts"
+        if let link = URL(string: linkString) {
+            let sfvc = SFSafariViewController(url: link)
+            sfvc.delegate = (self as! SFSafariViewControllerDelegate)
+            //            sfvc.preferredControlTintColor = .white
+            //            sfvc.preferredBarTintColor = UIColor.ChihulyUI.Red.UNMCSafariBackground
+            
+            present(sfvc, animated: true)
+        }
+    }
+    
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        //dismiss(animated: true)
+    }
+    
+    
 }
 
 extension UIImageView {
@@ -80,7 +103,7 @@ extension UIImageView {
         self.layer.cornerRadius = (self.frame.width / 2) //instead of let radius = CGRectGetWidth(self.frame) / 2
         self.layer.masksToBounds = true
         
-//        self.layer.borderWidth = 2
+        //        self.layer.borderWidth = 2
         
         //self.layer.borderColor = UIColor.lightGray.cgColor
     }

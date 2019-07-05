@@ -26,6 +26,7 @@
 		73B5EFA322AE240300E0F67F /* ArtDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B5EFA222AE240300E0F67F /* ArtDetailsViewController.swift */; };
 		73B5EFA922AE8CED00E0F67F /* ArtistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B5EFA822AE8CED00E0F67F /* ArtistDetailViewController.swift */; };
 		73B5EFAB22AEF01100E0F67F /* SingleArtworkMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B5EFAA22AEF01100E0F67F /* SingleArtworkMapViewController.swift */; };
+		73ED4FF822CFCF90001092E8 /* DonorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED4FF722CFCF90001092E8 /* DonorCollectionViewCell.swift */; };
 		7A2D1E5E22B1886F00C6B30A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D1E5D22B1886F00C6B30A /* NetworkManager.swift */; };
 		7A785EA422AE9D45008E42D8 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A785EA322AE9D45008E42D8 /* Firebase.swift */; };
 		7A785EA622AEDC1E008E42D8 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A785EA522AEDC1E008E42D8 /* Artwork.swift */; };
@@ -85,6 +86,7 @@
 		73B5EFA622AE2DA400E0F67F /* ArtworkDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ArtworkDetails.storyboard; sourceTree = "<group>"; };
 		73B5EFA822AE8CED00E0F67F /* ArtistDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailViewController.swift; sourceTree = "<group>"; };
 		73B5EFAA22AEF01100E0F67F /* SingleArtworkMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleArtworkMapViewController.swift; sourceTree = "<group>"; };
+		73ED4FF722CFCF90001092E8 /* DonorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorCollectionViewCell.swift; sourceTree = "<group>"; };
 		7A2D1E5D22B1886F00C6B30A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		7A785EA322AE9D45008E42D8 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		7A785EA522AEDC1E008E42D8 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 		23EFD0E422AAC0A500EC7B72 /* HealingArts */ = {
 			isa = PBXGroup;
 			children = (
+				73ED4FF722CFCF90001092E8 /* DonorCollectionViewCell.swift */,
 				733069EB22B4146900E5FB78 /* thevideo.mp4 */,
 				23D0E36022B2B04F00A093F2 /* Feedback.storyboard */,
 				23D0E35E22B2AFA100A093F2 /* FeedbackViewController.swift */,
@@ -407,6 +410,7 @@
 				15873C0F22B144040081410E /* ParallaxFlowLayout.swift in Sources */,
 				D5431D2F22CB968100CEFC7E /* ImageOverlay.swift in Sources */,
 				73B5EFAB22AEF01100E0F67F /* SingleArtworkMapViewController.swift in Sources */,
+				73ED4FF822CFCF90001092E8 /* DonorCollectionViewCell.swift in Sources */,
 				23EFD0E622AAC0A500EC7B72 /* AppDelegate.swift in Sources */,
 				D54D084F22B141990039E5A9 /* ArtworkCollectionViewCell.swift in Sources */,
 				E0B3060222B144D6007A2E85 /* UIColor+ChihulyColors.swift in Sources */,
