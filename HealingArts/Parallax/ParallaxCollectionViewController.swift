@@ -36,17 +36,6 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
         title = "Gallery"
         collectionView!.register(ParallaxCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
-        Firebase.getAllDocumentsInCollection { (artworks, error) in
-            if error != nil {
-                print(error?.localizedDescription)
-            } else {
-                Firebase.globalArtworks = artworks
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-            }
-        }
-        
         Firebase.getArtists { (artists, error) in
             if error != nil{
                 print (error?.localizedDescription)
