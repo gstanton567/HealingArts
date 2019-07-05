@@ -11,24 +11,45 @@ import UIKit
 class CalendarViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
   
+    @IBOutlet weak var tableView: UITableView!
     var events = [""]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        Firebase.getEvents { (events, err) in
+            if (err != nil) {
+                print("ERRRORRRRR \(err?.localizedDescription)")
+            } else {
+                print("good")
+                DispatchQueue.main.async {
+                    Firebase.globalEvents = events
+                    //                    Firebase.globalEvents[0].getImageURL(summary: events.first!.summary!)
+                    self.tableView.reloadData()
+                }
+                print("Oooga 3ga")
+            }
+        }
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return Firebase.globalEvents.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellID", for: indexPath) as! CalendarTableViewCell
-        cell.eventImageView.image = UIImage(named: "dan")
-        cell.eventTitleLabel.text = "Event title"
-        cell.locationLabel.text = "mav landing"
-        cell.dateLabel.text = "january"
+        cell.eventImageView.image = Firebase.globalEvents[indexPath.row].image
+        cell.eventTitleLabel.text = Firebase.globalEvents[indexPath.row].title
+        cell.locationLabel.text = Firebase.globalEvents[indexPath.row].location
+        cell.dateLabel.text = Firebase.globalEvents[indexPath.row].date
+
         return cell
         
     }
@@ -37,5 +58,5 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.rowHeight = 150
         return 150
     }
-
+    
 }
