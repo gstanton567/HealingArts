@@ -36,24 +36,23 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     //need to figure out how to make geopoints
     let art1 = Artwork(title: "Chihuly Sanctuary", artist: "Dale Chihuly", dimensions: "?", date: "2017", floor: 4, textDescription: "?", medium: "?", location: Firebase.makeGeoPoint(lat: 41.2554318, long: -95.9795596), images: [UIImage(named: "chihulySanctuary")!])
-    let art2 = Artwork(title: "Search", artist: "Jun Kaneko", dimensions: "?", date: "?", floor: 0, textDescription: "?", medium: "?", location: Firebase.makeGeoPoint(lat: 41.2560330, long: -95.9804196), images: [UIImage(named: "search")!])
-    let art3 = Artwork(title: "Leslie's Healing Garden", artist: "?", dimensions: "?", date: "?", floor: 2, textDescription: "?", medium: "Plants", location: Firebase.makeGeoPoint(lat: 41.2552318, long: -95.9796596), images: [UIImage(named: "lesliesHealingGarden")!])
-    
+//    let art2 = Artwork(title: "Search", artist: "Jun Kaneko", dimensions: "?", date: "?", floor: 0, textDescription: "?", medium: "?", location: Firebase.makeGeoPoint(lat: 41.2560330, long: -95.9804196), images: [UIImage(named: "search")!])
+//    let art3 = Artwork(title: "Leslie's Healing Garden", artist: "?", dimensions: "?", date: "?", floor: 2, textDescription: "?", medium: "Plants", location: Firebase.makeGeoPoint(lat: 41.2552318, long: -95.9796596), images: [UIImage(named: "lesliesHealingGarden")!])
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Map"
         
+       
         mapView.delegate = self
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
-        artworks?.append(art1)
-        artworks?.append(art2)
-        artworks?.append(art3)
+        print(artworks?.count)
+//        artworks?.append(art2)
+//        artworks?.append(art3)
         
-        for artwork in artworks!{
-            createPin(location: CLLocationCoordinate2D(latitude: artwork.location!.latitude, longitude: artwork.location!.longitude))
-        }
+        
         
     }
     
@@ -62,6 +61,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let center = CLLocationCoordinate2D(latitude: 41.2555318, longitude: -95.979859999)
         let region = MKCoordinateRegion(center: center, span: span)
         mapView.setRegion(region, animated: false)
+        
+        Firebase.getAllDocumentsInMap { (artworkss, err) in
+            for artwork in artworkss {
+                self.artworks?.append(artwork)
+            }
+            self.artworks?.append(self.art1)
+            DispatchQueue.main.async {
+                for artwork in self.artworks!{
+                    
+                    self.createPin(location: CLLocationCoordinate2D(latitude: artwork.location!.latitude, longitude: artwork.location!.longitude))
+                }
+            }
+            
+            
+            print(err?.localizedDescription)
+            
+        }
+        
     }
     
     
