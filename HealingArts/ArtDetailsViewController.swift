@@ -78,7 +78,7 @@ class ArtDetailsViewController: UIViewController {
             artistButton.setTitle(artwork?.artist, for: .normal)
             pieceNameLabel.text = artwork?.title
             location = CLLocationCoordinate2D(latitude: (artwork?.location?.latitude)!, longitude: (artwork?.location?.longitude)!)
-            artistButton.isEnabled = false
+            artistButton.isEnabled = true
             imageView.image = artwork?.images?.first
             dateLabel.text = artwork?.date
             mediumLabel.text = artwork?.medium
