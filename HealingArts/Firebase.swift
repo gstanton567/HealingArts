@@ -130,20 +130,21 @@ class Firebase {
             } else {
                 for document in querySnapshot!.documents {
                     let data = document.data()
-                    if let urlStrings = data["images"] as? [String] {
-                        NetworkManager.getImagesWith(urlStrings: urlStrings, completion: { (images) in
+//                    if let urlStrings = data["images"] as? [String] {
+//                        NetworkManager.getImagesWith(urlStrings: urlStrings, completion: { (images) in
+                    
                             let newEvent = Event(title: data["title"] as! String, date: data["startTime"] as! String, summary: data["description"] as! String, image: UIImage(named: "dan")!, location: data["location"] as! String)
                             events.append(newEvent)
                             if events.count == querySnapshot!.documents.count {
                                 completion(events, nil)
                             }
                             print ("Event: \(events.first?.title)")
-                        })
+//                        })
                     }
                 }
             }
         }
-    }
+    
     
     class func makeGeoPoint(lat: Double, long: Double) -> GeoPoint{
         let newPoint = GeoPoint(latitude: lat, longitude: long)
