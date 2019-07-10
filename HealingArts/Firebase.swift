@@ -134,6 +134,31 @@ class Firebase {
 //                        NetworkManager.getImagesWith(urlStrings: urlStrings, completion: { (images) in
                     
                             let newEvent = Event(title: data["title"] as! String, date: data["startTime"] as! String, summary: data["description"] as! String, image: UIImage(named: "dan")!, location: data["location"] as! String)
+                    DispatchQueue.main.async {
+                        print(newEvent.summary)
+                        if let eventSummaryArr = newEvent.summary?.components(separatedBy: "&&") {
+                            let str = eventSummaryArr[0]
+                            print(str)
+                            if let url = URL(string: str)
+                            {
+                                let url2 = url
+                                getData(from: url2) { data, response, error in
+                                    guard let data = data, error == nil else { print(error)
+                                        return }
+                                    
+                                    print("heloooooo2")
+                                    DispatchQueue.main.async() {
+                                        newEvent.image = UIImage(data: data)!
+                                        print("heloooooo")
+                                    }
+                                    
+                                    completion(events, nil)
+                                }
+                            }
+                        }
+                    }
+                    
+                   // newEvent.image =
                             events.append(newEvent)
                             if events.count == querySnapshot!.documents.count {
                                 completion(events, nil)
@@ -149,6 +174,10 @@ class Firebase {
     class func makeGeoPoint(lat: Double, long: Double) -> GeoPoint{
         let newPoint = GeoPoint(latitude: lat, longitude: long)
         return newPoint
+    }
+    
+    class func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
     
 }
