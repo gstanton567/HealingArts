@@ -36,7 +36,7 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
         sanctuaryMapView.showsUserLocation = true
         
         let center = CLLocationCoordinate2D(latitude: 41.2553360, longitude: -95.9795296)
-        let span = MKCoordinateSpan(latitudeDelta: 0.0004, longitudeDelta: 0.0004)
+        let span = MKCoordinateSpan(latitudeDelta: 0.00035, longitudeDelta: 0.00035)
         let region = MKCoordinateRegion(center: center, span: span)
         sanctuaryMapView.setRegion(region, animated: false)
         
