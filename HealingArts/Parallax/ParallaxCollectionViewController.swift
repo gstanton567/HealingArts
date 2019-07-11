@@ -81,7 +81,7 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dvc = segue.destination as! ArtDetailsViewController
+        let dvc = segue.destination as! CardArtDetailsViewController
         dvc.fromArtist = false
         dvc.artwork = Firebase.globalArtworks[self.indexPath!.row]
     }

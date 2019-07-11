@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="U4q-yq-WLn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="S4a-NC-Q21">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -181,16 +181,30 @@
             </objects>
             <point key="canvasLocation" x="3019" y="777"/>
         </scene>
-        <!--View Controller-->
+        <!--Card Art Details View Controller-->
         <scene sceneID="R8u-s5-eSZ">
             <objects>
-                <viewController id="S4a-NC-Q21" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="S4a-NC-Q21" customClass="CardArtDetailsViewController" customModule="HealingArts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fSM-5K-MWa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o0e-BZ-vM2">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="o0e-BZ-vM2" firstAttribute="leading" secondItem="lER-Z3-vKJ" secondAttribute="leading" id="GyC-5V-i10"/>
+                            <constraint firstItem="lER-Z3-vKJ" firstAttribute="trailing" secondItem="o0e-BZ-vM2" secondAttribute="trailing" id="HTB-eo-dbj"/>
+                            <constraint firstItem="lER-Z3-vKJ" firstAttribute="bottom" secondItem="o0e-BZ-vM2" secondAttribute="bottom" id="Tdv-zI-6cF"/>
+                            <constraint firstItem="o0e-BZ-vM2" firstAttribute="top" secondItem="lER-Z3-vKJ" secondAttribute="top" id="wTY-hg-5Xt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lER-Z3-vKJ"/>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImage" destination="o0e-BZ-vM2" id="fuA-gK-57H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bIc-ip-tys" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
