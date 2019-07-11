@@ -16,8 +16,13 @@ enum NetworkManager {
     static func getImageWithURL(url: URL, completion:@escaping (UIImage) -> Void) {
         session.dataTask(with: url) { (data, response, error) in
             guard let data = data else { return }
-            let image = UIImage.init(data: data)!
-            completion(image)
+            if UIImage.init(data: data) != nil{
+                let image = UIImage.init(data: data)!
+                completion(image)
+            } else {
+                let image = UIImage(named: "artPlaceholderImage")
+                completion(image!)
+            }
             if let error = error {
                 print(error)
             }
