@@ -12,14 +12,14 @@ import AVKit
 
 class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    
-    
     @IBOutlet weak var redBehindImage: UIImageView!
     @IBOutlet weak var donateAskLabel: UILabel!
     @IBOutlet weak var donorCollectionView: UICollectionView!
     
-    var donorPictures: [String] = ["walterscott", "fredandpam", "clwerner"]
-    var donorNames: [String] = ["Walter Scott, Jr.", "Fred and Pamela Buffett", "C.L. Werner"]
+    var donorPictures: [String] = ["walterscott", "fredandpam", "clwerner", "dan", "harnoor"]
+    var donorNames: [String] = ["Walter Scott, Jr.", "Fred and Pamela Buffett", "C.L. Werner", "Dan Shipp", "Harnoor Singh"]
+    
+    var scrollingTimer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,16 +39,28 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate,
         cell.donorImageView.image = UIImage(named: donorPictures[indexPath.item])
         cell.donorNameLabel.text = donorNames[indexPath.item]
         
-//        var rowIndex = indexPath.row
-//        let numberOfRecords: Int = donorPictures.count - 1
-//        if rowIndex < numberOfRecords{
-//            rowIndex = rowIndex + 1
-//        } else{
-//            rowIndex = 0
-//        }
         
+        
+        var rowIndex = indexPath.row
+        let numberOfRecords: Int = donorPictures.count - 1
+        print(rowIndex)
+        if rowIndex < numberOfRecords{
+            rowIndex = rowIndex + 1
+        } else{
+            rowIndex = 0
+        }
+        
+        scrollingTimer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(TestAboutViewController.startTimer(theTimer:)), userInfo: rowIndex, repeats: true)
         
         return cell
+    }
+    
+    @objc func startTimer(theTimer: Timer){
+        UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseOut, animations: {
+            self.donorCollectionView.scrollToItem(at: IndexPath(row: theTimer.userInfo as! Int, section: 0), at: .left, animated: false)
+        }, completion: nil)
+        
+        
     }
     
     
