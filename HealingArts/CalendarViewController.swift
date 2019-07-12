@@ -17,7 +17,8 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        // I don't know how to set the title at the top of the view controller becuase this is not working
+        self.title = "Upcoming Events"
     }
     
     override func viewWillAppear(_ animated: Bool) {
