@@ -36,7 +36,7 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
         sanctuaryMapView.showsUserLocation = true
         
         let center = CLLocationCoordinate2D(latitude: 41.2553360, longitude: -95.9795296)
-        let span = MKCoordinateSpan(latitudeDelta: 0.0003, longitudeDelta: 0.0003)
+        let span = MKCoordinateSpan(latitudeDelta: 0.00035, longitudeDelta: 0.00035)
         let region = MKCoordinateRegion(center: center, span: span)
         sanctuaryMapView.setRegion(region, animated: false)
         
@@ -57,7 +57,40 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
         locationManager.stopUpdatingLocation()
     }
     
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let ADVC =  segue.destination as! ArtDetailsViewController
+        ADVC.sanctuaryPiece = sanctuaryPiece
+        ADVC.fromArtist = false
+        ADVC.artworkPiece = artworkPiece
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        return ImageOverlayRenderer(overlay: overlay)
+    }
+    
+    func createOverlay(){
+        let mapRect = MKMapRect(origin: MKMapPoint(CLLocationCoordinate2D(latitude: 41.255530, longitude: -95.979840)), size: MKMapSize(width: 410, height: 400))
+        let overlay = ImageOverlay(image: UIImage(named: "mapOverlayImage")!, rect: mapRect)
+        print (overlay.coordinate)
+        sanctuaryMapView.addOverlay(overlay)
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let pin = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
+        pin.image = UIImage(named: "artIcon")
+        pin.canShowCallout = true
+        let button = UIButton(type: .detailDisclosure)
+        pin.rightCalloutAccessoryView = button
+        
+        if annotation.isEqual(mapView.userLocation) {
+            return nil
+        } else {
+            return pin
+        }
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        print("info button tapped")
         if view.annotation is MKUserLocation{
             //do nothing
         } else{
@@ -71,25 +104,6 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
             }
             performSegue(withIdentifier: "toArtworkDetailSegue", sender: nil)
         }
-        
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let ADVC =  segue.destination as! ArtDetailsViewController
-        ADVC.sanctuaryPiece = sanctuaryPiece
-        ADVC.fromArtist = false
-        ADVC.artworkPiece = artworkPiece
-    }
-    
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        return ImageOverlayRenderer(overlay: overlay)
-    }
-    
-    func createOverlay(){
-        let mapRect = MKMapRect(origin: MKMapPoint(CLLocationCoordinate2D(latitude: 41.255520, longitude: -95.979840)), size: MKMapSize(width: 410, height: 370))
-        let overlay = ImageOverlay(image: UIImage(named: "mapOverlayImage")!, rect: mapRect)
-        print (overlay.coordinate)
-        sanctuaryMapView.addOverlay(overlay)
-    }
+        }
     
 }
