@@ -27,7 +27,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     //just using this for now to see items outside of sanctuary
     var sanctuaryPiece = false
     
-    var artworks : [Artwork]? = []
+    var artworks = Firebase.globalMapArt
     var selectedArtwork : Artwork?
 
     //let art1 = ArtworkItem(name: "Chihuly Sanctuary", artist: "Dale Chihuly", coordinate: CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596), imageName: "chihulySanctuary", distanceToUser: 0.0)
@@ -35,9 +35,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
    // let art3 = ArtworkItem(name: "Leslie's Healing Garden", artist: "" /* N/A */, coordinate: CLLocationCoordinate2D(latitude: 41.2552318, longitude: -95.9796596), imageName: "lesliesHealingGarden", distanceToUser: 0.0)
     
     //need to figure out how to make geopoints
-    let art1 = Artwork(title: "Chihuly Sanctuary", artist: "Dale Chihuly", dimensions: "?", date: "2017", floor: 4, textDescription: "?", medium: "?", location: Firebase.makeGeoPoint(lat: 41.2554318, long: -95.9795596), images: [UIImage(named: "chihulySanctuary")!])
-    let art2 = Artwork(title: "Search", artist: "Jun Kaneko", dimensions: "?", date: "?", floor: 0, textDescription: "?", medium: "?", location: Firebase.makeGeoPoint(lat: 41.2560330, long: -95.9804196), images: [UIImage(named: "search")!])
-    let art3 = Artwork(title: "Leslie's Healing Garden", artist: "?", dimensions: "?", date: "?", floor: 2, textDescription: "?", medium: "Plants", location: Firebase.makeGeoPoint(lat: 41.2552318, long: -95.9796596), images: [UIImage(named: "lesliesHealingGarden")!])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,13 +43,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         mapView.delegate = self
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+
         
-        artworks?.append(art1)
-        artworks?.append(art2)
-        artworks?.append(art3)
-        
-        for artwork in artworks!{
-            createPin(location: CLLocationCoordinate2D(latitude: artwork.location!.latitude, longitude: artwork.location!.longitude))
+        for artwork in artworks{
+            if artwork.floor == 0{
+                createPin(location: CLLocationCoordinate2D(latitude: artwork.location!.latitude, longitude: artwork.location!.longitude))
+            } else {
+                //do nothing
+            }
         }
         
     }
@@ -84,7 +82,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let annotation = view.annotation
         let location = annotation?.coordinate
         //checks the coordinate of each artwork to see if it is equal to the coordinate of the selected pinb
-        for artwork in artworks!{
+        for artwork in artworks{
             if artwork.location?.latitude == location?.latitude && artwork.location?.longitude == location?.longitude{
                 self.selectedArtwork = artwork
                 

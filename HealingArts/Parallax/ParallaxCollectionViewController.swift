@@ -44,6 +44,14 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
             }
         }
         
+        Firebase.getMapArtworks { (mapArt, error) in
+            if error != nil {
+                print (error?.localizedDescription)
+            } else {
+                Firebase.globalMapArt = mapArt
+            }
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
