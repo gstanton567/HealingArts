@@ -19,20 +19,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybridFlyover" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" showsUserLocation="YES" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICr-ya-rC1">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="128" width="414" height="734"/>
                             </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="26Y-pG-u5y">
+                                <rect key="frame" x="0.0" y="93" width="414" height="31"/>
+                                <segments>
+                                    <segment title="Ground Floor"/>
+                                    <segment title="1st Floor"/>
+                                    <segment title="2nd Floor"/>
+                                    <segment title="4th Floor"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="i8u-PQ-EJu" eventType="valueChanged" id="Cs8-CV-Xxq"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="81l-KH-2Xo" firstAttribute="trailing" secondItem="26Y-pG-u5y" secondAttribute="trailing" id="Iub-dZ-oki"/>
                             <constraint firstItem="81l-KH-2Xo" firstAttribute="bottom" secondItem="ICr-ya-rC1" secondAttribute="bottom" id="ULO-mR-PYg"/>
-                            <constraint firstItem="ICr-ya-rC1" firstAttribute="top" secondItem="81l-KH-2Xo" secondAttribute="top" id="cFt-r2-lbv"/>
+                            <constraint firstItem="ICr-ya-rC1" firstAttribute="top" secondItem="26Y-pG-u5y" secondAttribute="bottom" constant="5" id="V28-zK-0hh"/>
+                            <constraint firstItem="ICr-ya-rC1" firstAttribute="top" secondItem="81l-KH-2Xo" secondAttribute="top" constant="40" id="cFt-r2-lbv"/>
+                            <constraint firstItem="26Y-pG-u5y" firstAttribute="leading" secondItem="81l-KH-2Xo" secondAttribute="leading" id="dNn-Ws-4Oe"/>
                             <constraint firstItem="81l-KH-2Xo" firstAttribute="trailing" secondItem="ICr-ya-rC1" secondAttribute="trailing" id="ea8-Yo-XF0"/>
+                            <constraint firstItem="26Y-pG-u5y" firstAttribute="top" secondItem="81l-KH-2Xo" secondAttribute="top" constant="5" id="hPf-FX-cdf"/>
                             <constraint firstItem="ICr-ya-rC1" firstAttribute="leading" secondItem="81l-KH-2Xo" secondAttribute="leading" id="jxb-lG-YnY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="81l-KH-2Xo"/>
                     </view>
                     <navigationItem key="navigationItem" id="4Nq-Db-LEM"/>
                     <connections>
+                        <outlet property="floorController" destination="26Y-pG-u5y" id="5dO-wc-mYu"/>
                         <outlet property="mapView" destination="ICr-ya-rC1" id="un8-F3-301"/>
                         <segue destination="Zhf-Qy-ZFO" kind="show" identifier="toMapDetailSegue" id="Lwo-oC-aFV"/>
                         <segue destination="4LR-qp-mLZ" kind="show" identifier="toSanctuaryMap" id="ssX-UW-TrZ"/>
@@ -148,6 +165,6 @@
         <image name="mapIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Nuf-ZY-hrJ"/>
+        <segue reference="uwl-ca-WCM"/>
     </inferredMetricsTieBreakers>
 </document>
