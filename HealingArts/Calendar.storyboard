@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Calendar View Controller-->
+        <!--Events-->
         <scene sceneID="kmB-w6-yNy">
             <objects>
                 <viewController id="QQC-uX-l8H" customClass="CalendarViewController" customModule="HealingArts" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hyw-yy-8eq">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellID" rowHeight="180" id="Fyi-43-5Zp" customClass="CalendarTableViewCell" customModule="HealingArts" customModuleProvider="target">
@@ -79,6 +79,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qok-L5-P0H"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Events" selectedImage="donorIcon" id="ArD-Ou-kq5"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="hyw-yy-8eq" id="Ckx-wp-mJL"/>
                     </connections>
@@ -88,4 +90,7 @@
             <point key="canvasLocation" x="-360.86956521739131" y="-8.0357142857142847"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="donorIcon" width="25" height="25"/>
+    </resources>
 </document>
