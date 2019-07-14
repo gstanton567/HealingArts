@@ -12,5 +12,9 @@ class CardViewController: UIViewController {
 
   
     @IBOutlet weak var handleArea: UIView!
+    @IBOutlet weak var feedbackButton: UIButton!
     
+//    @IBAction func feedbackButtonPressed(_ sender: Any) {
+//        print("feedback")
+//    }
 }
