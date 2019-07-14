@@ -135,8 +135,7 @@ class FeedbackViewController: UIViewController {
     //    }
     
     @IBAction func onSubmitPressed(_ sender: UIButton) {
-        let databaseRef  = Firestore.firestore()
-        
+        Firebase.sendFeedback(rating: rateLabel!.text!, quality: qualityLabel!.text!, interesting: interestingLabel!.text!, additional: textView!.text!, title: "Reflection Room Crystal Sconces")
         //Text fields cannot be blank or nil
         //        if nameTextField.text != nil && emailTextField.text != nil && textView.text != nil && nameTextField.text != "" && emailTextField.text != "" && textView.text != "" {
         //            var ref = databaseRef.collection("Feedback").addDocument(data: ["name" : nameTextField.text, "email" : emailTextField.text, "comment" : textView.text]) {err in

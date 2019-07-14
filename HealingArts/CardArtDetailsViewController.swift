@@ -16,55 +16,54 @@ class CardArtDetailsViewController: UIViewController {
         case collapsed
     }
     
-    var cardViewController:CardViewController!
-    var visualEffectView:UIVisualEffectView!
+    var cardViewController: CardViewController!
+    var visualEffectView: UIVisualEffectView!
     var fromArtist = false
-    var artwork : Artwork! 
+    var artwork: Artwork!
     
-    let cardHeight:CGFloat = 600
-    let cardHandleAreaHeight:CGFloat = 65
+    let cardHeight: CGFloat = 600
+    let cardHandleAreaHeight: CGFloat = 65
     
     var cardVisible = false
-    var nextState:CardState {
+    var nextState: CardState {
         return cardVisible ? .collapsed : .expanded
     }
     
     var runningAnimations = [UIViewPropertyAnimator]()
-    var animationProgressWhenInterrupted:CGFloat = 0
+    var animationProgressWhenInterrupted: CGFloat = 0
     
     @IBOutlet weak var backgroundImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        backgroundImage.image = artwork.images?.first
         setupCard()
+//        backgroundImage.image = artwork.images?.first
+        
     }
     
     func setupCard() {
         visualEffectView = UIVisualEffectView()
         visualEffectView.frame = self.view.frame
         self.view.addSubview(visualEffectView)
-        backgroundImage.backgroundColor = .blue
+//        backgroundImage.backgroundColor = .blue
         cardViewController = CardViewController(nibName: "CardViewController", bundle: nil)
         self.addChild(cardViewController)
         self.view.addSubview(cardViewController.view)
-        
+//        backgroundImage.backgroundColor = .red
         cardViewController.view.frame = CGRect(x: 0, y: self.view.frame.height - cardHandleAreaHeight, width: self.view.bounds.width, height: cardHeight)
         
         cardViewController.view.clipsToBounds = true
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CardArtDetailsViewController.handleCardTap(recognzier:)))
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(CardArtDetailsViewController.handleCardPan(recognizer:)))
-        
+
         cardViewController.handleArea.addGestureRecognizer(tapGestureRecognizer)
         cardViewController.handleArea.addGestureRecognizer(panGestureRecognizer)
-        
+
         
     }
     
-    @objc
-    func handleCardTap(recognzier:UITapGestureRecognizer) {
+    @objc func handleCardTap(recognzier:UITapGestureRecognizer) {
         switch recognzier.state {
         case .ended:
             animateTransitionIfNeeded(state: nextState, duration: 0.9)
@@ -73,8 +72,7 @@ class CardArtDetailsViewController: UIViewController {
         }
     }
     
-    @objc
-    func handleCardPan (recognizer:UIPanGestureRecognizer) {
+    @objc func handleCardPan(recognizer:UIPanGestureRecognizer) {
         switch recognizer.state {
         case .began:
             startInteractiveTransition(state: nextState, duration: 0.9)

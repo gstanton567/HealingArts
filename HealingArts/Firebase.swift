@@ -180,5 +180,21 @@ class Firebase {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
     
+    class func sendFeedback(rating: String, quality: String, interesting: String, additional: String, title: String) {
+        //take in the 4 data and put it into a string
+        //add it to the feedback collection
+        //use title as document name and make a new field
+        let feedback = "\(rating)##\(quality)##\(interesting)##\(additional)"
+        let database = Firestore.firestore()
+        
+        let timestamp = NSDate().timeIntervalSince1970
+        let myTimeInterval = TimeInterval(timestamp)
+        let time = NSDate(timeIntervalSince1970: TimeInterval(myTimeInterval))
+        
+        database.collection("Feedback").document(title).setData([ "\(time)": feedback ], merge: true)
+        
+        
+    }
+    
 }
 
