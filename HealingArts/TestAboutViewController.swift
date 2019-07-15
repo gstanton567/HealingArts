@@ -16,8 +16,8 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate,
     @IBOutlet weak var donateAskLabel: UILabel!
     @IBOutlet weak var donorCollectionView: UICollectionView!
     
-    var donorPictures: [String] = ["walterscott", "fredandpam", "clwerner", "dan", "harnoor"]
-    var donorNames: [String] = ["Walter Scott, Jr.", "Fred and Pamela Buffett", "C.L. Werner", "Dan Shipp", "Harnoor Singh"]
+    var donorPictures: [String] = ["walterscott", "fredandpam", "clwerner", "dan", "harnoor", "gold"]
+    var donorNames: [String] = ["Walter Scott, Jr.", "Fred and Pamela Buffett", "C.L. Werner", "Dan Shipp", "Harnoor Singh", "Dr.Gold"]
     
     var scrollingTimer = Timer()
     
@@ -26,6 +26,8 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate,
         print("View did Load")
         
         donateAskLabel.text = "By giving a small donation, you can help support those battling cancer and a program that brings them peace of mind.\n\nYou can make a difference today."
+        
+        startTimer()
     }
     
     // MARK: - Collection View
@@ -39,35 +41,36 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate,
         cell.donorImageView.image = UIImage(named: donorPictures[indexPath.item])
         cell.donorNameLabel.text = donorNames[indexPath.item]
         
-        var rowIndex = indexPath.item
-        let numberOfRecords = self.donorNames.count
-        
-        rowIndex = (rowIndex + 1) % numberOfRecords
-        print(rowIndex)
-        
-//        var rowIndex = indexPath.row
-//        let numberOfRecords: Int = donorPictures.count - 1
-//
-//        if rowIndex < numberOfRecords{
-//            rowIndex = rowIndex + 1
-//        } else{
-//            rowIndex = 0
-//        }
-        
-        scrollingTimer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(TestAboutViewController.startTimer(theTimer:)), userInfo: rowIndex, repeats: true)
-        
         return cell
     }
     
-    @objc func startTimer(theTimer: Timer){
-        UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseOut, animations: {
-            self.donorCollectionView.scrollToItem(at: IndexPath(row: theTimer.userInfo as! Int, section: 0), at: .left, animated: false)
-        }, completion: nil)
-        
-        
+    
+    //  MARK:  Auto-Scrolling
+    /**
+     Invokes Timer to start Automatic Animation with repeat enabled
+     */
+    func startTimer() {
+        Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: Selector("scrollToNextCell"), userInfo: nil, repeats: true);
     }
     
-    
+    @objc func scrollToNextCell(){
+        
+        //get cell size
+        let cellSize = CGSize(width: self.view.frame.width, height: self.view.frame.height);
+        
+        //get current content Offset of the Collection view
+        let contentOffset = donorCollectionView.contentOffset;
+        
+        if donorCollectionView.contentSize.width <= donorCollectionView.contentOffset.x + cellSize.width
+        {
+            donorCollectionView.scrollRectToVisible(CGRect(x: 0, y: contentOffset.y, width: cellSize.width, height: cellSize.height), animated: true);
+            
+        } else {
+            donorCollectionView.scrollRectToVisible(CGRect(x: contentOffset.x + cellSize.width + 9.2499, y: contentOffset.y, width: cellSize.width, height: cellSize.height), animated: true);
+            
+        }
+        
+    }
     
      // MARK: - Buttons
      
@@ -112,8 +115,7 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate,
         if let link = URL(string: linkString) {
             let sfvc = SFSafariViewController(url: link)
             sfvc.delegate = (self as! SFSafariViewControllerDelegate)
-            //            sfvc.preferredControlTintColor = .white
-            //            sfvc.preferredBarTintColor = UIColor.ChihulyUI.Red.UNMCSafariBackground
+            
             
             present(sfvc, animated: true)
         }
@@ -132,9 +134,6 @@ extension UIImageView {
         self.layer.cornerRadius = (self.frame.width / 2) //instead of let radius = CGRectGetWidth(self.frame) / 2
         self.layer.masksToBounds = true
         
-        //        self.layer.borderWidth = 2
-        
-        //self.layer.borderColor = UIColor.lightGray.cgColor
     }
     
 }
