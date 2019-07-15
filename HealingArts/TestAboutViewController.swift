@@ -39,16 +39,20 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate,
         cell.donorImageView.image = UIImage(named: donorPictures[indexPath.item])
         cell.donorNameLabel.text = donorNames[indexPath.item]
         
+        var rowIndex = indexPath.item
+        let numberOfRecords = self.donorNames.count
         
-        
-        var rowIndex = indexPath.row
-        let numberOfRecords: Int = donorPictures.count - 1
+        rowIndex = (rowIndex + 1) % numberOfRecords
         print(rowIndex)
-        if rowIndex < numberOfRecords{
-            rowIndex = rowIndex + 1
-        } else{
-            rowIndex = 0
-        }
+        
+//        var rowIndex = indexPath.row
+//        let numberOfRecords: Int = donorPictures.count - 1
+//
+//        if rowIndex < numberOfRecords{
+//            rowIndex = rowIndex + 1
+//        } else{
+//            rowIndex = 0
+//        }
         
         scrollingTimer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(TestAboutViewController.startTimer(theTimer:)), userInfo: rowIndex, repeats: true)
         
