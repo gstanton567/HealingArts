@@ -11,7 +11,7 @@ import CoreLocation
 import Firebase
 import FirebaseFirestore
 
-class ArtDetailsViewController: UIViewController {
+class ArtDetailsViewController: UIViewController, UIScrollViewDelegate{
     var artwork : Artwork?
     
     @IBOutlet weak var barLabel: UILabel!
@@ -23,6 +23,8 @@ class ArtDetailsViewController: UIViewController {
     @IBOutlet weak var mediumLabel: UILabel!
     @IBOutlet weak var dimensionsLabel: UILabel!
     @IBOutlet weak var mapButton: UIButton!
+    @IBOutlet weak var tintImageView: UIImageView!
+    @IBOutlet weak var imageDetailScrollView: UIScrollView!
     
     var sanctuaryPiece = false
     var fromArtist = false
@@ -34,11 +36,35 @@ class ArtDetailsViewController: UIViewController {
     var pieceLocation : GeoPoint?
     var artist : Artist?
     
+    var imageViewForScrolling = UIImageView()
+    
     var location = CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596)
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        imageDetailScrollView.delegate = self
+        imageViewForScrolling = UIImageView(image: UIImage(named: "artPlaceholderImage"))
+        imageDetailScrollView.backgroundColor = .black
+        imageDetailScrollView.contentSize = imageViewForScrolling.bounds.size
+        imageDetailScrollView.autoresizingMask = UIView.AutoresizingMask(rawValue: UIView.AutoresizingMask.flexibleWidth.rawValue | UIView.AutoresizingMask.flexibleHeight.rawValue)
+        imageDetailScrollView.contentOffset = CGPoint(x: 1090, y: 450)
+        imageDetailScrollView.isUserInteractionEnabled = true
+
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(fromArtist)
+        
+        let tapGestureRecognizerForImage = UITapGestureRecognizer(target: self, action: #selector(ArtDetailsViewController.imageTapped(tapGestureRecognizerForImage:)))
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapGestureRecognizerForImage)
+        
+        let tapGestureRecognizerForTint = UITapGestureRecognizer(target: self, action: #selector(ArtDetailsViewController.tintTapped(tapGestureRecognizerForTint:)))
+        
+        tintImageView.isUserInteractionEnabled = true
+        tintImageView.addGestureRecognizer(tapGestureRecognizerForTint)
 
         artistButton.setTitleColor(UIColor.ChihulyUI.Blue.DeepAqua, for: .normal)
         mapButton.setTitleColor(UIColor.ChihulyUI.Blue.DeepAqua, for: .normal)
@@ -68,6 +94,9 @@ class ArtDetailsViewController: UIViewController {
             dateLabel.text = artworkPiece?.date
             descriptionTextView.text = artworkPiece?.textDescription
             imageView.image = artworkPiece?.images?.first
+            imageViewForScrolling = UIImageView(image: (artworkPiece?.images?.first))
+            imageDetailScrollView.addSubview(imageViewForScrolling)
+
         }
         else if artwork != nil {
             for artist in Firebase.globalArtists{
@@ -84,11 +113,31 @@ class ArtDetailsViewController: UIViewController {
             mediumLabel.text = artwork?.medium
             dimensionsLabel.text = artwork?.dimensions
             descriptionTextView.text = artwork?.textDescription
+            imageViewForScrolling = UIImageView(image: (artwork?.images?.first))
+            imageDetailScrollView.addSubview(imageViewForScrolling)
+
         }
         
         
     }
     
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageViewForScrolling
+    }
+    
+    func setZoomScale(){
+        let imageViewSize = imageViewForScrolling.bounds.size
+        let scrollViewSize = imageDetailScrollView.bounds.size
+        let widthScale = scrollViewSize.width / imageViewSize.width
+        let heightScale = scrollViewSize.height / imageViewSize.height
+        
+        imageDetailScrollView.minimumZoomScale = min(widthScale, heightScale)
+        imageDetailScrollView.zoomScale = 1.0
+    }
+    
+    override func viewWillLayoutSubviews() {
+        setZoomScale()
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -127,8 +176,20 @@ class ArtDetailsViewController: UIViewController {
         }
     }
     
+    @objc func imageTapped(tapGestureRecognizerForImage: UITapGestureRecognizer) {
+        let tappedImage = tapGestureRecognizerForImage.view as! UIImageView
+        
+        imageDetailScrollView.isHidden = false
+        tintImageView.isHidden = false
+        
+    }
     
-    
+    @objc func tintTapped(tapGestureRecognizerForTint : UIGestureRecognizer) {
+        let tappedItem = tapGestureRecognizerForTint.view as! UIImageView
+        
+        imageDetailScrollView.isHidden = true
+        tintImageView.isHidden = true
+    }
     
     
     
