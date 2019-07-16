@@ -2,45 +2,61 @@
 //  CalendarViewController.swift
 //  HealingArts
 //
-//  Created by Grayson Stanton on 7/1/19.
+//  Created by Carly Cameron on 7/5/19.
 //  Copyright © 2019 Brady Fehr. All rights reserved.
 //
 
 import UIKit
 
-class CalendarViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class CalendarViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var events = [Event]()
-    var dans = [UIImage(named: "CancerCenter"), UIImage(named: "CancerCenter")]
-    
+  
+    @IBOutlet weak var tableView: UITableView!
+    var events = [""]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
-        // Do any additional setup after loading the view.
-        print("Grayson was here")
-    }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return events.count
-        return dans.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! CalendarCollectionViewCell
-//        let event = events[indexPath.row]
-        cell.imageView.image = dans.first as! UIImage
-//        cell.textlabel.text = "\(event.title) on \(event.date)"
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        Firebase.getEvents { (events, err) in
+            if let err = err {
+                print("ERRRORRRRR \(err.localizedDescription)")
+            } else {
+                print("good")
+                DispatchQueue.main.async {
+                    Firebase.globalEvents = events
+                    //                    Firebase.globalEvents[0].getImageURL(summary: events.first!.summary!)
+                    self.tableView.reloadData()
+                }
+                print("Oooga 3ga")
+            }
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Firebase.globalEvents.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellID", for: indexPath) as! CalendarTableViewCell
+        cell.eventImageView.image = Firebase.globalEvents[indexPath.row].image
+        cell.eventTitleLabel.text = Firebase.globalEvents[indexPath.row].title
+        cell.locationLabel.text = Firebase.globalEvents[indexPath.row].location
+        cell.dateLabel.text = Firebase.globalEvents[indexPath.row].date
+
         return cell
+        
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        tableView.rowHeight = 150
+        return 150
     }
-    */
-
+    
 }

@@ -16,6 +16,10 @@ import FirebaseStorage
 
 class Firebase {
     
+    static var globalArtworks : [Artwork] = []
+    static var globalMapArt : [Artwork] = []
+    static var globalArtists : [Artist] = []
+    static var globalEvents : [Event] = []
     
     //     Add a new document with a generated ID
     class func addDataGeneratedID() {
@@ -63,37 +67,6 @@ class Firebase {
         }
     }
     
-    //    Gets a specific piece of data from a specific document
-//    class func getDocumentFieldByName(docName: String, docField: String, completion: @escaping (String, Error?) -> Void) {
-//        let database = Firestore.firestore()
-//        let docRef = database.collection("Artwork").document(docName)
-//        var fieldData = ""
-//        docRef.getDocument { (document, error) in
-//            if let document = document, document.exists {
-//                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-//
-//                if docField == "image" {
-//                    let arr: [String] = document.get("image") as! [String]
-//                    let storage = Storage.storage()
-//                    let gsReference = storage.reference(forURL: arr.first!)
-//                    gsReference.downloadURL(completion: { (url, error) in
-//                        if let error = error {
-//                            print(error.localizedDescription)
-//                        } else {
-//                            fieldData = "\(url)"
-//                        }
-//                    })
-//                } else {
-//                    fieldData = document["\(docField)"] as! String
-//                }
-//                completion(fieldData, nil)
-//                print("Document data: \(dataDescription)")
-//            } else {
-//                print("Document does not exist")
-//            }
-//        }
-//    }
-    
     //Returns an array of Artworks of all the documents in the collection
     class func getAllDocumentsInCollection(completion: @escaping ([Artwork], Error?) -> Void) {
         let database = Firestore.firestore()
@@ -123,9 +96,117 @@ class Firebase {
         }
     }
     
+    class func getMapArtworks(completion: @escaping ([Artwork], Error?) -> Void) {
+        let database = Firestore.firestore()
+        var artworks = [Artwork]()
+        database.collection("MapArtworks").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+                completion([Artwork](), err)
+            } else {
+                for document in querySnapshot!.documents {
+                    let data = document.data()
+                    print(data["images"])
+                    if let urlStrings = data["images"] as? [String] {
+                        NetworkManager.getImagesWith(urlStrings: urlStrings, completion: { (images) in
+                            
+                            let newArtwork = Artwork(title: data["title"] as! String, artist: (data["artist"] as? String)!, dimensions: data["dimensions"] as? String, date: "", floor: data["floor"] as? Int, textDescription: data["textDescription"] as? String, medium: data["medium"] as? String, location: data["location"] as? GeoPoint, images: images)
+                            
+                            artworks.append(newArtwork)
+                            if artworks.count == querySnapshot!.documents.count {
+                                completion(artworks, nil)
+                            }
+                            print("Artwork: \(newArtwork.title!)")
+                        })
+                    }
+                }
+            }
+        }
+    }
+    
+    class func getArtists(completion: @escaping ([Artist], Error?) -> Void) {
+        let database = Firestore.firestore()
+        var artists = [Artist]()
+        database.collection("Artist").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print ("Error geting document \(err)")
+                completion([Artist](), err)
+            } else {
+                for document in querySnapshot!.documents {
+                    let data = document.data()
+                    if let urlStrings = data["images"] as? [String] {
+                        NetworkManager.getImagesWith(urlStrings: urlStrings, completion: { (images) in
+                            let newArtist = Artist(name: data["name"] as! String, textDesc: data["textDesc"] as! String, images: images)
+                            artists.append(newArtist)
+                            if artists.count == querySnapshot!.documents.count {
+                                completion(artists, nil)
+                            }
+                            print ("Artist: \(newArtist.name)")
+                        })
+                    }
+                }
+            }
+        }
+    }
+    
+    class func getEvents(completion: @escaping ([Event], Error?) -> Void) {
+        let database = Firestore.firestore()
+        var events = [Event]()
+        database.collection("Events").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print ("Error geting document \(err)")
+                completion([Event](), err)
+            } else {
+                for document in querySnapshot!.documents {
+                    let data = document.data()
+//                    if let urlStrings = data["images"] as? [String] {
+//                        NetworkManager.getImagesWith(urlStrings: urlStrings, completion: { (images) in
+                    
+                            let newEvent = Event(title: data["title"] as! String, date: data["startTime"] as! String, summary: data["description"] as! String, image: UIImage(named: "logo2")!, location: data["location"] as! String)
+                    DispatchQueue.main.async {
+                        print(newEvent.summary)
+                        if let eventSummaryArr = newEvent.summary?.components(separatedBy: "&&") {
+                            let str = eventSummaryArr[0]
+                            print(str)
+                            if let url = URL(string: str)
+                            {
+                                let url2 = url
+                                getData(from: url2) { data, response, error in
+                                    guard let data = data, error == nil else { print(error)
+                                        return }
+                                    
+                                    print("heloooooo2")
+                                    DispatchQueue.main.async() {
+                                        newEvent.image = UIImage(data: data)!
+                                        print("heloooooo")
+                                    }
+                                    
+                                    completion(events, nil)
+                                }
+                            }
+                        }
+                    }
+                    
+                   // newEvent.image =
+                            events.append(newEvent)
+                            if events.count == querySnapshot!.documents.count {
+                                completion(events, nil)
+                            }
+                            print ("Event: \(events.first?.title)")
+//                        })
+                    }
+                }
+            }
+        }
+    
+    
     class func makeGeoPoint(lat: Double, long: Double) -> GeoPoint{
         let newPoint = GeoPoint(latitude: lat, longitude: long)
         return newPoint
+    }
+    
+    class func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
     
 }
