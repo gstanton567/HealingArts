@@ -28,13 +28,13 @@ class Event {
         self.summary = summary
         self.image = image
         self.location = location
-        getImageURL(summary: self.summary!) { success, image  in
-            if success {
-                self.image = image
-                self.test = true
-                print("reload")
-            }
-        }
+//        getImageURL(summary: self.summary!) { success, image  in
+//            if success {
+//                self.image = image
+//                self.test = true
+//                print("reload")
+//            }
+//        }
     }
     
     
