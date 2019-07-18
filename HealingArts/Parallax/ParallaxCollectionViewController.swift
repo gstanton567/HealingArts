@@ -86,7 +86,7 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
                 artworksMod.append(artwork)
             }
         }
-        
+        Firebase.globalModArtworks = artworksMod
         return artworksMod.count
     }
     

@@ -38,7 +38,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     func getCollection() {
-        for artwork in Firebase.globalArtworks {
+        for artwork in Firebase.globalModArtworks {
             if artwork.artist == artistName {
                 artCollection.append(artwork)
                 print(artwork.title!)
