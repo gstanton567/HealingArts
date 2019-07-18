@@ -34,7 +34,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title of Event" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKL-Gs-e9x">
-                                                    <rect key="frame" x="164" y="27" width="228" height="55"/>
+                                                    <rect key="frame" x="164" y="11" width="228" height="86"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <nil key="textColor"/>
@@ -93,7 +93,7 @@
         <scene sceneID="a2A-IV-7vG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vuY-yj-y2U" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Events" selectedImage="donorIcon" id="ArD-Ou-kq5"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="icons8-calendar-50" selectedImage="icons8-calendar-50" id="ArD-Ou-kq5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2eq-La-GXz">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -110,6 +110,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="donorIcon" width="25" height="25"/>
+        <image name="icons8-calendar-50" width="20" height="20"/>
     </resources>
 </document>
