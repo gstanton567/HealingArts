@@ -67,7 +67,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xKG-ES-xWU"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Donors" image="donorIcon" id="JXl-pY-hiM"/>
+                    <tabBarItem key="tabBarItem" title="Donors" image="icons8-calendar-50" id="JXl-pY-hiM"/>
                     <connections>
                         <outlet property="donorsTextView" destination="ELX-TH-lkY" id="GJ0-Ik-3Ke"/>
                         <outlet property="redLabel" destination="sji-7a-uBE" id="fyj-uA-id5"/>
@@ -80,7 +80,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="donorIcon" width="25" height="25"/>
+        <image name="icons8-calendar-50" width="25" height="25"/>
         <image name="unmc" width="400" height="400"/>
     </resources>
 </document>
