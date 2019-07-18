@@ -17,6 +17,7 @@ import FirebaseStorage
 class Firebase {
     
     static var globalArtworks : [Artwork] = []
+    static var globalMapArt : [Artwork] = []
     static var globalArtists : [Artist] = []
     static var globalEvents : [Event] = []
     
@@ -95,6 +96,34 @@ class Firebase {
         }
     }
     
+    class func getMapArtworks(completion: @escaping ([Artwork], Error?) -> Void) {
+        let database = Firestore.firestore()
+        var artworks = [Artwork]()
+        database.collection("MapArtworks").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+                completion([Artwork](), err)
+            } else {
+                for document in querySnapshot!.documents {
+                    let data = document.data()
+                    print(data["images"])
+                    if let urlStrings = data["images"] as? [String] {
+                        NetworkManager.getImagesWith(urlStrings: urlStrings, completion: { (images) in
+                            
+                            let newArtwork = Artwork(title: data["title"] as! String, artist: (data["artist"] as? String)!, dimensions: data["dimensions"] as? String, date: "", floor: data["floor"] as? Int, textDescription: data["textDescription"] as? String, medium: data["medium"] as? String, location: data["location"] as? GeoPoint, images: images)
+                            
+                            artworks.append(newArtwork)
+                            if artworks.count == querySnapshot!.documents.count {
+                                completion(artworks, nil)
+                            }
+                            print("Artwork: \(newArtwork.title!)")
+                        })
+                    }
+                }
+            }
+        }
+    }
+    
     class func getArtists(completion: @escaping ([Artist], Error?) -> Void) {
         let database = Firestore.firestore()
         var artists = [Artist]()
@@ -133,7 +162,7 @@ class Firebase {
 //                    if let urlStrings = data["images"] as? [String] {
 //                        NetworkManager.getImagesWith(urlStrings: urlStrings, completion: { (images) in
                     
-                            let newEvent = Event(title: data["title"] as! String, date: data["startTime"] as! String, summary: data["description"] as! String, image: UIImage(named: "dan")!, location: data["location"] as! String)
+                            let newEvent = Event(title: data["title"] as! String, date: data["startTime"] as! String, summary: data["description"] as! String, image: UIImage(named: "logo2")!, location: data["location"] as! String)
                     DispatchQueue.main.async {
                         print(newEvent.summary)
                         if let eventSummaryArr = newEvent.summary?.components(separatedBy: "&&") {

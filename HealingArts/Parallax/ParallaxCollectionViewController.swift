@@ -19,6 +19,8 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     var sortedArtworks : [Artwork] = []
     
     var indexPath: IndexPath?
+    
+    var artworksMod : [Artwork] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,10 +46,18 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
             }
         }
         
+        Firebase.getMapArtworks { (mapArt, error) in
+            if error != nil {
+                print (error?.localizedDescription)
+            } else {
+                Firebase.globalMapArt = mapArt
+            }
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let image = Firebase.globalArtworks[indexPath.item].images?.first!
+        let image = artworksMod[indexPath.item].images?.first!
         
         let imageWidth: CGFloat = image!.size.width
         let imageHeight: CGFloat = image!.size.height
@@ -62,12 +72,28 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     // MARK: UICollectionViewDataSource
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Firebase.globalArtworks.count
+        
+        //sorts out duplicate images before returning a count
+        var isDuplicate = false
+        for artwork in Firebase.globalArtworks{
+            isDuplicate = false
+            for modArtwork in artworksMod{
+                if modArtwork.textDescription == artwork.textDescription {
+                    isDuplicate = true
+                }
+            }
+            if isDuplicate == false {
+                artworksMod.append(artwork)
+            }
+        }
+        
+        return artworksMod.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ParallaxCollectionViewCell
-        let image = Firebase.globalArtworks[indexPath.item].images?.first
+        let image = artworksMod[indexPath.item].images?.first
         cell.imageView.image = image
         let layout = collectionViewLayout as! ParallaxFlowLayout
         cell.maxParallaxOffset = layout.maxParallaxOffset
@@ -83,7 +109,7 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dvc = segue.destination as! ArtDetailsViewController
         dvc.fromArtist = false
-        dvc.artwork = Firebase.globalArtworks[self.indexPath!.row]
+        dvc.artwork = artworksMod[self.indexPath!.row]
     }
     
     
