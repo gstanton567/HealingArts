@@ -20,6 +20,7 @@ class Firebase {
     static var globalMapArt : [Artwork] = []
     static var globalArtists : [Artist] = []
     static var globalEvents : [Event] = []
+    static var globalModArtworks : [Artwork] = []
     
     //     Add a new document with a generated ID
     class func addDataGeneratedID() {
