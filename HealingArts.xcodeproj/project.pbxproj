@@ -60,6 +60,7 @@
 		E0B305FE22B14260007A2E85 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B305FD22B1425F007A2E85 /* About.storyboard */; };
 		E0B3060022B1428A007A2E85 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B305FF22B1428A007A2E85 /* AboutViewController.swift */; };
 		E0B3060222B144D6007A2E85 /* UIColor+ChihulyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3060122B144D6007A2E85 /* UIColor+ChihulyColors.swift */; };
+		E0BEC53022DF86B30071345E /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BEC52F22DF86B30071345E /* EventDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +120,7 @@
 		E0B305FD22B1425F007A2E85 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		E0B305FF22B1428A007A2E85 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E0B3060122B144D6007A2E85 /* UIColor+ChihulyColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+ChihulyColors.swift"; sourceTree = "<group>"; };
+		E0BEC52F22DF86B30071345E /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		E785BA99679D892493AD2F72 /* Pods-HealingArts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealingArts.debug.xcconfig"; path = "Target Support Files/Pods-HealingArts/Pods-HealingArts.debug.xcconfig"; sourceTree = "<group>"; };
 		FE50B71741D42914269684F1 /* Pods-HealingArts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealingArts.release.xcconfig"; path = "Target Support Files/Pods-HealingArts/Pods-HealingArts.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,6 +200,7 @@
 				D6A9A20322CFEDD10071E389 /* ArtistDetails.storyboard */,
 				23EFD0FF22AACAEA00EC7B72 /* Donor.storyboard */,
 				7A8C2B4022CFA4DA00990C8B /* Calendar.storyboard */,
+				E0BEC52F22DF86B30071345E /* EventDetailViewController.swift */,
 				7A8C2B4422CFA80700990C8B /* CalendarTableViewCell.swift */,
 				7A8C2B4222CFA4F200990C8B /* CalendarViewController.swift */,
 				7A785EBE22B02A11008E42D8 /* DonorViewController.swift */,
@@ -413,6 +416,7 @@
 				73ED4FF822CFCF90001092E8 /* DonorCollectionViewCell.swift in Sources */,
 				23EFD0E622AAC0A500EC7B72 /* AppDelegate.swift in Sources */,
 				D54D084F22B141990039E5A9 /* ArtworkCollectionViewCell.swift in Sources */,
+				E0BEC53022DF86B30071345E /* EventDetailViewController.swift in Sources */,
 				E0B3060222B144D6007A2E85 /* UIColor+ChihulyColors.swift in Sources */,
 				7A785EA622AEDC1E008E42D8 /* Artwork.swift in Sources */,
 				E0B3060022B1428A007A2E85 /* AboutViewController.swift in Sources */,
