@@ -14,6 +14,7 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
     
     var locationManager = CLLocationManager()
     var artworkPiece : Artwork?
+    var pinName : String?
     
     @IBOutlet weak var sanctuaryMapView: MKMapView!
     
@@ -27,28 +28,49 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        createOverlay()
-        
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
         sanctuaryMapView.delegate = self
         sanctuaryMapView.showsUserLocation = true
         
-        let center = CLLocationCoordinate2D(latitude: 41.2553360, longitude: -95.9795296)
-        let span = MKCoordinateSpan(latitudeDelta: 0.00035, longitudeDelta: 0.00035)
-        let region = MKCoordinateRegion(center: center, span: span)
-        sanctuaryMapView.setRegion(region, animated: false)
-        
-        for artwork in Firebase.globalArtworks{
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = CLLocationCoordinate2D(latitude: artwork.location!.latitude, longitude: artwork.location!.longitude)
-            annotation.title = artwork.title
-            DispatchQueue.main.async{
-                self.sanctuaryMapView.addAnnotation(annotation)
+        switch pinName!{
+        case "Chihuly Sanctuary" :
+            let center = CLLocationCoordinate2D(latitude: 41.2553360, longitude: -95.9795296)
+            let span = MKCoordinateSpan(latitudeDelta: 0.00035, longitudeDelta: 0.00035)
+            let region = MKCoordinateRegion(center: center, span: span)
+            sanctuaryMapView.setRegion(region, animated: false)
+            
+            createOverlay(image: UIImage(named: "mapOverlayImage")!, origin: CLLocationCoordinate2D(latitude: 41.255530, longitude: -95.979840), size: MKMapSize(width: 410, height: 400))
+            
+            for artwork in Firebase.globalArtworks{
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = CLLocationCoordinate2D(latitude: artwork.location!.latitude, longitude: artwork.location!.longitude)
+                annotation.title = artwork.title
+                DispatchQueue.main.async{
+                    self.sanctuaryMapView.addAnnotation(annotation)
+                }
             }
+        case "Lobby Artworks" :
+            let center = CLLocationCoordinate2D(latitude: 41.255467, longitude: -95.979874)
+            let span = MKCoordinateSpan(latitudeDelta: 0.0008, longitudeDelta: 0.0008)
+            let region = MKCoordinateRegion(center: center, span: span)
+            sanctuaryMapView.setRegion(region, animated: false)
+            
+            createOverlay(image: UIImage(named: "floorOneMap")!, origin: CLLocationCoordinate2D(latitude: 41.255867, longitude: -95.980234), size: MKMapSize(width: 1000, height: 760))
+        default :
+            break;
         }
         
+        
+        
+    }
+    
+    func createOverlay(image : UIImage?, origin: CLLocationCoordinate2D, size: MKMapSize){
+        let mapRect = MKMapRect(origin: MKMapPoint(origin), size: size)
+        let overlay = ImageOverlay(image: image!, rect: mapRect)
+        print (overlay.coordinate)
+        sanctuaryMapView.addOverlay(overlay)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -68,12 +90,6 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
         return ImageOverlayRenderer(overlay: overlay)
     }
     
-    func createOverlay(){
-        let mapRect = MKMapRect(origin: MKMapPoint(CLLocationCoordinate2D(latitude: 41.255530, longitude: -95.979840)), size: MKMapSize(width: 410, height: 400))
-        let overlay = ImageOverlay(image: UIImage(named: "mapOverlayImage")!, rect: mapRect)
-        print (overlay.coordinate)
-        sanctuaryMapView.addOverlay(overlay)
-    }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let pin = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
