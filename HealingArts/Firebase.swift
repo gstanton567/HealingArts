@@ -163,7 +163,7 @@ class Firebase {
 //                    if let urlStrings = data["images"] as? [String] {
 //                        NetworkManager.getImagesWith(urlStrings: urlStrings, completion: { (images) in
                     
-                            let newEvent = Event(title: data["title"] as! String, date: data["startTime"] as! String, summary: data["description"] as! String, image: UIImage(named: "logo2")!, location: data["location"] as! String)
+                    let newEvent = Event(title: data["title"] as! String, date: data["startTime"] as! String, summary: data["description"] as! String, image: UIImage(named: "logo2")!, location: data["location"] as? String)
                     DispatchQueue.main.async {
                         print(newEvent.summary)
                         if let eventSummaryArr = newEvent.summary?.components(separatedBy: "&&") {

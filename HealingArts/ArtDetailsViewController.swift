@@ -23,6 +23,7 @@ class ArtDetailsViewController: UIViewController {
     @IBOutlet weak var mediumLabel: UILabel!
     @IBOutlet weak var dimensionsLabel: UILabel!
     @IBOutlet weak var mapButton: UIButton!
+    @IBOutlet weak var feedbackButton: UIButton!
     
     var sanctuaryPiece = false
     var fromArtist = false
@@ -127,6 +128,8 @@ class ArtDetailsViewController: UIViewController {
         }
     }
     
+    @IBAction func onFeedbackButtonPressed(_ sender: Any) {
+    }
     
     
     

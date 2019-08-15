@@ -102,6 +102,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WmZ-9R-RUI">
+                                <rect key="frame" x="283" y="369" width="112" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Leave Feedback"/>
+                                <connections>
+                                    <action selector="onFeedbackButtonPressed:" destination="U4q-yq-WLn" eventType="touchUpInside" id="JiJ-0Q-dNy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -140,6 +148,7 @@
                         <outlet property="dateLabel" destination="WS3-il-uhN" id="XCX-dE-O5z"/>
                         <outlet property="descriptionTextView" destination="YyO-RK-tok" id="fUw-yV-9Ye"/>
                         <outlet property="dimensionsLabel" destination="SPH-Kw-cK6" id="cNB-cr-dgk"/>
+                        <outlet property="feedbackButton" destination="WmZ-9R-RUI" id="pVo-JT-dfo"/>
                         <outlet property="imageView" destination="3WJ-k3-ZZj" id="ETk-fi-CGC"/>
                         <outlet property="mapButton" destination="yaq-vt-7d2" id="Z3o-FF-94G"/>
                         <outlet property="mediumLabel" destination="p8D-sm-jal" id="htn-x2-EDZ"/>
