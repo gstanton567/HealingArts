@@ -32,7 +32,7 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
         locationManager.startUpdatingLocation()
         
         sanctuaryMapView.delegate = self
-        sanctuaryMapView.showsUserLocation = true
+        sanctuaryMapView.showsUserLocation = false
         
         switch pinName!{
         case "Chihuly Sanctuary" :
@@ -57,7 +57,19 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
             let region = MKCoordinateRegion(center: center, span: span)
             sanctuaryMapView.setRegion(region, animated: false)
             
-            createOverlay(image: UIImage(named: "floorOneMap")!, origin: CLLocationCoordinate2D(latitude: 41.255867, longitude: -95.980234), size: MKMapSize(width: 1000, height: 760))
+            createOverlay(image: UIImage(named: "floorOneMap")!, origin: CLLocationCoordinate2D(latitude: 41.255867, longitude: -95.980234), size: MKMapSize(width: 1200, height: 760))
+            
+            for artwork in Firebase.globalArtworks{
+                if artwork.floor == 0 {
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = CLLocationCoordinate2D(latitude: artwork.location!.latitude, longitude: artwork.location!.longitude)
+                    annotation.title = artwork.title
+                    DispatchQueue.main.async{
+                        self.sanctuaryMapView.addAnnotation(annotation)
+                    }
+                }
+                
+            }
         default :
             break;
         }
