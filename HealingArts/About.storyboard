@@ -308,31 +308,31 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                 <color key="backgroundColor" red="0.2303233496" green="0.2303233496" blue="0.2303233496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tour3" translatesAutoresizingMaskIntoConstraints="NO" id="rkG-P6-q8x">
-                                                <rect key="frame" x="91" y="2610" width="240" height="128"/>
+                                                <rect key="frame" x="91" y="2660" width="240" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="128" id="Wiv-cl-Ei4"/>
                                                     <constraint firstAttribute="width" constant="240" id="gaG-91-fED"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tourpic" translatesAutoresizingMaskIntoConstraints="NO" id="3dL-kh-b4c">
-                                                <rect key="frame" x="146" y="2519" width="240" height="128"/>
+                                                <rect key="frame" x="146" y="2549" width="240" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="240" id="Jp0-DB-uP4"/>
                                                     <constraint firstAttribute="height" constant="128" id="re8-Ro-Tek"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tour2" translatesAutoresizingMaskIntoConstraints="NO" id="3CT-jp-uuL">
-                                                <rect key="frame" x="46" y="2474" width="240" height="128"/>
+                                                <rect key="frame" x="46" y="2504" width="240" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="128" id="7fz-pU-4tA"/>
                                                     <constraint firstAttribute="width" constant="240" id="KvC-Om-tu8"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4D-mT-OHF">
-                                                <rect key="frame" x="46" y="2374" width="300" height="84"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4D-mT-OHF">
+                                                <rect key="frame" x="46" y="2369" width="300" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="6Gd-Xi-Gud"/>
-                                                    <constraint firstAttribute="height" constant="84" id="jrb-tg-TB9"/>
+                                                    <constraint firstAttribute="height" constant="120" id="jrb-tg-TB9"/>
                                                 </constraints>
                                                 <string key="text">Docent-led tours of the collection are offered to the general public on Saturdays on a first-come first-served basis for 15 people from 1 p.m. to 3 p.m. Saturdays. Self-guided tours are not allowed.</string>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
@@ -401,30 +401,27 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                 </connections>
                                             </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="88C-WB-XQA">
-                                                <rect key="frame" x="0.0" y="3020" width="414" height="200"/>
+                                                <rect key="frame" x="0.0" y="3020" width="414" height="242"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="slV-ko-5Tn"/>
+                                                    <constraint firstAttribute="height" constant="242" id="slV-ko-5Tn"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tGS-HQ-U9F">
-                                                    <size key="itemSize" width="163" height="200"/>
+                                                    <size key="itemSize" width="414.5" height="41"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="uO4-RP-KpF" customClass="DonorCollectionViewCell" customModule="HealingArts" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="163" height="200"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414.5" height="41"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="163" height="200"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="414.5" height="41"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Qi-QJ-KYk">
-                                                                    <rect key="frame" x="10" y="10" width="143" height="130"/>
-                                                                </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VH0-oD-8fT">
-                                                                    <rect key="frame" x="8" y="140" width="147" height="52"/>
+                                                                    <rect key="frame" x="8" y="14" width="398.5" height="19"/>
                                                                     <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -434,15 +431,9 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                         <constraints>
                                                             <constraint firstItem="VH0-oD-8fT" firstAttribute="leading" secondItem="uO4-RP-KpF" secondAttribute="leadingMargin" id="1B3-EM-Iuu"/>
                                                             <constraint firstAttribute="bottomMargin" secondItem="VH0-oD-8fT" secondAttribute="bottom" id="9Ib-Zf-psb"/>
-                                                            <constraint firstItem="7Qi-QJ-KYk" firstAttribute="top" secondItem="uO4-RP-KpF" secondAttribute="top" constant="10" id="Rv9-vm-1hE"/>
-                                                            <constraint firstAttribute="trailing" secondItem="7Qi-QJ-KYk" secondAttribute="trailing" constant="10" id="Vbn-yE-5g3"/>
-                                                            <constraint firstItem="7Qi-QJ-KYk" firstAttribute="leading" secondItem="uO4-RP-KpF" secondAttribute="leading" constant="10" id="aWW-Iq-44G"/>
-                                                            <constraint firstItem="VH0-oD-8fT" firstAttribute="top" secondItem="7Qi-QJ-KYk" secondAttribute="bottom" id="eMr-aG-PG6"/>
                                                             <constraint firstAttribute="trailingMargin" secondItem="VH0-oD-8fT" secondAttribute="trailing" id="eP7-za-w7k"/>
-                                                            <constraint firstAttribute="bottom" secondItem="7Qi-QJ-KYk" secondAttribute="bottom" constant="60" id="laq-hY-sgj"/>
                                                         </constraints>
                                                         <connections>
-                                                            <outlet property="donorImageView" destination="7Qi-QJ-KYk" id="Bxd-CO-pAI"/>
                                                             <outlet property="donorNameLabel" destination="VH0-oD-8fT" id="brF-nI-A5e"/>
                                                         </connections>
                                                     </collectionViewCell>
@@ -491,7 +482,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                             <constraint firstAttribute="trailing" secondItem="Ygr-z5-3m6" secondAttribute="trailing" id="L5q-Mf-4zO"/>
                                             <constraint firstAttribute="trailing" secondItem="UG9-yZ-Avg" secondAttribute="trailing" constant="38" id="LVg-ia-933"/>
                                             <constraint firstItem="ZU2-uY-lBB" firstAttribute="top" secondItem="Ch7-FJ-bQj" secondAttribute="bottom" constant="29" id="LjS-OX-yk0"/>
-                                            <constraint firstItem="3CT-jp-uuL" firstAttribute="top" secondItem="ZH2-h9-9T6" secondAttribute="bottom" constant="120" id="Mgi-VZ-EaO"/>
+                                            <constraint firstItem="3CT-jp-uuL" firstAttribute="top" secondItem="ZH2-h9-9T6" secondAttribute="bottom" constant="150" id="Mgi-VZ-EaO"/>
                                             <constraint firstItem="ZH2-h9-9T6" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="46" id="Nc2-T3-jAK"/>
                                             <constraint firstItem="jX8-wm-D0t" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="5" id="Osb-Uy-DK8"/>
                                             <constraint firstAttribute="trailing" secondItem="JAX-Am-suE" secondAttribute="trailing" constant="28" id="PID-xV-ij5"/>
@@ -517,7 +508,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                             <constraint firstItem="VbV-Av-W4A" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="10" id="d34-PB-NBW"/>
                                             <constraint firstAttribute="trailing" secondItem="jX8-wm-D0t" secondAttribute="trailing" constant="5" id="dGv-Vw-RTq"/>
                                             <constraint firstAttribute="trailing" secondItem="88C-WB-XQA" secondAttribute="trailing" id="dfB-7r-uFc"/>
-                                            <constraint firstItem="3dL-kh-b4c" firstAttribute="top" secondItem="ZH2-h9-9T6" secondAttribute="bottom" constant="165" id="dja-VB-MhK"/>
+                                            <constraint firstItem="3dL-kh-b4c" firstAttribute="top" secondItem="ZH2-h9-9T6" secondAttribute="bottom" constant="195" id="dja-VB-MhK"/>
                                             <constraint firstItem="jX8-wm-D0t" firstAttribute="top" secondItem="SgD-Qv-JMF" secondAttribute="top" constant="185" id="dxR-Qu-2hy"/>
                                             <constraint firstItem="0GV-uk-ggK" firstAttribute="top" secondItem="Ygr-z5-3m6" secondAttribute="bottom" constant="-5" id="dz8-i5-O4S"/>
                                             <constraint firstItem="b47-9C-fAi" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" id="eJe-CP-21R"/>
@@ -529,18 +520,18 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                             <constraint firstItem="oft-hW-fLw" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="46" id="g3Z-jg-j70"/>
                                             <constraint firstAttribute="trailing" secondItem="vzY-As-81c" secondAttribute="trailing" constant="47" id="gVm-2E-j1y"/>
                                             <constraint firstItem="fE8-N6-enM" firstAttribute="top" secondItem="UG9-yZ-Avg" secondAttribute="bottom" constant="15" id="ghe-aZ-8A5"/>
-                                            <constraint firstItem="X4D-mT-OHF" firstAttribute="top" secondItem="ZH2-h9-9T6" secondAttribute="bottom" constant="20" id="gvk-sU-e2t"/>
+                                            <constraint firstItem="X4D-mT-OHF" firstAttribute="top" secondItem="ZH2-h9-9T6" secondAttribute="bottom" constant="15" id="gvk-sU-e2t"/>
                                             <constraint firstAttribute="trailing" secondItem="0GV-uk-ggK" secondAttribute="trailing" id="hO7-Y2-gnV"/>
                                             <constraint firstItem="jcQ-Ye-cZS" firstAttribute="top" secondItem="SgD-Qv-JMF" secondAttribute="top" constant="-29" id="heu-Un-opN"/>
                                             <constraint firstItem="fE8-N6-enM" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="57" id="hjX-O6-YeZ"/>
                                             <constraint firstItem="UG9-yZ-Avg" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="57" id="ixN-df-cQw"/>
                                             <constraint firstItem="ecl-jG-Fnz" firstAttribute="top" secondItem="ixV-5d-u33" secondAttribute="bottom" constant="15.5" id="ja1-a0-NBI"/>
-                                            <constraint firstItem="rkG-P6-q8x" firstAttribute="top" secondItem="3CT-jp-uuL" secondAttribute="bottom" constant="8" id="lOG-n1-AEy"/>
+                                            <constraint firstItem="rkG-P6-q8x" firstAttribute="top" secondItem="3CT-jp-uuL" secondAttribute="bottom" constant="28" id="lOG-n1-AEy"/>
                                             <constraint firstItem="YOK-1h-bhc" firstAttribute="top" secondItem="oft-hW-fLw" secondAttribute="bottom" constant="25" id="mB2-iu-ciJ"/>
                                             <constraint firstItem="ecl-jG-Fnz" firstAttribute="top" secondItem="ySE-8f-LnD" secondAttribute="bottom" constant="35" id="nld-Tr-5LI"/>
                                             <constraint firstItem="jcQ-Ye-cZS" firstAttribute="centerX" secondItem="SgD-Qv-JMF" secondAttribute="centerX" id="rtL-iA-qqf"/>
                                             <constraint firstAttribute="trailing" secondItem="wLU-pk-HIc" secondAttribute="trailing" constant="-78" id="siw-HQ-ZVt"/>
-                                            <constraint firstItem="vzY-As-81c" firstAttribute="top" secondItem="3dL-kh-b4c" secondAttribute="bottom" constant="165" id="tGp-G9-crH"/>
+                                            <constraint firstItem="vzY-As-81c" firstAttribute="top" secondItem="3dL-kh-b4c" secondAttribute="bottom" constant="135" id="tGp-G9-crH"/>
                                             <constraint firstItem="3CT-jp-uuL" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="46" id="u1a-1h-Uqa"/>
                                             <constraint firstAttribute="trailing" secondItem="ixV-5d-u33" secondAttribute="trailing" constant="70" id="uFD-2h-qT1"/>
                                             <constraint firstAttribute="trailing" secondItem="ySE-8f-LnD" secondAttribute="trailing" constant="28" id="udE-0r-rPa"/>

@@ -12,46 +12,65 @@ import AVKit
 
 class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    
-    
     @IBOutlet weak var redBehindImage: UIImageView!
     @IBOutlet weak var donateAskLabel: UILabel!
     @IBOutlet weak var donorCollectionView: UICollectionView!
     
-    var donorPictures: [String] = ["walterscott", "fredandpam", "clwerner"]
-    var donorNames: [String] = ["Walter Scott, Jr.", "Fred and Pamela Buffett", "C.L. Werner"]
+    var donorPictures: [String] = []
+    var donorNames: [String] = ["Mr. & Mrs. Walter Scott, Jr.", "Marshall & Mona Faith", "Dr. C. C. & Mabel L. Criss Memorial Foundation", "Mr. Michael & Dr. Gail Walling Yanney", "Amy L. Scott", "Bill & Lisa Roskens", "Robert E. Owen", "Robert & Mary Harbour", "Mary Whyte", "Carol Gendler", "Stanley Winokur", "Jeanne and Larry Williams", "Roger & Kathleen Weitz", "Richard and Laura Schrager", "Samuel Poppleton", "Mr. & Mrs. William L. Otis", "John W. Hilton, M.D.", "Jenard and Gail Gross", "Adam and Sarah Yale", "Margaret A. Lloyd, M.D.", "James Luyten and Meredith Fuller", "Mogens & Cynthia Bay", "Opera Omaha", "Guy and Wanda Bush", "Senator E. Benjamin & Diane Nelson", "Todd Cuddy", "Rita M. Henry, Ph.D.", "Dr. & Mrs. Martin A. Massengale", "Michele Jeffres", "Lois Cudley", "HI Omaha, LLC DBA Home Instead Senior Care 100", "Mr. James T. and Mrs. Dian J. Warren", "Fred and Joy Witecy", "Col. (Ret) & Mrs. John A. O'Donovan", "Robert and Robyn Freeman", "Abdul Latasha Muhammad", "Amy and Tony Volk", "Mr. Christopher B. Kelly and Dr. Rosemary L. Edzie", "Marshall Borchert", "Thelma Wiser", "Valerie Patzloff-Duntz", "Leon Espinoza", "Jeff Wiser", "Lisa Eastman", "Rebecca Wiser", "Joseph and Kristine Gardner", "Pam Grudle", "Joyce Pitman", "Rachel Cordova"]
+    
+    var scrollingTimer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("View did Load")
         
         donateAskLabel.text = "By giving a small donation, you can help support those battling cancer and a program that brings them peace of mind.\n\nYou can make a difference today."
+        
+        startTimer()
     }
     
     // MARK: - Collection View
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return donorPictures.count
+        return donorNames.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = donorCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! DonorCollectionViewCell
-        cell.donorImageView.image = UIImage(named: donorPictures[indexPath.item])
+        //cell.donorImageView.image = UIImage(named: donorPictures[indexPath.item])
         cell.donorNameLabel.text = donorNames[indexPath.item]
-        
-//        var rowIndex = indexPath.row
-//        let numberOfRecords: Int = donorPictures.count - 1
-//        if rowIndex < numberOfRecords{
-//            rowIndex = rowIndex + 1
-//        } else{
-//            rowIndex = 0
-//        }
-        
         
         return cell
     }
     
     
+    //  MARK:  Auto-Scrolling
+    /**
+     Invokes Timer to start Automatic Animation with repeat enabled
+     */
+    func startTimer() {
+        Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: Selector("scrollToNextCell"), userInfo: nil, repeats: true)
+    }
+    
+    @objc func scrollToNextCell(){
+        
+        //get cell size
+        let cellSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
+        
+        //get current content Offset of the Collection view
+        let contentOffset = donorCollectionView.contentOffset
+        
+        if donorCollectionView.contentSize.width <= donorCollectionView.contentOffset.x + cellSize.width
+        {
+            donorCollectionView.scrollRectToVisible(CGRect(x: 0, y: contentOffset.y, width: cellSize.width, height: cellSize.height), animated: true)
+            
+        } else {
+            donorCollectionView.scrollRectToVisible(CGRect(x: contentOffset.x + cellSize.width + 9.7, y: contentOffset.y, width: cellSize.width, height: cellSize.height), animated: true)
+            
+        }
+        
+    }
     
      // MARK: - Buttons
      
@@ -96,8 +115,7 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate,
         if let link = URL(string: linkString) {
             let sfvc = SFSafariViewController(url: link)
             sfvc.delegate = (self as! SFSafariViewControllerDelegate)
-            //            sfvc.preferredControlTintColor = .white
-            //            sfvc.preferredBarTintColor = UIColor.ChihulyUI.Red.UNMCSafariBackground
+            
             
             present(sfvc, animated: true)
         }
@@ -116,9 +134,6 @@ extension UIImageView {
         self.layer.cornerRadius = (self.frame.width / 2) //instead of let radius = CGRectGetWidth(self.frame) / 2
         self.layer.masksToBounds = true
         
-        //        self.layer.borderWidth = 2
-        
-        //self.layer.borderColor = UIColor.lightGray.cgColor
     }
     
 }
