@@ -21,6 +21,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     var selectedArtwork : Artwork?
     
+    var pinName : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Map"
@@ -119,6 +121,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         for artwork in Firebase.globalMapArt{
             if artwork.location?.latitude == location?.latitude && artwork.location?.longitude == location?.longitude{
                 self.selectedArtwork = artwork
+                pinName = artwork.title!
                 
                 let alertController = UIAlertController(title: artwork.title, message: "", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "OK", style: .cancel) { (UIAlertAction) in
@@ -126,10 +129,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                     mapView.deselectAnnotation(annotation, animated: true)
                 }
                 let detailAction = UIAlertAction(title: "Details", style: .default) { (UIAlertAction) in
-                    if artwork.title == "Chihuly Sanctuary"{
-                        self.performSegue(withIdentifier: "toSanctuaryMap", sender: nil)
-                    } else{
+                    if artwork.title == "Search" || artwork.title == "Leslie's Healing Garden"{
                         self.performSegue(withIdentifier: "toArtworkDetailSegue", sender: nil)
+                    } else{
+                        self.performSegue(withIdentifier: "toSanctuaryMap", sender: nil)
                     }
                     self.mapView.deselectAnnotation(view.annotation, animated: true)
                 }
@@ -192,6 +195,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             sanctuaryPiece = true
             SMVC.sanctuaryPiece = sanctuaryPiece
             SMVC.locationManager = locationManager
+            SMVC.pinName = pinName
         }
         
     }
