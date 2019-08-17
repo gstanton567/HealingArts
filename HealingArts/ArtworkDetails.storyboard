@@ -102,7 +102,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-<<<<<<< HEAD
+
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WmZ-9R-RUI">
                                 <rect key="frame" x="283" y="369" width="112" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -112,7 +112,7 @@
                                     <segue destination="9xk-3u-Obp" kind="show" identifier="detailsToFeedbackSegue" id="tEg-Ob-UtC"/>
                                 </connections>
                             </button>
-=======
+
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qRq-UT-DVr">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -123,7 +123,7 @@
                                     <outlet property="delegate" destination="U4q-yq-WLn" id="So5-x4-nM7"/>
                                 </connections>
                             </scrollView>
->>>>>>> 5181dc38f5916fbb5beefdddf093d0ad80a07d57
+
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -170,11 +170,10 @@
                         <outlet property="dateLabel" destination="WS3-il-uhN" id="XCX-dE-O5z"/>
                         <outlet property="descriptionTextView" destination="YyO-RK-tok" id="fUw-yV-9Ye"/>
                         <outlet property="dimensionsLabel" destination="SPH-Kw-cK6" id="cNB-cr-dgk"/>
-<<<<<<< HEAD
+
                         <outlet property="feedbackButton" destination="WmZ-9R-RUI" id="pVo-JT-dfo"/>
-=======
+
                         <outlet property="imageDetailScrollView" destination="j0G-Ah-6ht" id="ho8-C0-w0p"/>
->>>>>>> 5181dc38f5916fbb5beefdddf093d0ad80a07d57
                         <outlet property="imageView" destination="3WJ-k3-ZZj" id="ETk-fi-CGC"/>
                         <outlet property="mapButton" destination="yaq-vt-7d2" id="Z3o-FF-94G"/>
                         <outlet property="mediumLabel" destination="p8D-sm-jal" id="htn-x2-EDZ"/>
