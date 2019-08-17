@@ -33,6 +33,9 @@ class FeedbackViewController: UIViewController {
     
     @IBOutlet var textView: UITextView!
     
+    var artTitle: String?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,31 +46,7 @@ class FeedbackViewController: UIViewController {
         textView.layer.borderColor = UIColor.ChihulyCG.Gray.Graphite
         textView.layer.borderWidth = 1
         
-        //        nameTextField.layer.borderColor = UIColor.ChihulyCG.Gray.Graphite
-        //        nameTextField.layer.borderWidth = 1
-        //        emailTextField.layer.borderColor = UIColor.ChihulyCG.Gray.Graphite
-        //        emailTextField.layer.borderWidth = 1
-        //
-        //        let tapGestureRecognizerOne = UITapGestureRecognizer(target: self, action: #selector(starOneTapped(tapGestureRecognizer:)))
-        //        starOneImageView.isUserInteractionEnabled = true
-        //        starOneImageView.addGestureRecognizer(tapGestureRecognizerOne)
-        //
-        //        let tapGestureRecognizerTwo = UITapGestureRecognizer(target: self, action: #selector(starTwoTapped(tapGestureRecognizer:)))
-        //        starTwoImageView.isUserInteractionEnabled = true
-        //        starTwoImageView.addGestureRecognizer(tapGestureRecognizerTwo)
-        //
-        //        let tapGestureRecognizerThree = UITapGestureRecognizer(target: self, action: #selector(starThreeTapped(tapGestureRecognizer:)))
-        //        starThreeImageView.isUserInteractionEnabled = true
-        //        starThreeImageView.addGestureRecognizer(tapGestureRecognizerThree)
-        //
-        //        let tapGestureRecognizerFour = UITapGestureRecognizer(target: self, action: #selector(starFourTapped(tapGestureRecognizer:)))
-        //        starFourImageView.isUserInteractionEnabled = true
-        //        starFourImageView.addGestureRecognizer(tapGestureRecognizerFour)
-        //
-        //        let tapGestureRecognizerFive = UITapGestureRecognizer(target: self, action: #selector(starFiveTapped(tapGestureRecognizer:)))
-        //        starFiveImageView.isUserInteractionEnabled = true
-        //        starFiveImageView.addGestureRecognizer(tapGestureRecognizerFive)
-        
+       
     }
     
     @IBAction func rateSliderAction(_ sender: UISlider) {
@@ -84,58 +63,36 @@ class FeedbackViewController: UIViewController {
         let currentValue = Int(sender.value)
         interestingLabel.text = "\(currentValue)"
     }
-    //    @objc func starOneTapped(tapGestureRecognizer: UITapGestureRecognizer)
-    //    {
-    //        starOneImageView.image = UIImage.init(named: "RedStar")
-    //        starTwoImageView.image = UIImage.init(named: "RedStarHollow")
-    //        starThreeImageView.image = UIImage.init(named: "RedStarHollow")
-    //        starFourImageView.image = UIImage.init(named: "RedStarHollow")
-    //        starFiveImageView.image = UIImage.init(named: "RedStarHollow")
-    //        // Your action
-    //    }
-    //
-    //    @objc func starTwoTapped(tapGestureRecognizer: UITapGestureRecognizer)
-    //    {
-    //        starOneImageView.image = UIImage.init(named: "RedStar")
-    //        starTwoImageView.image = UIImage.init(named: "RedStar")
-    //        starThreeImageView.image = UIImage.init(named: "RedStarHollow")
-    //        starFourImageView.image = UIImage.init(named: "RedStarHollow")
-    //        starFiveImageView.image = UIImage.init(named: "RedStarHollow")
-    //        // Your action
-    //    }
-    //
-    //    @objc func starThreeTapped(tapGestureRecognizer: UITapGestureRecognizer)
-    //    {
-    //        starOneImageView.image = UIImage.init(named: "RedStar")
-    //        starTwoImageView.image = UIImage.init(named: "RedStar")
-    //        starThreeImageView.image = UIImage.init(named: "RedStar")
-    //        starFourImageView.image = UIImage.init(named: "RedStarHollow")
-    //        starFiveImageView.image = UIImage.init(named: "RedStarHollow")
-    //        // Your action
-    //    }
-    //
-    //    @objc func starFourTapped(tapGestureRecognizer: UITapGestureRecognizer)
-    //    {
-    //        starOneImageView.image = UIImage.init(named: "RedStar")
-    //        starTwoImageView.image = UIImage.init(named: "RedStar")
-    //        starThreeImageView.image = UIImage.init(named: "RedStar")
-    //        starFourImageView.image = UIImage.init(named: "RedStar")
-    //        starFiveImageView.image = UIImage.init(named: "RedStarHollow")
-    //        // Your action
-    //    }
-    //
-    //    @objc func starFiveTapped(tapGestureRecognizer: UITapGestureRecognizer)
-    //    {
-    //        starOneImageView.image = UIImage.init(named: "RedStar")
-    //        starTwoImageView.image = UIImage.init(named: "RedStar")
-    //        starThreeImageView.image = UIImage.init(named: "RedStar")
-    //        starFourImageView.image = UIImage.init(named: "RedStar")
-    //        starFiveImageView.image = UIImage.init(named: "RedStar")
-    //        // Your action
-    //    }
+   
     
     @IBAction func onSubmitPressed(_ sender: UIButton) {
-        let databaseRef  = Firestore.firestore()
+        
+        let feedback = "\(rateLabel.text!)&&\(qualityLabel.text!)&&\(interestingLabel.text!)&&\(textView.text!)"
+        
+        let timeStamp = NSDate().timeIntervalSince1970
+
+        Firebase.sendFeedback(title: artTitle!, timestamp: timeStamp, feedback: feedback) { (success) in
+            if success {
+                let alertController = UIAlertController(title: "Thank You!", message: "We have received your feedback", preferredStyle: .alert)
+                let okay = UIAlertAction(title: "Okay", style: .default, handler: { (UIAlertAction) in
+                    //reset
+                    self.textView.text = ""
+                    self.rateSlider.value = 5
+                    self.qualitySlider.value = 5
+                    self.interestingSlider.value = 5
+                    self.rateLabel.text = "5"
+                    self.qualityLabel.text = "5"
+                    self.interestingLabel.text = "5"
+                })
+                alertController.addAction(okay)
+                self.present(alertController, animated: true)
+            } else {
+                let alertController = UIAlertController(title: "Try Again", message: "We have not received your feedback", preferredStyle: .alert)
+                let okay = UIAlertAction(title: "Okay", style: .default, handler: nil)
+                alertController.addAction(okay)
+                self.present(alertController, animated: true)
+            }
+        }
         
         //Text fields cannot be blank or nil
         //        if nameTextField.text != nil && emailTextField.text != nil && textView.text != nil && nameTextField.text != "" && emailTextField.text != "" && textView.text != "" {
@@ -143,14 +100,13 @@ class FeedbackViewController: UIViewController {
         //                if let err = err {
         //                    print("Error adding document: \(err)")
         //                } else {
-        let alertController = UIAlertController(title: "Thank You!", message: "We have received your feedback", preferredStyle: .alert)
-        let okay = UIAlertAction(title: "Okay", style: .default, handler: { (UIAlertAction) in
-            //                        self.nameTextField.text = ""
-            //                        self.emailTextField.text = ""
-            self.textView.text = ""
-        })
-        alertController.addAction(okay)
-        self.present(alertController, animated: true)
+        
+        
+        
+        
+        
+        
+        
         
         //            }
         //        }
@@ -162,14 +118,6 @@ class FeedbackViewController: UIViewController {
     }
 }
 
-/*
- // MARK: - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- // Get the new view controller using segue.destination.
- // Pass the selected object to the new view controller.
- }
- */
+
 
 

@@ -32,6 +32,7 @@ class ArtDetailsViewController: UIViewController {
     var artworkPiece : Artwork?
     var selectedArtwork : ArtworkItem?
     var mapButtonPressed = false
+    var feedbackButtonPressed = false
     var pieceLocation : GeoPoint?
     var artist : Artist?
     
@@ -103,24 +104,31 @@ class ArtDetailsViewController: UIViewController {
     //Artist info segue
     @IBAction func onArtistButtonPressed(_ sender: UIButton) {
         mapButtonPressed = false
+        feedbackButtonPressed = false
         performSegue(withIdentifier: "detailsToArtistDetailsSegue", sender: nil)
     }
     
     //Map button
     @IBAction func onMapButtonPressed(_ sender: UIButton) {
         mapButtonPressed = true
+        feedbackButtonPressed = false
         performSegue(withIdentifier: "detailsToSingleMapSegue", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if !mapButtonPressed {
+        if !mapButtonPressed && !feedbackButtonPressed{
             let avc = segue.destination as! ArtistDetailViewController
             avc.artworkPiece = artworkPiece
             avc.artist = artist
-            print("art boi button")
+            print("art segue")
             
-        }
-        else{
+        } else if feedbackButtonPressed {
+            let fvc = segue.destination as! FeedbackViewController
+            //pass through name only?
+            let artTitle = artworkPiece?.title
+            fvc.artTitle = artTitle
+            print("feedback segue")
+        } else {
             let smvc = segue.destination as! SingleArtworkMapViewController
             smvc.location = location
             smvc.sanctuaryPiece = sanctuaryPiece
@@ -129,6 +137,10 @@ class ArtDetailsViewController: UIViewController {
     }
     
     @IBAction func onFeedbackButtonPressed(_ sender: Any) {
+        feedbackButtonPressed = true
+        mapButtonPressed = false
+        performSegue(withIdentifier: "detailsToFeedbackSegue", sender: nil)
+        
     }
     
     

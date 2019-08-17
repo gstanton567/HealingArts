@@ -108,6 +108,7 @@
                                 <state key="normal" title="Leave Feedback"/>
                                 <connections>
                                     <action selector="onFeedbackButtonPressed:" destination="U4q-yq-WLn" eventType="touchUpInside" id="JiJ-0Q-dNy"/>
+                                    <segue destination="9xk-3u-Obp" kind="show" identifier="detailsToFeedbackSegue" id="tEg-Ob-UtC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -205,13 +206,21 @@
             </objects>
             <point key="canvasLocation" x="4371" y="778"/>
         </scene>
+        <!--Feedback-->
+        <scene sceneID="ynF-ea-NLt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Feedback" id="9xk-3u-Obp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GlL-Gq-rG0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3951" y="-1"/>
+        </scene>
         <!--ArtistDetails-->
         <scene sceneID="HS7-Zc-ynL">
             <objects>
                 <viewControllerPlaceholder storyboardName="ArtistDetails" id="Sgm-JK-viD" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hIp-fg-xu3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3912" y="21"/>
+            <point key="canvasLocation" x="3909" y="34"/>
         </scene>
     </scenes>
 </document>
