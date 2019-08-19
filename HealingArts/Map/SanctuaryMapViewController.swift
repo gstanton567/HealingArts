@@ -70,11 +70,28 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
                 }
                 
             }
+        case "Featured Artist" :
+            let center = CLLocationCoordinate2D(latitude: 41.255467, longitude: -95.979724)
+            let span = MKCoordinateSpan(latitudeDelta: 0.0008, longitudeDelta: 0.0008)
+            let region = MKCoordinateRegion(center: center, span: span)
+            sanctuaryMapView.setRegion(region, animated: false)
+            
+            createOverlay(image: UIImage(named: "floorOneMap")!, origin: CLLocationCoordinate2D(latitude: 41.255867, longitude: -95.980234), size: MKMapSize(width: 1200, height: 760))
+            
+            for artwork in Firebase.globalArtworks{
+                if artwork.floor == 1 {
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = CLLocationCoordinate2D(latitude: artwork.location!.latitude, longitude: artwork.location!.longitude)
+                    annotation.title = artwork.title
+                    DispatchQueue.main.async{
+                        self.sanctuaryMapView.addAnnotation(annotation)
+                    }
+                }
+                
+            }
         default :
             break;
         }
-        
-        
         
     }
     
