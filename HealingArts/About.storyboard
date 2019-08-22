@@ -240,8 +240,10 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="274" id="gQJ-tf-orn"/>
                                                 </constraints>
-                                                <string key="text">The Healing Arts program exists to create environments that support and comfort people through the diverse art opportunities and experiences.                                  
-                                                                              The Healing Arts program is composed of a growing list of elements to help reduce pain perception, anxiety, stress, loneliness and depression and to provide new insight and clarify feelings about a cancer diagnosis and treatment: therapeutic art and music programs for patients, diverse art collection throughout the cancer center, and rotating art exhibits.</string>
+                                                <mutableString key="text">The Healing Arts program's vision is to engage patients, caregivers, staff and students to heal through art.                                 
+                                                                              The Healing Arts Program’s mission is to:                                                                                             - Educate and build community awareness encompassing the arts, health and medicine                                       
+- Provide visual, performing and therapeutic arts experiences                                                               - Create an environment promoting healing and humanizing the hospital experience                                    
+ - Integrate and enhance our evidence-based experiences within UNMC/Nebraska Medicine through the arts</mutableString>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
