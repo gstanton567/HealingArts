@@ -25,7 +25,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         
         Firebase.getEvents { (events, err) in
             if let err = err {
-                print("ERRRORRRRR \(err.localizedDescription)")
+                print("\(err.localizedDescription)")
             } else {
                 DispatchQueue.main.async {
                     Firebase.globalEvents = events

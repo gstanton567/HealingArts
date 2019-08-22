@@ -176,10 +176,10 @@ class Firebase {
                                     guard let data = data, error == nil else { print(error)
                                         return }
                                     
-                                    print("heloooooo2")
+                                    //print("heloooooo2")
                                     DispatchQueue.main.async() {
                                         newEvent.image = UIImage(data: data)!
-                                        print("heloooooo")
+                                        //print("heloooooo")
                                     }
                                     
                                     completion(events, nil)
