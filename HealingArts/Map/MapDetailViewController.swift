@@ -10,6 +10,8 @@ import UIKit
 
 class MapDetailViewController: UIViewController {
     
+    //This looks like a lot of nothing
+    
     @IBOutlet weak var artTitleLabel: UILabel!
     
     var artwork : ArtworkItem?

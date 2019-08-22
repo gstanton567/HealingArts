@@ -27,14 +27,11 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
             if let err = err {
                 print("ERRRORRRRR \(err.localizedDescription)")
             } else {
-                print("good")
                 DispatchQueue.main.async {
                     Firebase.globalEvents = events
                     //                    Firebase.globalEvents[0].getImageURL(summary: events.first!.summary!)
                     self.tableView.reloadData()
                 }
-                print("Oooga 3ga")
-            
             }
         }
     }
