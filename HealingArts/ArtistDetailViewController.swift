@@ -10,7 +10,7 @@ import UIKit
 
 class ArtistDetailViewController: UIViewController {
     
-    var artworkPiece: Artwork?
+    var artworkPiece : Artwork?
     var indexOfArtist : Int!
     var artist : Artist?
 
