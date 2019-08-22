@@ -163,7 +163,7 @@ class Firebase {
 //                    if let urlStrings = data["images"] as? [String] {
 //                        NetworkManager.getImagesWith(urlStrings: urlStrings, completion: { (images) in
                     
-                            let newEvent = Event(title: data["title"] as! String, date: data["startTime"] as! String, summary: data["description"] as! String, image: UIImage(named: "logo2")!, location: data["location"] as! String)
+                    let newEvent = Event(title: data["title"] as! String, date: data["startTime"] as! String, summary: data["description"] as! String, image: UIImage(named: "logo2")!, location: data["location"] as? String)
                     DispatchQueue.main.async {
                         print(newEvent.summary)
                         if let eventSummaryArr = newEvent.summary?.components(separatedBy: "&&") {
@@ -208,6 +208,20 @@ class Firebase {
     
     class func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
+    
+    class func sendFeedback(title: String, timestamp: Double, feedback: String, completion: @escaping (Bool) -> Void) {
+        let database = Firestore.firestore()
+        database.collection("Feedback").document("\(title)").setData([
+            "\(timestamp)": feedback], merge: true) { err in
+                if let err = err {
+                    completion(false)
+                    print("Error adding document: \(err)")
+                } else {
+                    completion(true)
+                    print("Document added")
+                }
+        }
     }
     
 }
