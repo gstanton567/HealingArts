@@ -567,13 +567,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eLn-ra-dZr"/>
                     </view>
-                    <navigationItem key="navigationItem" id="IAo-PM-Psq">
-                        <barButtonItem key="rightBarButtonItem" title="Feedback" id="y0v-PN-RlC">
-                            <connections>
-                                <segue destination="raL-tL-yx8" kind="show" id="qQb-id-Zip"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="IAo-PM-Psq"/>
                     <size key="freeformSize" width="414" height="3600"/>
                     <connections>
                         <outlet property="donateAskLabel" destination="oft-hW-fLw" id="saf-Wv-eHb"/>

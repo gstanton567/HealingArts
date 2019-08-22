@@ -71,6 +71,7 @@ class ArtDetailsViewController: UIViewController, UIScrollViewDelegate{
         artistButton.setTitleColor(UIColor.ChihulyUI.Blue.DeepAqua, for: .normal)
         mapButton.setTitleColor(UIColor.ChihulyUI.Blue.DeepAqua, for: .normal)
         barLabel.backgroundColor = UIColor.ChihulyUI.Blue.DeepAqua
+        feedbackButton.tintColor = UIColor.ChihulyUI.Blue.DeepAqua
         
         if fromArtist{
             artistButton.isEnabled = false
@@ -174,7 +175,7 @@ class ArtDetailsViewController: UIViewController, UIScrollViewDelegate{
         } else if feedbackButtonPressed {
             let fvc = segue.destination as! FeedbackViewController
             //pass through name only?
-            let artTitle = artworkPiece?.title
+            let artTitle = artwork?.title
             fvc.artTitle = artTitle
             print("feedback segue")
         } else {

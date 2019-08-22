@@ -33,7 +33,7 @@ class FeedbackViewController: UIViewController {
     
     @IBOutlet var textView: UITextView!
     
-    var artTitle: String?
+    var artTitle: String!
     
     
     override func viewDidLoad() {
