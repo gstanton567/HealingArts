@@ -16,6 +16,7 @@ class ArtistDetailViewController: UIViewController {
 
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var artistLabel: UILabel!
+    @IBOutlet weak var viewCollectionButton: UIButton!
     @IBOutlet weak var artistImageView: UIImageView!
     
     
@@ -24,6 +25,9 @@ class ArtistDetailViewController: UIViewController {
         artistLabel.text = artist?.name
         textView.text = artist?.textDesc
         artistImageView.image = artist!.images.first
+//        if artworkPiece?.artist == nil {
+//           viewCollectionButton.isEnabled = false
+//        }
     }
     
     

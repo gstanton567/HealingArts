@@ -181,6 +181,7 @@
                         <outlet property="artistImageView" destination="QA5-ov-1Uz" id="za6-fg-Zn3"/>
                         <outlet property="artistLabel" destination="whQ-3L-6bz" id="aEv-sM-mis"/>
                         <outlet property="textView" destination="OOV-vI-HQL" id="NWc-pi-Fwv"/>
+                        <outlet property="viewCollectionButton" destination="FuP-7w-vv0" id="9IX-fB-Lpt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nUd-lU-nym" userLabel="First Responder" sceneMemberID="firstResponder"/>
