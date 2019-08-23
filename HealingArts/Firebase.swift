@@ -137,7 +137,7 @@ class Firebase {
                     let data = document.data()
                     if let urlStrings = data["images"] as? [String] {
                         NetworkManager.getImagesWith(urlStrings: urlStrings, completion: { (images) in
-                            let newArtist = Artist(name: data["name"] as! String, textDesc: data["textDesc"] as! String, images: images)
+                            let newArtist = Artist(name: data["name"] as! String, textDesc: data["textDesc"] as! String, images: images, website: data["website"] as! String)
                             artists.append(newArtist)
                             if artists.count == querySnapshot!.documents.count {
                                 completion(artists, nil)
