@@ -25,6 +25,7 @@ class ArtDetailsViewController: UIViewController, UIScrollViewDelegate{
     @IBOutlet weak var mapButton: UIButton!
     @IBOutlet weak var tintImageView: UIImageView!
     @IBOutlet weak var imageDetailScrollView: UIScrollView!
+    @IBOutlet weak var feedbackButton: UIButton!
     
     var sanctuaryPiece = false
     var fromArtist = false
@@ -33,6 +34,7 @@ class ArtDetailsViewController: UIViewController, UIScrollViewDelegate{
     var artworkPiece : Artwork?
     var selectedArtwork : ArtworkItem?
     var mapButtonPressed = false
+    var feedbackButtonPressed = false
     var pieceLocation : GeoPoint?
     var artist : Artist?
     
@@ -69,6 +71,7 @@ class ArtDetailsViewController: UIViewController, UIScrollViewDelegate{
         artistButton.setTitleColor(UIColor.ChihulyUI.Blue.DeepAqua, for: .normal)
         mapButton.setTitleColor(UIColor.ChihulyUI.Blue.DeepAqua, for: .normal)
         barLabel.backgroundColor = UIColor.ChihulyUI.Blue.DeepAqua
+        feedbackButton.tintColor = UIColor.ChihulyUI.Blue.DeepAqua
         
         if fromArtist{
             artistButton.isEnabled = false
@@ -151,24 +154,31 @@ class ArtDetailsViewController: UIViewController, UIScrollViewDelegate{
     //Artist info segue
     @IBAction func onArtistButtonPressed(_ sender: UIButton) {
         mapButtonPressed = false
+        feedbackButtonPressed = false
         performSegue(withIdentifier: "detailsToArtistDetailsSegue", sender: nil)
     }
     
     //Map button
     @IBAction func onMapButtonPressed(_ sender: UIButton) {
         mapButtonPressed = true
+        feedbackButtonPressed = false
         performSegue(withIdentifier: "detailsToSingleMapSegue", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if !mapButtonPressed {
+        if !mapButtonPressed && !feedbackButtonPressed{
             let avc = segue.destination as! ArtistDetailViewController
             avc.artworkPiece = artworkPiece
             avc.artist = artist
-            print("art boi button")
+            print("art segue")
             
-        }
-        else{
+        } else if feedbackButtonPressed {
+            let fvc = segue.destination as! FeedbackViewController
+            //pass through name only?
+            let artTitle = artwork?.title
+            fvc.artTitle = artTitle
+            print("feedback segue")
+        } else {
             let smvc = segue.destination as! SingleArtworkMapViewController
             smvc.location = location
             smvc.sanctuaryPiece = sanctuaryPiece
@@ -190,6 +200,14 @@ class ArtDetailsViewController: UIViewController, UIScrollViewDelegate{
         imageDetailScrollView.isHidden = true
         tintImageView.isHidden = true
     }
+    @IBAction func onFeedbackButtonPressed(_ sender: Any) {
+        feedbackButtonPressed = true
+        mapButtonPressed = false
+        performSegue(withIdentifier: "detailsToFeedbackSegue", sender: nil)
+        
+    }
+    
+    
     
     
     

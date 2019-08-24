@@ -44,11 +44,13 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
             createOverlay(image: UIImage(named: "mapOverlayImage")!, origin: CLLocationCoordinate2D(latitude: 41.255530, longitude: -95.979840), size: MKMapSize(width: 410, height: 400))
             
             for artwork in Firebase.globalArtworks{
-                let annotation = MKPointAnnotation()
-                annotation.coordinate = CLLocationCoordinate2D(latitude: artwork.location!.latitude, longitude: artwork.location!.longitude)
-                annotation.title = artwork.title
-                DispatchQueue.main.async{
-                    self.sanctuaryMapView.addAnnotation(annotation)
+                if artwork.artist == "Dale Chihuly"{
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = CLLocationCoordinate2D(latitude: artwork.location!.latitude, longitude: artwork.location!.longitude)
+                    annotation.title = artwork.title
+                    DispatchQueue.main.async{
+                        self.sanctuaryMapView.addAnnotation(annotation)
+                    }
                 }
             }
         case "Lobby Artworks" :
@@ -70,7 +72,7 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
                 }
                 
             }
-        case "Featured Artist" :
+        case "Upper Lobby Artworks" :
             let center = CLLocationCoordinate2D(latitude: 41.255467, longitude: -95.979724)
             let span = MKCoordinateSpan(latitudeDelta: 0.0008, longitudeDelta: 0.0008)
             let region = MKCoordinateRegion(center: center, span: span)

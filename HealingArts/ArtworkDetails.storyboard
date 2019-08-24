@@ -87,6 +87,13 @@
                                     <action selector="onMapButtonPressed:" destination="U4q-yq-WLn" eventType="touchUpInside" id="6PB-Iy-P5q"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WmZ-9R-RUI">
+                                <rect key="frame" x="283" y="369" width="113" height="30"/>
+                                <state key="normal" title="Leave Feedback"/>
+                                <connections>
+                                    <action selector="onFeedbackButtonPressed:" destination="U4q-yq-WLn" eventType="touchUpInside" id="JiJ-0Q-dNy"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPK-JH-SLW">
                                 <rect key="frame" x="10" y="401" width="394" height="12"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -122,8 +129,11 @@
                             <constraint firstItem="h65-Wy-nNB" firstAttribute="bottom" secondItem="j0G-Ah-6ht" secondAttribute="bottom" constant="65" id="8HL-UK-pJv"/>
                             <constraint firstItem="w0A-e3-nJX" firstAttribute="top" secondItem="yTp-0I-THi" secondAttribute="bottom" constant="5" id="Ajx-r6-he4"/>
                             <constraint firstItem="WS3-il-uhN" firstAttribute="top" secondItem="w0A-e3-nJX" secondAttribute="bottom" constant="8" id="Cfr-El-uTZ"/>
+                            <constraint firstItem="WmZ-9R-RUI" firstAttribute="leading" secondItem="SPH-Kw-cK6" secondAttribute="trailing" constant="-32" id="GoL-vJ-JJS"/>
                             <constraint firstItem="WS3-il-uhN" firstAttribute="leading" secondItem="h65-Wy-nNB" secondAttribute="leading" constant="15" id="Js3-tJ-Xq1"/>
                             <constraint firstItem="p8D-sm-jal" firstAttribute="leading" secondItem="h65-Wy-nNB" secondAttribute="leading" constant="15" id="LRy-js-GO5"/>
+                            <constraint firstItem="WmZ-9R-RUI" firstAttribute="baseline" secondItem="SPH-Kw-cK6" secondAttribute="baseline" id="OD5-zy-Tm4"/>
+                            <constraint firstItem="WmZ-9R-RUI" firstAttribute="centerX" secondItem="yaq-vt-7d2" secondAttribute="centerX" id="OWp-On-Eha"/>
                             <constraint firstItem="h65-Wy-nNB" firstAttribute="trailing" secondItem="3WJ-k3-ZZj" secondAttribute="trailing" constant="15" id="R2c-g4-Coz"/>
                             <constraint firstItem="p8D-sm-jal" firstAttribute="top" secondItem="WS3-il-uhN" secondAttribute="bottom" constant="5" id="RMy-z4-KoR"/>
                             <constraint firstItem="j0G-Ah-6ht" firstAttribute="top" secondItem="h65-Wy-nNB" secondAttribute="top" constant="65" id="SfE-j4-tLl"/>
@@ -158,6 +168,7 @@
                         <outlet property="dateLabel" destination="WS3-il-uhN" id="XCX-dE-O5z"/>
                         <outlet property="descriptionTextView" destination="YyO-RK-tok" id="fUw-yV-9Ye"/>
                         <outlet property="dimensionsLabel" destination="SPH-Kw-cK6" id="cNB-cr-dgk"/>
+                        <outlet property="feedbackButton" destination="WmZ-9R-RUI" id="pVo-JT-dfo"/>
                         <outlet property="imageDetailScrollView" destination="j0G-Ah-6ht" id="ho8-C0-w0p"/>
                         <outlet property="imageView" destination="3WJ-k3-ZZj" id="ETk-fi-CGC"/>
                         <outlet property="mapButton" destination="yaq-vt-7d2" id="Z3o-FF-94G"/>
@@ -166,6 +177,7 @@
                         <outlet property="tintImageView" destination="qRq-UT-DVr" id="EeP-0o-K9M"/>
                         <segue destination="Sgm-JK-viD" kind="show" identifier="detailsToArtistDetailsSegue" id="Iqz-fO-cUt"/>
                         <segue destination="bhI-VO-vKJ" kind="show" identifier="detailsToSingleMapSegue" id="gTe-De-BHl"/>
+                        <segue destination="9xk-3u-Obp" kind="show" identifier="detailsToFeedbackSegue" id="WoH-9S-jZP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOv-kz-Tac" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -216,13 +228,21 @@
             </objects>
             <point key="canvasLocation" x="4371" y="778"/>
         </scene>
+        <!--Feedback-->
+        <scene sceneID="ynF-ea-NLt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Feedback" id="9xk-3u-Obp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GlL-Gq-rG0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3951" y="-1"/>
+        </scene>
         <!--ArtistDetails-->
         <scene sceneID="HS7-Zc-ynL">
             <objects>
                 <viewControllerPlaceholder storyboardName="ArtistDetails" id="Sgm-JK-viD" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hIp-fg-xu3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3912" y="21"/>
+            <point key="canvasLocation" x="3909" y="34"/>
         </scene>
     </scenes>
 </document>

@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import SafariServices
 
-class ArtistDetailViewController: UIViewController {
+class ArtistDetailViewController: UIViewController, SFSafariViewControllerDelegate {
     
-    var artworkPiece: Artwork?
+    var artworkPiece : Artwork?
     var indexOfArtist : Int!
     var artist : Artist?
+    var number = 0              //check if artist has artwork
+    
 
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var artistLabel: UILabel!
@@ -25,9 +28,14 @@ class ArtistDetailViewController: UIViewController {
         artistLabel.text = artist?.name
         textView.text = artist?.textDesc
         artistImageView.image = artist!.images.first
-//        if artworkPiece?.artist == nil {
-//           viewCollectionButton.isEnabled = false
-//        }
+        for artwork in Firebase.globalArtworks {
+            if artwork.artist == artist?.name {
+                number = 1
+            }
+        }
+        if number == 0 {
+            viewCollectionButton.isEnabled = false
+        }
     }
     
     
@@ -40,4 +48,17 @@ class ArtistDetailViewController: UIViewController {
     }
  
 
+    @IBAction func onButtonPressed(_ sender: Any) {
+        let linkString = "\(artist!.website)"
+        if let link = URL(string: linkString) {
+            let sfvc = SFSafariViewController(url: link)
+            sfvc.delegate = (self as! SFSafariViewControllerDelegate)
+            
+            present(sfvc, animated: true)
+        }
+    }
+    
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        //dismiss(animated: true)
+    }
 }
