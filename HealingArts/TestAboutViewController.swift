@@ -23,7 +23,7 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("View did Load")
+        //print("View did Load")
         
         donateAskLabel.text = "By giving a small donation, you can help support those battling cancer and a program that brings them peace of mind.\n\nYou can make a difference today."
         

@@ -48,7 +48,7 @@ class Event {
                 print(self.image)
                 self.image = image.first!
                 print(self.image)
-                print("Oooga 2ga")
+                //print("Oooga 2ga")
                 completion(true, image.first!)
                 
             }

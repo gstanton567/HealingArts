@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import SafariServices
 
-class ArtistDetailViewController: UIViewController {
+class ArtistDetailViewController: UIViewController, SFSafariViewControllerDelegate {
     
-    var artworkPiece: Artwork?
+    var artworkPiece : Artwork?
     var indexOfArtist : Int!
     var artist : Artist?
 
@@ -24,6 +25,7 @@ class ArtistDetailViewController: UIViewController {
         artistLabel.text = artist?.name
         textView.text = artist?.textDesc
         artistImageView.image = artist!.images.first
+        
     }
     
     
@@ -36,4 +38,17 @@ class ArtistDetailViewController: UIViewController {
     }
  
 
+    @IBAction func onButtonPressed(_ sender: Any) {
+        let linkString = "\(artist!.website)"
+        if let link = URL(string: linkString) {
+            let sfvc = SFSafariViewController(url: link)
+            sfvc.delegate = (self as! SFSafariViewControllerDelegate)
+            
+            present(sfvc, animated: true)
+        }
+    }
+    
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        //dismiss(animated: true)
+    }
 }

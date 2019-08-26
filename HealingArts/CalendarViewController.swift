@@ -25,7 +25,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         
         Firebase.getEvents { (events, err) in
             if let err = err {
-                print("ERRRORRRRR \(err.localizedDescription)")
+                print("\(err.localizedDescription)")
             } else {
                 DispatchQueue.main.async {
                     Firebase.globalEvents = events
@@ -49,6 +49,23 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         cell.dateLabel.text = Firebase.globalEvents[indexPath.row].date
 
         return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        let path = Firebase.globalEvents[indexPath.row]
+        if let eventSummaryArr = path.summary?.components(separatedBy: "&&") {
+            let summaryWithoutURL = eventSummaryArr.last
+            let alertController = UIAlertController(title: path.title, message: summaryWithoutURL, preferredStyle: .alert)
+            let okayAction = UIAlertAction(title: "Okay", style: .default)
+            
+            alertController.addAction(okayAction)
+            
+            present(alertController, animated: true, completion: nil)
+            tableView.deselectRow(at: indexPath, animated: false)
+        
+        }
         
     }
     
