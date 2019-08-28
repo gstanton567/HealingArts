@@ -53,15 +53,20 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+
         let path = Firebase.globalEvents[indexPath.row]
-        let alertController = UIAlertController(title: path.title, message: path.summary, preferredStyle: .alert)
-        let okayAction = UIAlertAction(title: "Okay", style: .default)
+        if let eventSummaryArr = path.summary?.components(separatedBy: "&&") {
+            let summaryWithoutURL = eventSummaryArr.last
+            let alertController = UIAlertController(title: path.title, message: summaryWithoutURL, preferredStyle: .alert)
+            let okayAction = UIAlertAction(title: "Okay", style: .default)
+            
+            alertController.addAction(okayAction)
+            
+            present(alertController, animated: true, completion: nil)
+            tableView.deselectRow(at: indexPath, animated: false)
         
-        alertController.addAction(okayAction)
+        }
         
-        present(alertController, animated: true, completion: nil)
-        tableView.deselectRow(at: indexPath, animated: false)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
