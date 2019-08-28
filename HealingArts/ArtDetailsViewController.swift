@@ -23,8 +23,6 @@ class ArtDetailsViewController: UIViewController, UIScrollViewDelegate{
     @IBOutlet weak var mediumLabel: UILabel!
     @IBOutlet weak var dimensionsLabel: UILabel!
     @IBOutlet weak var mapButton: UIButton!
-    @IBOutlet weak var tintImageView: UIImageView!
-    @IBOutlet weak var imageDetailScrollView: UIScrollView!
     @IBOutlet weak var feedbackButton: UIButton!
     
     var sanctuaryPiece = false
@@ -35,23 +33,17 @@ class ArtDetailsViewController: UIViewController, UIScrollViewDelegate{
     var selectedArtwork : ArtworkItem?
     var mapButtonPressed = false
     var feedbackButtonPressed = false
+    var imagePressed = false
     var pieceLocation : GeoPoint?
     var artist : Artist?
+    var theImage = UIImage()
     
-    var imageViewForScrolling = UIImageView()
     
     var location = CLLocationCoordinate2D(latitude: 41.2554318, longitude: -95.9795596)
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-        imageDetailScrollView.delegate = self
-        imageViewForScrolling = UIImageView(image: UIImage(named: "artPlaceholderImage"))
-        imageDetailScrollView.backgroundColor = .black
-        imageDetailScrollView.contentSize = imageViewForScrolling.bounds.size
-        imageDetailScrollView.autoresizingMask = UIView.AutoresizingMask(rawValue: UIView.AutoresizingMask.flexibleWidth.rawValue | UIView.AutoresizingMask.flexibleHeight.rawValue)
-        imageDetailScrollView.contentOffset = CGPoint(x: 1090, y: 450)
-        imageDetailScrollView.isUserInteractionEnabled = true
+
 
     }
     
@@ -63,10 +55,7 @@ class ArtDetailsViewController: UIViewController, UIScrollViewDelegate{
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(tapGestureRecognizerForImage)
         
-        let tapGestureRecognizerForTint = UITapGestureRecognizer(target: self, action: #selector(ArtDetailsViewController.tintTapped(tapGestureRecognizerForTint:)))
         
-        tintImageView.isUserInteractionEnabled = true
-        tintImageView.addGestureRecognizer(tapGestureRecognizerForTint)
 
         artistButton.setTitleColor(UIColor.ChihulyUI.Blue.DeepAqua, for: .normal)
         mapButton.setTitleColor(UIColor.ChihulyUI.Blue.DeepAqua, for: .normal)
@@ -97,8 +86,7 @@ class ArtDetailsViewController: UIViewController, UIScrollViewDelegate{
             dateLabel.text = artworkPiece?.date
             descriptionTextView.text = artworkPiece?.textDescription
             imageView.image = artworkPiece?.images?.first
-            imageViewForScrolling = UIImageView(image: (artworkPiece?.images?.first))
-            imageDetailScrollView.addSubview(imageViewForScrolling)
+            theImage = (artworkPiece?.images!.first)!
 
         }
         else if artwork != nil {
@@ -116,31 +104,16 @@ class ArtDetailsViewController: UIViewController, UIScrollViewDelegate{
             mediumLabel.text = artwork?.medium
             dimensionsLabel.text = artwork?.dimensions
             descriptionTextView.text = artwork?.textDescription
-            imageViewForScrolling = UIImageView(image: (artwork?.images?.first))
-            imageDetailScrollView.addSubview(imageViewForScrolling)
+            theImage = (artwork?.images!.first)!
 
         }
         
         
     }
     
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return imageViewForScrolling
-    }
+
     
-    func setZoomScale(){
-        let imageViewSize = imageViewForScrolling.bounds.size
-        let scrollViewSize = imageDetailScrollView.bounds.size
-        let widthScale = scrollViewSize.width / imageViewSize.width
-        let heightScale = scrollViewSize.height / imageViewSize.height
-        
-        imageDetailScrollView.minimumZoomScale = min(widthScale, heightScale)
-        imageDetailScrollView.zoomScale = 1.0
-    }
     
-    override func viewWillLayoutSubviews() {
-        setZoomScale()
-    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -155,6 +128,7 @@ class ArtDetailsViewController: UIViewController, UIScrollViewDelegate{
     @IBAction func onArtistButtonPressed(_ sender: UIButton) {
         mapButtonPressed = false
         feedbackButtonPressed = false
+        imagePressed = false
         performSegue(withIdentifier: "detailsToArtistDetailsSegue", sender: nil)
     }
     
@@ -162,11 +136,12 @@ class ArtDetailsViewController: UIViewController, UIScrollViewDelegate{
     @IBAction func onMapButtonPressed(_ sender: UIButton) {
         mapButtonPressed = true
         feedbackButtonPressed = false
+        imagePressed = false
         performSegue(withIdentifier: "detailsToSingleMapSegue", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if !mapButtonPressed && !feedbackButtonPressed{
+        if !mapButtonPressed && !feedbackButtonPressed && !imagePressed{
             let avc = segue.destination as! ArtistDetailViewController
             avc.artworkPiece = artworkPiece
             avc.artist = artist
@@ -178,31 +153,33 @@ class ArtDetailsViewController: UIViewController, UIScrollViewDelegate{
             let artTitle = artwork?.title
             fvc.artTitle = artTitle
             print("feedback segue")
+        } else if imagePressed {
+            let zvc = segue.destination as! ZoomedArtworkViewController
+            let artwork = theImage
+            zvc.artwork = artwork
+            print("zoom segue")
         } else {
             let smvc = segue.destination as! SingleArtworkMapViewController
             smvc.location = location
             smvc.sanctuaryPiece = sanctuaryPiece
-            print(pieceNameLabel.text)
+            
         }
     }
     
     @objc func imageTapped(tapGestureRecognizerForImage: UITapGestureRecognizer) {
         let tappedImage = tapGestureRecognizerForImage.view as! UIImageView
-        
-        imageDetailScrollView.isHidden = false
-        tintImageView.isHidden = false
+        imagePressed = true
+        feedbackButtonPressed = false
+        mapButtonPressed = false
+        performSegue(withIdentifier: "detailsToZoomSegue", sender: nil)
         
     }
     
-    @objc func tintTapped(tapGestureRecognizerForTint : UIGestureRecognizer) {
-        let tappedItem = tapGestureRecognizerForTint.view as! UIImageView
-        
-        imageDetailScrollView.isHidden = true
-        tintImageView.isHidden = true
-    }
+
     @IBAction func onFeedbackButtonPressed(_ sender: Any) {
         feedbackButtonPressed = true
         mapButtonPressed = false
+        imagePressed = false
         performSegue(withIdentifier: "detailsToFeedbackSegue", sender: nil)
         
     }
