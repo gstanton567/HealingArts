@@ -14,9 +14,12 @@ class ArtistDetailViewController: UIViewController, SFSafariViewControllerDelega
     var artworkPiece : Artwork?
     var indexOfArtist : Int!
     var artist : Artist?
+    var number = 0              //check if artist has artwork
+    
 
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var artistLabel: UILabel!
+    @IBOutlet weak var viewCollectionButton: UIButton!
     @IBOutlet weak var artistImageView: UIImageView!
     
     
@@ -25,7 +28,14 @@ class ArtistDetailViewController: UIViewController, SFSafariViewControllerDelega
         artistLabel.text = artist?.name
         textView.text = artist?.textDesc
         artistImageView.image = artist!.images.first
-        
+        for artwork in Firebase.globalArtworks {
+            if artwork.artist == artist?.name {
+                number = 1
+            }
+        }
+        if number == 0 {
+            viewCollectionButton.isEnabled = false
+        }
     }
     
     
