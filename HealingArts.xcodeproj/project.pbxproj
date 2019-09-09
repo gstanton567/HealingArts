@@ -23,6 +23,7 @@
 		23EFD0FA22AACAA900EC7B72 /* Artists.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EFD0F922AACAA900EC7B72 /* Artists.storyboard */; };
 		23EFD10022AACAEA00EC7B72 /* Donor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EFD0FF22AACAEA00EC7B72 /* Donor.storyboard */; };
 		733069EC22B4146A00E5FB78 /* thevideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 733069EB22B4146900E5FB78 /* thevideo.mp4 */; };
+		7373F77A2316366A00716062 /* ZoomedArtworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7373F7792316366A00716062 /* ZoomedArtworkViewController.swift */; };
 		73B5EFA322AE240300E0F67F /* ArtDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B5EFA222AE240300E0F67F /* ArtDetailsViewController.swift */; };
 		73B5EFA922AE8CED00E0F67F /* ArtistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B5EFA822AE8CED00E0F67F /* ArtistDetailViewController.swift */; };
 		73B5EFAB22AEF01100E0F67F /* SingleArtworkMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B5EFAA22AEF01100E0F67F /* SingleArtworkMapViewController.swift */; };
@@ -81,6 +82,7 @@
 		23EFD0F922AACAA900EC7B72 /* Artists.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Artists.storyboard; sourceTree = "<group>"; };
 		23EFD0FF22AACAEA00EC7B72 /* Donor.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Donor.storyboard; sourceTree = "<group>"; };
 		733069EB22B4146900E5FB78 /* thevideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = thevideo.mp4; sourceTree = "<group>"; };
+		7373F7792316366A00716062 /* ZoomedArtworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomedArtworkViewController.swift; sourceTree = "<group>"; };
 		73B5EFA022AAF04200E0F67F /* DonorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorViewController.swift; sourceTree = "<group>"; };
 		73B5EFA222AE240300E0F67F /* ArtDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtDetailsViewController.swift; sourceTree = "<group>"; };
 		73B5EFA822AE8CED00E0F67F /* ArtistDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				D54D085022B149540039E5A9 /* Collection.storyboard */,
 				D54D084C22B13FF60039E5A9 /* CollectionViewController.swift */,
 				7A785EBA22B014FF008E42D8 /* ArtworkDetails.storyboard */,
+				7373F7792316366A00716062 /* ZoomedArtworkViewController.swift */,
 				7A8C2B4622D4375000990C8B /* CardArtDetailsViewController.swift */,
 				23EFD0F722AAC8C100EC7B72 /* Gallery.storyboard */,
 				15873C0922B144040081410E /* Parallax */,
@@ -398,6 +401,7 @@
 				15873C1122B144040081410E /* ParallaxCollectionViewController.swift in Sources */,
 				7A785EBF22B02A11008E42D8 /* DonorViewController.swift in Sources */,
 				7A785EB922B0137C008E42D8 /* ArtDetailsViewController.swift in Sources */,
+				7373F77A2316366A00716062 /* ZoomedArtworkViewController.swift in Sources */,
 				154E835822CA9A920009E842 /* Event.swift in Sources */,
 				15873C1022B144040081410E /* ParallaxLayoutAttributes.swift in Sources */,
 				7A785EAA22B01331008E42D8 /* ArtistViewController.swift in Sources */,
