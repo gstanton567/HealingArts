@@ -37,7 +37,7 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
         switch pinName!{
         case "Chihuly Sanctuary" :
             let center = CLLocationCoordinate2D(latitude: 41.2553360, longitude: -95.9795296)
-            let span = MKCoordinateSpan(latitudeDelta: 0.00035, longitudeDelta: 0.00035)
+            let span = MKCoordinateSpan(latitudeDelta: 0.0004, longitudeDelta: 0.0004)
             let region = MKCoordinateRegion(center: center, span: span)
             sanctuaryMapView.setRegion(region, animated: false)
             
@@ -126,6 +126,7 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
         let pin = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
         pin.image = UIImage(named: "artIcon")
         pin.canShowCallout = true
+        pin.calloutOffset = CGPoint(x: 0, y: 25)
         let button = UIButton(type: .detailDisclosure)
         pin.rightCalloutAccessoryView = button
         
@@ -140,7 +141,7 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
         print("info button tapped")
         if view.annotation is MKUserLocation{
             //do nothing
-        } else{
+        } else {
             let annotation = view.annotation as! MKPointAnnotation
             print (annotation.title!)
             for artwork in Firebase.globalArtworks{
@@ -150,7 +151,7 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
                 }
             }
             performSegue(withIdentifier: "toArtworkDetailSegue", sender: nil)
+            }
         }
-        }
-    
+
 }
