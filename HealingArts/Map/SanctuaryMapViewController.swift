@@ -153,5 +153,6 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
             performSegue(withIdentifier: "toArtworkDetailSegue", sender: nil)
             }
         }
+    
 
 }

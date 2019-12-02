@@ -12,6 +12,7 @@ import AVKit
 
 class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var aboutDescriptionLabel: UILabel!
     @IBOutlet weak var redBehindImage: UIImageView!
     @IBOutlet weak var donateAskLabel: UILabel!
     @IBOutlet weak var donorCollectionView: UICollectionView!
@@ -26,6 +27,7 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate,
         //print("View did Load")
         
         donateAskLabel.text = "By giving a small donation, you can help support those battling cancer and a program that brings them peace of mind.\n\nYou can make a difference today."
+        aboutDescriptionLabel.text = "The Healing Arts program's vision is to engage patients, caregivers, staff and students to heal through art.\nThe Healing Arts Program’s mission is to:\n- Educate and build community awareness encompassing the arts, health and medicine\n- Provide visual, performing and therapeutic arts experiences\n- Create an environment promoting healing and humanizing the hospital experience\n- Integrate and enhance our evidence-based experiences within UNMC/Nebraska Medicine through the arts"
         
         startTimer()
     }
