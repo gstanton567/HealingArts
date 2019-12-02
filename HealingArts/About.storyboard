@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lJ4-Cr-pqr">
-    <device id="retina6_1" orientation="portrait">
+    <device id="ipad12_9rounded" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,18 +15,18 @@
             <objects>
                 <viewController id="31M-F2-wMh" customClass="AboutViewController" customModule="HealingArts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nln-gl-iDy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jTO-6V-CnX">
-                                <rect key="frame" x="0.0" y="84" width="414" height="212"/>
+                                <rect key="frame" x="0.0" y="64" width="1024" height="212"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="212" id="BYN-vP-dYR"/>
                                     <constraint firstAttribute="width" constant="414" id="eAL-ka-wsg"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DWs-bt-aIo">
-                                <rect key="frame" x="20" y="304" width="374" height="216.5"/>
+                                <rect key="frame" x="20" y="284" width="984" height="216.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="4cL-oU-iac"/>
                                     <constraint firstAttribute="height" constant="216.5" id="OmW-lg-MFY"/>
@@ -37,7 +37,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fey-4S-Eqa">
-                                <rect key="frame" x="0.0" y="44" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="24" width="414" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="QcZ-Ru-7ql"/>
                                     <constraint firstAttribute="height" constant="40" id="mhv-2t-Zhf"/>
@@ -47,7 +47,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXu-9I-65p">
-                                <rect key="frame" x="90" y="527.5" width="234" height="30"/>
+                                <rect key="frame" x="90" y="507.5" width="844" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="jgZ-Ce-oQ2"/>
                                 </constraints>
@@ -60,7 +60,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7De-Ib-Dfc">
-                                <rect key="frame" x="92" y="564.5" width="230" height="30"/>
+                                <rect key="frame" x="92" y="544.5" width="840" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="8vW-0N-Zkw"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="B6H-ff-yV4"/>
@@ -124,7 +124,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cwe-Ih-cGp">
-                                <rect key="frame" x="0.0" y="88" width="414" height="3512"/>
+                                <rect key="frame" x="0.0" y="74" width="414" height="3526"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SgD-Qv-JMF">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="3500"/>
@@ -235,7 +235,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="21"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
-                                                <mutableString key="userLabel">The Healing Arts program's vision is to engage patients, caregivers, staff and students to heal through art.                                  The Healing Arts Program’s mission is to:                                                                                                                                        - Educate and build community awareness encompassing the arts, health and medicine                                        - Provide visual, performing and therapeutic arts experiences                                                               - Create an environment promoting healing and humanizing the hospital experience                                      - Integrate and enhance our evidence-based experiences within UNMC/Nebraska Medicine through the arts</mutableString>
+                                                <string key="userLabel">The Healing Arts program's vision is to engage patients, caregivers, staff and students to heal through art.                                  The Healing Arts Program’s mission is to:                                                                                                                                        - Educate and build community awareness encompassing the arts, health and medicine                                        - Provide visual, performing and therapeutic arts experiences                                                               - Create an environment promoting healing and humanizing the hospital experience                                      - Integrate and enhance our evidence-based experiences within UNMC/Nebraska Medicine through the arts</string>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jcQ-Ye-cZS">
                                                 <rect key="frame" x="0.0" y="-29" width="414" height="865"/>
@@ -608,7 +608,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                     <tabBarItem key="tabBarItem" title="About" image="aboutIcon" id="Okd-1X-uCt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rv6-eK-FwH">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="24" width="1024" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.68627450980000004" green="0.062745098040000002" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
