@@ -42,6 +42,14 @@ class SpinnerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Firebase.getMapArtworks { (mapArt, error) in
+            if error != nil {
+                print (error?.localizedDescription)
+            } else {
+                Firebase.globalMapArt = mapArt
+            }
+        }
     
         Firebase.getAllDocumentsInCollection { (artworks, error) in
             if error != nil {
