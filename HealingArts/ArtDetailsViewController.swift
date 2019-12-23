@@ -108,6 +108,17 @@ class ArtDetailsViewController: UIViewController, UIScrollViewDelegate{
 
         }
         
+        //makes sure the artist button will actually go to an existing profile when tapped
+        var isPermArtist = false
+        for artist in Firebase.globalArtists {
+            if (artist.name == artwork?.artist) {
+                isPermArtist = true
+            }
+        }
+        if !isPermArtist {
+            artistButton.isEnabled = false
+            artistButton.setTitleColor(UIColor(named: "black"), for: .normal)
+        }
         
     }
     

@@ -46,14 +46,6 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
             }
         }
         
-        Firebase.getMapArtworks { (mapArt, error) in
-            if error != nil {
-                print (error?.localizedDescription)
-            } else {
-                Firebase.globalMapArt = mapArt
-            }
-        }
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -84,6 +76,20 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
             }
             if isDuplicate == false {
                 artworksMod.append(artwork)
+            }
+        }
+        // boolean to deal with duplicate chihuly
+        var chihulyAdded = false;
+        for artwork in Firebase.globalMapArt{
+            if (artwork.title != "Upper Lobby Artworks" && artwork.title != "Lobby Artworks"){
+                if (artwork.title == "Chihuly Sanctuary"){
+                    if (!chihulyAdded){
+                        artworksMod.append(artwork)
+                        chihulyAdded = true
+                    }
+                } else {
+                    artworksMod.append(artwork)
+                }
             }
         }
         Firebase.globalModArtworks = artworksMod

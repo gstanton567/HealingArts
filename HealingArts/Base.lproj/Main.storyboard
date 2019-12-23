@@ -21,7 +21,7 @@
                         <viewLayoutGuide key="safeArea" id="bvS-U2-VJh"/>
                     </view>
                     <connections>
-                        <segue destination="jig-y2-oGt" kind="show" identifier="toTabBarSegue" id="PJJ-TO-z4I"/>
+                        <segue destination="jig-y2-oGt" kind="modal" identifier="toTabBarSegue" modalPresentationStyle="fullScreen" id="PJJ-TO-z4I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ZQ-fR-ju2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -110,6 +110,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icons8-calendar-50" width="25" height="25"/>
+        <image name="icons8-calendar-50" width="20" height="20"/>
     </resources>
 </document>
