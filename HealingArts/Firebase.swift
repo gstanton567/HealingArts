@@ -224,5 +224,78 @@ class Firebase {
         }
     }
     
+    class func dateToTimestamp(date: String) -> Date{
+        //Oct 16, 2019 02:30PM
+        
+        let firstHalf = date.split(separator: ",")[0]
+        let secondHalf = date.split(separator: ",")[1]
+        let day = firstHalf.split(separator: " ")[1]
+        let monthString = firstHalf.split(separator: " ")[0]
+        let year = secondHalf.split(separator: " ")[0]
+        var month = 0
+        
+        switch monthString {
+        case "Jan":
+            month = 1
+        case "Feb":
+            month = 2
+        case "Mar":
+            month = 3
+        case "Apr":
+            month = 4
+        case "May":
+            month = 5
+        case "Jun":
+            month = 6
+        case "Jul":
+            month = 7
+        case "Aug":
+            month = 8
+        case "Sep":
+            month = 9
+        case "Oct":
+            month = 10
+        case "Nov":
+            month = 11
+        case "Dec":
+            month = 12
+        default:
+            month = 0
+        }
+        
+        
+        let c = NSDateComponents()
+        c.year = Int(year) ?? 0
+        c.month = month
+        c.day = Int(day) ?? 0
+        // Get NSDate given the above date components
+        let date = NSCalendar(identifier: NSCalendar.Identifier.gregorian)?.date(from: c as DateComponents)
+        
+        return date!
+        
+    }
+    
+    class func clearOldEvents(completion: @escaping (Bool) -> Void) {
+        let database = Firestore.firestore()
+        let calendar = Calendar.current
+        for event in Firebase.globalEvents {
+            
+            let time = Firebase.dateToTimestamp(date: event.date!)
+            
+            if calendar.component(.weekOfYear, from: time as Date) < calendar.component(.weekOfYear, from: Date())
+            {
+                database.collection("Events").document(event.title!).delete() { err in
+                    if err != nil {
+                        print("Error")
+                    } else {
+                        print("No errors")
+                    }
+                }
+                print("clear 1")
+            }
+            
+        }
+        completion(true)
+    }
 }
 

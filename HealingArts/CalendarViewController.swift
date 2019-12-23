@@ -18,7 +18,15 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
 
         
+        
+        
+        
     }
+    
+     
+    
+   
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -29,6 +37,13 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
             } else {
                 DispatchQueue.main.async {
                     Firebase.globalEvents = events
+                    Firebase.clearOldEvents { (success) in
+                        if success {
+                            print("event removed")
+                        } else {
+                            print("events not removed")
+                        }
+                    }
                     //                    Firebase.globalEvents[0].getImageURL(summary: events.first!.summary!)
                     self.tableView.reloadData()
                 }
@@ -58,7 +73,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         if let eventSummaryArr = path.summary?.components(separatedBy: "&&") {
             let summaryWithoutURL = eventSummaryArr.last
             let alertController = UIAlertController(title: path.title, message: summaryWithoutURL, preferredStyle: .alert)
-            let okayAction = UIAlertAction(title: "Okay", style: .default)
+            let okayAction = UIAlertAction(title: "OK", style: .default)
             
             alertController.addAction(okayAction)
             
