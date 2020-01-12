@@ -37,71 +37,113 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="20"/>
                                 <state key="normal" title="More About Artist"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="25"/>
+                                </variation>
                                 <connections>
                                     <action selector="onArtistButtonPressed:" destination="U4q-yq-WLn" eventType="touchUpInside" id="jCl-gf-5AH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WS3-il-uhN">
-                                <rect key="frame" x="15" y="1040" width="300" height="18"/>
+                                <rect key="frame" x="15" y="1051.5" width="300" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="jvd-8c-7NH"/>
+                                    <constraint firstAttribute="height" constant="18" id="jvd-8c-7NH">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="25"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" constant="300" id="yem-NU-MX3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="25"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Medium" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8D-sm-jal">
-                                <rect key="frame" x="15" y="1063" width="300" height="18"/>
+                                <rect key="frame" x="15" y="1081.5" width="300" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="h8W-rs-kd9"/>
-                                    <constraint firstAttribute="height" constant="18" id="xqq-cq-BhU"/>
+                                    <constraint firstAttribute="height" constant="18" id="xqq-cq-BhU">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="25"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="25"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dimensions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPH-Kw-cK6">
-                                <rect key="frame" x="15" y="1086" width="300" height="18"/>
+                                <rect key="frame" x="15" y="1111.5" width="300" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="6hO-fv-bMH"/>
-                                    <constraint firstAttribute="height" constant="18" id="LdI-Ca-Evd"/>
+                                    <constraint firstAttribute="height" constant="18" id="LdI-Ca-Evd">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="25"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="25"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0A-e3-nJX">
-                                <rect key="frame" x="15" y="1008" width="300" height="24"/>
+                                <rect key="frame" x="15" y="1008" width="300" height="35.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="96w-Dx-2Uo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="35"/>
+                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaq-vt-7d2">
-                                <rect key="frame" x="940" y="967" width="39" height="36"/>
+                                <rect key="frame" x="889" y="953" width="75" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="Efe-Cg-dkJ"/>
-                                    <constraint firstAttribute="width" constant="39" id="tBK-Sz-cxo"/>
+                                    <constraint firstAttribute="height" constant="36" id="Efe-Cg-dkJ">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="39" id="tBK-Sz-cxo">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="75"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="17"/>
                                 <state key="normal" title="Map"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="25"/>
+                                </variation>
                                 <connections>
                                     <action selector="onMapButtonPressed:" destination="U4q-yq-WLn" eventType="touchUpInside" id="6PB-Iy-P5q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WmZ-9R-RUI">
-                                <rect key="frame" x="283" y="1081" width="1353" height="29"/>
+                                <rect key="frame" x="826.5" y="1105.5" width="200" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="bD5-1T-QDV"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="17"/>
                                 <state key="normal" title="Leave Feedback"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="bD5-1T-QDV"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="25"/>
+                                    <mask key="constraints">
+                                        <include reference="bD5-1T-QDV"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="onFeedbackButtonPressed:" destination="U4q-yq-WLn" eventType="touchUpInside" id="JiJ-0Q-dNy"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPK-JH-SLW">
-                                <rect key="frame" x="10" y="1112" width="1004" height="12"/>
+                                <rect key="frame" x="10" y="1144.5" width="1004" height="12"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="12" id="FaB-hJ-eOs"/>
@@ -111,17 +153,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Piece Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YyO-RK-tok">
-                                <rect key="frame" x="12" y="1128" width="999" height="218"/>
+                                <rect key="frame" x="12" y="1160.5" width="999" height="185.5"/>
                                 <fontDescription key="fontDescription" name="URWGrotesk-Lig" family="URW Grotesk" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="URWGrotesk-Lig" family="URW Grotesk" pointSize="25"/>
+                                </variation>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Click on image to expand)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4OF-ZD-giK">
-                                <rect key="frame" x="441.5" y="950" width="141" height="13"/>
+                                <rect key="frame" x="403.5" y="950" width="217.5" height="20"/>
                                 <fontDescription key="fontDescription" name="URWGrotesk-Lig" family="URW Grotesk" pointSize="13"/>
                                 <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="URWGrotesk-Lig" family="URW Grotesk" pointSize="13"/>
+                                    <fontDescription key="fontDescription" name="URWGrotesk-Lig" family="URW Grotesk" pointSize="20"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -154,12 +199,19 @@
                             <constraint firstAttribute="trailing" secondItem="RPK-JH-SLW" secondAttribute="trailing" constant="10" id="pcO-4q-KK7"/>
                             <constraint firstItem="SPH-Kw-cK6" firstAttribute="top" secondItem="p8D-sm-jal" secondAttribute="bottom" constant="5" id="sCe-aC-mBH"/>
                             <constraint firstItem="SPH-Kw-cK6" firstAttribute="top" secondItem="p8D-sm-jal" secondAttribute="bottom" constant="5" id="sKz-jd-A4g"/>
-                            <constraint firstItem="h65-Wy-nNB" firstAttribute="trailing" secondItem="yaq-vt-7d2" secondAttribute="trailing" constant="45" id="u5f-CK-eGX"/>
+                            <constraint firstItem="h65-Wy-nNB" firstAttribute="trailing" secondItem="yaq-vt-7d2" secondAttribute="trailing" constant="45" id="u5f-CK-eGX">
+                                <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                            </constraint>
                             <constraint firstItem="w0A-e3-nJX" firstAttribute="leading" secondItem="h65-Wy-nNB" secondAttribute="leading" constant="15" id="yfH-K6-Juw"/>
                             <constraint firstItem="yTp-0I-THi" firstAttribute="leading" secondItem="h65-Wy-nNB" secondAttribute="leading" constant="15" id="yiX-8d-CfG"/>
                             <constraint firstItem="4OF-ZD-giK" firstAttribute="centerX" secondItem="aNI-Mx-UWr" secondAttribute="centerX" id="zQT-GF-1gx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h65-Wy-nNB"/>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="GoL-vJ-JJS"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="artistButton" destination="yTp-0I-THi" id="zI9-lG-Q9J"/>
