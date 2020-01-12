@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vuY-yj-y2U">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vuY-yj-y2U">
+    <device id="ipad12_9rounded" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,46 +23,147 @@
             <objects>
                 <viewController id="QQC-uX-l8H" customClass="CalendarViewController" customModule="HealingArts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PNF-1j-fvJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hyw-yy-8eq">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="74" width="1024" height="1227"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellID" rowHeight="180" id="Fyi-43-5Zp" customClass="CalendarTableViewCell" customModule="HealingArts" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="180"/>
+                                        <rect key="frame" x="0.0" y="28" width="1024" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fyi-43-5Zp" id="FXR-ew-NCe">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fyi-43-5Zp" id="FXR-ew-NCe">
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="179.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BBg-3Z-AtX">
-                                                    <rect key="frame" x="20" y="27" width="125" height="125"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BBg-3Z-AtX">
+                                                    <rect key="frame" x="20" y="27" width="200" height="200.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="200" id="GZ9-aK-hxw"/>
+                                                        <constraint firstAttribute="width" constant="200" id="Pbh-02-pmn"/>
+                                                        <constraint firstAttribute="width" constant="125" id="UIk-2L-SXI">
+                                                            <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                                        </constraint>
+                                                        <constraint firstAttribute="height" constant="125" id="YpW-hn-umm">
+                                                            <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                                        </constraint>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="GZ9-aK-hxw"/>
+                                                            <exclude reference="Pbh-02-pmn"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <mask key="constraints">
+                                                            <include reference="GZ9-aK-hxw"/>
+                                                            <include reference="Pbh-02-pmn"/>
+                                                            <exclude reference="UIk-2L-SXI"/>
+                                                            <exclude reference="YpW-hn-umm"/>
+                                                        </mask>
+                                                    </variation>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title of Event" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKL-Gs-e9x">
-                                                    <rect key="frame" x="164" y="11" width="228" height="86"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title of Event" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKL-Gs-e9x">
+                                                    <rect key="frame" x="232" y="12" width="777" height="50.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="X6L-Vl-xIb"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="30"/>
+                                                    </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date: " lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q6b-i6-w2U">
-                                                    <rect key="frame" x="157" y="79" width="86" height="73"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Date: " lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q6b-i6-w2U">
+                                                    <rect key="frame" x="232" y="67.5" width="386" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="eOT-0L-384"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="URWGrotesk-Lig" family="URW Grotesk" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="eOT-0L-384"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" name="URWGrotesk-Lig" family="URW Grotesk" pointSize="25"/>
+                                                        <mask key="constraints">
+                                                            <include reference="eOT-0L-384"/>
+                                                        </mask>
+                                                    </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location: " lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDw-tT-BDm">
-                                                    <rect key="frame" x="247" y="79" width="147" height="73"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location: " lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDw-tT-BDm">
+                                                    <rect key="frame" x="623" y="67.5" width="386" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="GlT-Dz-ktA"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="URWGrotesk-Lig" family="URW Grotesk" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="GlT-Dz-ktA"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" name="URWGrotesk-Lig" family="URW Grotesk" pointSize="25"/>
+                                                        <mask key="constraints">
+                                                            <include reference="GlT-Dz-ktA"/>
+                                                        </mask>
+                                                    </variation>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cDw-tT-BDm" firstAttribute="top" secondItem="kKL-Gs-e9x" secondAttribute="bottom" constant="5" id="5Fn-rZ-XHE"/>
+                                                <constraint firstItem="BBg-3Z-AtX" firstAttribute="leading" secondItem="FXR-ew-NCe" secondAttribute="leadingMargin" id="651-v4-3eL">
+                                                    <variation key="heightClass=regular-widthClass=regular" constant="5"/>
+                                                </constraint>
+                                                <constraint firstAttribute="bottom" secondItem="BBg-3Z-AtX" secondAttribute="bottom" constant="12" id="EoB-kw-ZyJ"/>
+                                                <constraint firstItem="cDw-tT-BDm" firstAttribute="centerY" secondItem="Q6b-i6-w2U" secondAttribute="centerY" id="Ff0-nU-HKp"/>
+                                                <constraint firstItem="Q6b-i6-w2U" firstAttribute="top" secondItem="kKL-Gs-e9x" secondAttribute="bottomMargin" constant="75" id="GTf-nz-Dlz">
+                                                    <variation key="heightClass=regular-widthClass=regular" constant="10"/>
+                                                </constraint>
+                                                <constraint firstAttribute="trailingMargin" secondItem="cDw-tT-BDm" secondAttribute="trailing" id="ToO-Em-7tJ"/>
+                                                <constraint firstItem="kKL-Gs-e9x" firstAttribute="leading" secondItem="BBg-3Z-AtX" secondAttribute="trailing" constant="12" id="VyD-6R-bFm"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="kKL-Gs-e9x" secondAttribute="trailing" id="XJm-6y-ahP"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Q6b-i6-w2U" secondAttribute="bottom" constant="5" id="Y5a-nY-fyc"/>
+                                                <constraint firstItem="Q6b-i6-w2U" firstAttribute="leading" secondItem="BBg-3Z-AtX" secondAttribute="trailing" constant="12" id="bIa-PC-70B"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="cDw-tT-BDm" secondAttribute="bottom" constant="5" id="juG-f2-kwG"/>
+                                                <constraint firstItem="cDw-tT-BDm" firstAttribute="width" secondItem="Q6b-i6-w2U" secondAttribute="width" id="r2c-vJ-GUj"/>
+                                                <constraint firstItem="kKL-Gs-e9x" firstAttribute="top" secondItem="FXR-ew-NCe" secondAttribute="top" constant="12" id="tWJ-m8-O0F">
+                                                    <variation key="heightClass=regular-widthClass=regular" constant="12"/>
+                                                </constraint>
+                                                <constraint firstItem="cDw-tT-BDm" firstAttribute="leading" secondItem="Q6b-i6-w2U" secondAttribute="trailing" constant="5" id="th7-RK-eo7"/>
+                                                <constraint firstItem="BBg-3Z-AtX" firstAttribute="top" secondItem="FXR-ew-NCe" secondAttribute="topMargin" constant="12" id="wrm-Hz-BM6"/>
+                                                <constraint firstItem="BBg-3Z-AtX" firstAttribute="top" secondItem="FXR-ew-NCe" secondAttribute="topMargin" constant="12" id="xY1-z4-wHY"/>
+                                                <constraint firstItem="BBg-3Z-AtX" firstAttribute="leading" secondItem="FXR-ew-NCe" secondAttribute="leadingMargin" constant="5" id="yHl-Xd-Qel"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="EoB-kw-ZyJ"/>
+                                                    <exclude reference="xY1-z4-wHY"/>
+                                                    <exclude reference="yHl-Xd-Qel"/>
+                                                    <exclude reference="GTf-nz-Dlz"/>
+                                                    <exclude reference="Ff0-nU-HKp"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <mask key="constraints">
+                                                    <include reference="651-v4-3eL"/>
+                                                    <include reference="EoB-kw-ZyJ"/>
+                                                    <include reference="xY1-z4-wHY"/>
+                                                    <exclude reference="yHl-Xd-Qel"/>
+                                                    <include reference="VyD-6R-bFm"/>
+                                                    <exclude reference="GTf-nz-Dlz"/>
+                                                    <include reference="bIa-PC-70B"/>
+                                                    <include reference="Ff0-nU-HKp"/>
+                                                    <include reference="th7-RK-eo7"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dateLabel" destination="Q6b-i6-w2U" id="oyY-EZ-OL6"/>
@@ -93,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D4p-cm-wob" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="549.27536231884062" y="-8.0357142857142847"/>
+            <point key="canvasLocation" x="549.0234375" y="-8.3455344070278183"/>
         </scene>
         <!--Events-->
         <scene sceneID="a2A-IV-7vG">
@@ -102,7 +205,7 @@
                     <tabBarItem key="tabBarItem" title="Events" image="icons8-calendar-50" selectedImage="icons8-calendar-50" id="ArD-Ou-kq5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2eq-La-GXz">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="24" width="1024" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -119,7 +222,7 @@
             <objects>
                 <viewController id="dDI-UY-UoY" customClass="EventDetailViewController" customModule="HealingArts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9qa-vl-LKy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RedStar" translatesAutoresizingMaskIntoConstraints="NO" id="9tZ-9E-ZzK">
