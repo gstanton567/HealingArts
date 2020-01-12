@@ -10,6 +10,8 @@ import UIKit
 
 class SpinnerViewController: UIViewController {
     
+    //creates loading screen with spinner
+    
     var spinner = UIActivityIndicatorView(style: .whiteLarge)
     var label = UILabel(frame: CGRect(x: 138, y: 400, width: 200, height: 40))
     
@@ -27,10 +29,10 @@ class SpinnerViewController: UIViewController {
         spinner.startAnimating()
         
         let stackView = UIStackView(arrangedSubviews: [label, spinner])
-        stackView.axis = .horizontal
+        stackView.axis = .vertical
         stackView.distribution = .equalSpacing
-        stackView.alignment = .fill
-        stackView.spacing = 5
+        stackView.alignment = .center
+        stackView.spacing = 20
         stackView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(stackView)
         
@@ -43,6 +45,7 @@ class SpinnerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //pulls in map artworks
         Firebase.getMapArtworks { (mapArt, error) in
             if error != nil {
                 print (error?.localizedDescription)
@@ -51,6 +54,7 @@ class SpinnerViewController: UIViewController {
             }
         }
     
+        //pulls in artworks
         Firebase.getAllDocumentsInCollection { (artworks, error) in
             if error != nil {
                 print(error?.localizedDescription)

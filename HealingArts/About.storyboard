@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lJ4-Cr-pqr">
-    <device id="ipad12_9rounded" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lJ4-Cr-pqr">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="URW++ - URWGrotesk-Lig.otf">
+            <string>URWGrotesk-Lig</string>
+        </array>
+        <array key="URW++ - URWGrotesk-Med.otf">
+            <string>URWGrotesk-Med</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--About View Controller-->
         <scene sceneID="YZy-Fa-zEG">
@@ -165,7 +171,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                     <constraint firstAttribute="width" constant="287" id="DXD-li-FZY"/>
                                                     <constraint firstAttribute="height" constant="79" id="ZEd-pB-Wh8"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                                <fontDescription key="fontDescription" name="URWGrotesk-Med" family="URW Grotesk" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -197,7 +203,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                     <constraint firstAttribute="width" constant="232" id="y8J-jU-Xv5"/>
                                                 </constraints>
                                                 <string key="text">Studies have shown that creating an atmosphere of hope and resilience through artwork goes beyond curing a disease and leads to improved patient outcomes. </string>
-                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="19"/>
+                                                <fontDescription key="fontDescription" name="URWGrotesk-Lig" family="URW Grotesk" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -232,7 +238,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="274" id="gQJ-tf-orn"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="21"/>
+                                                <fontDescription key="fontDescription" name="URWGrotesk-Lig" family="URW Grotesk" pointSize="21"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                                 <string key="userLabel">The Healing Arts program's vision is to engage patients, caregivers, staff and students to heal through art.                                  The Healing Arts Program’s mission is to:                                                                                                                                        - Educate and build community awareness encompassing the arts, health and medicine                                        - Provide visual, performing and therapeutic arts experiences                                                               - Create an environment promoting healing and humanizing the hospital experience                                      - Integrate and enhance our evidence-based experiences within UNMC/Nebraska Medicine through the arts</string>
@@ -326,7 +332,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                     <constraint firstAttribute="height" constant="120" id="jrb-tg-TB9"/>
                                                 </constraints>
                                                 <string key="text">Docent-led tours of the collection are offered to the general public on Saturdays on a first-come first-served basis for 15 people from 1 p.m. to 3 p.m. Saturdays. Self-guided tours are not allowed.</string>
-                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="19"/>
+                                                <fontDescription key="fontDescription" name="URWGrotesk-Lig" family="URW Grotesk" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -371,7 +377,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                     <constraint firstAttribute="height" constant="95" id="AxZ-KZ-pJx"/>
                                                 </constraints>
                                                 <string key="text">By giving a small donation, you can help support those battling cancer and a program that brings them peace of mind. You can make a difference today.</string>
-                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="19"/>
+                                                <fontDescription key="fontDescription" name="URWGrotesk-Lig" family="URW Grotesk" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -411,8 +417,8 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VH0-oD-8fT">
-                                                                    <rect key="frame" x="8" y="14" width="398.5" height="19"/>
-                                                                    <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="17"/>
+                                                                    <rect key="frame" x="8" y="16" width="398.5" height="17"/>
+                                                                    <fontDescription key="fontDescription" name="URWGrotesk-Lig" family="URW Grotesk" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -447,7 +453,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                     <constraint firstAttribute="width" constant="232" id="fuT-RH-nNv"/>
                                                 </constraints>
                                                 <string key="text">Engaging in the healing arts can offer patients and caregivers a safe place to process their experiences, helping to clarify and    provide insight about        their cancer                       diagnosis and           treatment.</string>
-                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="19"/>
+                                                <fontDescription key="fontDescription" name="URWGrotesk-Lig" family="URW Grotesk" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
