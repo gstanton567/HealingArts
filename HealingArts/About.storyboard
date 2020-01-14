@@ -200,15 +200,34 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                     <constraint firstAttribute="height" constant="629" id="n7V-p6-3F3"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hi8-Ka-WWp">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hi8-Ka-WWp">
                                                 <rect key="frame" x="0.0" y="2655" width="414" height="142"/>
                                                 <color key="backgroundColor" red="0.84313725490000002" green="0.098039215690000001" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="142" id="gpC-cZ-cLa"/>
                                                 </constraints>
                                             </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wall image" translatesAutoresizingMaskIntoConstraints="NO" id="f2t-5z-jgS">
+                                                <rect key="frame" x="-566.5" y="2112" width="357" height="635"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="357" id="XvA-15-VpP"/>
+                                                    <constraint firstAttribute="height" constant="635" id="eFB-Qk-zig"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="XvA-15-VpP"/>
+                                                        <exclude reference="eFB-Qk-zig"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="XvA-15-VpP"/>
+                                                        <include reference="eFB-Qk-zig"/>
+                                                    </mask>
+                                                </variation>
+                                            </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newCancer" translatesAutoresizingMaskIntoConstraints="NO" id="wLU-pk-HIc">
-                                                <rect key="frame" x="104" y="2097" width="700" height="700"/>
+                                                <rect key="frame" x="157" y="2097" width="700" height="700"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="492" id="rW1-Un-zPW">
                                                         <variation key="heightClass=regular-widthClass=regular" constant="700"/>
@@ -219,7 +238,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KP0-QF-3pK">
-                                                <rect key="frame" x="-33" y="2230" width="300" height="160"/>
+                                                <rect key="frame" x="37" y="2230" width="300" height="160"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="151" id="3XN-wt-Q6N">
                                                         <variation key="heightClass=regular-widthClass=regular" constant="160"/>
@@ -346,7 +365,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                 </variation>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2019-07-02 at 8.13.36 AM" translatesAutoresizingMaskIntoConstraints="NO" id="awY-iT-rU6">
-                                                <rect key="frame" x="-268" y="2210" width="200" height="200"/>
+                                                <rect key="frame" x="-173" y="2210" width="200" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="115" id="CTH-1I-Mmf">
                                                         <variation key="heightClass=regular-widthClass=regular" constant="200"/>
@@ -357,7 +376,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="youtubeButton" translatesAutoresizingMaskIntoConstraints="NO" id="g3l-pb-Q37">
-                                                <rect key="frame" x="-198" y="2280" width="60" height="60"/>
+                                                <rect key="frame" x="-103" y="2280" width="60" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="CFR-Sb-PDd">
                                                         <variation key="heightClass=regular-widthClass=regular" constant="60"/>
@@ -598,7 +617,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                 </connections>
                                             </collectionView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Uq-VG-Str">
-                                                <rect key="frame" x="-268" y="2245" width="200" height="150"/>
+                                                <rect key="frame" x="-173" y="2245" width="200" height="150"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="DVE-ln-u4P"/>
                                                     <constraint firstAttribute="width" constant="200" id="UqP-AH-4ff"/>
@@ -621,7 +640,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="16" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Afz-Fl-5g7">
-                                                <rect key="frame" x="-265.5" y="2400" width="275" height="250"/>
+                                                <rect key="frame" x="-150.5" y="2400" width="275" height="250"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="195" id="6DB-FH-SqI">
                                                         <variation key="heightClass=regular-widthClass=regular" constant="250"/>
@@ -642,7 +661,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="wLU-pk-HIc" firstAttribute="centerX" secondItem="SgD-Qv-JMF" secondAttribute="centerX" constant="39" id="08D-SH-TC8">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="247"/>
+                                                <variation key="heightClass=regular-widthClass=regular" constant="300"/>
                                             </constraint>
                                             <constraint firstAttribute="trailing" secondItem="b47-9C-fAi" secondAttribute="trailing" id="1Rr-ka-bsd"/>
                                             <constraint firstItem="ySE-8f-LnD" firstAttribute="centerX" secondItem="SgD-Qv-JMF" secondAttribute="centerX" constant="30" id="1xv-6h-LSt"/>
@@ -658,14 +677,15 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                             <constraint firstItem="5Uq-VG-Str" firstAttribute="top" secondItem="y8K-I1-Hbg" secondAttribute="bottom" constant="65" id="9QS-9m-ZEX"/>
                                             <constraint firstItem="Hi8-Ka-WWp" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" id="9Vf-W8-KzR"/>
                                             <constraint firstAttribute="bottom" secondItem="0GV-uk-ggK" secondAttribute="bottom" id="9X8-Yx-TcD"/>
+                                            <constraint firstItem="f2t-5z-jgS" firstAttribute="top" secondItem="fE8-N6-enM" secondAttribute="bottom" constant="25" id="9fQ-yP-Gkl"/>
                                             <constraint firstItem="KP0-QF-3pK" firstAttribute="leading" secondItem="g3l-pb-Q37" secondAttribute="trailing" constant="73.5" id="9kp-sl-AEF"/>
-                                            <constraint firstItem="g3l-pb-Q37" firstAttribute="centerX" secondItem="SgD-Qv-JMF" secondAttribute="centerX" constant="-375" id="Awg-dh-Ptj"/>
+                                            <constraint firstItem="g3l-pb-Q37" firstAttribute="centerX" secondItem="SgD-Qv-JMF" secondAttribute="centerX" constant="-280" id="Awg-dh-Ptj"/>
                                             <constraint firstItem="y8K-I1-Hbg" firstAttribute="top" secondItem="ZuW-LS-1qd" secondAttribute="top" constant="30" id="B4u-Yh-QkT"/>
                                             <constraint firstItem="qJO-1s-zpa" firstAttribute="top" secondItem="g7R-qF-vXF" secondAttribute="bottom" constant="295" id="B9y-un-jrR">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="310"/>
                                             </constraint>
                                             <constraint firstItem="awY-iT-rU6" firstAttribute="centerX" secondItem="SgD-Qv-JMF" secondAttribute="centerX" constant="-120" id="Bwf-sz-MqC">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="-375"/>
+                                                <variation key="heightClass=regular-widthClass=regular" constant="-280"/>
                                             </constraint>
                                             <constraint firstItem="y8K-I1-Hbg" firstAttribute="centerX" secondItem="SgD-Qv-JMF" secondAttribute="centerX" id="C3X-Vv-PNX"/>
                                             <constraint firstAttribute="trailing" secondItem="VbV-Av-W4A" secondAttribute="trailing" constant="10" id="CuH-P7-gd4"/>
@@ -689,6 +709,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                             <constraint firstItem="jcQ-Ye-cZS" firstAttribute="centerX" secondItem="SgD-Qv-JMF" secondAttribute="centerX" id="Ho6-Fs-dqL"/>
                                             <constraint firstAttribute="trailing" secondItem="ZuW-LS-1qd" secondAttribute="trailing" id="JN4-gz-BSc"/>
                                             <constraint firstItem="rkG-P6-q8x" firstAttribute="centerX" secondItem="SgD-Qv-JMF" secondAttribute="centerX" constant="6" id="JU9-A1-tfi"/>
+                                            <constraint firstItem="f2t-5z-jgS" firstAttribute="centerX" secondItem="SgD-Qv-JMF" secondAttribute="centerX" constant="-595" id="L2C-Mv-leZ"/>
                                             <constraint firstAttribute="trailing" secondItem="Ygr-z5-3m6" secondAttribute="trailing" id="L5q-Mf-4zO"/>
                                             <constraint firstItem="Hi8-Ka-WWp" firstAttribute="top" secondItem="Afz-Fl-5g7" secondAttribute="bottom" constant="38" id="LKQ-Vw-LCZ">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="5"/>
@@ -707,7 +728,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                                 <variation key="heightClass=regular-widthClass=regular" constant="180"/>
                                             </constraint>
                                             <constraint firstItem="jcQ-Ye-cZS" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" id="Pab-wT-PCd"/>
-                                            <constraint firstItem="5Uq-VG-Str" firstAttribute="centerX" secondItem="SgD-Qv-JMF" secondAttribute="centerX" constant="-375" id="PoX-Ol-YeB"/>
+                                            <constraint firstItem="5Uq-VG-Str" firstAttribute="centerX" secondItem="SgD-Qv-JMF" secondAttribute="centerX" constant="-280" id="PoX-Ol-YeB"/>
                                             <constraint firstItem="VbV-Av-W4A" firstAttribute="centerX" secondItem="SgD-Qv-JMF" secondAttribute="centerX" id="Qa9-sg-7h6"/>
                                             <constraint firstItem="qJO-1s-zpa" firstAttribute="centerX" secondItem="SgD-Qv-JMF" secondAttribute="centerX" id="Qlr-2g-7RJ"/>
                                             <constraint firstItem="JAX-Am-suE" firstAttribute="centerX" secondItem="SgD-Qv-JMF" secondAttribute="centerX" constant="30" id="Rol-Nm-01x"/>
@@ -735,7 +756,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                             <constraint firstItem="vzY-As-81c" firstAttribute="centerX" secondItem="SgD-Qv-JMF" secondAttribute="centerX" id="aeI-9n-h7m"/>
                                             <constraint firstItem="fE8-N6-enM" firstAttribute="centerX" secondItem="SgD-Qv-JMF" secondAttribute="centerX" id="b81-wC-INM"/>
                                             <constraint firstItem="Afz-Fl-5g7" firstAttribute="centerX" secondItem="SgD-Qv-JMF" secondAttribute="centerX" constant="-81" id="bYc-Ub-P4P">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="-335"/>
+                                                <variation key="heightClass=regular-widthClass=regular" constant="-220"/>
                                             </constraint>
                                             <constraint firstItem="VbV-Av-W4A" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" constant="10" id="d34-PB-NBW"/>
                                             <constraint firstAttribute="trailing" secondItem="jX8-wm-D0t" secondAttribute="trailing" constant="5" id="dGv-Vw-RTq"/>
@@ -751,7 +772,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                             <constraint firstItem="ecl-jG-Fnz" firstAttribute="top" secondItem="ySE-8f-LnD" secondAttribute="bottom" constant="35" id="ep9-9Q-nO0"/>
                                             <constraint firstItem="VbV-Av-W4A" firstAttribute="top" secondItem="jX8-wm-D0t" secondAttribute="bottom" constant="6.5" id="esB-FP-jyK"/>
                                             <constraint firstItem="KP0-QF-3pK" firstAttribute="centerX" secondItem="SgD-Qv-JMF" secondAttribute="centerX" constant="81" id="fFZ-pO-xnI">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="-90"/>
+                                                <variation key="heightClass=regular-widthClass=regular" constant="-20"/>
                                             </constraint>
                                             <constraint firstItem="88C-WB-XQA" firstAttribute="leading" secondItem="SgD-Qv-JMF" secondAttribute="leading" id="fyj-t6-aDK"/>
                                             <constraint firstItem="5Uq-VG-Str" firstAttribute="top" secondItem="y8K-I1-Hbg" secondAttribute="bottom" constant="37" id="g1h-0H-qdn"/>
@@ -797,29 +818,39 @@ The Healing Arts program will be comprised of a growing list of elements to help
                                             <constraint firstAttribute="trailing" secondItem="Hi8-Ka-WWp" secondAttribute="trailing" id="zyO-6d-YJQ"/>
                                         </constraints>
                                         <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="f2t-5z-jgS"/>
+                                            </mask>
                                             <mask key="constraints">
                                                 <exclude reference="1xv-6h-LSt"/>
                                                 <exclude reference="PIa-kw-WfG"/>
-                                                <exclude reference="Awg-dh-Ptj"/>
+                                                <exclude reference="9fQ-yP-Gkl"/>
+                                                <exclude reference="L2C-Mv-leZ"/>
                                                 <exclude reference="9QS-9m-ZEX"/>
                                                 <exclude reference="PoX-Ol-YeB"/>
+                                                <exclude reference="Awg-dh-Ptj"/>
                                                 <exclude reference="S6V-37-8N3"/>
                                                 <exclude reference="ijU-cp-V4v"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
+                                            <mask key="subviews">
+                                                <include reference="f2t-5z-jgS"/>
+                                            </mask>
                                             <mask key="constraints">
                                                 <include reference="1xv-6h-LSt"/>
                                                 <exclude reference="LQC-S2-t3b"/>
                                                 <exclude reference="PIa-kw-WfG"/>
+                                                <include reference="9fQ-yP-Gkl"/>
+                                                <include reference="L2C-Mv-leZ"/>
+                                                <exclude reference="tLu-Su-i2d"/>
                                                 <exclude reference="9kp-sl-AEF"/>
                                                 <exclude reference="ZH6-zx-JdT"/>
-                                                <exclude reference="tLu-Su-i2d"/>
-                                                <include reference="Awg-dh-Ptj"/>
                                                 <include reference="9QS-9m-ZEX"/>
                                                 <include reference="PoX-Ol-YeB"/>
                                                 <exclude reference="g1h-0H-qdn"/>
                                                 <exclude reference="z1f-y1-fac"/>
+                                                <include reference="Awg-dh-Ptj"/>
                                                 <exclude reference="38y-1U-Goc"/>
                                                 <exclude reference="FMe-Ao-DCc"/>
                                                 <exclude reference="XbI-oo-N7v"/>
@@ -907,6 +938,7 @@ The Healing Arts program will be comprised of a growing list of elements to help
         <image name="tour3" width="2048" height="1360"/>
         <image name="tourpic" width="2048" height="1225"/>
         <image name="tower" width="1000" height="1500"/>
+        <image name="wall image" width="2707" height="4922"/>
         <image name="youtubeButton" width="356" height="243"/>
     </resources>
 </document>
