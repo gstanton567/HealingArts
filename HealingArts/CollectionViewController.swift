@@ -42,9 +42,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
             if artwork.artist == artistName {
                 artCollection.append(artwork)
                 print(artwork.title!)
-            } else {
-                print("duplicate")
-            }
+            } 
         }
     }
     

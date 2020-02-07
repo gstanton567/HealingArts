@@ -55,7 +55,7 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
             }
         case "Lobby Artworks" :
             let center = CLLocationCoordinate2D(latitude: 41.255467, longitude: -95.979874)
-            let span = MKCoordinateSpan(latitudeDelta: 0.0008, longitudeDelta: 0.0008)
+            let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
             let region = MKCoordinateRegion(center: center, span: span)
             sanctuaryMapView.setRegion(region, animated: false)
             
@@ -74,7 +74,7 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
             }
         case "Upper Lobby Artworks" :
             let center = CLLocationCoordinate2D(latitude: 41.255467, longitude: -95.979724)
-            let span = MKCoordinateSpan(latitudeDelta: 0.0008, longitudeDelta: 0.0008)
+            let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
             let region = MKCoordinateRegion(center: center, span: span)
             sanctuaryMapView.setRegion(region, animated: false)
             

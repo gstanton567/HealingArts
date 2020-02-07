@@ -28,7 +28,7 @@ class ArtistDetailViewController: UIViewController, SFSafariViewControllerDelega
         artistLabel.text = artist?.name
         textView.text = artist?.textDesc
         artistImageView.image = artist!.images.first
-        for artwork in Firebase.globalArtworks {
+        for artwork in Firebase.globalModArtworks {
             if artwork.artist == artist?.name {
                 number = 1
             }

@@ -66,11 +66,13 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         //sorts out duplicate images before returning a count
+        //currently DOES NOT remove artworks w/o proper data
         var isDuplicate = false
         for artwork in Firebase.globalArtworks{
             isDuplicate = false
             for modArtwork in artworksMod{
-                if modArtwork.textDescription == artwork.textDescription {
+                if (modArtwork.textDescription == artwork.textDescription && artwork.textDescription != "") {
+                    print(artwork.title!)
                     isDuplicate = true
                 }
             }
@@ -78,6 +80,7 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
                 artworksMod.append(artwork)
             }
         }
+        
         // boolean to deal with duplicate chihuly
         var chihulyAdded = false;
         for artwork in Firebase.globalMapArt{
