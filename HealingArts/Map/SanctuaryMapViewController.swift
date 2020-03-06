@@ -20,20 +20,20 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
     
     var sanctuaryPiece = true
     
-    
     var artTitle = ""
     var pieceArtist = ""
     var pieceLocation : CLLocationCoordinate2D?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //Do we still need to get location???
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
         sanctuaryMapView.delegate = self
         sanctuaryMapView.showsUserLocation = false
         
+        //Creates detail map based on selected annotation.
         switch pinName!{
         case "Chihuly Sanctuary" :
             let center = CLLocationCoordinate2D(latitude: 41.2553360, longitude: -95.9795296)
@@ -97,6 +97,9 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
         
     }
     
+    /**
+     Allows for easy creation of image overlays for the detail maps.
+     */
     func createOverlay(image : UIImage?, origin: CLLocationCoordinate2D, size: MKMapSize){
         let mapRect = MKMapRect(origin: MKMapPoint(origin), size: size)
         let overlay = ImageOverlay(image: image!, rect: mapRect)
@@ -104,24 +107,38 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
         sanctuaryMapView.addOverlay(overlay)
     }
     
+    /**
+     Udpdates location when the detail map disappears.
+    
+     Not needed until we add becons???
+     */
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         
         locationManager.stopUpdatingLocation()
     }
     
+    /**
+     Prep for segue to art details.
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let ADVC =  segue.destination as! ArtDetailsViewController
         ADVC.sanctuaryPiece = sanctuaryPiece
         ADVC.fromArtist = false
         ADVC.artworkPiece = artworkPiece
+        ADVC.artwork = artworkPiece
     }
     
+    /**
+     Renders the image overlay for the detail map.
+     */
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         return ImageOverlayRenderer(overlay: overlay)
     }
     
-    
+    /**
+     Handles what should be shown when an icon is clicked.
+     */
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let pin = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
         pin.image = UIImage(named: "artIcon")
@@ -137,6 +154,9 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
         }
     }
     
+    /**
+     Handles the user pressing the info on an annotation.
+     */
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         print("info button tapped")
         if view.annotation is MKUserLocation{

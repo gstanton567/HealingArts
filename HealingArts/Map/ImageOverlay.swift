@@ -12,9 +12,9 @@ import CoreLocation
 
 class ImageOverlay : NSObject, MKOverlay {
     
-    let image:UIImage
+    let image : UIImage
     let boundingMapRect: MKMapRect
-    let coordinate:CLLocationCoordinate2D
+    let coordinate : CLLocationCoordinate2D
     
     init(image: UIImage, rect: MKMapRect) {
         self.image = image

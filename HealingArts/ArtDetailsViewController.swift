@@ -12,6 +12,7 @@ import Firebase
 import FirebaseFirestore
 
 class ArtDetailsViewController: UIViewController, UIScrollViewDelegate{
+    
     var artwork : Artwork?
     
     @IBOutlet weak var barLabel: UILabel!
@@ -69,7 +70,7 @@ class ArtDetailsViewController: UIViewController, UIScrollViewDelegate{
             artistButton.isEnabled = true
         }
         
-        
+        //old code?
         if sanctuaryPiece{
             for artist in Firebase.globalArtists{
                 if artist.name == artworkPiece?.artist{
