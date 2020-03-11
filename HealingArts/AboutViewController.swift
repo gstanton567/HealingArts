@@ -10,7 +10,7 @@
 import UIKit
 import SafariServices
 import AVKit
-
+//This page was an old version of the about page and is no longer used
 
 class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
     

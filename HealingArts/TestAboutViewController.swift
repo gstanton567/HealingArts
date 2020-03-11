@@ -28,6 +28,7 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate,
         
         donateAskLabel.text = "By giving a small donation, you can help support those battling cancer and a program that brings them peace of mind.\n\nYou can make a difference today."
         aboutDescriptionLabel.text = "The Healing Arts program's vision is to engage patients, caregivers, staff and students to heal through art.\nThe Healing Arts Program’s mission is to:\n- Educate and build community awareness encompassing the arts, health and medicine\n- Provide visual, performing and therapeutic arts experiences\n- Create an environment promoting healing and humanizing the hospital experience\n- Integrate and enhance our evidence-based experiences within UNMC/Nebraska Medicine through the arts"
+        //sets text for different paragraphs on the about page
         
         startTimer()
     }
@@ -76,7 +77,7 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate,
     
      // MARK: - Buttons
      
- 
+ //plays video when button is clicked
     @IBAction func videoButton(_ sender: Any) {
         if let path = Bundle.main.path(forResource: "thevideo", ofType: "mp4"){
             let video = AVPlayer(url: URL(fileURLWithPath: path))
@@ -89,7 +90,7 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate,
         
     }
     
-    
+    //links user to Docent lead tours when button is pressed
     @IBAction func onTourButtonPressed(_ sender: UIButton) {
         let linkString = "https://www.eventbrite.com/e/healing-arts-tour-tickets-35186263060"
         if let link = URL(string: linkString) {
@@ -101,6 +102,8 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate,
         
     }
     
+    //links user to donation website when button is pressed
+
     @IBAction func onGiveButtonPressed(_ sender: UIButton) {
         let linkString = "https://nufoundation.org/-/unmc-fred-and-pamela-buffett-cancer-center-fred-and-pamela-buffett-cancer-center-healing-arts-program-fund-01133070"
         if let link = URL(string: linkString) {
@@ -111,6 +114,8 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate,
         }
     }
     
+    //links user to UNMC webpage when button is pressed
+
     @IBAction func onButtonPressed(_ sender: Any) {
         
         let linkString = "https://www.nebraskamed.com/healingarts"
@@ -129,7 +134,7 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate,
     
     
 }
-
+//rounds an image
 extension UIImageView {
     
     func setRounded() {

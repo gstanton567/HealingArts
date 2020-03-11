@@ -12,5 +12,6 @@ class DonorCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var donorImageView: UIImageView!
     @IBOutlet weak var donorNameLabel: UILabel!
+    //Used at bottom of about page for side-scrolling view which has donor names
     
 }

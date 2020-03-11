@@ -45,29 +45,33 @@ class FeedbackViewController: UIViewController {
         textView.layer.cornerRadius = 5
         textView.layer.borderColor = UIColor.ChihulyCG.Gray.Graphite
         textView.layer.borderWidth = 1
-        
+        //Sets up aesthetics of Feedback page
        
     }
     
     @IBAction func rateSliderAction(_ sender: UISlider) {
         let currentValue = Int(sender.value)
         rateLabel.text = "\(currentValue)"
+        //Calculates and displays the value that shows on the feedback slider. This display is the number you are rating each piece of artwork.
     }
     
     @IBAction func qualitySliderAction(_ sender: UISlider) {
         let currentValue = Int(sender.value)
         qualityLabel.text = "\(currentValue)"
+        //Calculates and displays the value that shows on the feedback slider. This display is the number you are rating each piece of artwork's quality.
     }
     
     @IBAction func interestingSliderAction(_ sender: UISlider) {
         let currentValue = Int(sender.value)
         interestingLabel.text = "\(currentValue)"
+        //Calculates and displays the value that shows on the feedback slider. This display is the number you are rating each piece of artwork on how interesting it is.
     }
    
     
     @IBAction func onSubmitPressed(_ sender: UIButton) {
         
         let feedback = "\(rateLabel.text!)&&\(qualityLabel.text!)&&\(interestingLabel.text!)&&\(textView.text!)"
+        //creates a feedback object of the form ##&&##&&## this can be parsed to create an easier to read rating later
         
         let timeStamp = NSDate().timeIntervalSince1970
 
