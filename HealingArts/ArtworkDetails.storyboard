@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="U4q-yq-WLn">
-    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -21,14 +21,14 @@
             <objects>
                 <viewController id="U4q-yq-WLn" customClass="ArtDetailsViewController" customModule="HealingArts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aNI-Mx-UWr">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3WJ-k3-ZZj">
-                                <rect key="frame" x="15" y="10" width="994" height="936"/>
+                                <rect key="frame" x="15" y="54" width="384" height="408"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTp-0I-THi">
-                                <rect key="frame" x="15" y="961" width="300" height="42"/>
+                                <rect key="frame" x="15" y="477" width="300" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="cti-af-JbV"/>
                                     <constraint firstAttribute="width" constant="300" id="gBc-n0-vrk"/>
@@ -43,7 +43,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WS3-il-uhN">
-                                <rect key="frame" x="15" y="1051.5" width="300" height="25"/>
+                                <rect key="frame" x="15" y="556" width="300" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="jvd-8c-7NH">
                                         <variation key="heightClass=regular-widthClass=regular" constant="25"/>
@@ -58,7 +58,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Medium" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="16" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p8D-sm-jal">
-                                <rect key="frame" x="15" y="1081.5" width="300" height="25"/>
+                                <rect key="frame" x="15" y="579" width="300" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="h8W-rs-kd9"/>
                                     <constraint firstAttribute="height" constant="18" id="xqq-cq-BhU">
@@ -73,7 +73,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dimensions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPH-Kw-cK6">
-                                <rect key="frame" x="15" y="1111.5" width="300" height="25"/>
+                                <rect key="frame" x="15" y="602" width="300" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="6hO-fv-bMH"/>
                                     <constraint firstAttribute="height" constant="18" id="LdI-Ca-Evd">
@@ -88,7 +88,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0A-e3-nJX">
-                                <rect key="frame" x="15" y="1008" width="300" height="35.5"/>
+                                <rect key="frame" x="15" y="524" width="300" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="96w-Dx-2Uo"/>
                                 </constraints>
@@ -100,7 +100,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaq-vt-7d2">
-                                <rect key="frame" x="889" y="953" width="75" height="50"/>
+                                <rect key="frame" x="330" y="483" width="39" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="Efe-Cg-dkJ">
                                         <variation key="heightClass=regular-widthClass=regular" constant="50"/>
@@ -118,10 +118,37 @@
                                     <action selector="onMapButtonPressed:" destination="U4q-yq-WLn" eventType="touchUpInside" id="6PB-Iy-P5q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WmZ-9R-RUI">
-                                <rect key="frame" x="826.5" y="1105.5" width="200" height="37"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPK-JH-SLW">
+                                <rect key="frame" x="10" y="628" width="394" height="12"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="bD5-1T-QDV"/>
+                                    <constraint firstAttribute="height" constant="12" id="FaB-hJ-eOs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Piece Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YyO-RK-tok">
+                                <rect key="frame" x="12" y="644" width="389" height="218"/>
+                                <fontDescription key="fontDescription" name="URWGrotesk-Lig" family="URW Grotesk" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="URWGrotesk-Lig" family="URW Grotesk" pointSize="25"/>
+                                </variation>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Click on image to expand)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4OF-ZD-giK">
+                                <rect key="frame" x="136.33333333333331" y="466" width="141.33333333333331" height="13"/>
+                                <fontDescription key="fontDescription" name="URWGrotesk-Lig" family="URW Grotesk" pointSize="13"/>
+                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="URWGrotesk-Lig" family="URW Grotesk" pointSize="20"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WmZ-9R-RUI">
+                                <rect key="frame" x="283" y="592.66666666666663" width="131" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="bD5-1T-QDV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="17"/>
                                 <state key="normal" title="Leave Feedback"/>
@@ -140,33 +167,6 @@
                                     <action selector="onFeedbackButtonPressed:" destination="U4q-yq-WLn" eventType="touchUpInside" id="JiJ-0Q-dNy"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPK-JH-SLW">
-                                <rect key="frame" x="10" y="1144.5" width="1004" height="12"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="12" id="FaB-hJ-eOs"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Piece Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YyO-RK-tok">
-                                <rect key="frame" x="12" y="1160.5" width="999" height="185.5"/>
-                                <fontDescription key="fontDescription" name="URWGrotesk-Lig" family="URW Grotesk" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="URWGrotesk-Lig" family="URW Grotesk" pointSize="25"/>
-                                </variation>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Click on image to expand)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4OF-ZD-giK">
-                                <rect key="frame" x="403.5" y="950" width="217.5" height="20"/>
-                                <fontDescription key="fontDescription" name="URWGrotesk-Lig" family="URW Grotesk" pointSize="13"/>
-                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="URWGrotesk-Lig" family="URW Grotesk" pointSize="20"/>
-                                </variation>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -181,8 +181,8 @@
                             <constraint firstItem="WmZ-9R-RUI" firstAttribute="leading" secondItem="SPH-Kw-cK6" secondAttribute="trailing" constant="-32" id="GoL-vJ-JJS"/>
                             <constraint firstItem="WS3-il-uhN" firstAttribute="leading" secondItem="h65-Wy-nNB" secondAttribute="leading" constant="15" id="Js3-tJ-Xq1"/>
                             <constraint firstItem="p8D-sm-jal" firstAttribute="leading" secondItem="h65-Wy-nNB" secondAttribute="leading" constant="15" id="LRy-js-GO5"/>
-                            <constraint firstItem="WmZ-9R-RUI" firstAttribute="baseline" secondItem="SPH-Kw-cK6" secondAttribute="baseline" id="OD5-zy-Tm4"/>
-                            <constraint firstItem="WmZ-9R-RUI" firstAttribute="centerX" secondItem="yaq-vt-7d2" secondAttribute="centerX" id="OWp-On-Eha"/>
+                            <constraint firstItem="WmZ-9R-RUI" firstAttribute="baseline" secondItem="SPH-Kw-cK6" secondAttribute="baseline" constant="-4.5" id="OD5-zy-Tm4"/>
+                            <constraint firstItem="WmZ-9R-RUI" firstAttribute="centerX" secondItem="yaq-vt-7d2" secondAttribute="centerX" constant="-1" id="OWp-On-Eha"/>
                             <constraint firstItem="h65-Wy-nNB" firstAttribute="trailing" secondItem="3WJ-k3-ZZj" secondAttribute="trailing" constant="15" id="R2c-g4-Coz"/>
                             <constraint firstItem="p8D-sm-jal" firstAttribute="top" secondItem="WS3-il-uhN" secondAttribute="bottom" constant="5" id="RMy-z4-KoR"/>
                             <constraint firstItem="h65-Wy-nNB" firstAttribute="trailing" secondItem="YyO-RK-tok" secondAttribute="trailing" constant="13" id="XpD-pe-Mat"/>
@@ -193,6 +193,7 @@
                             <constraint firstItem="WS3-il-uhN" firstAttribute="top" secondItem="w0A-e3-nJX" secondAttribute="bottom" constant="8" id="gtc-9Y-ath"/>
                             <constraint firstItem="3WJ-k3-ZZj" firstAttribute="top" secondItem="h65-Wy-nNB" secondAttribute="top" constant="10" id="hY3-yM-GU8"/>
                             <constraint firstItem="SPH-Kw-cK6" firstAttribute="leading" secondItem="h65-Wy-nNB" secondAttribute="leading" constant="15" id="iMt-Px-hF0"/>
+                            <constraint firstItem="h65-Wy-nNB" firstAttribute="trailing" secondItem="WmZ-9R-RUI" secondAttribute="trailing" id="nDU-dU-U6L"/>
                             <constraint firstItem="YyO-RK-tok" firstAttribute="leading" secondItem="h65-Wy-nNB" secondAttribute="leading" constant="12" id="pZF-JV-FNB"/>
                             <constraint firstAttribute="trailing" secondItem="RPK-JH-SLW" secondAttribute="trailing" constant="10" id="pcO-4q-KK7"/>
                             <constraint firstItem="SPH-Kw-cK6" firstAttribute="top" secondItem="p8D-sm-jal" secondAttribute="bottom" constant="5" id="sCe-aC-mBH"/>
@@ -230,18 +231,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOv-kz-Tac" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3018.840579710145" y="20.758928571428569"/>
+            <point key="canvasLocation" x="3017.3913043478265" y="20.089285714285712"/>
         </scene>
         <!--Single Artwork Map View Controller-->
         <scene sceneID="sdq-ME-cI0">
             <objects>
                 <viewController id="bhI-VO-vKJ" customClass="SingleArtworkMapViewController" customModule="HealingArts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ETy-4E-vSS">
-                        <rect key="frame" x="0.0" y="0.0" width="712" height="1006.9200564096436"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybridFlyover" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" showsUserLocation="YES" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyf-Ob-Gad">
-                                <rect key="frame" x="0.0" y="0.0" width="712" height="1007"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -266,7 +267,7 @@
             <objects>
                 <viewController id="S4a-NC-Q21" customClass="ZoomedArtworkViewController" customModule="HealingArts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fSM-5K-MWa">
-                        <rect key="frame" x="0.0" y="0.0" width="712" height="1006.9200564096436"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="lER-Z3-vKJ"/>
