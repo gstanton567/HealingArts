@@ -50,6 +50,15 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let image = artworksMod[indexPath.item].images?.first!
+        var imageSizeMultiplier = 1.0
+        if (artworksMod[indexPath.item].title == "Autumn Leaves Persian Installation")
+        {
+            imageSizeMultiplier = 3
+        }
+        if (artworksMod[indexPath.item].title == "The Hope Tapestry")
+        {
+            imageSizeMultiplier = (1/1.5)
+        }
         
         let imageWidth: CGFloat = image!.size.width
         let imageHeight: CGFloat = image!.size.height
@@ -57,7 +66,13 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
         let layout = collectionViewLayout as! ParallaxFlowLayout
         
         let cellWidth: CGFloat = collectionView.bounds.size.width - layout.sectionInset.left - layout.sectionInset.right
-        let cellHeight = floor(cellWidth / imageWidth * imageHeight) - (2 * layout.maxParallaxOffset)
+        var cellHeight = (floor(cellWidth / imageWidth * imageHeight) - (2 * layout.maxParallaxOffset))
+        if(cellHeight * 1.5 < 500)
+        {
+            cellHeight = cellHeight * 1.5
+        }
+        cellHeight = cellHeight * CGFloat(imageSizeMultiplier)
+        
         return CGSize(width: cellWidth, height: cellHeight)
     }
     
