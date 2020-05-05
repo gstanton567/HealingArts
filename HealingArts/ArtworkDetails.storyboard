@@ -58,9 +58,9 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Medium" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="16" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p8D-sm-jal">
-                                <rect key="frame" x="15" y="579" width="300" height="18"/>
+                                <rect key="frame" x="15" y="579" width="389" height="18"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="h8W-rs-kd9"/>
+                                    <constraint firstAttribute="width" constant="389" id="h8W-rs-kd9"/>
                                     <constraint firstAttribute="height" constant="18" id="xqq-cq-BhU">
                                         <variation key="heightClass=regular-widthClass=regular" constant="25"/>
                                     </constraint>
