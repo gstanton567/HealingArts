@@ -124,8 +124,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 pinName = artwork.title!
                 
                 let alertController = UIAlertController(title: artwork.title, message: "", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "OK", style: .cancel) { (UIAlertAction) in
-                    print ("OK")
+                let okAction = UIAlertAction(title: "Cancel", style: .cancel) { (UIAlertAction) in
+                    print ("Cancel")
                     mapView.deselectAnnotation(annotation, animated: true)
                 }
                 let detailAction = UIAlertAction(title: "Details", style: .default) { (UIAlertAction) in

@@ -66,11 +66,10 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
                     let annotation = MKPointAnnotation()
                     annotation.coordinate = CLLocationCoordinate2D(latitude: artwork.location!.latitude, longitude: artwork.location!.longitude)
                     annotation.title = artwork.title
-                    DispatchQueue.main.async{
+                    DispatchQueue.main.async {
                         self.sanctuaryMapView.addAnnotation(annotation)
                     }
                 }
-                
             }
         case "Upper Lobby Artworks" :
             let center = CLLocationCoordinate2D(latitude: 41.255467, longitude: -95.979724)
@@ -108,8 +107,7 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
     }
     
     /**
-     Udpdates location when the detail map disappears.
-    
+     Updates location when the detail map disappears.
      Not needed until we add becons???
      */
     override func viewWillDisappear(_ animated: Bool) {
@@ -171,8 +169,8 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
                 }
             }
             performSegue(withIdentifier: "toArtworkDetailSegue", sender: nil)
-            }
         }
+    }
     
 
 }
