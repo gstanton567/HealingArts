@@ -127,6 +127,7 @@ class Firebase {
     
     class func getArtists(completion: @escaping ([Artist], Error?) -> Void) {
         let database = Firestore.firestore()
+        var count = 0
         var artists = [Artist]()
         database.collection("Artist").getDocuments() { (querySnapshot, err) in
             if let err = err {
@@ -138,8 +139,14 @@ class Firebase {
                     if let urlStrings = data["images"] as? [String] {
                         NetworkManager.getImagesWith(urlStrings: urlStrings, completion: { (images) in
                             let newArtist = Artist(name: data["name"] as! String, textDesc: data["textDesc"] as! String, images: images, website: data["website"] as! String)
+                            if (newArtist.name != "Jim Dine" && newArtist.name != "Stanley Winokur"){
                             artists.append(newArtist)
+                            }
+                            
                             if artists.count == querySnapshot!.documents.count {
+                                completion(artists, nil)
+                            }
+                            else if artists.count == querySnapshot!.documents.count - 2 {
                                 completion(artists, nil)
                             }
                             print ("Artist: \(newArtist.name)")
