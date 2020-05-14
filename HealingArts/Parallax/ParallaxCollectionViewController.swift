@@ -82,6 +82,7 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
         
         //sorts out duplicate images before returning a count
         //currently DOES NOT remove artworks w/o proper data
+        
         var isDuplicate = false
         for artwork in Firebase.globalArtworks{
             isDuplicate = false
