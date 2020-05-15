@@ -67,9 +67,9 @@ class DETAILSViewController: UIViewController {
             if artworkPiece.dimensions != "" && artworkPiece.dimensions != nil {
                 dimensionLabel.text = artworkPiece.dimensions
             }
-            //if artwork.donor != "" {
-                //donorLabel.text = artwork.donor
-            //}
+            if artworkPiece.donor != "" {
+                donorLabel.text = artworkPiece.donor
+            }
             
             descriptionLabel.text = artworkPiece.textDescription
             
@@ -105,9 +105,9 @@ class DETAILSViewController: UIViewController {
             if artwork.dimensions != "" && artwork.dimensions != nil {
                 dimensionLabel.text = artwork.dimensions
             }
-            //if artwork.donor != "" {
-                //donorLabel.text = artwork.donor
-            //}
+            if artwork.donor != "" {
+                donorLabel.text = artwork.donor
+            }
             
             descriptionLabel.text = artwork.textDescription
             
