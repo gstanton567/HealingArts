@@ -48,7 +48,7 @@ extension UIColor {
         
         struct Blue {
             //Blues From Brochure
-            static let Aqua = #colorLiteral(red: 0.3366586566, green: 0.6921415925, blue: 0.7651050687, alpha: 1)
+            static let Aqua = #colorLiteral(red: 0.3337997794, green: 0.6936920285, blue: 0.7667155862, alpha: 1)
             static let DeepAqua = #colorLiteral(red: 0.2891671956, green: 0.6490014791, blue: 0.7183415294, alpha: 1)
             //From Icicle Sculpture
             static let Ice = #colorLiteral(red: 0.5390818715, green: 0.6847582459, blue: 0.6156810522, alpha: 1)
