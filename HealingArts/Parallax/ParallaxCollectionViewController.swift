@@ -86,7 +86,7 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
         for artwork in Firebase.globalArtworks{
             isDuplicate = false
             for modArtwork in artworksMod{
-                if (modArtwork.textDescription == artwork.textDescription && artwork.textDescription != "") {
+                if (modArtwork.textDescription == artwork.textDescription && artwork.title == "Niijima Floats") {
                     print(artwork.title!)
                     isDuplicate = true
                 }
