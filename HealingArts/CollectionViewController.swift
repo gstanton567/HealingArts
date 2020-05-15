@@ -53,7 +53,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     
 //prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dvc = segue.destination as! ArtDetailsViewController
+        let dvc = segue.destination as! DETAILSViewController
         dvc.artworkPiece = artCollection[indexPath!.row]
         dvc.sanctuaryPiece = true
         dvc.fromArtist = true

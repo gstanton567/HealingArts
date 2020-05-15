@@ -19,7 +19,7 @@ extension UIColor {
             static let Rossa = #colorLiteral(red: 0.9201050997, green: 0.3446080089, blue: 0.2914460301, alpha: 1)
             static let Ember = #colorLiteral(red: 0.6406946182, green: 0.2197358012, blue: 0.1547788382, alpha: 1)
             static let Cherry = #colorLiteral(red: 0.3773891926, green: 0.1359370947, blue: 0.1034416035, alpha: 1)
-            static let UNMC = #colorLiteral(red: 0.6265701056, green: 0.1587787569, blue: 0.1563733816, alpha: 1)
+            static let UNMC = #colorLiteral(red: 0.6249090433, green: 0.1620610654, blue: 0.1587317586, alpha: 1)
             static let UNMCSafariBackground = #colorLiteral(red: 0.5946657591, green: 0, blue: 0, alpha: 1)
             //
         }
