@@ -360,7 +360,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="5tY-c7-ZeU"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -372,7 +372,7 @@
                                                         </constraints>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.42745098039215684" green="0.68627450980392157" blue="0.75686274509803919" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.42745098039215684" green="0.68627450980392157" blue="0.75686274509803919" alpha="0.74676262842465757" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="1Rp-bS-w9z" secondAttribute="bottom" constant="5" id="3p3-Ln-wWZ"/>
                                                     <constraint firstItem="MJ5-gP-Aav" firstAttribute="leading" secondItem="cJs-3e-txP" secondAttribute="leading" id="5up-2M-lmc"/>
