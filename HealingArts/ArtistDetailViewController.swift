@@ -48,45 +48,64 @@ class ArtistDetailViewController: UIViewController, SFSafariViewControllerDelega
         var bold = false
         var italicSubStr = ""
         var boldSubStr = ""
-        
         var totalText = ""
+        
+
+        var attributedString = NSMutableAttributedString(string:totalText)
+        var normAttr = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17)]
+        var italicAttr = [NSAttributedString.Key.font : UIFont.italicSystemFont(ofSize: 17)]
+        var boldAttr = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 17)]
+        //var boldString = NSMutableAttributedString(string: boldSubStr, attributes: boldAttr)
+
+        //attributedString.append(boldString)
+        
+        
+       
         
         for word in textView.text.split(separator: " ") {
             
             if (word == "$n") {
                 //new line
+                let newLineStr = "\n\n"
+                var newLineAttributedString = NSMutableAttributedString(string:String(newLineStr), attributes: normAttr)
+                attributedString.append(newLineAttributedString)
             }
             else if (word == "$i") {
-                print("gotem")
                 italics = true
-                print("italics babyyyyyyyyyy")
             }
             else if (word == "$b") {
                 bold = true
-                print("bold bihh")
             }
             else if (word == "i$") {
                 italics = false
-                totalText += italicSubStr + " "
-                print("italics \(italicSubStr)")
+                //totalText += italicSubStr + " "
+                var italicString = NSMutableAttributedString(string: italicSubStr, attributes: italicAttr)
+                attributedString.append(italicString)
                 italicSubStr = ""
             }
             else if (word == "b$") {
                 bold = false
-                totalText += boldSubStr + " "
-                print("bold \(boldSubStr)")
+                //totalText += boldSubStr + " "
+                 var boldString = NSMutableAttributedString(string: boldSubStr, attributes: boldAttr)
+                attributedString.append(boldString)
                 boldSubStr = ""
             }
             else if (italics) {
-                italicSubStr += word
+                italicSubStr += word + " "
             }
             else if (bold) {
-                boldSubStr += word
+                boldSubStr += word + " "
             }
             else {
-                totalText += word
+                //totalText += word
+                let wordWithSpace = word + " "
+                var normAttributedString = NSMutableAttributedString(string:String(wordWithSpace), attributes: normAttr)
+                attributedString.append(normAttributedString)
             }
         }
+        
+        //print(attributedString)
+        textView.attributedText = attributedString
     }
     
     
@@ -185,4 +204,66 @@ func desetItalic()-> UIFont
         return UIFont(descriptor: fontAtrDetails!, size: pointSize)
     }
 }
+}
+extension NSMutableAttributedString {
+    var fontSize:CGFloat { return 14 }
+    var boldFont:UIFont { return UIFont(name: "AvenirNext-Bold", size: fontSize) ?? UIFont.boldSystemFont(ofSize: fontSize) }
+    var normalFont:UIFont { return UIFont(name: "AvenirNext-Regular", size: fontSize) ?? UIFont.systemFont(ofSize: fontSize)}
+
+    func bold(_ value:String) -> NSMutableAttributedString {
+
+        let attributes:[NSAttributedString.Key : Any] = [
+            .font : boldFont
+        ]
+
+        self.append(NSAttributedString(string: value, attributes:attributes))
+        return self
+    }
+
+    func normal(_ value:String) -> NSMutableAttributedString {
+
+        let attributes:[NSAttributedString.Key : Any] = [
+            .font : normalFont,
+        ]
+
+        self.append(NSAttributedString(string: value, attributes:attributes))
+        return self
+    }
+    /* Other styling methods */
+    func orangeHighlight(_ value:String) -> NSMutableAttributedString {
+
+        let attributes:[NSAttributedString.Key : Any] = [
+            .font :  normalFont,
+            .foregroundColor : UIColor.white,
+            .backgroundColor : UIColor.orange
+        ]
+
+        self.append(NSAttributedString(string: value, attributes:attributes))
+        return self
+    }
+
+    func blackHighlight(_ value:String) -> NSMutableAttributedString {
+
+        let attributes:[NSAttributedString.Key : Any] = [
+            .font :  normalFont,
+            .foregroundColor : UIColor.white,
+            .backgroundColor : UIColor.black
+
+        ]
+
+        self.append(NSAttributedString(string: value, attributes:attributes))
+        return self
+    }
+
+    func underlined(_ value:String) -> NSMutableAttributedString {
+
+        let attributes:[NSAttributedString.Key : Any] = [
+            .font :  normalFont,
+            .underlineStyle : NSUnderlineStyle.single.rawValue
+
+        ]
+
+        self.append(NSAttributedString(string: value, attributes:attributes))
+        return self
+    }
 }

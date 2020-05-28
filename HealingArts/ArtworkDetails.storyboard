@@ -536,41 +536,31 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THI-oZ-udb">
-                                                <rect key="frame" x="20" y="909" width="374" height="30"/>
+                                                <rect key="frame" x="20" y="871" width="374" height="45"/>
                                                 <state key="normal" title="Leave Feedback"/>
                                                 <connections>
                                                     <action selector="onFeedbackButtonPressed:" destination="nWM-gU-QUF" eventType="touchUpInside" id="o6i-yL-0Pq"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDZ-7E-lWn">
-                                                <rect key="frame" x="20" y="871" width="374" height="30"/>
-                                                <state key="normal" title="View on Map"/>
-                                                <connections>
-                                                    <action selector="onMapButtonPressed:" destination="nWM-gU-QUF" eventType="touchUpInside" id="TVT-je-H9e"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="62Q-Sn-KfC" secondAttribute="bottom" constant="-589" id="2wf-Mt-1pf"/>
-                                            <constraint firstAttribute="bottom" secondItem="THI-oZ-udb" secondAttribute="bottom" constant="12" id="3Ao-Or-9G1"/>
+                                            <constraint firstAttribute="bottom" secondItem="THI-oZ-udb" secondAttribute="bottom" constant="35" id="3Ao-Or-9G1"/>
                                             <constraint firstItem="62Q-Sn-KfC" firstAttribute="top" secondItem="K4K-xf-NTy" secondAttribute="bottom" constant="15" id="4A5-fn-Xl9"/>
-                                            <constraint firstItem="THI-oZ-udb" firstAttribute="top" secondItem="tDZ-7E-lWn" secondAttribute="bottom" constant="8" id="5Zc-og-WHz"/>
                                             <constraint firstAttribute="trailing" secondItem="SN8-HX-1DI" secondAttribute="trailing" constant="20" id="9S9-FB-nBE"/>
                                             <constraint firstItem="gK1-NR-j4d" firstAttribute="top" secondItem="AGT-TW-s8e" secondAttribute="bottom" constant="8" id="B4r-EO-bEG"/>
                                             <constraint firstAttribute="trailing" secondItem="62Q-Sn-KfC" secondAttribute="trailing" id="D1i-Pi-q8O"/>
-                                            <constraint firstItem="tDZ-7E-lWn" firstAttribute="top" secondItem="9vT-il-bUi" secondAttribute="bottom" constant="20" id="EQq-5I-you"/>
                                             <constraint firstItem="SN8-HX-1DI" firstAttribute="leading" secondItem="tmA-fJ-Tzh" secondAttribute="leading" constant="20" id="Hzy-x2-lKC"/>
                                             <constraint firstItem="BZB-Xy-gkQ" firstAttribute="top" secondItem="SN8-HX-1DI" secondAttribute="bottom" constant="8" id="INV-YT-18h"/>
                                             <constraint firstItem="55n-80-cCq" firstAttribute="top" secondItem="K4K-xf-NTy" secondAttribute="bottom" constant="34" id="M9w-cX-v23"/>
                                             <constraint firstItem="62Q-Sn-KfC" firstAttribute="leading" secondItem="tmA-fJ-Tzh" secondAttribute="leading" id="N4T-np-ZKy"/>
-                                            <constraint firstAttribute="trailing" secondItem="tDZ-7E-lWn" secondAttribute="trailing" constant="20" id="OIz-zT-ltr"/>
                                             <constraint firstItem="BZB-Xy-gkQ" firstAttribute="leading" secondItem="tmA-fJ-Tzh" secondAttribute="leading" constant="20" id="PDR-kO-rOa"/>
                                             <constraint firstItem="slZ-3f-UQd" firstAttribute="top" secondItem="gK1-NR-j4d" secondAttribute="bottom" constant="8" id="RN8-rV-b3K"/>
                                             <constraint firstItem="AGT-TW-s8e" firstAttribute="leading" secondItem="tmA-fJ-Tzh" secondAttribute="leading" constant="20" id="UiL-dm-aUO"/>
                                             <constraint firstItem="AGT-TW-s8e" firstAttribute="top" secondItem="BZB-Xy-gkQ" secondAttribute="bottom" constant="8" id="UzN-Vc-MnP"/>
-                                            <constraint firstItem="tDZ-7E-lWn" firstAttribute="leading" secondItem="tmA-fJ-Tzh" secondAttribute="leading" constant="20" id="V6c-PL-ecx"/>
                                             <constraint firstAttribute="trailing" secondItem="K4K-xf-NTy" secondAttribute="trailing" constant="20" id="VGa-dH-8jF"/>
+                                            <constraint firstItem="THI-oZ-udb" firstAttribute="top" secondItem="9vT-il-bUi" secondAttribute="bottom" constant="20" id="VnY-hD-lUc"/>
                                             <constraint firstAttribute="bottom" secondItem="62Q-Sn-KfC" secondAttribute="bottom" constant="-589" id="X3k-a9-jqw"/>
                                             <constraint firstAttribute="trailing" secondItem="THI-oZ-udb" secondAttribute="trailing" constant="20" id="a1e-Zc-ycF"/>
                                             <constraint firstAttribute="trailing" secondItem="55n-80-cCq" secondAttribute="trailing" constant="20" id="aRi-8F-HUg"/>
