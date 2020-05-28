@@ -17,7 +17,8 @@ class ArtistDetailViewController: UIViewController, SFSafariViewControllerDelega
     var number = 0              //check if artist has artwork
     
 
-    @IBOutlet weak var textView: UITextView!
+    //@IBOutlet weak var biographyLabel: UILabel!
+   @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var viewCollectionButton: UIButton!
     @IBOutlet weak var artistImageView: UIImageView!
@@ -26,7 +27,9 @@ class ArtistDetailViewController: UIViewController, SFSafariViewControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         artistLabel.text = artist?.name
+        //biographyLabel.text! += artist!.textDesc!
         textView.text = artist?.textDesc
+        setTextStyling()
         artistImageView.image = artist!.images.first
         for artwork in Firebase.globalModArtworks {
             if artwork.artist == artist?.name {
@@ -39,11 +42,60 @@ class ArtistDetailViewController: UIViewController, SFSafariViewControllerDelega
     }
     
     
+    
+    func setTextStyling() {
+        var italics = false
+        var bold = false
+        var italicSubStr = ""
+        var boldSubStr = ""
+        
+        var totalText = ""
+        
+        for word in textView.text.split(separator: " ") {
+            
+            if (word == "$n") {
+                //new line
+            }
+            else if (word == "$i") {
+                print("gotem")
+                italics = true
+                print("italics babyyyyyyyyyy")
+            }
+            else if (word == "$b") {
+                bold = true
+                print("bold bihh")
+            }
+            else if (word == "i$") {
+                italics = false
+                totalText += italicSubStr + " "
+                print("italics \(italicSubStr)")
+                italicSubStr = ""
+            }
+            else if (word == "b$") {
+                bold = false
+                totalText += boldSubStr + " "
+                print("bold \(boldSubStr)")
+                boldSubStr = ""
+            }
+            else if (italics) {
+                italicSubStr += word
+            }
+            else if (bold) {
+                boldSubStr += word
+            }
+            else {
+                totalText += word
+            }
+        }
+    }
+    
+    
 //prepare for segue
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dvc = segue.destination as? CollectionViewController
         let artistName = artist?.name
+        print(artistName)
         dvc!.artistName = artistName
     }
  
@@ -61,4 +113,76 @@ class ArtistDetailViewController: UIViewController, SFSafariViewControllerDelega
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
         //dismiss(animated: true)
     }
+}
+
+
+extension UIFont{
+var isBold: Bool
+{
+    return fontDescriptor.symbolicTraits.contains(.traitBold)
+}
+
+var isItalic: Bool
+{
+    return fontDescriptor.symbolicTraits.contains(.traitItalic)
+}
+
+func setBold() -> UIFont
+{
+    if(isBold)
+    {
+        return self
+    }
+    else
+    {
+        var fontAtrAry = fontDescriptor.symbolicTraits
+        fontAtrAry.insert([.traitBold])
+        let fontAtrDetails = fontDescriptor.withSymbolicTraits(fontAtrAry)
+        return UIFont(descriptor: fontAtrDetails!, size: pointSize)
+    }
+}
+
+func setItalic()-> UIFont
+{
+    if(isItalic)
+    {
+        return self
+    }
+    else
+    {
+        var fontAtrAry = fontDescriptor.symbolicTraits
+        fontAtrAry.insert([.traitItalic])
+        let fontAtrDetails = fontDescriptor.withSymbolicTraits(fontAtrAry)
+        return UIFont(descriptor: fontAtrDetails!, size: pointSize)
+    }
+}
+func desetBold() -> UIFont
+{
+    if(!isBold)
+    {
+        return self
+    }
+    else
+    {
+        var fontAtrAry = fontDescriptor.symbolicTraits
+        fontAtrAry.remove([.traitBold])
+        let fontAtrDetails = fontDescriptor.withSymbolicTraits(fontAtrAry)
+        return UIFont(descriptor: fontAtrDetails!, size: pointSize)
+    }
+}
+
+func desetItalic()-> UIFont
+{
+    if(!isItalic)
+    {
+        return self
+    }
+    else
+    {
+        var fontAtrAry = fontDescriptor.symbolicTraits
+        fontAtrAry.remove([.traitItalic])
+        let fontAtrDetails = fontDescriptor.withSymbolicTraits(fontAtrAry)
+        return UIFont(descriptor: fontAtrDetails!, size: pointSize)
+    }
+}
 }
