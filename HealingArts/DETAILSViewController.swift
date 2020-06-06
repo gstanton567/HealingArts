@@ -42,7 +42,10 @@ class DETAILSViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        let tapGestureRecognizerForImage = UITapGestureRecognizer(target: self, action: #selector(ArtDetailsViewController.imageTapped(tapGestureRecognizerForImage:)))
+               imageView.isUserInteractionEnabled = true
+               imageView.addGestureRecognizer(tapGestureRecognizerForImage)
+               
 
         if sanctuaryPiece{
             for artist in Firebase.globalArtists{
@@ -230,6 +233,15 @@ class DETAILSViewController: UIViewController {
         imagePressed = false
         performSegue(withIdentifier: "detailsToFeedbackSegue", sender: nil)
     }
+    
+    @objc func imageTapped(tapGestureRecognizerForImage: UITapGestureRecognizer) {
+           let tappedImage = tapGestureRecognizerForImage.view as! UIImageView
+           imagePressed = true
+           feedbackButtonPressed = false
+           mapButtonPressed = false
+           performSegue(withIdentifier: "detailsToZoomSegue", sender: nil)
+           
+       }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if !mapButtonPressed && !feedbackButtonPressed && !imagePressed{
