@@ -39,7 +39,7 @@ class FeedbackViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Thoughts And Feedback"
+        self.title = "Feedback"
         
         textView.layer.masksToBounds = true
         textView.layer.cornerRadius = 5
