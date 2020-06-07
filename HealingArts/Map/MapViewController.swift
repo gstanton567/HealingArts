@@ -184,7 +184,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toArtworkDetailSegue"{
-            let ADVC =  segue.destination as! ArtDetailsViewController
+            let ADVC =  segue.destination as! DETAILSViewController
             sanctuaryPiece = false
             ADVC.artwork = selectedArtwork
             ADVC.fromArtist = true

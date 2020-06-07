@@ -53,7 +53,7 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
         var imageSizeMultiplier = 1.0
         if (artworksMod[indexPath.item].title == "Autumn Leaves Persian Installation")
         {
-            imageSizeMultiplier = 3
+            imageSizeMultiplier = 2.5
         }
         if (artworksMod[indexPath.item].title == "The Hope Tapestry")
         {
@@ -87,7 +87,7 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
         for artwork in Firebase.globalArtworks{
             isDuplicate = false
             for modArtwork in artworksMod{
-                if (modArtwork.textDescription == artwork.textDescription && artwork.title == "Niijima Floats") {
+                if (modArtwork.textDescription == artwork.textDescription && (artwork.title == "Niijima Floats" || artwork.title == "Mille Fiori (Exterior)")) {
                     print(artwork.title!)
                     isDuplicate = true
                 }
@@ -132,7 +132,7 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dvc = segue.destination as! ArtDetailsViewController
+        let dvc = segue.destination as! DETAILSViewController
         dvc.fromArtist = false
         dvc.artwork = artworksMod[self.indexPath!.row]
     }

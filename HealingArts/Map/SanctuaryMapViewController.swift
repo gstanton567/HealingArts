@@ -120,7 +120,7 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
      Prep for segue to art details.
      */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let ADVC =  segue.destination as! ArtDetailsViewController
+        let ADVC =  segue.destination as! DETAILSViewController
         ADVC.sanctuaryPiece = sanctuaryPiece
         ADVC.fromArtist = false
         ADVC.artworkPiece = artworkPiece

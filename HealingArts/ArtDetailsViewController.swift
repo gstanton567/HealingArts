@@ -45,7 +45,7 @@ class ArtDetailsViewController: UIViewController, UIScrollViewDelegate{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
 
-
+        setTextStyling()
     }
     
     override func viewDidLoad() {
@@ -120,16 +120,80 @@ class ArtDetailsViewController: UIViewController, UIScrollViewDelegate{
             artistButton.isEnabled = false
             artistButton.setTitleColor(UIColor(named: "black"), for: .normal)
         }
-        
+        setTextStyling()
     }
     
 
-    
+    func setTextStyling() {
+        var italics = false
+        var bold = false
+        var italicSubStr = ""
+        var boldSubStr = ""
+        var totalText = ""
+        
+
+        var attributedString = NSMutableAttributedString(string:totalText)
+        var normAttr = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17)]
+        var italicAttr = [NSAttributedString.Key.font : UIFont.italicSystemFont(ofSize: 17)]
+        var boldAttr = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 17)]
+        //var boldString = NSMutableAttributedString(string: boldSubStr, attributes: boldAttr)
+
+        //attributedString.append(boldString)
+        
+        
+       
+        
+        for word in descriptionTextView.text.split(separator: " ") {
+            
+            if (word == "$n") {
+                //new line
+                let newLineStr = "\n\n"
+                var newLineAttributedString = NSMutableAttributedString(string:String(newLineStr), attributes: normAttr)
+                attributedString.append(newLineAttributedString)
+            }
+            else if (word == "$i") {
+                italics = true
+            }
+            else if (word == "$b") {
+                bold = true
+            }
+            else if (word == "i$") {
+                italics = false
+                //totalText += italicSubStr + " "
+                var italicString = NSMutableAttributedString(string: italicSubStr, attributes: italicAttr)
+                attributedString.append(italicString)
+                italicSubStr = ""
+            }
+            else if (word == "b$") {
+                bold = false
+                //totalText += boldSubStr + " "
+                 var boldString = NSMutableAttributedString(string: boldSubStr, attributes: boldAttr)
+                attributedString.append(boldString)
+                boldSubStr = ""
+            }
+            else if (italics) {
+                italicSubStr += word + " "
+            }
+            else if (bold) {
+                boldSubStr += word + " "
+            }
+            else {
+                //totalText += word
+                let wordWithSpace = word + " "
+                var normAttributedString = NSMutableAttributedString(string:String(wordWithSpace), attributes: normAttr)
+                attributedString.append(normAttributedString)
+            }
+        }
+        
+        //print(attributedString)
+        descriptionTextView.attributedText = attributedString
+    }
     
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         descriptionTextView.setContentOffset(CGPoint.zero, animated: false)
+        setTextStyling()
     }
     
     

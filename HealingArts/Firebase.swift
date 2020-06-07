@@ -83,7 +83,7 @@ class Firebase {
                     if let urlStrings = data["images"] as? [String] {
                         NetworkManager.getImagesWith(urlStrings: urlStrings, completion: { (images) in
                             
-                            let newArtwork = Artwork(title: data["title"] as! String, artist: (data["artist"] as? String)!, dimensions: data["dimensions"] as? String, date: "", floor: data["floor"] as? Int, textDescription: data["textDescription"] as? String, medium: data["medium"] as? String, location: data["location"] as? GeoPoint, images: images)
+                            let newArtwork = Artwork(title: data["title"] as! String, artist: (data["artist"] as? String)!, dimensions: data["dimensions"] as? String, date: data["date"] as? String, floor: data["floor"] as? Int, textDescription: data["textDescription"] as? String, medium: data["medium"] as? String, location: data["location"] as? GeoPoint, images: images, donor: data["donor"] as? String)
                             
                             artworks.append(newArtwork)
                             if artworks.count == querySnapshot!.documents.count {
@@ -111,7 +111,7 @@ class Firebase {
                     if let urlStrings = data["images"] as? [String] {
                         NetworkManager.getImagesWith(urlStrings: urlStrings, completion: { (images) in
                             
-                            let newArtwork = Artwork(title: data["title"] as! String, artist: (data["artist"] as? String)!, dimensions: data["dimensions"] as? String, date: "", floor: data["floor"] as? Int, textDescription: data["textDescription"] as? String, medium: data["medium"] as? String, location: data["location"] as? GeoPoint, images: images)
+                            let newArtwork = Artwork(title: data["title"] as! String, artist: (data["artist"] as? String)!, dimensions: data["dimensions"] as? String, date: data["date"] as? String, floor: data["floor"] as? Int, textDescription: data["textDescription"] as? String, medium: data["medium"] as? String, location: data["location"] as? GeoPoint, images: images, donor: data["donor"] as? String)
                             
                             artworks.append(newArtwork)
                             if artworks.count == querySnapshot!.documents.count {

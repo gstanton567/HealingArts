@@ -24,8 +24,9 @@ class Artwork {
     var location: GeoPoint?
 //    var imageURLs: [String]?
     var images: [UIImage]?
+    var donor: String?
     
-    init(title: String, artist: String, dimensions: String?, date: String?, floor: Int?, textDescription: String?, medium: String?, location: GeoPoint?, images: [UIImage]?) {
+    init(title: String, artist: String, dimensions: String?, date: String?, floor: Int?, textDescription: String?, medium: String?, location: GeoPoint?, images: [UIImage]?, donor: String?) {
         self.title = title
         self.artist = artist
         self.dimensions = dimensions
@@ -35,6 +36,7 @@ class Artwork {
         self.medium = medium
         self.location = location
         self.images = images!
+        self.donor = donor
     }
 }
 
