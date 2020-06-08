@@ -22,6 +22,8 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate,
     
     var scrollingTimer = Timer()
     
+    var scrollNum = 3
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //print("View did Load")
@@ -43,6 +45,9 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate,
         let cell = donorCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! DonorCollectionViewCell
         //cell.donorImageView.image = UIImage(named: donorPictures[indexPath.item])
         cell.donorNameLabel.text = donorNames[indexPath.item]
+        let constraint = cell.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width)
+        constraint.priority = UILayoutPriority.defaultHigh
+        cell.addConstraint(constraint)
         
         return cell
     }
@@ -53,9 +58,10 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate,
      Invokes Timer to start Automatic Animation with repeat enabled
      */
     func startTimer() {
-        Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: Selector("scrollToNextCell"), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: Selector("scrollToNextCell"), userInfo: nil, repeats: true)
     }
     
+    //TODO: Get first cell to be properly lined up on start and on loop for all devices.
     @objc func scrollToNextCell(){
         
         //get cell size
@@ -64,12 +70,14 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate,
         //get current content Offset of the Collection view
         let contentOffset = donorCollectionView.contentOffset
         
-        if donorCollectionView.contentSize.width <= donorCollectionView.contentOffset.x + cellSize.width
+        if scrollNum >= donorCollectionView.numberOfItems(inSection: 0)
         {
-            donorCollectionView.scrollRectToVisible(CGRect(x: 0, y: contentOffset.y, width: cellSize.width, height: cellSize.height), animated: true)
-            
+            donorCollectionView.scrollToItem(at: IndexPath(item: scrollNum, section: 0), at: .centeredHorizontally, animated: true)
+            scrollNum = 3;
         } else {
-            donorCollectionView.scrollRectToVisible(CGRect(x: contentOffset.x + cellSize.width + 9.7, y: contentOffset.y, width: cellSize.width, height: cellSize.height), animated: true)
+            donorCollectionView.scrollToItem(at: IndexPath(item: scrollNum, section: 0), at: .centeredHorizontally, animated: true)
+            scrollNum += 3
+            //donorCollectionView.scrollRectToVisible(CGRect(x: contentOffset.x + UIScreen.main.bounds.width, y: contentOffset.y, width: cellSize.width, height: cellSize.height), animated: true)
             
         }
         
