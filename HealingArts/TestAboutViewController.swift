@@ -58,10 +58,18 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate,
      Invokes Timer to start Automatic Animation with repeat enabled
      */
     func startTimer() {
+        //Only runs start-up once
+        Timer.scheduledTimer(timeInterval: 0.0, target: self, selector: Selector("scrollStartUp"), userInfo: nil, repeats: false)
+        //repeats the scrolling animation indefinetly
         Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: Selector("scrollToNextCell"), userInfo: nil, repeats: true)
     }
     
-    //TODO: Get first cell to be properly lined up on start and on loop for all devices.
+    //Makes sure first cell is cented regardless of device type
+    @objc func scrollStartUp(){
+        donorCollectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .centeredHorizontally, animated: false)
+    }
+    
+    //Scolls through the cells
     @objc func scrollToNextCell(){
         
         //get cell size
@@ -72,7 +80,7 @@ class TestAboutViewController: UIViewController, SFSafariViewControllerDelegate,
         
         if scrollNum >= donorCollectionView.numberOfItems(inSection: 0)
         {
-            donorCollectionView.scrollToItem(at: IndexPath(item: scrollNum, section: 0), at: .centeredHorizontally, animated: true)
+            donorCollectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .centeredHorizontally, animated: true)
             scrollNum = 3;
         } else {
             donorCollectionView.scrollToItem(at: IndexPath(item: scrollNum, section: 0), at: .centeredHorizontally, animated: true)
