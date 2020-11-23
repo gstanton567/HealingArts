@@ -15,7 +15,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var floorController: UISegmentedControl!
     @IBOutlet weak var mapView: MKMapView!
     
-    let locationManager = CLLocationManager()
+    //let locationManager = CLLocationManager()
  
     var sanctuaryPiece = false
     
@@ -28,8 +28,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.title = "Map"
         
         mapView.delegate = self
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
+        //locationManager.delegate = self
+        //locationManager.requestWhenInUseAuthorization()
 
         
         for artwork in Firebase.globalMapArt{
@@ -101,15 +101,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        locationManager.startUpdatingLocation()
-        print ("getting location")
-        mapView.showsUserLocation = true
+        //locationManager.startUpdatingLocation()
+        //print ("getting location")
+        //mapView.showsUserLocation = true
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
-        locationManager.stopUpdatingLocation()
-        print ("Location is no longer updating")
+        //locationManager.stopUpdatingLocation()
+        //print ("Location is no longer updating")
     }
     
 
@@ -194,7 +194,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             let SMVC = segue.destination as! SanctuaryMapViewController
             sanctuaryPiece = true
             SMVC.sanctuaryPiece = sanctuaryPiece
-            SMVC.locationManager = locationManager
+            //SMVC.locationManager = locationManager
             SMVC.pinName = pinName
         }
         

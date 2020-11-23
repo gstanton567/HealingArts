@@ -12,7 +12,7 @@ import MapKit
 
 class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
-    var locationManager = CLLocationManager()
+    //var locationManager = CLLocationManager()
     var artworkPiece : Artwork?
     var pinName : String?
     
@@ -27,11 +27,11 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
     override func viewDidLoad() {
         super.viewDidLoad()
         //Do we still need to get location???
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        //locationManager.requestWhenInUseAuthorization()
+        //locationManager.startUpdatingLocation()
         
         sanctuaryMapView.delegate = self
-        sanctuaryMapView.showsUserLocation = false
+        //sanctuaryMapView.showsUserLocation = false
         
         //Creates detail map based on selected annotation.
         switch pinName!{
@@ -113,7 +113,7 @@ class SanctuaryMapViewController: UIViewController, MKMapViewDelegate, CLLocatio
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         
-        locationManager.stopUpdatingLocation()
+        //locationManager.stopUpdatingLocation()
     }
     
     /**
