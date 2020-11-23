@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ncv-v1-84J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ncv-v1-84J">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -229,21 +228,12 @@
                             </textView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="K9e-uV-a6Z">
                                 <rect key="frame" x="34" y="114" width="347" height="31"/>
-                                <connections>
-                                    <action selector="rateSliderAction:" destination="dnW-Cy-nhM" eventType="valueChanged" id="e54-cF-gng"/>
-                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5.5" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="U03-yg-HxC">
                                 <rect key="frame" x="34" y="244" width="347" height="31"/>
-                                <connections>
-                                    <action selector="qualitySliderAction:" destination="dnW-Cy-nhM" eventType="valueChanged" id="elB-ev-S2Z"/>
-                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5.5" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="VEf-bq-kNl">
                                 <rect key="frame" x="34" y="369" width="347" height="31"/>
-                                <connections>
-                                    <action selector="interestingSliderAction:" destination="dnW-Cy-nhM" eventType="valueChanged" id="kaB-Uq-8ro"/>
-                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mN-NF-L0n">
                                 <rect key="frame" x="190" y="407" width="35" height="21"/>
@@ -335,14 +325,7 @@
                         <viewLayoutGuide key="safeArea" id="o5i-3V-pah"/>
                     </view>
                     <connections>
-                        <outlet property="interestingLabel" destination="1mN-NF-L0n" id="kkg-L9-Wou"/>
-                        <outlet property="interestingSlider" destination="VEf-bq-kNl" id="kXM-WG-Ale"/>
-                        <outlet property="qualityLabel" destination="2e0-jE-bFG" id="VQQ-Db-uZg"/>
-                        <outlet property="qualitySlider" destination="U03-yg-HxC" id="4ZQ-67-0Dc"/>
-                        <outlet property="rateLabel" destination="AIF-4B-0kf" id="TlN-gY-mia"/>
-                        <outlet property="rateSlider" destination="K9e-uV-a6Z" id="PXJ-iW-H5B"/>
                         <outlet property="submitButton" destination="9FW-7S-Ol7" id="MmL-C2-6Yt"/>
-                        <outlet property="textView" destination="SyL-FA-PRr" id="mvt-hr-ucF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hnc-XW-0UY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -625,6 +608,7 @@
                         <outlet property="qualityLabel" destination="eXJ-q1-jC8" id="g8J-8S-NvR"/>
                         <outlet property="qualitySlider" destination="x9Y-8k-W9f" id="Pra-Uz-CPD"/>
                         <outlet property="rateLabel" destination="jaX-bF-i09" id="TxS-Aq-LE8"/>
+                        <outlet property="rateSlider" destination="qwz-ln-gJO" id="bVU-uc-rMF"/>
                         <outlet property="submitButton" destination="iX4-T5-Xdw" id="nlk-SB-OrF"/>
                         <outlet property="textView" destination="YnH-U1-Kzo" id="HND-i2-hLw"/>
                     </connections>
