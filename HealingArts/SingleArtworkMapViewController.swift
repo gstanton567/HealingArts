@@ -26,7 +26,7 @@ class SingleArtworkMapViewController: UIViewController, CLLocationManagerDelegat
         super.viewDidLoad()
         mapView.delegate = self
         locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
+        //locationManager.requestWhenInUseAuthorization()
         createPin()
     }
     

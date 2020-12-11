@@ -31,8 +31,8 @@ class ParallaxCollectionViewController: UICollectionViewController, UICollection
         layout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
         
         locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        //locationManager.requestWhenInUseAuthorization()
+        //locationManager.startUpdatingLocation()
         
         collectionView.backgroundColor = .black
         title = "Gallery"
