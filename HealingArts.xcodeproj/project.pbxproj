@@ -24,8 +24,6 @@
 		23EFD10022AACAEA00EC7B72 /* Donor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EFD0FF22AACAEA00EC7B72 /* Donor.storyboard */; };
 		733069EC22B4146A00E5FB78 /* thevideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 733069EB22B4146900E5FB78 /* thevideo.mp4 */; };
 		7373F77A2316366A00716062 /* ZoomedArtworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7373F7792316366A00716062 /* ZoomedArtworkViewController.swift */; };
-		73B5EFA322AE240300E0F67F /* ArtDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B5EFA222AE240300E0F67F /* ArtDetailsViewController.swift */; };
-		73B5EFA922AE8CED00E0F67F /* ArtistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B5EFA822AE8CED00E0F67F /* ArtistDetailViewController.swift */; };
 		73B5EFAB22AEF01100E0F67F /* SingleArtworkMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B5EFAA22AEF01100E0F67F /* SingleArtworkMapViewController.swift */; };
 		73ED4FF822CFCF90001092E8 /* DonorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED4FF722CFCF90001092E8 /* DonorCollectionViewCell.swift */; };
 		7A2D1E5E22B1886F00C6B30A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D1E5D22B1886F00C6B30A /* NetworkManager.swift */; };
@@ -63,8 +61,6 @@
 		E01D17A722AEB8C700885EEC /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D17A622AEB8C700885EEC /* AboutViewController.swift */; };
 		E01D17A922AEBF0D00885EEC /* UIColor+ChihulyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D17A822AEBF0D00885EEC /* UIColor+ChihulyColors.swift */; };
 		E0B305FE22B14260007A2E85 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B305FD22B1425F007A2E85 /* About.storyboard */; };
-		E0B3060022B1428A007A2E85 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B305FF22B1428A007A2E85 /* AboutViewController.swift */; };
-		E0B3060222B144D6007A2E85 /* UIColor+ChihulyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3060122B144D6007A2E85 /* UIColor+ChihulyColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -307,7 +303,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Brady Fehr";
 				TargetAttributes = {
 					23EFD0E122AAC0A500EC7B72 = {
@@ -429,9 +425,7 @@
 				15873C1022B144040081410E /* ParallaxLayoutAttributes.swift in Sources */,
 				7A785EAA22B01331008E42D8 /* ArtistViewController.swift in Sources */,
 				7A785EB322B0135F008E42D8 /* SanctuaryMapViewController.swift in Sources */,
-				73B5EFA322AE240300E0F67F /* ArtDetailsViewController.swift in Sources */,
 				7A44401E246D03340096AFBF /* DETAILSViewController.swift in Sources */,
-				73B5EFA922AE8CED00E0F67F /* ArtistDetailViewController.swift in Sources */,
 				7A2D1E5E22B1886F00C6B30A /* NetworkManager.swift in Sources */,
 				7A9A300322C6A3680006EAA4 /* TestAboutViewController.swift in Sources */,
 				D5431D3122CBB95D00CEFC7E /* Artist.swift in Sources */,
@@ -441,9 +435,7 @@
 				73ED4FF822CFCF90001092E8 /* DonorCollectionViewCell.swift in Sources */,
 				23EFD0E622AAC0A500EC7B72 /* AppDelegate.swift in Sources */,
 				D54D084F22B141990039E5A9 /* ArtworkCollectionViewCell.swift in Sources */,
-				E0B3060222B144D6007A2E85 /* UIColor+ChihulyColors.swift in Sources */,
 				7A785EA622AEDC1E008E42D8 /* Artwork.swift in Sources */,
-				E0B3060022B1428A007A2E85 /* AboutViewController.swift in Sources */,
 				7A8C2B4522CFA80700990C8B /* CalendarTableViewCell.swift in Sources */,
 				15873C0E22B144040081410E /* ParallaxCollectionViewCell.swift in Sources */,
 				7A785EB522B0135F008E42D8 /* MapViewController.swift in Sources */,
@@ -594,7 +586,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 9GSTA5ER4V;
 				INFOPLIST_FILE = HealingArts/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -615,7 +607,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 9GSTA5ER4V;
 				INFOPLIST_FILE = HealingArts/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
